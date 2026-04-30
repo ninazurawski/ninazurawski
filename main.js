@@ -23,22 +23,37 @@ function initPreloader() {
   const plTagline   = document.querySelector('.preloader-tagline');
   const plCounterEl = document.querySelector('.preloader-counter');
 
+  let dismissed = false;
+
+  // Guard: called exactly once, however we get here
+  function showPage() {
+    if (dismissed) return;
+    dismissed = true;
+    preloader.style.display = 'none';
+    document.body.classList.remove('is-loading');
+    initCore();
+  }
+
+  // Hard failsafe — always show page within 5 s no matter what
+  setTimeout(showPage, 5000);
+
   let progress = 0;
 
   // Animate logo lockup in
-  gsap.to('.preloader-logo', {
-    opacity: 1,
-    y: 0,
-    duration: 0.9,
-    ease: 'power3.out',
-    delay: 0.15,
-  });
-
-  gsap.to([plTagline, plCounterEl], {
-    opacity: 1,
-    duration: 0.6,
-    delay: 0.65,
-  });
+  try {
+    gsap.to('.preloader-logo', {
+      opacity: 1,
+      y: 0,
+      duration: 0.9,
+      ease: 'power3.out',
+      delay: 0.15,
+    });
+    gsap.to([plTagline, plCounterEl], {
+      opacity: 1,
+      duration: 0.6,
+      delay: 0.65,
+    });
+  } catch(e) { /* GSAP unavailable — logo stays hidden, page still loads */ }
 
   // Progress bar fill
   const interval = setInterval(() => {
@@ -46,46 +61,42 @@ function initPreloader() {
     if (progress >= 100) {
       progress = 100;
       clearInterval(interval);
-      bar.style.width = '100%';
-      counter.textContent = '100';
-
-      // Short pause then reveal
+      if (bar)     bar.style.width = '100%';
+      if (counter) counter.textContent = '100';
       setTimeout(dismissPreloader, 400);
     } else {
-      bar.style.width = progress + '%';
-      counter.textContent = Math.floor(progress);
+      if (bar)     bar.style.width = progress + '%';
+      if (counter) counter.textContent = Math.floor(progress);
     }
   }, 80);
 
   function dismissPreloader() {
-    // Fade logo out
-    gsap.to('.preloader-inner', {
-      opacity: 0,
-      y: -30,
-      duration: 0.5,
-      ease: 'power2.in',
-    });
-
-    // Slide panels out
-    gsap.to('.pl-panel--left', {
-      xPercent: -100,
-      duration: 0.9,
-      ease: 'power3.inOut',
-      delay: 0.3,
-    });
-
-    gsap.to('.pl-panel--right', {
-      xPercent: 100,
-      duration: 0.9,
-      ease: 'power3.inOut',
-      delay: 0.3,
-      onComplete: () => {
-        preloader.style.display = 'none';
-        document.body.classList.remove('is-loading');
-        // Boot everything else
-        initCore();
-      },
-    });
+    try {
+      gsap.to('.preloader-inner', {
+        opacity: 0,
+        y: -30,
+        duration: 0.5,
+        ease: 'power2.in',
+      });
+      gsap.to('.pl-panel--left', {
+        xPercent: -100,
+        duration: 0.9,
+        ease: 'power3.inOut',
+        delay: 0.3,
+      });
+      gsap.to('.pl-panel--right', {
+        xPercent: 100,
+        duration: 0.9,
+        ease: 'power3.inOut',
+        delay: 0.3,
+        onComplete: showPage,
+      });
+    } catch(e) {
+      showPage(); // GSAP failed — reveal page immediately
+      return;
+    }
+    // Fallback: if onComplete never fires (e.g. tab hidden), still show page
+    setTimeout(showPage, 1500);
   }
 }
 
