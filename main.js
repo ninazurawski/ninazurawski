@@ -20,28 +20,24 @@ function initPreloader() {
   const preloader   = document.getElementById('preloader');
   const bar         = document.getElementById('preloaderBar');
   const counter     = document.getElementById('preloaderCounter');
-  const plN         = document.querySelector('.pl-n');
-  const plZ         = document.querySelector('.pl-z');
-  const plDot       = document.querySelector('.pl-dot');
   const plTagline   = document.querySelector('.preloader-tagline');
   const plCounterEl = document.querySelector('.preloader-counter');
 
   let progress = 0;
 
-  // Animate logo letters in
-  gsap.to([plN, plZ], {
+  // Animate logo lockup in
+  gsap.to('.preloader-logo', {
     opacity: 1,
     y: 0,
-    duration: 0.8,
-    stagger: 0.15,
+    duration: 0.9,
     ease: 'power3.out',
-    delay: 0.2,
+    delay: 0.15,
   });
 
-  gsap.to([plDot, plTagline, plCounterEl], {
+  gsap.to([plTagline, plCounterEl], {
     opacity: 1,
     duration: 0.6,
-    delay: 0.7,
+    delay: 0.65,
   });
 
   // Progress bar fill
