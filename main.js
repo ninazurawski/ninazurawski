@@ -786,52 +786,16 @@ window.addEventListener('resize', () => {
 function initCookieConsent() {
   const banner    = document.getElementById('cookieBanner');
   const acceptBtn = document.getElementById('cookieAccept');
-  const rejectBtn = document.getElementById('cookieReject');
   if (!banner) return;
 
-  const consent = localStorage.getItem('cookie_consent');
-
-  // Already decided: fire pixel if accepted, hide banner
-  if (consent === 'accepted') {
-    loadMetaPixel();
-    return;
-  }
-  if (consent === 'rejected') {
-    return;
-  }
+  // Already acknowledged: hide banner
+  if (localStorage.getItem('cookie_notice') === 'seen') return;
 
   // First visit: show banner after 1.2s
   setTimeout(() => banner.classList.add('is-visible'), 1200);
 
   acceptBtn.addEventListener('click', () => {
-    localStorage.setItem('cookie_consent', 'accepted');
-    banner.classList.remove('is-visible');
-    loadMetaPixel();
-  });
-
-  rejectBtn.addEventListener('click', () => {
-    localStorage.setItem('cookie_consent', 'rejected');
+    localStorage.setItem('cookie_notice', 'seen');
     banner.classList.remove('is-visible');
   });
-}
-
-function loadMetaPixel() {
-  if (window._fbqLoaded) return;
-  window._fbqLoaded = true;
-
-  // ── Meta Pixel ────────────────────────────────────────────
-  // Deine Pixel-ID hier eintragen:
-  const PIXEL_ID = 'DEINE_PIXEL_ID';
-  // ─────────────────────────────────────────────────────────
-
-  !function(f,b,e,v,n,t,s){
-    if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window,document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', PIXEL_ID);
-  fbq('track', 'PageView');
 }
