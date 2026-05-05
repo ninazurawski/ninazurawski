@@ -1223,72 +1223,127 @@ ul { list-style: none; }
    ============================================================ */
 .section-process {
   padding: clamp(5rem, 10vw, 9rem) 0;
-  background: var(--bg-secondary);
+  background: var(--bg-primary);
   text-align: center;
 }
 
-.process-steps {
-  position: relative;
-  max-width: 680px;
-  margin: 0 auto;
-}
-
-.process-line {
-  position: absolute;
-  left: 1.6rem;
-  top: 2.5rem;
-  bottom: 2.5rem;
-  width: 1px;
-  background: linear-gradient(to bottom, var(--green), rgba(217,107,82,0.4), transparent);
-  transform-origin: top;
-  transform: scaleY(0);
-}
-
-.process-step {
+/* ── Process Timeline (WOW redesign) ── */
+.process-timeline {
   display: grid;
-  grid-template-columns: 3.5rem 1fr;
-  gap: 1.75rem;
-  padding: 2rem 0;
-  text-align: left;
-  border-bottom: 1px solid var(--border-light);
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.25rem;
+  margin-top: 4rem;
   position: relative;
 }
 
-.process-step:last-child { border-bottom: none; }
-
-.step-number {
-  font-family: var(--ff-label);
-  font-size: 0.68rem;
-  letter-spacing: 0.15em;
-  color: var(--salmon);
-  font-weight: 700;
-  padding-top: 0.3rem;
-  position: relative;
-}
-
-.step-number::before {
+/* Gradient connecting line between all nodes */
+.process-timeline::before {
   content: '';
   position: absolute;
-  left: -2.4rem;
-  top: 0.3rem;
-  width: 8px; height: 8px;
+  top: 1.75rem;           /* vertically centered on the 3.5rem node */
+  left: calc(10% - 0.25rem);
+  right: calc(10% - 0.25rem);
+  height: 2px;
+  background: linear-gradient(90deg, var(--salmon) 0%, var(--green) 100%);
+  z-index: 0;
+  opacity: 0.5;
+}
+
+.pt-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.4rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Circular icon node */
+.pt-node {
+  width: 3.5rem;
+  height: 3.5rem;
   border-radius: 50%;
-  background: var(--salmon);
-  box-shadow: 0 0 0 4px rgba(217,107,82,0.15);
+  background: var(--green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0;
+  box-shadow: 0 0 0 6px rgba(31, 61, 46, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.step-content h3 {
+.pt-step:hover .pt-node {
+  transform: scale(1.12);
+  box-shadow: 0 0 0 10px rgba(31, 61, 46, 0.12),
+              0 8px 24px rgba(31, 61, 46, 0.2);
+}
+
+/* Card below node */
+.pt-card {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem 1.1rem;
+  border: 1px solid var(--border-light);
+  text-align: center;
+  flex: 1;
+  width: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pt-step:hover .pt-card {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(31, 61, 46, 0.1);
+}
+
+.pt-num {
+  font-family: var(--ff-label);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--salmon);
+  margin-bottom: 0.6rem;
+}
+
+.pt-title {
   font-family: var(--ff-heading);
-  font-size: 1.15rem;
+  font-size: 0.97rem;
   font-weight: 600;
-  margin-bottom: 0.45rem;
   color: var(--text-primary);
+  line-height: 1.25;
+  margin-bottom: 0.55rem;
 }
 
-.step-content p {
-  font-size: 0.88rem;
+.pt-desc {
+  font-size: 0.82rem;
   color: var(--text-secondary);
-  line-height: 1.8;
+  line-height: 1.72;
+}
+
+/* Tablet: 3 columns */
+@media (max-width: 1100px) {
+  .process-timeline {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .process-timeline::before { display: none; }
+}
+
+/* Mobile: stacked with icon left */
+@media (max-width: 640px) {
+  .process-timeline {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .pt-step {
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: left;
+  }
+  .pt-node { flex-shrink: 0; }
+  .pt-card { text-align: left; padding: 1.1rem; }
+  .pt-num  { text-align: left; }
 }
 
 /* ============================================================
@@ -1369,7 +1424,7 @@ ul { list-style: none; }
    ============================================================ */
 .section-about {
   padding: clamp(5rem, 10vw, 9rem) 0;
-  background: var(--bg-primary);
+  background: var(--bg-secondary);
 }
 
 .about-grid {
@@ -1630,6 +1685,10 @@ ul { list-style: none; }
 .section-faq {
   padding: clamp(5rem, 10vw, 9rem) 0;
   background: var(--bg-primary);
+}
+
+.faq-heading em {
+  white-space: nowrap;
 }
 
 .faq-grid {

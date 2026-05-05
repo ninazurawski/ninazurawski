@@ -518,16 +518,15 @@ function initScrollAnimations() {
     },
   });
 
-  // Process line draw
-  gsap.to('#processLine', {
-    scaleY: 1,
-    ease: 'none',
-    scrollTrigger: {
-      trigger: '.process-steps',
-      start: 'top 70%',
-      end: 'bottom 60%',
-      scrub: 1,
-    },
+  // Process timeline: nodes pop in after step cards appear
+  gsap.utils.toArray('.pt-node').forEach((node, i) => {
+    gsap.from(node, {
+      scale: 0.5,
+      duration: 0.45,
+      ease: 'back.out(2)',
+      scrollTrigger: { trigger: node.closest('.pt-step') || node, start: 'top 85%', once: true },
+      delay: 0.35 + i * 0.08,
+    });
   });
 
   // About section entrance
