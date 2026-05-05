@@ -28,9 +28,9 @@
   <meta name="twitter:image" content="https://www.nina-zurawski.de/images/nina.png">
 
   <!-- ══ Fonts ══ -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+  <!-- Bunny Fonts — EU-Server, DSGVO-konform, kein IP-Transfer an Google -->
+  <link rel="preconnect" href="https://fonts.bunny.net">
+  <link href="https://fonts.bunny.net/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css">
 
@@ -826,6 +826,20 @@
       </div>
     </div>
   </footer>
+
+  <!-- ═══ COOKIE BANNER ═══ -->
+  <div id="cookieBanner" class="cookie-banner" role="dialog" aria-label="Cookie-Einstellungen" aria-live="polite">
+    <div class="cookie-inner">
+      <div class="cookie-text">
+        <strong>Cookies &amp; Datenschutz</strong>
+        <p>Ich nutze den Meta Pixel für Marketing-Analysen. Mit „Akzeptieren" stimmst du der Verarbeitung zu. Mehr dazu in meiner <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
+      </div>
+      <div class="cookie-actions">
+        <button id="cookieReject" class="btn-cookie-reject">Nur Notwendige</button>
+        <button id="cookieAccept" class="btn-cookie-accept">Akzeptieren</button>
+      </div>
+    </div>
+  </div>
 
   <!-- ═══ SCRIPTS ═══ -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
