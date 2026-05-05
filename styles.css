@@ -306,16 +306,16 @@ ul { list-style: none; }
   font-weight: 500;
   padding: 0.6rem 1.4rem;
   border-radius: 100px;
-  border: 1.5px solid var(--green);
-  color: var(--green);
+  border: 1.5px solid var(--salmon);
+  color: var(--salmon);
   transition: background 0.3s, color 0.3s, box-shadow 0.3s;
   white-space: nowrap;
 }
 
 .btn-nav:hover {
-  background: var(--green);
+  background: var(--salmon);
   color: #fff;
-  box-shadow: 0 4px 16px var(--green-glow);
+  box-shadow: 0 4px 16px var(--salmon-glow);
 }
 
 .nav-toggle {
@@ -378,7 +378,7 @@ ul { list-style: none; }
   gap: 0.6rem;
   padding: 0.95rem 2.1rem;
   border-radius: 100px;
-  background: var(--green);
+  background: var(--salmon);
   color: #fff;
   font-family: var(--ff-label);
   font-size: 0.95rem;
@@ -386,13 +386,13 @@ ul { list-style: none; }
   position: relative;
   overflow: hidden;
   transition: transform 0.3s var(--ease-expo), box-shadow 0.3s, background 0.3s;
-  box-shadow: 0 4px 20px var(--green-glow);
+  box-shadow: 0 4px 20px var(--salmon-glow);
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  background: var(--green-mid);
-  box-shadow: 0 10px 32px var(--green-glow);
+  background: var(--salmon-dark);
+  box-shadow: 0 10px 32px var(--salmon-glow);
 }
 
 .btn-primary .btn-glow {
@@ -775,7 +775,7 @@ ul { list-style: none; }
 .hero-headline em {
   font-style: italic;
   font-weight: 500;
-  color: var(--salmon);
+  color: var(--green);
 }
 
 /* Glitch on "Endlich." */
@@ -1929,7 +1929,7 @@ ul { list-style: none; }
     max-width: 480px;
     margin: 0 auto;
   }
-  .service-card--featured { transform: translateY(0); order: -1; }
+  .service-card--featured { transform: translateY(0); }
 
   .numbers-grid { grid-template-columns: repeat(2, 1fr); }
   .number-item:nth-child(3) { border-left: none; }
