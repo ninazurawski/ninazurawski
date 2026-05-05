@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Impressum — Nina Zurawski</title>
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="https://www.nina-zurawski.de/impressum.html">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    .legal-page {
+      min-height: 100vh;
+      background: var(--bg-primary);
+      padding-top: 120px;
+      padding-bottom: 6rem;
+    }
+    .legal-container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 clamp(1rem, 4vw, 3rem);
+    }
+    .legal-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--ff-label);
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      margin-bottom: 2.5rem;
+      transition: color 0.2s;
+    }
+    .legal-back:hover { color: var(--green); }
+    .legal-label {
+      font-family: var(--ff-label);
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--salmon);
+      margin-bottom: 1rem;
+    }
+    .legal-title {
+      font-family: var(--ff-heading);
+      font-size: clamp(2rem, 5vw, 3rem);
+      color: var(--green);
+      margin-bottom: 3rem;
+      line-height: 1.15;
+    }
+    .legal-section {
+      margin-bottom: 2.5rem;
+    }
+    .legal-section h2 {
+      font-family: var(--ff-heading);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 0.75rem;
+    }
+    .legal-section p,
+    .legal-section address {
+      font-family: var(--ff-body);
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.75;
+      font-style: normal;
+    }
+    .legal-section a {
+      color: var(--salmon);
+      text-decoration: none;
+    }
+    .legal-section a:hover { text-decoration: underline; }
+    .legal-divider {
+      border: none;
+      border-top: 1px solid var(--border-light);
+      margin: 2rem 0;
+    }
+    .placeholder {
+      background: rgba(217,107,82,0.1);
+      border: 1px dashed var(--salmon);
+      border-radius: 6px;
+      padding: 0.2rem 0.5rem;
+      font-size: 0.8rem;
+      color: var(--salmon);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══ NAVIGATION ═══ -->
+  <header id="siteNav">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-mark">
+          <img src="images/logo-nina.png" alt="Nina Zurawski" class="logo-img">
+        </span>
+        <span class="logo-text">Nina Zurawski</span>
+      </a>
+      <nav class="nav-links" aria-label="Hauptnavigation">
+        <a href="index.html#services" class="nav-link">Leistungen</a>
+        <a href="index.html#process" class="nav-link">Ablauf</a>
+        <a href="index.html#about" class="nav-link">Über mich</a>
+        <a href="index.html#faq" class="nav-link">FAQ</a>
+      </nav>
+      <a href="index.html#contact" class="btn-nav magnetic">
+        <span>15 Min. Kennenlerncall sichern</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menü">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main class="legal-page">
+    <div class="legal-container">
+
+      <a href="index.html" class="legal-back">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <path d="M13 8H3M3 8L7 4M3 8L7 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        Zurück zur Startseite
+      </a>
+
+      <div class="legal-label">Rechtliches</div>
+      <h1 class="legal-title">Impressum</h1>
+
+      <div class="legal-section">
+        <h2>Angaben gemäß § 5 TMG</h2>
+        <address>
+          Nina Zurawski<br>
+          <span class="placeholder">Straße &amp; Hausnummer</span><br>
+          <span class="placeholder">PLZ Ort</span><br>
+          Deutschland
+        </address>
+      </div>
+
+      <hr class="legal-divider">
+
+      <div class="legal-section">
+        <h2>Kontakt</h2>
+        <p>
+          E-Mail: <a href="mailto:info@nina-zurawski.de">info@nina-zurawski.de</a>
+        </p>
+      </div>
+
+      <hr class="legal-divider">
+
+      <div class="legal-section">
+        <h2>Umsatzsteuer</h2>
+        <p>
+          Gemäß § 19 UStG wird keine Umsatzsteuer berechnet (Kleinunternehmerregelung).<br>
+          <em>Falls zutreffend ersetzen durch:</em> Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG: <span class="placeholder">DE&nbsp;XXXXXXXXX</span>
+        </p>
+      </div>
+
+      <hr class="legal-divider">
+
+      <div class="legal-section">
+        <h2>Berufsbezeichnung</h2>
+        <p>
+          Freiberufliche Google Ads &amp; Landingpage Spezialistin<br>
+          Tätigkeitsland: Deutschland
+        </p>
+      </div>
+
+      <hr class="legal-divider">
+
+      <div class="legal-section">
+        <h2>Streitschlichtung</h2>
+        <p>
+          Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:
+          <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener">https://ec.europa.eu/consumers/odr/</a><br>
+          Ich bin nicht verpflichtet und nicht bereit, an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
+        </p>
+      </div>
+
+      <hr class="legal-divider">
+
+      <div class="legal-section">
+        <h2>Haftung für Inhalte</h2>
+        <p>
+          Als Dienstanbieter bin ich gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG bin ich als Dienstanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.
+        </p>
+      </div>
+
+      <div class="legal-section">
+        <h2>Urheberrecht</h2>
+        <p>
+          Die durch die Seitenbetreiberin erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung der jeweiligen Autorin.
+        </p>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">Nina Zurawski</div>
+          <p>Performance Marketing für Coaches, Beraterinnen &amp; Solo-Selbstständige, die planbar wachsen wollen.</p>
+          <a href="mailto:info@nina-zurawski.de" class="footer-email">info@nina-zurawski.de</a>
+        </div>
+        <div class="footer-nav">
+          <h4>Navigation</h4>
+          <a href="index.html#services">Leistungen</a>
+          <a href="index.html#process">Ablauf</a>
+          <a href="index.html#about">Über mich</a>
+          <a href="index.html#faq">FAQ</a>
+          <a href="index.html#contact">Kontakt</a>
+        </div>
+        <div class="footer-nav">
+          <h4>Rechtliches</h4>
+          <a href="impressum.html">Impressum</a>
+          <a href="datenschutz.html">Datenschutz</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Nina Zurawski. Alle Rechte vorbehalten.</p>
+        <p class="footer-love">Made with ♥ für ambitionierte Frauen</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

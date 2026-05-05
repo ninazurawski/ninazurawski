@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Datenschutz — Nina Zurawski</title>
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="https://www.nina-zurawski.de/datenschutz.html">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    .legal-page {
+      min-height: 100vh;
+      background: var(--bg-primary);
+      padding-top: 120px;
+      padding-bottom: 6rem;
+    }
+    .legal-container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 clamp(1rem, 4vw, 3rem);
+    }
+    .legal-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--ff-label);
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      margin-bottom: 2.5rem;
+      transition: color 0.2s;
+    }
+    .legal-back:hover { color: var(--green); }
+    .legal-label {
+      font-family: var(--ff-label);
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--salmon);
+      margin-bottom: 1rem;
+    }
+    .legal-title {
+      font-family: var(--ff-heading);
+      font-size: clamp(2rem, 5vw, 3rem);
+      color: var(--green);
+      margin-bottom: 3rem;
+      line-height: 1.15;
+    }
+    .legal-section {
+      margin-bottom: 2.5rem;
+    }
+    .legal-section h2 {
+      font-family: var(--ff-heading);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 0.75rem;
+    }
+    .legal-section p,
+    .legal-section address,
+    .legal-section li {
+      font-family: var(--ff-body);
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.75;
+      font-style: normal;
+    }
+    .legal-section ul {
+      padding-left: 1.25rem;
+      margin: 0.5rem 0;
+    }
+    .legal-section a {
+      color: var(--salmon);
+      text-decoration: none;
+    }
+    .legal-section a:hover { text-decoration: underline; }
+    .legal-divider {
+      border: none;
+      border-top: 1px solid var(--border-light);
+      margin: 2rem 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══ NAVIGATION ═══ -->
+  <header id="siteNav">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-mark">
+          <img src="images/logo-nina.png" alt="Nina Zurawski" class="logo-img">
+        </span>
+        <span class="logo-text">Nina Zurawski</span>
+      </a>
+      <nav class="nav-links" aria-label="Hauptnavigation">
+        <a href="index.html#services" class="nav-link">Leistungen</a>
+        <a href="index.html#process" class="nav-link">Ablauf</a>
+        <a href="index.html#about" class="nav-link">Über mich</a>
+        <a href="index.html#faq" class="nav-link">FAQ</a>
+      </nav>
+      <a href="index.html#contact" class="btn-nav magnetic">
+        <span>15 Min. Kennenlerncall sichern</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menü">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main class="legal-page">
+    <div class="legal-container">
+
+      <a href="index.html" class="legal-back">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <path d="M13 8H3M3 8L7 4M3 8L7 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        Zurück zur Startseite
+      </a>
+
+      <div class="legal-label">Rechtliches</div>
+      <h1 class="legal-title">Datenschutzerklärung</h1>
+
+      <div class="legal-section">
+        <h2>1. Verantwortliche</h2>
+        <p>
+          Verantwortliche im Sinne der Datenschutz-Grundverordnung (DSGVO) ist:<br><br>
+          Nina Zurawski<br>
+          E-Mail: <a href="mailto:info@nina-zurawski.de">info@nina-zurawski.de</a><br>
+          Website: <a href="https://www.nina-zurawski.de">www.nina-zurawski.de</a>
+        </p>
+      </div>
+
+      <hr class="legal-divider">
+
+      <div class="legal-section">
+        <h2>2. Hosting</h2>
+        <p>
+          Diese Website wird über <strong>GitHub Pages</strong> gehostet, einem Dienst der GitHub, Inc., 88 Colin P. Kelly Jr. St., San Francisco, CA 94107, USA. Beim Aufruf dieser Website werden von GitHub automatisch sogenannte Server-Log-Dateien erfasst, die dein Browser automatisch übermittelt. Dies sind:
+        </p>
+        <ul>
+          <li>Browsertyp und Browserversion</li>
+          <li>Verwendetes Betriebssystem</li>
+          <li>Referrer-URL</li>
+          <li>Hostname des zugreifenden Rechners</li>
+          <li>Uhrzeit der Serveranfrage</li>
+          <li>IP-Adresse</li>
+        </ul>
+        <p>
+          Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der sicheren und stabilen Bereitstellung der Website). Weitere Informationen findest du in der Datenschutzerklärung von GitHub: <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" target="_blank" rel="noopener">GitHub Privacy Statement</a>.
+        </p>
+      </div>
+
+      <hr class="legal-divider">
+
+      <div class="legal-section">
+        <h2>3. Google Fonts</h2>
+        <p>
+          Diese Website verwendet <strong>Google Fonts</strong>, einen Dienst der Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA. Die Schriftarten werden beim Seitenaufruf von Google-Servern geladen. Dabei wird deine IP-Adresse an Google übermittelt.
+        </p>
+        <p>
+          Die Nutzung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer einheitlichen Darstellung der Website). Informationen zur Datenverarbeitung durch Google: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Datenschutzerklärung</a>.
+        </p>
+      </div>
+
+      <hr class="legal-divider">
+
+      <div class="legal-section">
+        <h2>4. Externe Skripte (GSAP, Lenis)</h2>
+        <p>
+          Zur Darstellung von Animationen lädt diese Website JavaScript-Bibliotheken von externen CDN-Servern (cdnjs.cloudflare.com, cdn.jsdelivr.net). Dabei kann deine IP-Adresse an den jeweiligen Anbieter übermittelt werden. Es werden keine personenbezogenen Daten gespeichert oder verarbeitet. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO.
+        </p>
+      </div>
+
+      <hr class="legal-divider">
+
+      <div class="legal-section">
+        <h2>5. Kontaktaufnahme per E-Mail</h2>
+        <p>
+          Wenn du mich per E-Mail kontaktierst, werden die von dir übermittelten Daten (deine E-Mail-Adresse, Name und der Inhalt deiner Nachricht) gespeichert, um deine Anfrage zu bearbeiten und Rückfragen stellen zu können. Diese Daten werden nicht ohne deine Einwilligung weitergegeben.
+        </p>
+        <p>
+          Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (Vertragsanbahnung) bzw. Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse). Die Daten werden gelöscht, sobald sie für die Bearbeitung deiner Anfrage nicht mehr erforderlich sind.
+        </p>
+      </div>
+
+      <hr class="legal-divider">
+
+      <div class="legal-section">
+        <h2>6. Cookies</h2>
+        <p>
+          Diese Website setzt keine eigenen Cookies. Externe Dienste (GitHub Pages, Google Fonts, CDN-Anbieter) können technisch notwendige Cookies setzen. Diese dienen ausschließlich dem Betrieb der jeweiligen Dienste und speichern keine personenbezogenen Daten.
+        </p>
+      </div>
+
+      <hr class="legal-divider">
+
+      <div class="legal-section">
+        <h2>7. Deine Rechte</h2>
+        <p>Du hast gegenüber mir folgende Rechte hinsichtlich deiner personenbezogenen Daten:</p>
+        <ul>
+          <li>Recht auf Auskunft (Art. 15 DSGVO)</li>
+          <li>Recht auf Berichtigung (Art. 16 DSGVO)</li>
+          <li>Recht auf Löschung (Art. 17 DSGVO)</li>
+          <li>Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO)</li>
+          <li>Recht auf Datenübertragbarkeit (Art. 20 DSGVO)</li>
+          <li>Recht auf Widerspruch gegen die Verarbeitung (Art. 21 DSGVO)</li>
+        </ul>
+        <p>
+          Du hast außerdem das Recht, dich bei einer Datenschutz-Aufsichtsbehörde über die Verarbeitung deiner personenbezogenen Daten zu beschweren. Für Anfragen wende dich an: <a href="mailto:info@nina-zurawski.de">info@nina-zurawski.de</a>
+        </p>
+      </div>
+
+      <hr class="legal-divider">
+
+      <div class="legal-section">
+        <h2>8. Aktualität dieser Datenschutzerklärung</h2>
+        <p>
+          Diese Datenschutzerklärung ist aktuell gültig und hat den Stand Mai 2026. Durch die Weiterentwicklung der Website oder aufgrund geänderter gesetzlicher Vorgaben kann es notwendig werden, diese Datenschutzerklärung zu ändern.
+        </p>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">Nina Zurawski</div>
+          <p>Performance Marketing für Coaches, Beraterinnen &amp; Solo-Selbstständige, die planbar wachsen wollen.</p>
+          <a href="mailto:info@nina-zurawski.de" class="footer-email">info@nina-zurawski.de</a>
+        </div>
+        <div class="footer-nav">
+          <h4>Navigation</h4>
+          <a href="index.html#services">Leistungen</a>
+          <a href="index.html#process">Ablauf</a>
+          <a href="index.html#about">Über mich</a>
+          <a href="index.html#faq">FAQ</a>
+          <a href="index.html#contact">Kontakt</a>
+        </div>
+        <div class="footer-nav">
+          <h4>Rechtliches</h4>
+          <a href="impressum.html">Impressum</a>
+          <a href="datenschutz.html">Datenschutz</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Nina Zurawski. Alle Rechte vorbehalten.</p>
+        <p class="footer-love">Made with ♥ für ambitionierte Frauen</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
