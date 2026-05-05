@@ -784,58 +784,78 @@ window.addEventListener('resize', () => {
    COOKIE CONSENT & META PIXEL
    ============================================================ */
 function initCookieConsent() {
-  const banner    = document.getElementById('cookieBanner');
-  const overlay   = document.getElementById('cookieOverlay');
+  const banner  = document.getElementById('cookieBanner');
+  const overlay = document.getElementById('cookieOverlay');
   if (!banner || !overlay) return;
 
+  // Already decided → apply saved consent, skip banner
   const stored = getConsentData();
+  if (stored) { applyConsent(stored); return; }
 
-  // Already decided → apply and skip banner
-  if (stored) {
-    applyConsent(stored);
-    return;
-  }
-
-  // Pre-check marketing toggle if previously accepted (first visit: unchecked)
-  const marketingToggle = document.getElementById('marketingToggle');
-
-  // Show banner after short delay
+  // Show after short delay
   setTimeout(() => {
     banner.classList.add('is-visible');
     overlay.classList.add('is-visible');
   }, 900);
+
+  const viewMain     = document.getElementById('cookieViewMain');
+  const viewSettings = document.getElementById('cookieViewSettings');
 
   function hideBanner() {
     banner.classList.remove('is-visible');
     overlay.classList.remove('is-visible');
   }
 
-  // ── Alle akzeptieren ───────────────────────────────────────
-  document.getElementById('cookieAcceptAll').addEventListener('click', () => {
-    const consent = { essential: true, marketing: true };
-    saveConsent(consent);
-    applyConsent(consent);
-    hideBanner();
-  });
+  function showSettings() {
+    viewMain.classList.add('cookie-view--hidden');
+    viewSettings.classList.remove('cookie-view--hidden');
+    banner.scrollTop = 0;
+  }
 
-  // ── Auswahl akzeptieren ────────────────────────────────────
-  document.getElementById('cookieAcceptSelection').addEventListener('click', () => {
-    const consent = {
-      essential: true,
-      marketing: marketingToggle ? marketingToggle.checked : false
+  function showMain() {
+    viewSettings.classList.add('cookie-view--hidden');
+    viewMain.classList.remove('cookie-view--hidden');
+    banner.scrollTop = 0;
+  }
+
+  function getSelection() {
+    return {
+      essential:  true,
+      functional: document.getElementById('functionalToggle')?.checked || false,
+      statistik:  document.getElementById('statistikToggle')?.checked  || false,
+      marketing:  document.getElementById('marketingToggle')?.checked  || false,
     };
-    saveConsent(consent);
-    applyConsent(consent);
-    hideBanner();
-  });
+  }
 
-  // ── Alle ablehnen ──────────────────────────────────────────
-  document.getElementById('cookieRejectAll').addEventListener('click', () => {
-    const consent = { essential: true, marketing: false };
+  function acceptAll() {
+    const consent = { essential: true, functional: true, statistik: true, marketing: true };
+    saveConsent(consent);
+    applyConsent(consent);
+    hideBanner();
+  }
+
+  function rejectAll() {
+    const consent = { essential: true, functional: false, statistik: false, marketing: false };
+    saveConsent(consent);
+    applyConsent(consent);
+    hideBanner();
+  }
+
+  // ── View 1 buttons ─────────────────────────────────────────
+  document.getElementById('cookieAcceptAll')   ?.addEventListener('click', acceptAll);
+  document.getElementById('cookieRejectAll')   ?.addEventListener('click', rejectAll);
+  document.getElementById('cookieShowSettings')?.addEventListener('click', showSettings);
+
+  // ── View 2 buttons ─────────────────────────────────────────
+  document.getElementById('cookieAcceptAll2')      ?.addEventListener('click', acceptAll);
+  document.getElementById('cookieRejectAll2')      ?.addEventListener('click', rejectAll);
+  document.getElementById('cookieAcceptSelection') ?.addEventListener('click', () => {
+    const consent = getSelection();
     saveConsent(consent);
     applyConsent(consent);
     hideBanner();
   });
+  document.getElementById('cookieBack')?.addEventListener('click', showMain);
 }
 
 function saveConsent(consent) {
@@ -849,21 +869,25 @@ function getConsentData() {
   try {
     const raw = localStorage.getItem('cookie_consent');
     return raw ? JSON.parse(raw) : null;
-  } catch {
-    return null;
-  }
+  } catch { return null; }
 }
 
 function applyConsent(consent) {
-  if (consent.marketing) {
-    loadMarketingScripts();
-  }
+  if (consent.marketing)  loadMarketingScripts();
+  if (consent.statistik)  loadStatistikScripts();
+  if (consent.functional) loadFunctionalScripts();
 }
 
 function loadMarketingScripts() {
-  // Placeholder: Marketing-Skripte hier einbinden
-  // z.B. Google Ads Conversion-Tracking oder Meta Pixel
+  // Google Ads Conversion-Tracking oder Meta Pixel hier einbinden
   // if (window._marketingLoaded) return;
   // window._marketingLoaded = true;
-  // ... load scripts here
+}
+
+function loadStatistikScripts() {
+  // z.B. Matomo oder anonymes Analytics
+}
+
+function loadFunctionalScripts() {
+  // z.B. erweiterte Einbettungen
 }
