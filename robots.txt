@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ninazurawski.github.io/sitemap.xml
+Sitemap: https://www.nina-zurawski.de/sitemap.xml
