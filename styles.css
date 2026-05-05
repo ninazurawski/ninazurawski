@@ -2027,6 +2027,8 @@ ul { list-style: none; }
 
   .hero-headline { font-size: clamp(2.4rem, 10vw, 4rem); }
 
+  .hero-container { padding-bottom: 7rem; }
+
   .pain-grid {
     grid-template-columns: 1fr;
     max-width: 480px;
