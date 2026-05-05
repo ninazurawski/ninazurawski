@@ -785,17 +785,85 @@ window.addEventListener('resize', () => {
    ============================================================ */
 function initCookieConsent() {
   const banner    = document.getElementById('cookieBanner');
-  const acceptBtn = document.getElementById('cookieAccept');
-  if (!banner) return;
+  const overlay   = document.getElementById('cookieOverlay');
+  if (!banner || !overlay) return;
 
-  // Already acknowledged: hide banner
-  if (localStorage.getItem('cookie_notice') === 'seen') return;
+  const stored = getConsentData();
 
-  // First visit: show banner after 1.2s
-  setTimeout(() => banner.classList.add('is-visible'), 1200);
+  // Already decided → apply and skip banner
+  if (stored) {
+    applyConsent(stored);
+    return;
+  }
 
-  acceptBtn.addEventListener('click', () => {
-    localStorage.setItem('cookie_notice', 'seen');
+  // Pre-check marketing toggle if previously accepted (first visit: unchecked)
+  const marketingToggle = document.getElementById('marketingToggle');
+
+  // Show banner after short delay
+  setTimeout(() => {
+    banner.classList.add('is-visible');
+    overlay.classList.add('is-visible');
+  }, 900);
+
+  function hideBanner() {
     banner.classList.remove('is-visible');
+    overlay.classList.remove('is-visible');
+  }
+
+  // ── Alle akzeptieren ───────────────────────────────────────
+  document.getElementById('cookieAcceptAll').addEventListener('click', () => {
+    const consent = { essential: true, marketing: true };
+    saveConsent(consent);
+    applyConsent(consent);
+    hideBanner();
   });
+
+  // ── Auswahl akzeptieren ────────────────────────────────────
+  document.getElementById('cookieAcceptSelection').addEventListener('click', () => {
+    const consent = {
+      essential: true,
+      marketing: marketingToggle ? marketingToggle.checked : false
+    };
+    saveConsent(consent);
+    applyConsent(consent);
+    hideBanner();
+  });
+
+  // ── Alle ablehnen ──────────────────────────────────────────
+  document.getElementById('cookieRejectAll').addEventListener('click', () => {
+    const consent = { essential: true, marketing: false };
+    saveConsent(consent);
+    applyConsent(consent);
+    hideBanner();
+  });
+}
+
+function saveConsent(consent) {
+  localStorage.setItem('cookie_consent', JSON.stringify({
+    ...consent,
+    timestamp: new Date().toISOString()
+  }));
+}
+
+function getConsentData() {
+  try {
+    const raw = localStorage.getItem('cookie_consent');
+    return raw ? JSON.parse(raw) : null;
+  } catch {
+    return null;
+  }
+}
+
+function applyConsent(consent) {
+  if (consent.marketing) {
+    loadMarketingScripts();
+  }
+}
+
+function loadMarketingScripts() {
+  // Placeholder: Marketing-Skripte hier einbinden
+  // z.B. Google Ads Conversion-Tracking oder Meta Pixel
+  // if (window._marketingLoaded) return;
+  // window._marketingLoaded = true;
+  // ... load scripts here
 }

@@ -822,16 +822,70 @@
     </div>
   </footer>
 
-  <!-- ═══ COOKIE BANNER ═══ -->
-  <div id="cookieBanner" class="cookie-banner" role="dialog" aria-label="Cookie-Einstellungen" aria-live="polite">
+  <!-- ═══ COOKIE CONSENT ═══ -->
+  <div id="cookieOverlay" class="cookie-overlay" aria-hidden="true"></div>
+
+  <div id="cookieBanner" class="cookie-banner" role="dialog" aria-modal="true" aria-label="Datenschutzeinstellungen">
     <div class="cookie-inner">
-      <div class="cookie-text">
-        <strong>Cookies &amp; Datenschutz</strong>
-        <p>Diese Website verwendet technisch notwendige Dienste (Hosting, Schriftarten, Animationen). Es werden keine Tracking-Cookies gesetzt. Mehr dazu in meiner <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
+
+      <div class="cookie-head">
+        <div class="cookie-logo">
+          <svg viewBox="0 0 24 24" fill="none" width="20" height="20">
+            <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 18a8 8 0 110-16 8 8 0 010 16zm-1-5h2v2h-2zm0-8h2v6h-2z" fill="currentColor" opacity=".7"/>
+          </svg>
+          <strong>Datenschutzeinstellungen</strong>
+        </div>
+        <p>Ich nutze Cookies und ähnliche Technologien auf meiner Website. Einige sind essenziell, andere helfen mir, das Angebot zu verbessern. Du kannst selbst entscheiden, welche du zulässt. Weitere Infos in meiner <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
       </div>
+
+      <div class="cookie-categories">
+
+        <!-- Essenziell -->
+        <div class="cookie-cat">
+          <div class="cookie-cat-head">
+            <div class="cookie-cat-info">
+              <span class="cookie-cat-name">Essenziell</span>
+              <span class="cookie-cat-badge">Immer aktiv</span>
+            </div>
+            <div class="cookie-toggle cookie-toggle--fixed" aria-label="Essenziell — immer aktiv">
+              <span class="ct-track ct-track--on">
+                <span class="ct-thumb"></span>
+              </span>
+            </div>
+          </div>
+          <p class="cookie-cat-desc">Technisch notwendig für den Betrieb der Website. Dazu gehören Hosting (GitHub Pages), Schriftarten (Bunny Fonts) und Animations-Bibliotheken. Ohne diese Cookies funktioniert die Website nicht korrekt.</p>
+        </div>
+
+        <!-- Marketing -->
+        <div class="cookie-cat">
+          <div class="cookie-cat-head">
+            <div class="cookie-cat-info">
+              <span class="cookie-cat-name">Marketing</span>
+              <span class="cookie-cat-desc-inline">Conversion-Tracking &amp; Werbemessung</span>
+            </div>
+            <label class="cookie-toggle" aria-label="Marketing-Cookies">
+              <input type="checkbox" id="marketingToggle" class="ct-input">
+              <span class="ct-track">
+                <span class="ct-thumb"></span>
+              </span>
+            </label>
+          </div>
+          <p class="cookie-cat-desc">Ermöglicht die Messung der Werbewirksamkeit (z.&thinsp;B. Google Ads Conversion-Tracking). Ohne diese Cookies kann ich nicht nachvollziehen, über welche Anzeigen Anfragen eingehen.</p>
+        </div>
+
+      </div><!-- /cookie-categories -->
+
       <div class="cookie-actions">
-        <button id="cookieAccept" class="btn-cookie-accept">Verstanden</button>
+        <button id="cookieRejectAll" class="btn-cookie-reject">Alle ablehnen</button>
+        <button id="cookieAcceptSelection" class="btn-cookie-selection">Auswahl akzeptieren</button>
+        <button id="cookieAcceptAll" class="btn-cookie-accept">Alle akzeptieren</button>
       </div>
+
+      <div class="cookie-footer-links">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+      </div>
+
     </div>
   </div>
 
