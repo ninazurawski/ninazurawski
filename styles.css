@@ -2027,7 +2027,8 @@ ul { list-style: none; }
 
   .hero-headline { font-size: clamp(2.4rem, 10vw, 4rem); }
 
-  .hero-container { padding-bottom: 7rem; }
+  .hero-container { padding-bottom: 3rem; }
+  .scroll-indicator { display: none; }
 
   .pain-grid {
     grid-template-columns: 1fr;
