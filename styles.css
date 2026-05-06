@@ -2285,6 +2285,9 @@ ul { list-style: none; }
   .btn-cookie { flex: unset; width: 100%; }
 }
 
+/* Mobile-only line breaks — hidden on desktop */
+br.m-br { display: none; }
+
 /* ============================================================
    RESPONSIVE
    ============================================================ */
@@ -2353,8 +2356,10 @@ ul { list-style: none; }
   }
 
   /* Remove hard line breaks in flowing text on mobile */
-  .analyse-sub br,
-  .contact-sub br { display: none; }
+  .analyse-sub br { display: none; }
+
+  /* Mobile-only breaks (.m-br) — visible only here */
+  br.m-br { display: block; }
 
   /* Hero eyebrow — allow wrapping instead of overflow */
   .hero-eyebrow {
