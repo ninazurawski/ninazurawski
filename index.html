@@ -124,32 +124,7 @@
   }
   </script>
 </head>
-<body class="is-loading">
-
-  <!-- ═══ CUSTOM CURSOR ═══ -->
-  <div class="cursor-dot" id="cursorDot"></div>
-  <div class="cursor-ring" id="cursorRing"></div>
-
-  <!-- ═══ PRELOADER ═══ -->
-  <div id="preloader">
-    <div class="preloader-inner">
-      <div class="preloader-logo">
-        <div class="pl-logo-mark">
-          <img src="images/logo-nina.png" alt="Nina Zurawski" class="pl-logo-img">
-        </div>
-        <span class="pl-logo-name">Nina Zurawski</span>
-      </div>
-      <div class="preloader-tagline">Google Ads Consulting</div>
-      <div class="preloader-progress">
-        <div class="preloader-bar" id="preloaderBar"></div>
-      </div>
-      <div class="preloader-counter" id="preloaderCounter">0</div>
-    </div>
-    <div class="preloader-panels">
-      <div class="pl-panel pl-panel--left"></div>
-      <div class="pl-panel pl-panel--right"></div>
-    </div>
-  </div>
+<body>
 
   <!-- ═══ NAVIGATION ═══ -->
   <header id="siteNav">
@@ -166,7 +141,7 @@
         <a href="#about" class="nav-link">Über mich</a>
         <a href="#faq" class="nav-link">FAQ</a>
       </nav>
-      <a href="https://meet.brevo.com/nina-zurawski/kennenlerncall" target="_blank" rel="noopener" class="btn-nav magnetic" data-magnetic>
+      <a href="https://meet.brevo.com/nina-zurawski/kennenlerncall" target="_blank" rel="noopener" class="btn-nav">
         <span>15 Min. Kennenlerncall sichern</span>
       </a>
       <button class="nav-toggle" id="navToggle" aria-label="Menü">
@@ -190,9 +165,6 @@
 
   <!-- ═══ HERO ═══ -->
   <section id="hero">
-
-    <!-- Animated particle canvas -->
-    <canvas id="heroCanvas"></canvas>
 
     <!-- Soft ambient colour blobs (CSS) -->
     <div class="hero-ambient">
@@ -222,7 +194,7 @@
         </p>
 
         <div class="hero-ctas" data-reveal>
-          <a href="https://meet.brevo.com/nina-zurawski/kennenlerncall" target="_blank" rel="noopener" class="btn-primary magnetic" data-magnetic>
+          <a href="https://meet.brevo.com/nina-zurawski/kennenlerncall" target="_blank" rel="noopener" class="btn-primary">
             <span class="btn-text">15 Min. Kennenlerncall sichern</span>
             <span class="btn-glow"></span>
           </a>
@@ -347,7 +319,7 @@
       <div class="services-grid">
 
         <!-- Service 1 -->
-        <div class="service-card glass-card" data-tilt data-reveal data-delay="0">
+        <div class="service-card glass-card" data-reveal data-delay="0">
           <div class="service-number">01</div>
           <div class="service-icon">
             <svg viewBox="0 0 56 56" fill="none">
@@ -365,14 +337,14 @@
             <li>Monatliche Optimierung</li>
           </ul>
           <div class="service-cta">
-            <a href="https://meet.brevo.com/nina-zurawski/kennenlerncall" target="_blank" rel="noopener" class="btn-outline magnetic" data-magnetic>
+            <a href="https://meet.brevo.com/nina-zurawski/kennenlerncall" target="_blank" rel="noopener" class="btn-outline">
               <span class="btn-text">15 Min. Kennenlerncall sichern</span>
             </a>
           </div>
         </div>
 
         <!-- Service 2 — highlighted -->
-        <div class="service-card service-card--featured glass-card" data-tilt data-reveal data-delay="100">
+        <div class="service-card service-card--featured glass-card" data-reveal data-delay="100">
           <div class="service-badge">Beliebtestes Paket</div>
           <div class="service-number">02</div>
           <div class="service-icon">
@@ -390,7 +362,7 @@
             <li>Prio-Support &amp; monatliches Reporting</li>
           </ul>
           <div class="service-cta">
-            <a href="#contact" class="btn-primary magnetic" data-magnetic>
+            <a href="#contact" class="btn-primary">
               <span class="btn-text">15 Min. Kennenlerncall sichern</span>
               <span class="btn-glow"></span>
             </a>
@@ -398,7 +370,7 @@
         </div>
 
         <!-- Service 3 -->
-        <div class="service-card glass-card" data-tilt data-reveal data-delay="200">
+        <div class="service-card glass-card" data-reveal data-delay="200">
           <div class="service-number">03</div>
           <div class="service-icon">
             <svg viewBox="0 0 56 56" fill="none">
@@ -417,7 +389,7 @@
             <li>Mobile-First &amp; Ladezeit-optimiert</li>
           </ul>
           <div class="service-cta">
-            <a href="https://meet.brevo.com/nina-zurawski/kennenlerncall" target="_blank" rel="noopener" class="btn-outline magnetic" data-magnetic>
+            <a href="https://meet.brevo.com/nina-zurawski/kennenlerncall" target="_blank" rel="noopener" class="btn-outline">
               <span class="btn-text">15 Min. Kennenlerncall sichern</span>
             </a>
           </div>
@@ -446,7 +418,7 @@
             <div class="analyse-highlight"><span class="ah-icon">✓</span> Konkrete Verbesserungsvorschläge</div>
             <div class="analyse-highlight"><span class="ah-icon">✓</span> Ca. 30 Minuten, kostenlos &amp; unverbindlich</div>
           </div>
-          <a href="#contact" class="btn-primary magnetic" data-magnetic>
+          <a href="#contact" class="btn-primary">
             <span class="btn-text">Kostenlose Ads-Analyse buchen</span>
             <span class="btn-glow"></span>
           </a>
@@ -557,7 +529,7 @@
             <div class="value-chip">Female Empowerment</div>
             <div class="value-chip">Kein Bullshit-Marketing</div>
           </div>
-          <a href="#contact" class="btn-primary magnetic" data-magnetic data-reveal>
+          <a href="#contact" class="btn-primary" data-reveal>
             <span class="btn-text">15 Min. Kennenlerncall sichern</span>
             <span class="btn-glow"></span>
           </a>
@@ -784,7 +756,6 @@
 
   <!-- ═══ FINAL CTA ═══ -->
   <section id="contact" class="section-contact">
-    <div class="contact-particles" id="contactParticles"></div>
     <div class="container">
       <div class="contact-inner">
         <div class="section-label" data-reveal>Jetzt starten</div>
@@ -800,7 +771,7 @@
         </p>
 
         <div class="contact-cta" data-reveal>
-          <a href="https://meet.brevo.com/nina-zurawski/kennenlerncall" target="_blank" rel="noopener" class="btn-hero magnetic" data-magnetic>
+          <a href="https://meet.brevo.com/nina-zurawski/kennenlerncall" target="_blank" rel="noopener" class="btn-hero">
             <span class="btn-text">15 Min. Kennenlerncall sichern</span>
             <span class="btn-arrow">→</span>
             <span class="btn-glow"></span>
@@ -987,7 +958,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/split-type@0.3.4/package/index.umd.min.js" crossorigin="anonymous"></script>
   <script src="main.js" defer></script>
 </body>
 </html>
