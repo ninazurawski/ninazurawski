@@ -236,6 +236,9 @@ function initHeroCanvas() {
   const canvas = document.getElementById('heroCanvas');
   if (!canvas) return;
 
+  // Skip on mobile — O(n²) particle loop is too heavy for touch CPUs
+  if (window.matchMedia('(max-width: 768px)').matches) return;
+
   const ctx = canvas.getContext('2d');
   let W, H, particles;
 
@@ -496,29 +499,32 @@ function initScrollAnimations() {
     });
   });
 
-  // Services parallax background
-  gsap.to('.services-bg-parallax', {
-    yPercent: -20,
-    ease: 'none',
-    scrollTrigger: {
-      trigger: '.section-services',
-      start: 'top bottom',
-      end: 'bottom top',
-      scrub: 1.5,
-    },
-  });
+  // Parallax effects — skip on mobile (poor perf on touch devices)
+  const isMobile = window.matchMedia('(max-width: 768px)').matches;
 
-  // Numbers parallax
-  gsap.to('.numbers-parallax', {
-    yPercent: -25,
-    ease: 'none',
-    scrollTrigger: {
-      trigger: '.section-numbers',
-      start: 'top bottom',
-      end: 'bottom top',
-      scrub: 2,
-    },
-  });
+  if (!isMobile) {
+    gsap.to('.services-bg-parallax', {
+      yPercent: -20,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '.section-services',
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: 1.5,
+      },
+    });
+
+    gsap.to('.numbers-parallax', {
+      yPercent: -25,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '.section-numbers',
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: 2,
+      },
+    });
+  }
 
   // Process timeline: nodes pop in after step cards appear
   gsap.utils.toArray('.pt-node').forEach((node, i) => {

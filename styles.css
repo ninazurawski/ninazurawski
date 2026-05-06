@@ -638,6 +638,7 @@ ul { list-style: none; }
   line-height: 1.1;
   color: var(--text-primary);
   margin-bottom: 1.5rem;
+  text-wrap: balance;
 }
 
 .section-heading em {
@@ -691,6 +692,7 @@ ul { list-style: none; }
   position: absolute;
   border-radius: 50%;
   filter: blur(110px);
+  will-change: transform;
 }
 
 .ha-1 {
@@ -893,6 +895,7 @@ ul { list-style: none; }
   color: var(--text-primary);
   margin-bottom: 1.5rem;
   letter-spacing: -0.01em;
+  text-wrap: balance;
 }
 
 .hero-headline em {
@@ -950,6 +953,7 @@ ul { list-style: none; }
   max-width: 560px;
   margin: 0 0 2.5rem;          /* left: no auto */
   opacity: 0;
+  text-wrap: pretty;
 }
 
 .hero-ctas {
@@ -1975,6 +1979,7 @@ ul { list-style: none; }
   line-height: 1.1;
   color: var(--text-primary);
   margin-bottom: 1.5rem;
+  text-wrap: balance;
 }
 
 .contact-heading em {
@@ -1989,6 +1994,7 @@ ul { list-style: none; }
   line-height: 1.82;
   max-width: 520px;
   margin: 0 auto 3rem;
+  text-wrap: pretty;
 }
 
 .contact-booking {
@@ -2319,10 +2325,47 @@ ul { list-style: none; }
   .nav-links, .btn-nav { display: none; }
   .nav-toggle { display: flex; }
 
-  .hero-headline { font-size: clamp(2.4rem, 10vw, 4rem); }
+  .hero-headline { font-size: clamp(2.2rem, 9vw, 3.2rem); }
 
   .hero-container { padding-bottom: 3rem; }
   .scroll-indicator { display: none; }
+
+  /* Hyphenation for German compound words */
+  body {
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    overflow-wrap: break-word;
+  }
+
+  /* Prevent orphan words in body text */
+  .hero-sub,
+  .section-sub,
+  .analyse-sub,
+  .contact-sub,
+  .pt-desc,
+  .faq-answer p,
+  .about-text p,
+  .review-quote,
+  .pain-card p,
+  .service-card p {
+    text-wrap: pretty;
+    overflow-wrap: break-word;
+  }
+
+  /* Remove hard line breaks in flowing text on mobile */
+  .analyse-sub br,
+  .contact-sub br { display: none; }
+
+  /* Hero eyebrow — allow wrapping instead of overflow */
+  .hero-eyebrow {
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    white-space: normal;
+    text-align: left;
+  }
+
+  /* FAQ left column: remove inline break */
+  .faq-left p br { display: none; }
 
   .pain-grid {
     grid-template-columns: 1fr;
@@ -2347,11 +2390,41 @@ ul { list-style: none; }
   .process-line { display: none; }
 
   .about-badge { right: 0; }
+
+  /* Perf: disable expensive blur blobs on mobile */
+  .ha { display: none; }
+
+  /* Perf: disable promises ticker animation on mobile — show as grid */
+  .promises-track-wrap {
+    mask-image: none;
+    -webkit-mask-image: none;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .promises-track {
+    animation: none;
+    width: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 280px);
+    padding-bottom: 0.5rem;
+  }
+  /* Hide duplicate cards on mobile */
+  .promise-card[aria-hidden="true"] { display: none; }
 }
 
 @media (max-width: 480px) {
   .hero-ctas { flex-direction: column; align-items: stretch; }
-  .btn-primary, .btn-ghost, .btn-hero { justify-content: center; text-align: center; }
+  .btn-primary, .btn-ghost, .btn-hero, .btn-outline { justify-content: center; text-align: center; }
+
+  /* Process: single column on small phones */
+  .promises-track { grid-template-columns: repeat(3, 260px); }
+
+  /* Services cards: full width */
+  .services-grid { max-width: 100%; }
+
+  /* Reduce section padding on very small screens */
+  .section-contact { padding: 4rem 0 5rem; }
+  .section-faq { padding: 4rem 0; }
 }
 
 /* ============================================================
