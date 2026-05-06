@@ -2072,6 +2072,157 @@ br.m-br { display: none; }
 @media (max-width: 768px) { br.m-br { display: inline; } }
 
 /* ============================================================
+   SALES PSYCHOLOGY ELEMENTS
+   ============================================================ */
+
+/* ── Hero: Verfügbarkeits-Indikator (Scarcity) ─────────────── */
+.hero-availability {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--ff-label);
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  margin-bottom: 1.25rem;
+  padding: 0.4rem 0.9rem 0.4rem 0.55rem;
+  border-radius: 100px;
+  background: rgba(31, 61, 46, 0.06);
+  border: 1px solid rgba(31, 61, 46, 0.12);
+  opacity: 0; /* animated by initHeroEntrance */
+}
+
+.hero-availability strong { color: var(--green); font-weight: 600; }
+
+.avail-pulse {
+  flex-shrink: 0;
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: #3aaa6b;
+  animation: avail-pulse 2.2s ease-in-out infinite;
+}
+
+@keyframes avail-pulse {
+  0%   { box-shadow: 0 0 0 0   rgba(58, 170, 107, 0.5); }
+  60%  { box-shadow: 0 0 0 7px rgba(58, 170, 107, 0);   }
+  100% { box-shadow: 0 0 0 0   rgba(58, 170, 107, 0);   }
+}
+
+/* ── Trust Bar ─────────────────────────────────────────────── */
+.trust-bar {
+  background: var(--bg-card);
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+  padding: 0.85rem 0;
+  overflow: hidden;
+}
+
+.trust-items {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--ff-label);
+  font-size: 0.77rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  padding: 0.45rem 1.5rem;
+  white-space: nowrap;
+  position: relative;
+}
+
+.trust-item + .trust-item::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 50%;
+  transform: translateY(-50%);
+  width: 1px; height: 16px;
+  background: var(--border-light);
+}
+
+.trust-item svg { color: var(--green); flex-shrink: 0; }
+
+/* ── Analyse: Scarcity ─────────────────────────────────────── */
+.analyse-scarcity {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--ff-label);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--salmon);
+  margin-top: 1.25rem;
+  padding: 0.45rem 0.9rem;
+  background: var(--salmon-muted);
+  border: 1px solid rgba(217, 107, 82, 0.2);
+  border-radius: 100px;
+}
+
+.analyse-scarcity svg { flex-shrink: 0; }
+
+/* ── About: Exclusivity ────────────────────────────────────── */
+.about-exclusivity {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-family: var(--ff-label);
+  font-size: 0.84rem;
+  color: var(--green-mid);
+  line-height: 1.65;
+  margin: 0 0 1.5rem;
+  padding: 1rem 1.25rem;
+  background: rgba(31, 61, 46, 0.06);
+  border: 1px solid rgba(31, 61, 46, 0.12);
+  border-radius: var(--radius);
+}
+
+.about-exclusivity svg {
+  flex-shrink: 0;
+  margin-top: 1px;
+  color: var(--green);
+  opacity: 0.7;
+}
+
+/* ── Contact: Reassurance Badges ──────────────────────────── */
+.contact-reassurance {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem 1.5rem;
+  flex-wrap: wrap;
+  margin-top: 1.75rem;
+}
+
+.reassurance-item {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--ff-label);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.reassurance-item svg { color: var(--green); flex-shrink: 0; }
+
+/* ── Contact: 24h Note ─────────────────────────────────────── */
+.contact-note {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--ff-label);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-top: 1.5rem;
+}
+
+.contact-note svg { flex-shrink: 0; color: var(--green-light); }
+
+/* ============================================================
    RESPONSIVE
    ============================================================ */
 @media (max-width: 1024px) {
@@ -2168,6 +2319,13 @@ br.m-br { display: none; }
 
   /* Perf: disable expensive blur blobs on mobile */
   .ha { display: none; }
+
+  /* Trust bar: allow wrapping, hide separators */
+  .trust-item { padding: 0.4rem 0.9rem; }
+  .trust-item + .trust-item::before { display: none; }
+
+  /* Hero availability: full width on mobile */
+  .hero-availability { font-size: 0.73rem; }
 
   /* Perf: disable promises ticker animation on mobile — show as grid */
   .promises-track-wrap {

@@ -100,7 +100,7 @@ function initMobileMenu() {
    HERO ENTRANCE
    ============================================================ */
 function initHeroEntrance() {
-  gsap.to(['.hero-eyebrow', '.hero-sub', '.hero-ctas', '.hero-social-proof'], {
+  gsap.to(['.hero-eyebrow', '.hero-sub', '.hero-ctas', '.hero-availability', '.hero-social-proof'], {
     opacity: 1,
     y: 0,
     duration: 0.8,
