@@ -1399,7 +1399,7 @@ ul { list-style: none; }
   margin-top: 3.5rem;
 }
 
-/* Single wide testimonial */
+/* Single wide testimonial (legacy, unused if 2 cards shown) */
 .reviews-grid--solo {
   grid-template-columns: 1fr;
   max-width: 860px;
@@ -1495,6 +1495,19 @@ ul { list-style: none; }
   object-fit: cover;
   border-radius: 50%;
   display: block;
+}
+
+/* Logo-Variante: weißer Hintergrund, Logo enthält (nicht zuschneiden) */
+.review-avatar--logo {
+  background: #fff;
+  border: 1.5px solid var(--border-card);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.review-avatar--logo .review-avatar-img {
+  object-fit: contain;
+  border-radius: 0;
+  padding: 5px;
 }
 
 .review-meta {
