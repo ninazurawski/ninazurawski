@@ -88,10 +88,22 @@ function initMobileMenu() {
   });
 
   links.forEach(link => {
-    link.addEventListener('click', () => {
+    link.addEventListener('click', (e) => {
+      const href = link.getAttribute('href');
       toggle.classList.remove('is-open');
       menu.classList.remove('is-open');
       lenis.start();
+
+      // Anchor-Links: erst Lenis starten, dann scrollen
+      if (href && href.startsWith('#')) {
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if (target) {
+          setTimeout(() => {
+            lenis.scrollTo(target, { offset: -80, duration: 1.4 });
+          }, 50);
+        }
+      }
     });
   });
 }
