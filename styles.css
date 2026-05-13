@@ -2304,6 +2304,7 @@ br.m-br { display: none; }
   .step-number::before { display: none; }
   .process-line { display: none; }
 
+  .about-photo { object-position: center 28%; }
   .about-badge { right: 0; }
 
   /* Perf: disable expensive blur blobs on mobile */
