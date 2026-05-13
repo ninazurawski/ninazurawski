@@ -1394,9 +1394,10 @@ ul { list-style: none; }
 
 .reviews-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
   margin-top: 3.5rem;
+  align-items: start;
 }
 
 /* Single wide testimonial (legacy, unused if 2 cards shown) */
@@ -2257,7 +2258,7 @@ br.m-br { display: none; }
 
 .about-grid { grid-template-columns: 1fr; gap: 3rem; }
   .about-image-placeholder { max-width: 340px; aspect-ratio: 4/3; }
-  .reviews-grid { grid-template-columns: 1fr; }
+  .reviews-grid { grid-template-columns: 1fr 1fr; }
   .review-card--wide { grid-template-columns: 1fr; }
   .review-photo { min-height: 280px; }
   .review-body { padding: 2rem; }
@@ -2313,6 +2314,8 @@ br.m-br { display: none; }
 
   /* FAQ left column: remove inline break */
   .faq-left p br { display: none; }
+
+  .reviews-grid { grid-template-columns: 1fr; }
 
   .pain-grid {
     grid-template-columns: 1fr;
