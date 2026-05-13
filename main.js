@@ -12,6 +12,7 @@ function initApp() {
   initHeroEntrance();
   initTextAnimations();
   initScrollAnimations();
+  initReviewSlider();
   initFAQ();
   initMobileMenu();
   initCookieConsent();
@@ -181,6 +182,55 @@ function initScrollAnimations() {
       delay: 0.35 + i * 0.08,
     });
   });
+}
+
+/* ============================================================
+   REVIEW SLIDER
+   ============================================================ */
+function initReviewSlider() {
+  const track   = document.querySelector('.reviews-track');
+  if (!track) return;
+
+  const slides  = track.querySelectorAll('.review-slide');
+  const dots    = document.querySelectorAll('.slider-dot');
+  const btnPrev = document.querySelector('.slider-btn--prev');
+  const btnNext = document.querySelector('.slider-btn--next');
+  const slider  = document.querySelector('.reviews-slider');
+  const total   = slides.length;
+  let current   = 0;
+  let autoTimer;
+
+  function goTo(idx) {
+    current = ((idx % total) + total) % total;
+    track.style.transform = `translateX(-${current * 100}%)`;
+    dots.forEach((d, i) => d.classList.toggle('is-active', i === current));
+  }
+
+  btnPrev?.addEventListener('click', () => { goTo(current - 1); resetAuto(); });
+  btnNext?.addEventListener('click', () => { goTo(current + 1); resetAuto(); });
+  dots.forEach((dot, i) => dot.addEventListener('click', () => { goTo(i); resetAuto(); }));
+
+  function resetAuto() {
+    clearInterval(autoTimer);
+    autoTimer = setInterval(() => goTo(current + 1), 6000);
+  }
+
+  // Pause on hover
+  slider?.addEventListener('mouseenter', () => clearInterval(autoTimer));
+  slider?.addEventListener('mouseleave', resetAuto);
+
+  // Touch / swipe support
+  let touchStartX = 0;
+  track.addEventListener('touchstart', e => {
+    touchStartX = e.touches[0].clientX;
+  }, { passive: true });
+  track.addEventListener('touchend', e => {
+    const diff = touchStartX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) goTo(current + (diff > 0 ? 1 : -1));
+    resetAuto();
+  }, { passive: true });
+
+  resetAuto();
 }
 
 /* ============================================================

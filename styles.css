@@ -1392,20 +1392,104 @@ ul { list-style: none; }
   background: var(--bg-primary);
 }
 
-.reviews-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
+/* ── Slider Layout ──────────────────────────────────────────── */
+.reviews-slider-wrap {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
   margin-top: 3.5rem;
-  align-items: start;
-}
-
-/* Single wide testimonial (legacy, unused if 2 cards shown) */
-.reviews-grid--solo {
-  grid-template-columns: 1fr;
-  max-width: 860px;
+  max-width: 900px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.reviews-slider {
+  flex: 1;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+}
+
+.reviews-track {
+  display: flex;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.review-slide {
+  flex: 0 0 100%;
+  min-width: 0;
+}
+
+/* Spacious card inside slider */
+.review-slide .review-card {
+  padding: 2.75rem 3rem;
+  border-radius: var(--radius-lg);
+  position: relative;
+}
+
+/* Decorative large quote mark */
+.review-slide .review-card::before {
+  content: '\201C';
+  position: absolute;
+  top: 1.5rem;
+  right: 2.5rem;
+  font-family: var(--ff-heading);
+  font-size: 7rem;
+  line-height: 1;
+  color: var(--salmon);
+  opacity: 0.12;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Slider navigation buttons */
+.slider-btn {
+  flex-shrink: 0;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: 1.5px solid var(--border-card);
+  box-shadow: var(--shadow-card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: background 0.25s, color 0.25s, border-color 0.25s, box-shadow 0.25s, transform 0.2s;
+}
+
+.slider-btn:hover {
+  background: var(--green);
+  color: #fff;
+  border-color: var(--green);
+  box-shadow: 0 6px 20px rgba(31, 61, 46, 0.25);
+  transform: scale(1.08);
+}
+
+/* Navigation dots */
+.slider-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.75rem;
+}
+
+.slider-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 100px;
+  background: var(--border);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.3s, width 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.slider-dot.is-active {
+  background: var(--salmon);
+  width: 26px;
 }
 
 .review-card--wide {
@@ -2258,7 +2342,7 @@ br.m-br { display: none; }
 
 .about-grid { grid-template-columns: 1fr; gap: 3rem; }
   .about-image-placeholder { max-width: 340px; aspect-ratio: 4/3; }
-  .reviews-grid { grid-template-columns: 1fr 1fr; }
+  .reviews-slider-wrap { gap: 0.75rem; }
   .review-card--wide { grid-template-columns: 1fr; }
   .review-photo { min-height: 280px; }
   .review-body { padding: 2rem; }
@@ -2315,7 +2399,11 @@ br.m-br { display: none; }
   /* FAQ left column: remove inline break */
   .faq-left p br { display: none; }
 
-  .reviews-grid { grid-template-columns: 1fr; }
+  /* Slider auf Mobile: Buttons ausblenden, Karte kompakter */
+  .slider-btn { display: none; }
+  .reviews-slider-wrap { gap: 0; }
+  .review-slide .review-card { padding: 2rem 1.75rem; }
+  .review-slide .review-card::before { font-size: 5rem; top: 1rem; right: 1.5rem; }
 
   .pain-grid {
     grid-template-columns: 1fr;
