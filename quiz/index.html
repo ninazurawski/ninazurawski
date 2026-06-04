@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Google Ads Selbstcheck – Nina Zurawski</title>
+  <meta name="description" content="5 Fragen. 2 Minuten. Finde heraus, ob Google Ads der richtige nächste Schritt für dein Business ist – und was konkret als nächstes zu tun ist.">
+  <meta name="robots" content="noindex, follow">
+
+  <!-- Open Graph für LinkedIn / Social Media -->
+  <meta property="og:title" content="Ist Google Ads der richtige nächste Schritt für dich?">
+  <meta property="og:description" content="5 Fragen. 2 Minuten. Du bekommst ein persönliches Ergebnis und weißt danach genau, ob und wie Google Ads für dein Business sinnvoll ist.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.nina-zurawski.de/quiz">
+  <meta property="og:image" content="https://www.nina-zurawski.de/images/logo-nina.png">
+
+  <link rel="icon" type="image/png" href="../images/logo-nina.png">
+  <link rel="apple-touch-icon" href="../images/logo-nina.png">
+  <link rel="stylesheet" href="../styles.css">
+
+  <style>
+    .quiz-page {
+      min-height: 100vh;
+      background: var(--bg-secondary);
+      display: flex;
+      flex-direction: column;
+    }
+    .quiz-page .section-quiz {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      padding: 7rem 0 5rem;
+    }
+    .quiz-page .section-quiz .container { width: 100%; }
+    .quiz-page [data-reveal] { opacity: 1; transform: none; }
+  </style>
+</head>
+<body class="quiz-page">
+
+  <!-- ═══ NAVIGATION ═══ -->
+  <header id="siteNav">
+    <div class="nav-container">
+      <a href="../" class="nav-logo">
+        <span class="logo-mark">
+          <img src="../images/logo-nina.png" alt="Nina Zurawski" class="logo-img">
+        </span>
+        <span class="logo-text">Nina Zurawski</span>
+      </a>
+      <nav class="nav-links" aria-label="Hauptnavigation">
+        <a href="../#services" class="nav-link">Leistungen</a>
+        <a href="../#process" class="nav-link">Ablauf</a>
+        <a href="../#about" class="nav-link">Über mich</a>
+        <a href="../#faq" class="nav-link">FAQ</a>
+      </nav>
+      <a href="https://meet.brevo.com/nina-zurawski/kennenlerncall" target="_blank" rel="noopener" class="btn-nav magnetic">
+        <span>15 Min. Kennenlerncall sichern</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menü">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <nav class="mobile-nav">
+      <a href="../#services" class="mobile-link">Leistungen</a>
+      <a href="../#process" class="mobile-link">Ablauf</a>
+      <a href="../#about" class="mobile-link">Über mich</a>
+      <a href="../#faq" class="mobile-link">FAQ</a>
+      <a href="https://meet.brevo.com/nina-zurawski/kennenlerncall" target="_blank" rel="noopener" class="btn-primary mobile-cta">15 Min. Kennenlerncall sichern</a>
+    </nav>
+  </div>
+
+  <!-- ═══ QUIZ ═══ -->
+  <main>
+    <section id="quiz" class="section-quiz">
+      <div class="container">
+        <div class="quiz-inner">
+
+          <!-- Intro -->
+          <div id="quizIntro">
+            <div class="section-label" style="justify-content:center">Kostenloser Selbstcheck</div>
+            <h1 class="section-heading" style="font-size:clamp(1.9rem,5vw,3.2rem)">
+              Ist Google Ads der richtige<br><em>nächste Schritt für dich?</em>
+            </h1>
+            <p class="section-sub">5 Fragen. 2 Minuten. Du bekommst ein persönliches Ergebnis und weißt danach genau, ob und wie Google Ads für dein Business sinnvoll ist.</p>
+            <button class="btn-primary" id="quizStartBtn">
+              <span class="btn-glow"></span>
+              Quiz starten
+              <span class="btn-arrow">→</span>
+            </button>
+          </div>
+
+          <!-- Question -->
+          <div id="quizQWrap" class="quiz-hidden">
+            <div class="quiz-progress">
+              <div class="quiz-progress-bar">
+                <div class="quiz-progress-fill" id="quizFill"></div>
+              </div>
+              <span class="quiz-progress-label" id="quizLabel">Frage 1 von 5</span>
+            </div>
+            <div class="glass-card quiz-card" id="quizCard">
+              <h3 class="quiz-q-text" id="quizQText"></h3>
+              <div class="quiz-options" id="quizOpts"></div>
+            </div>
+          </div>
+
+          <!-- Result -->
+          <div id="quizResult" class="quiz-hidden"></div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">Nina Zurawski</div>
+          <p>Performance Marketing für Dienstleister*innen &amp; Solo-Selbstständige, die planbar wachsen wollen.</p>
+          <a href="mailto:info@nina-zurawski.de" class="footer-email">info@nina-zurawski.de</a>
+        </div>
+        <div class="footer-nav">
+          <h4>Navigation</h4>
+          <a href="../#services">Leistungen</a>
+          <a href="../#process">Ablauf</a>
+          <a href="../#about">Über mich</a>
+          <a href="../#faq">FAQ</a>
+          <a href="../#contact">Kontakt</a>
+        </div>
+        <div class="footer-nav">
+          <h4>Rechtliches</h4>
+          <a href="../impressum.html">Impressum</a>
+          <a href="../datenschutz.html">Datenschutz</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Nina Zurawski. Alle Rechte vorbehalten.</p>
+        <p class="footer-love">Made with ♥ für ambitionierte Dienstleister*innen</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js" defer></script>
+  <script src="../main.js" defer></script>
+
+</body>
+</html>
