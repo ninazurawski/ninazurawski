@@ -197,6 +197,7 @@ function initQuiz() {
       text: 'Schaltest du bereits Google Ads?',
       options: [
         { label: 'Ja, ich schalte bereits Ads',               next: 'q2a' },
+        { label: 'Nein, aktuell nicht mehr',                  next: 'q2c' },
         { label: 'Nein, ich habe noch keine Ads geschaltet',  next: 'q2b' }
       ]
     },
@@ -265,31 +266,66 @@ function initQuiz() {
         { label: 'Ich will ausprobieren, ob Ads für mich funktionieren',       next: 'END', score:  0 },
         { label: 'Ich bin mir noch nicht sicher, was ich will',               next: 'END', score: -1 }
       ]
+    },
+    /* Path C — previously ran ads, now paused → always Result 2 (Ads-Analyse) */
+    q2c: {
+      text: 'Warum hast du die Google Ads pausiert oder gestoppt?',
+      options: [
+        { label: 'Ich hatte keine Zeit, mich selbst darum zu kümmern',        next: 'q3c' },
+        { label: 'Die Ergebnisse waren nicht gut genug',                       next: 'q3c' },
+        { label: 'Das Budget war zu hoch oder die Kosten unklar',             next: 'q3c' },
+        { label: 'Aus einem anderen Grund',                                    next: 'q3c' }
+      ]
+    },
+    q3c: {
+      text: 'Hattest du damals Conversion-Tracking eingerichtet?',
+      options: [
+        { label: 'Ja, ich habe Anfragen oder Käufe getrackt',                 next: 'q4c' },
+        { label: 'Ich bin nicht sicher / weiß es nicht mehr',                 next: 'q4c' },
+        { label: 'Nein',                                                       next: 'q4c' }
+      ]
+    },
+    q4c: {
+      text: 'Hast du noch eine aktive Website oder Landingpage für dein Angebot?',
+      options: [
+        { label: 'Ja, sie ist aktuell und hat einen klaren CTA',              next: 'q5c' },
+        { label: 'Ja, aber sie müsste überarbeitet werden',                   next: 'q5c' },
+        { label: 'Nein, ich habe gerade keine aktive Seite',                  next: 'q5c' }
+      ]
+    },
+    q5c: {
+      text: 'Was möchtest du beim Neustart anders machen?',
+      options: [
+        { label: 'Klare Zahlen und messbaren Erfolg sehen',                   next: 'END', resultId: 2 },
+        { label: 'Professionelle Betreuung, ohne alles selbst zu verwalten',  next: 'END', resultId: 2 },
+        { label: 'Erst verstehen, was damals nicht funktioniert hat',         next: 'END', resultId: 2 },
+        { label: 'Ich weiß es noch nicht genau',                              next: 'END', resultId: 2 }
+      ]
     }
   };
 
-  const STEP  = { q1:1, q2a:2, q2b:2, q3a:3, q3b:3, q4a:4, q4b:4, q5a:5, q5b:5 };
+  const STEP  = { q1:1, q2a:2, q2b:2, q2c:2, q3a:3, q3b:3, q3c:3, q4a:4, q4b:4, q4c:4, q5a:5, q5b:5, q5c:5 };
   const TOTAL = 5;
 
   const RESULTS = {
     1: {
       badge: '✅ Du bist bereit',
       title: 'Du bist bereit – lass uns deine Ads zum Laufen bringen',
-      text:  'Du hast die Grundlagen, die es braucht, damit Google Ads funktionieren. Ein klares Angebot, eine Seite, eine Zielgruppe – das ist die Basis, auf der sich eine Kampagne aufbauen lässt, die wirklich Anfragen bringt. Im kostenlosen Erstgespräch schauen wir gemeinsam, ob und wie Ads für dich konkret aussehen könnten.',
+      text:  'Du hast die Grundlagen, die es braucht, damit Google Ads funktionieren. Ein klares Angebot, eine Seite, eine Zielgruppe. Das ist die Basis, auf der sich eine Kampagne aufbauen lässt, die wirklich Anfragen bringt. Im kostenlosen Erstgespräch schauen wir gemeinsam, ob und wie Ads für dich konkret aussehen könnten.',
       cta:   { label: 'Kostenloses Kennenlerngespräch buchen', href: 'https://meet.brevo.com/nina-zurawski/kennenlerncall' },
       mod:   'green'
     },
     2: {
       badge: '📈 Mehr Potenzial möglich',
       title: 'Deine Ads haben mehr Potenzial – wir holen es raus',
-      text:  'Du schaltest bereits Ads – aber irgendwo zwischen Klick und Anfrage geht Potenzial verloren. Das ist häufiger als du denkst, und meistens liegt es an ein paar konkreten Stellschrauben: Tracking, Landingpage, Kampagnenstruktur. Im kostenlosen Erstgespräch schaue ich mir an, wo bei dir Geld verloren geht – und was sich ändern müsste.',
+      text:  'Du schaltest bereits Ads, aber irgendwo zwischen Klick und Anfrage geht Potenzial verloren. Das ist häufiger als du denkst, und meistens liegt es an ein paar konkreten Stellschrauben: Tracking, Landingpage, Kampagnenstruktur. In der kostenlosen Ads-Analyse schaue ich mir an, wo bei dir Geld verloren geht und was sich ändern müsste.',
       cta:   { label: 'Kostenlose Ads-Analyse buchen', href: 'https://calendly.com/ninazurawski/ads-analyse' },
       mod:   'green'
     },
     3: {
       badge: '⏳ Noch nicht ganz soweit',
       title: 'Noch nicht ganz soweit – aber das lässt sich ändern',
-      text:  'Google Ads können viel – aber nur, wenn die Grundlage stimmt. Ohne klares Angebot und eine Seite mit klarem CTA verbrennt jedes Budget schnell. Das bedeutet nicht, dass Ads für dich keine Option sind – sondern dass es noch einen Schritt davor gibt.',
+      text:  'Google Ads können viel, aber nur, wenn die Grundlage stimmt. Ohne klares Angebot und eine Seite mit klarem CTA verbrennt jedes Budget schnell. Das bedeutet nicht, dass Ads für dich keine Option sind, sondern dass es noch einen Schritt davor gibt.',
       links: [
         { label: 'Folge mir auf Instagram', href: 'https://instagram.com/adsmitplan/' },
         { label: 'Verbinde dich auf LinkedIn', href: 'https://linkedin.com/in/nina-zurawski/' }
