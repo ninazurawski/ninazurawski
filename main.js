@@ -13,6 +13,7 @@ function initApp() {
   initTextAnimations();
   initScrollAnimations();
   initFAQ();
+  initQuiz();
   initMobileMenu();
   initCookieConsent();
 }
@@ -181,6 +182,220 @@ function initScrollAnimations() {
       delay: 0.35 + i * 0.08,
     });
   });
+}
+
+/* ============================================================
+   QUIZ — branching questionnaire with 2 paths, 3 results
+   ============================================================ */
+function initQuiz() {
+  const section = document.getElementById('quiz');
+  if (!section) return;
+
+  /* ─── Question graph ─────────────────────────────────── */
+  const Q = {
+    q1: {
+      text: 'Schaltest du bereits Google Ads?',
+      options: [
+        { label: 'Ja, ich schalte bereits Ads',               next: 'q2a' },
+        { label: 'Nein, ich habe noch keine Ads geschaltet',  next: 'q2b' }
+      ]
+    },
+    /* Path A — already running ads → always Result 2 */
+    q2a: {
+      text: 'Hast du Conversion-Tracking eingerichtet?',
+      options: [
+        { label: 'Ja, ich tracke Anfragen oder Käufe',        next: 'q3a' },
+        { label: 'Ich bin nicht sicher / weiß nicht genau',   next: 'q3a' },
+        { label: 'Nein',                                       next: 'q3a' }
+      ]
+    },
+    q3a: {
+      text: 'Weißt du, wie viel dich eine Kundenanfrage über Ads im Durchschnitt kostet?',
+      options: [
+        { label: 'Ja, das kenne ich',                         next: 'q4a' },
+        { label: 'Ungefähr, aber nicht genau',                next: 'q4a' },
+        { label: 'Nein, keine Ahnung',                        next: 'q4a' }
+      ]
+    },
+    q4a: {
+      text: 'Schickst du deinen Ads-Traffic auf eine dedizierte Landingpage?',
+      options: [
+        { label: 'Ja, auf eine eigene Seite für die Kampagne', next: 'q5a' },
+        { label: 'Nein, auf meine Homepage',                   next: 'q5a' },
+        { label: 'Ich bin nicht sicher',                       next: 'q5a' }
+      ]
+    },
+    q5a: {
+      text: 'Wie zufrieden bist du mit deinen aktuellen Ergebnissen?',
+      options: [
+        { label: 'Läuft gut, aber ich will mehr rausholen',   next: 'END', resultId: 2 },
+        { label: 'Mittel – ich glaube, da ist mehr drin',     next: 'END', resultId: 2 },
+        { label: 'Schlecht – die Ads bringen kaum etwas',     next: 'END', resultId: 2 }
+      ]
+    },
+    /* Path B — new to ads → scored: 3+ pos = Result 1, 2+ neg = Result 3 */
+    q2b: {
+      text: 'Hast du ein klar definiertes Angebot mit einem festen Preis oder Preisrahmen?',
+      options: [
+        { label: 'Ja, mein Angebot steht',                         next: 'q3b', score:  1 },
+        { label: 'Ich bin gerade dabei, es zu entwickeln',         next: 'q3b', score: -1 },
+        { label: 'Nein, noch nicht klar',                          next: 'q3b', score: -1 }
+      ]
+    },
+    q3b: {
+      text: 'Hat deine Website eine klare Handlungsaufforderung – also einen konkreten nächsten Schritt, den Besucher*innen direkt sehen und anklicken können?',
+      options: [
+        { label: 'Ja, es gibt eine Seite mit einem klaren CTA (z.B. Kontaktformular, Buchungslink)', next: 'q4b', score:  1 },
+        { label: 'Ich habe eine Website, aber keinen wirklich klaren nächsten Schritt',              next: 'q4b', score: -1 },
+        { label: 'Nein, ich habe noch keine Seite',                                                  next: 'q4b', score: -1 }
+      ]
+    },
+    q4b: {
+      text: 'Weißt du, wen du genau ansprechen willst – also wer deine ideale Kundschaft ist?',
+      options: [
+        { label: 'Ja, das ist mir klar',                           next: 'q5b', score:  1 },
+        { label: 'Ungefähr, aber noch nicht ganz konkret',         next: 'q5b', score: -1 },
+        { label: 'Nein, das ist noch offen',                       next: 'q5b', score: -1 }
+      ]
+    },
+    q5b: {
+      text: 'Was ist dein Ziel mit Google Ads?',
+      options: [
+        { label: 'Ich will planbar neue Anfragen bekommen',                    next: 'END', score:  1 },
+        { label: 'Ich will ausprobieren, ob Ads für mich funktionieren',       next: 'END', score:  0 },
+        { label: 'Ich bin mir noch nicht sicher, was ich will',               next: 'END', score: -1 }
+      ]
+    }
+  };
+
+  const STEP  = { q1:1, q2a:2, q2b:2, q3a:3, q3b:3, q4a:4, q4b:4, q5a:5, q5b:5 };
+  const TOTAL = 5;
+
+  const RESULTS = {
+    1: {
+      badge: '✅ Du bist bereit',
+      title: 'Du bist bereit – lass uns deine Ads zum Laufen bringen',
+      text:  'Du hast die Grundlagen, die es braucht, damit Google Ads funktionieren. Ein klares Angebot, eine Seite, eine Zielgruppe – das ist die Basis, auf der sich eine Kampagne aufbauen lässt, die wirklich Anfragen bringt. Im kostenlosen Erstgespräch schauen wir gemeinsam, ob und wie Ads für dich konkret aussehen könnten.',
+      cta:   { label: 'Kostenloses Erstgespräch buchen', href: '#contact' },
+      mod:   'green'
+    },
+    2: {
+      badge: '📈 Mehr Potenzial möglich',
+      title: 'Deine Ads haben mehr Potenzial – wir holen es raus',
+      text:  'Du schaltest bereits Ads – aber irgendwo zwischen Klick und Anfrage geht Potenzial verloren. Das ist häufiger als du denkst, und meistens liegt es an ein paar konkreten Stellschrauben: Tracking, Landingpage, Kampagnenstruktur. Im kostenlosen Erstgespräch schaue ich mir an, wo bei dir Geld verloren geht – und was sich ändern müsste.',
+      cta:   { label: 'Kostenloses Erstgespräch buchen', href: '#contact' },
+      mod:   'green'
+    },
+    3: {
+      badge: '⏳ Noch nicht ganz soweit',
+      title: 'Noch nicht ganz soweit – aber das lässt sich ändern',
+      text:  'Google Ads können viel – aber nur, wenn die Grundlage stimmt. Ohne klares Angebot und eine Seite mit klarem CTA verbrennt jedes Budget schnell. Das bedeutet nicht, dass Ads für dich keine Option sind – sondern dass es noch einen Schritt davor gibt.',
+      cta:   { label: 'Folge mir auf Instagram', href: 'https://www.instagram.com/' }, /* Platzhalter */
+      mod:   'salmon'
+    }
+  };
+
+  /* ─── State ─────────────────────────────────────────── */
+  let pos = 0, neg = 0;
+
+  /* ─── DOM ───────────────────────────────────────────── */
+  const introEl = section.querySelector('#quizIntro');
+  const qWrapEl = section.querySelector('#quizQWrap');
+  const resEl   = section.querySelector('#quizResult');
+  const fillEl  = section.querySelector('#quizFill');
+  const lblEl   = section.querySelector('#quizLabel');
+  const textEl  = section.querySelector('#quizQText');
+  const optsEl  = section.querySelector('#quizOpts');
+  const cardEl  = section.querySelector('#quizCard');
+
+  /* ─── Start ─────────────────────────────────────────── */
+  section.querySelector('#quizStartBtn').addEventListener('click', () => {
+    hide(introEl); show(qWrapEl);
+    renderQ('q1', false);
+  });
+
+  /* ─── Render question ───────────────────────────────── */
+  function renderQ(id, animate = true) {
+    const q    = Q[id];
+    const step = STEP[id];
+
+    fillEl.style.width = `${(step / TOTAL) * 100}%`;
+    lblEl.textContent  = `Frage ${step} von ${TOTAL}`;
+
+    const draw = () => {
+      textEl.textContent = q.text;
+      optsEl.innerHTML   = '';
+      q.options.forEach((opt, i) => {
+        const btn = document.createElement('button');
+        btn.className = 'quiz-option';
+        btn.textContent = opt.label;
+        btn.style.setProperty('--qi', i);
+        btn.addEventListener('click', () => pick(opt, btn));
+        optsEl.appendChild(btn);
+      });
+      cardEl.classList.remove('quiz-card--out');
+    };
+
+    if (animate) {
+      cardEl.classList.add('quiz-card--out');
+      setTimeout(draw, 215);
+    } else {
+      draw();
+    }
+  }
+
+  /* ─── Handle selection ──────────────────────────────── */
+  function pick(opt, btn) {
+    optsEl.querySelectorAll('.quiz-option').forEach(b => {
+      b.disabled = true;
+      if (b !== btn) b.classList.add('quiz-opt--dim');
+    });
+    btn.classList.add('quiz-opt--chosen');
+
+    if (typeof opt.score === 'number') {
+      if (opt.score > 0) pos++;
+      else if (opt.score < 0) neg++;
+    }
+
+    setTimeout(() => {
+      if (opt.next === 'END') {
+        showResult(opt.resultId ?? (pos >= 3 ? 1 : 3));
+      } else {
+        renderQ(opt.next);
+      }
+    }, 390);
+  }
+
+  /* ─── Show result ───────────────────────────────────── */
+  function showResult(id) {
+    const r = RESULTS[id];
+    hide(qWrapEl); show(resEl);
+
+    resEl.innerHTML = `
+      <div class="quiz-res-card glass-card quiz-res--${r.mod}">
+        <span class="quiz-res-badge">${r.badge}</span>
+        <h3 class="quiz-res-title">${r.title}</h3>
+        <p class="quiz-res-text">${r.text}</p>
+        <a href="${r.cta.href}" class="btn-primary quiz-res-cta">
+          <span class="btn-glow"></span>${r.cta.label}
+        </a>
+        <button class="quiz-restart">↩ Nochmal starten</button>
+      </div>`;
+
+    resEl.querySelector('.quiz-restart').addEventListener('click', reset);
+    setTimeout(() => resEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 80);
+  }
+
+  /* ─── Reset ─────────────────────────────────────────── */
+  function reset() {
+    pos = 0; neg = 0;
+    hide(resEl); show(introEl);
+    fillEl.style.width = '0%';
+  }
+
+  /* ─── Visibility helpers ────────────────────────────── */
+  function show(el) { el.classList.remove('quiz-hidden'); }
+  function hide(el) { el.classList.add('quiz-hidden'); }
 }
 
 /* ============================================================

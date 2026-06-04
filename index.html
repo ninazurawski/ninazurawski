@@ -431,6 +431,46 @@
     </div>
   </section>
 
+  <!-- ═══ QUIZ ═══ -->
+  <section id="quiz" class="section-quiz">
+    <div class="container">
+      <div class="quiz-inner">
+
+        <!-- Intro -->
+        <div id="quizIntro">
+          <div class="section-label" style="justify-content:center" data-reveal>Kostenloser Selbstcheck</div>
+          <h2 class="section-heading" data-split-heading>
+            Ist Google Ads der richtige<br><em>nächste Schritt für dich?</em>
+          </h2>
+          <p class="section-sub">5 Fragen. 2 Minuten. Du bekommst ein persönliches Ergebnis und weißt danach genau, ob und wie Google Ads für dein Business sinnvoll ist.</p>
+          <button class="btn-primary" id="quizStartBtn" data-reveal>
+            <span class="btn-glow"></span>
+            Quiz starten
+            <span class="btn-arrow">→</span>
+          </button>
+        </div>
+
+        <!-- Question -->
+        <div id="quizQWrap" class="quiz-hidden">
+          <div class="quiz-progress">
+            <div class="quiz-progress-bar">
+              <div class="quiz-progress-fill" id="quizFill"></div>
+            </div>
+            <span class="quiz-progress-label" id="quizLabel">Frage 1 von 5</span>
+          </div>
+          <div class="glass-card quiz-card" id="quizCard">
+            <h3 class="quiz-q-text" id="quizQText"></h3>
+            <div class="quiz-options" id="quizOpts"></div>
+          </div>
+        </div>
+
+        <!-- Result -->
+        <div id="quizResult" class="quiz-hidden"></div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- ═══ ADS ANALYSE ═══ -->
   <section class="section-analyse" id="analyse">
     <div class="container">
