@@ -276,21 +276,24 @@ function initQuiz() {
       badge: '✅ Du bist bereit',
       title: 'Du bist bereit – lass uns deine Ads zum Laufen bringen',
       text:  'Du hast die Grundlagen, die es braucht, damit Google Ads funktionieren. Ein klares Angebot, eine Seite, eine Zielgruppe – das ist die Basis, auf der sich eine Kampagne aufbauen lässt, die wirklich Anfragen bringt. Im kostenlosen Erstgespräch schauen wir gemeinsam, ob und wie Ads für dich konkret aussehen könnten.',
-      cta:   { label: 'Kostenloses Erstgespräch buchen', href: '#contact' },
+      cta:   { label: 'Kostenloses Kennenlerngespräch buchen', href: 'https://meet.brevo.com/nina-zurawski/kennenlerncall' },
       mod:   'green'
     },
     2: {
       badge: '📈 Mehr Potenzial möglich',
       title: 'Deine Ads haben mehr Potenzial – wir holen es raus',
       text:  'Du schaltest bereits Ads – aber irgendwo zwischen Klick und Anfrage geht Potenzial verloren. Das ist häufiger als du denkst, und meistens liegt es an ein paar konkreten Stellschrauben: Tracking, Landingpage, Kampagnenstruktur. Im kostenlosen Erstgespräch schaue ich mir an, wo bei dir Geld verloren geht – und was sich ändern müsste.',
-      cta:   { label: 'Kostenloses Erstgespräch buchen', href: '#contact' },
+      cta:   { label: 'Kostenlose Ads-Analyse buchen', href: 'https://calendly.com/ninazurawski/ads-analyse' },
       mod:   'green'
     },
     3: {
       badge: '⏳ Noch nicht ganz soweit',
       title: 'Noch nicht ganz soweit – aber das lässt sich ändern',
       text:  'Google Ads können viel – aber nur, wenn die Grundlage stimmt. Ohne klares Angebot und eine Seite mit klarem CTA verbrennt jedes Budget schnell. Das bedeutet nicht, dass Ads für dich keine Option sind – sondern dass es noch einen Schritt davor gibt.',
-      cta:   { label: 'Folge mir auf Instagram', href: 'https://www.instagram.com/' }, /* Platzhalter */
+      links: [
+        { label: 'Folge mir auf Instagram', href: 'https://instagram.com/adsmitplan/' },
+        { label: 'Verbinde dich auf LinkedIn', href: 'https://linkedin.com/in/nina-zurawski/' }
+      ],
       mod:   'salmon'
     }
   };
@@ -371,14 +374,16 @@ function initQuiz() {
     const r = RESULTS[id];
     hide(qWrapEl); show(resEl);
 
+    const ctaHtml = r.cta
+      ? `<a href="${r.cta.href}" target="_blank" rel="noopener" class="btn-primary quiz-res-cta"><span class="btn-glow"></span>${r.cta.label}</a>`
+      : r.links.map(l => `<a href="${l.href}" target="_blank" rel="noopener" class="btn-ghost quiz-res-link">${l.label}</a>`).join('');
+
     resEl.innerHTML = `
       <div class="quiz-res-card glass-card quiz-res--${r.mod}">
         <span class="quiz-res-badge">${r.badge}</span>
         <h3 class="quiz-res-title">${r.title}</h3>
         <p class="quiz-res-text">${r.text}</p>
-        <a href="${r.cta.href}" class="btn-primary quiz-res-cta">
-          <span class="btn-glow"></span>${r.cta.label}
-        </a>
+        <div class="quiz-res-actions">${ctaHtml}</div>
         <button class="quiz-restart">↩ Nochmal starten</button>
       </div>`;
 

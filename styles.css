@@ -2361,10 +2361,15 @@ br.m-br { display: none; }
   margin: 0 auto 2rem;
 }
 
-.quiz-res-cta {
-  display: inline-flex;
+.quiz-res-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
   margin-bottom: 1.5rem;
 }
+
+.quiz-res-cta, .quiz-res-link { display: inline-flex; }
 
 .quiz-restart {
   display: block;
