@@ -338,7 +338,6 @@ function initQuiz() {
   let pos = 0, neg = 0;
 
   /* ─── DOM ───────────────────────────────────────────── */
-  const introEl = section.querySelector('#quizIntro');
   const qWrapEl = section.querySelector('#quizQWrap');
   const resEl   = section.querySelector('#quizResult');
   const fillEl  = section.querySelector('#quizFill');
@@ -347,11 +346,8 @@ function initQuiz() {
   const optsEl  = section.querySelector('#quizOpts');
   const cardEl  = section.querySelector('#quizCard');
 
-  /* ─── Start ─────────────────────────────────────────── */
-  section.querySelector('#quizStartBtn').addEventListener('click', () => {
-    hide(introEl); show(qWrapEl);
-    renderQ('q1', false);
-  });
+  /* ─── Auto-start: erste Frage direkt anzeigen ───────── */
+  renderQ('q1', false);
 
   /* ─── Render question ───────────────────────────────── */
   function renderQ(id, animate = true) {
@@ -430,8 +426,9 @@ function initQuiz() {
   /* ─── Reset ─────────────────────────────────────────── */
   function reset() {
     pos = 0; neg = 0;
-    hide(resEl); show(introEl);
+    hide(resEl); show(qWrapEl);
     fillEl.style.width = '0%';
+    renderQ('q1', false);
   }
 
   /* ─── Visibility helpers ────────────────────────────── */
