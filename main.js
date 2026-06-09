@@ -335,7 +335,7 @@ function initQuiz() {
   };
 
   /* ─── State ─────────────────────────────────────────── */
-  let pos = 0, neg = 0;
+  let pos = 0, neg = 0, currentQId = 'q1';
 
   /* ─── DOM ───────────────────────────────────────────── */
   const qWrapEl = section.querySelector('#quizQWrap');
@@ -351,6 +351,7 @@ function initQuiz() {
 
   /* ─── Render question ───────────────────────────────── */
   function renderQ(id, animate = true) {
+    currentQId = id;
     const q    = Q[id];
     const step = STEP[id];
 
@@ -392,6 +393,15 @@ function initQuiz() {
       else if (opt.score < 0) neg++;
     }
 
+    // GA4: Antwort tracken
+    if (window.gtag) {
+      window.gtag('event', 'quiz_answer', {
+        question_id:   currentQId,
+        question_text: Q[currentQId].text,
+        answer:        opt.label
+      });
+    }
+
     setTimeout(() => {
       if (opt.next === 'END') {
         showResult(opt.resultId ?? (pos >= 3 ? 1 : 3));
@@ -405,6 +415,15 @@ function initQuiz() {
   function showResult(id) {
     const r = RESULTS[id];
     hide(qWrapEl); show(resEl);
+
+    // GA4: Ergebnis tracken
+    if (window.gtag) {
+      window.gtag('event', 'quiz_result', {
+        result_id:    id,
+        result_badge: r.badge,
+        result_title: r.title
+      });
+    }
 
     const ctaHtml = r.cta
       ? `<a href="${r.cta.href}" target="_blank" rel="noopener" class="btn-primary quiz-res-cta"><span class="btn-glow"></span>${r.cta.label}</a>`
@@ -425,7 +444,7 @@ function initQuiz() {
 
   /* ─── Reset ─────────────────────────────────────────── */
   function reset() {
-    pos = 0; neg = 0;
+    pos = 0; neg = 0; currentQId = 'q1';
     hide(resEl); show(qWrapEl);
     fillEl.style.width = '0%';
     renderQ('q1', false);
@@ -546,7 +565,24 @@ function applyConsent(consent) {
 }
 
 function loadMarketingScripts()  { /* Google Ads Conversion-Tracking hier einbinden */ }
-function loadStatistikScripts()  { /* z.B. Matomo */ }
+
+function loadStatistikScripts() {
+  if (window._ga4Loaded) return;
+  window._ga4Loaded = true;
+
+  // GA4 Script laden
+  const s = document.createElement('script');
+  s.async = true;
+  s.src = 'https://www.googletagmanager.com/gtag/js?id=G-ZLHY2HRWDB';
+  document.head.appendChild(s);
+
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ window.dataLayer.push(arguments); }
+  window.gtag = gtag;
+  gtag('js', new Date());
+  gtag('config', 'G-ZLHY2HRWDB', { anonymize_ip: true });
+}
+
 function loadFunctionalScripts() { /* z.B. erweiterte Einbettungen */ }
 
 /* ============================================================
