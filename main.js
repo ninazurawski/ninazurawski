@@ -319,7 +319,7 @@ function initQuiz() {
       badge: '📈 Mehr Potenzial möglich',
       title: 'Deine Ads haben mehr Potenzial – wir holen es raus',
       text:  'Du schaltest bereits Ads, aber irgendwo zwischen Klick und Anfrage geht Potenzial verloren. Das ist häufiger als du denkst, und meistens liegt es an ein paar konkreten Stellschrauben: Tracking, Landingpage, Kampagnenstruktur. In der kostenlosen Ads-Analyse schaue ich mir an, wo bei dir Geld verloren geht und was sich ändern müsste.',
-      cta:   { label: 'Kostenlose Ads-Analyse buchen', href: 'https://calendly.com/ninazurawski/ads-analyse' },
+      cta:   { label: 'Kostenlose Ads-Analyse buchen', href: 'https://meet.brevo.com/nina-zurawski/ads-analyse' },
       mod:   'green'
     },
     3: {
