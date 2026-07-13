@@ -614,80 +614,66 @@ ul { list-style: none; }
   background: rgba(241, 248, 244, 0.9);
 }
 
-/* ── Right column — decorative ring + badges ─────────────────── */
-.hero-visual {
+/* ── Right column — portrait photo ─────────────────── */
+.hero-portrait {
   position: relative;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
-  height: 440px;
+  height: 500px;
+  flex-shrink: 0;
   opacity: 0;
 }
 
-/* Animated concentric rings */
-.hv-ring {
+.hero-portrait-frame {
+  position: relative;
+  height: 100%;
+  width: 340px;
+  border-radius: 180px 180px 60px 60px;
+  overflow: hidden;
+  box-shadow:
+    0 0 0 1px rgba(217, 107, 82, 0.2),
+    0 0 0 6px rgba(31, 61, 46, 0.06),
+    0 32px 80px rgba(0, 0, 0, 0.3);
+}
+
+.hero-portrait-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.hero-portrait-fade {
   position: absolute;
-  border-radius: 50%;
-  border: 1.5px solid rgba(31, 61, 46, 0.55);
-  animation: ring-spin linear infinite;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 30%;
+  background: linear-gradient(to top, var(--bg-primary) 0%, transparent 100%);
+  pointer-events: none;
 }
 
-.hv-ring--outermost {
-  width: 420px; height: 420px;
-  border: 1px dashed rgba(31, 61, 46, 0.22);
-  animation-duration: 60s;
-}
-
-.hv-ring--outer {
-  width: 320px; height: 320px;
-  animation-duration: 40s;
-  border-style: dashed;
-  border-color: rgba(31, 61, 46, 0.45);
-}
-
-.hv-ring--inner {
-  width: 200px; height: 200px;
-  border: 2px solid rgba(217, 107, 82, 0.65);
-  animation-duration: 25s;
-  animation-direction: reverse;
-}
-
-@keyframes ring-spin {
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
-}
-
-/* Centre icon */
-.hv-center {
+.hero-portrait-badge {
   position: absolute;
-  width: 82px; height: 82px;
-  background: #fff;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 8px 32px rgba(31, 61, 46, 0.18), 0 0 0 6px rgba(31, 61, 46, 0.06);
-  z-index: 2;
-}
-
-/* Floating label badges */
-.hv-badge {
-  position: absolute;
+  bottom: 32px;
+  right: -12px;
   display: flex;
   align-items: center;
   gap: 0.5rem;
   font-family: var(--ff-label);
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-weight: 700;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.04em;
   padding: 0.55rem 1.15rem;
-  background: rgba(255, 255, 255, 0.96);
-  border: 1.5px solid rgba(31, 61, 46, 0.3);
+  background: rgba(255, 255, 255, 0.97);
+  border: 1.5px solid rgba(31, 61, 46, 0.2);
   border-radius: 100px;
-  box-shadow: 0 8px 28px rgba(31, 61, 46, 0.18), 0 2px 6px rgba(0,0,0,0.06);
+  box-shadow: 0 8px 28px rgba(31, 61, 46, 0.18), 0 2px 6px rgba(0, 0, 0, 0.06);
   white-space: nowrap;
   color: var(--text-primary);
-  animation: badge-float ease-in-out infinite;
+  animation: badge-float 5s ease-in-out infinite;
 }
 
 .hv-badge-dot {
@@ -696,26 +682,6 @@ ul { list-style: none; }
   background: var(--green);
   flex-shrink: 0;
   box-shadow: 0 0 0 2px rgba(31, 61, 46, 0.15);
-}
-
-.hv-badge--1 {
-  top: 12%;  left: -8%;
-  animation-duration: 5s;
-  animation-delay: 0s;
-}
-
-.hv-badge--2 {
-  top: 55%; right: -6%;
-  animation-duration: 6s;
-  animation-delay: 1.5s;
-}
-
-.hv-badge--2 .hv-badge-dot { background: var(--salmon); }
-
-.hv-badge--3 {
-  bottom: 14%; left: 5%;
-  animation-duration: 4.5s;
-  animation-delay: 0.8s;
 }
 
 @keyframes badge-float {
@@ -2405,7 +2371,7 @@ br.m-br { display: none; }
     text-align: left;
   }
 
-  .hero-visual { display: none; }
+  .hero-portrait { display: none; }
 
   .services-grid {
     grid-template-columns: 1fr;
