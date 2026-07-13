@@ -7,7 +7,7 @@
 window.addEventListener('load', initApp);
 
 function initApp() {
-  initLenis();
+  gsap.registerPlugin(ScrollTrigger);
   initNavigation();
   initHeroEntrance();
   initTextAnimations();
@@ -19,43 +19,22 @@ function initApp() {
 }
 
 /* ============================================================
-   LENIS SMOOTH SCROLL
-   ============================================================ */
-let lenis;
-
-function initLenis() {
-  lenis = new Lenis({
-    duration: 1.2,
-    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-    smoothTouch: false,
-  });
-
-  gsap.registerPlugin(ScrollTrigger);
-
-  function raf(time) {
-    lenis.raf(time);
-    ScrollTrigger.update();
-    requestAnimationFrame(raf);
-  }
-  requestAnimationFrame(raf);
-}
-
-/* ============================================================
    NAVIGATION
    ============================================================ */
 function initNavigation() {
   const nav = document.getElementById('siteNav');
 
-  lenis.on('scroll', ({ scroll }) => {
-    nav.classList.toggle('is-scrolled', scroll > 60);
-  });
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('is-scrolled', window.scrollY > 60);
+  }, { passive: true });
 
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
       const target = document.querySelector(a.getAttribute('href'));
       if (target) {
         e.preventDefault();
-        lenis.scrollTo(target, { offset: -80, duration: 1.4 });
+        const top = target.getBoundingClientRect().top + window.scrollY - 80;
+        window.scrollTo({ top, behavior: 'smooth' });
       }
     });
   });
@@ -78,7 +57,7 @@ function initMobileMenu() {
   toggle.addEventListener('click', () => {
     const isOpen = toggle.classList.toggle('is-open');
     menu.classList.toggle('is-open', isOpen);
-    lenis[isOpen ? 'stop' : 'start']();
+    document.body.style.overflow = isOpen ? 'hidden' : '';
 
     if (isOpen) {
       gsap.from(links, {
@@ -93,15 +72,15 @@ function initMobileMenu() {
       const href = link.getAttribute('href');
       toggle.classList.remove('is-open');
       menu.classList.remove('is-open');
-      lenis.start();
+      document.body.style.overflow = '';
 
-      // Anchor-Links: erst Lenis starten, dann scrollen
       if (href && href.startsWith('#')) {
         e.preventDefault();
         const target = document.querySelector(href);
         if (target) {
           setTimeout(() => {
-            lenis.scrollTo(target, { offset: -80, duration: 1.4 });
+            const top = target.getBoundingClientRect().top + window.scrollY - 80;
+            window.scrollTo({ top, behavior: 'smooth' });
           }, 50);
         }
       }

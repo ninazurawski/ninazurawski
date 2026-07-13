@@ -152,7 +152,7 @@
    ============================================================ */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { scroll-behavior: auto; } /* Lenis handles smooth scroll via JS */
+html { scroll-behavior: smooth; }
 
 body {
   background: var(--bg-primary);
