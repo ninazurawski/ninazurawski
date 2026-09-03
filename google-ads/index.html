@@ -119,7 +119,6 @@
     border-radius: 100px; padding: 0.7rem 1.1rem; font-size: 0.82rem; cursor: pointer; transition: opacity .2s, transform .2s;
   }
   .btn-cookie:hover { opacity: 0.88; transform: translateY(-1px); }
-  #cookieRejectAll, #cookieShowSettings, #cookieRejectAll2, #cookieAcceptSelection { background: #fff; color: #1E3A2C; }
   .cookie-footer-links { display: flex; gap: 1.25rem; margin-top: 1.1rem; }
   .cookie-footer-links a { font-size: 0.74rem; letter-spacing: 0.06em; color: #8C978F; }
   .cookie-footer-links a:hover { color: #1E3A2C; }
@@ -704,7 +703,6 @@
       <div style="display:flex; gap:1.5rem">
         <a href="../impressum.html" style="font-size:0.78rem; letter-spacing:0.08em; color:#8C978F">Impressum</a>
         <a href="../datenschutz.html" style="font-size:0.78rem; letter-spacing:0.08em; color:#8C978F">Datenschutz</a>
-        <a href="../" style="font-size:0.78rem; letter-spacing:0.08em; color:#8C978F">Zur Website</a>
       </div>
     </div>
   </footer>
@@ -719,9 +717,9 @@
       <h2 class="cookie-title">Wir nutzen Cookies und andere Technologien.</h2>
       <p class="cookie-body">Diese Website nutzt Cookies und vergleichbare Funktionen zur Verarbeitung von Endgeräteinformationen und personenbezogenen Daten. Deine Einwilligung ist freiwillig und kann jederzeit widerrufen werden.</p>
       <div class="cookie-actions">
+        <button id="cookieAcceptAll" class="btn-cookie">Alles akzeptieren</button>
         <button id="cookieRejectAll" class="btn-cookie">Alles ablehnen</button>
         <button id="cookieShowSettings" class="btn-cookie">Informationen</button>
-        <button id="cookieAcceptAll" class="btn-cookie">Alles akzeptieren</button>
       </div>
       <div class="cookie-footer-links">
         <a href="../impressum.html">Impressum</a>
@@ -761,9 +759,9 @@
         </div>
       </div>
       <div class="cookie-actions">
+        <button id="cookieAcceptAll2" class="btn-cookie">Alles akzeptieren</button>
         <button id="cookieRejectAll2" class="btn-cookie">Alles ablehnen</button>
         <button id="cookieAcceptSelection" class="btn-cookie">Auswahl akzeptieren</button>
-        <button id="cookieAcceptAll2" class="btn-cookie">Alles akzeptieren</button>
       </div>
       <div class="cookie-footer-links">
         <a href="../impressum.html">Impressum</a>
