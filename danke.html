@@ -136,6 +136,15 @@ src||(base+i+dl);f.parentNode.insertBefore(j,f);
       transition: color 0.2s;
     }
     .danke-back:hover { color: var(--green); }
+    .danke-header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 1.75rem clamp(1.5rem, 5vw, 3rem);
+      z-index: 10;
+    }
+    .danke-header img { width: 44px; height: 44px; }
+    .footer-email { color: rgba(255,255,255,0.45); }
   </style>
 </head>
 <body>
@@ -144,28 +153,11 @@ src||(base+i+dl);f.parentNode.insertBefore(j,f);
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-  <!-- ═══ NAVIGATION ═══ -->
-  <header id="siteNav">
-    <div class="nav-container">
-      <a href="index.html" class="nav-logo">
-        <span class="logo-mark">
-          <img src="images/logo-nina.png" alt="Nina Zurawski" class="logo-img">
-        </span>
-        <span class="logo-text">Nina Zurawski</span>
-      </a>
-      <nav class="nav-links" aria-label="Hauptnavigation">
-        <a href="index.html#services" class="nav-link">Leistungen</a>
-        <a href="index.html#process" class="nav-link">Ablauf</a>
-        <a href="index.html#about" class="nav-link">Über mich</a>
-        <a href="index.html#faq" class="nav-link">FAQ</a>
-      </nav>
-      <a href="index.html#contact" class="btn-nav magnetic">
-        <span>15 Min. Kennenlerncall sichern</span>
-      </a>
-      <button class="nav-toggle" id="navToggle" aria-label="Menü">
-        <span></span><span></span>
-      </button>
-    </div>
+  <!-- ═══ LOGO ═══ -->
+  <header class="danke-header">
+    <a href="index.html" aria-label="Zur Startseite">
+      <img src="images/logo-nina.png" alt="Nina Zurawski">
+    </a>
   </header>
 
   <main class="danke-page">
@@ -181,7 +173,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <h1 class="danke-title">Ich freue mich auf<br>unser <em>Gespräch!</em></h1>
 
       <p class="danke-text">
-        Deine Buchung ist eingegangen — du bekommst gleich eine Bestätigungs-E-Mail mit allen Details. Bis dahin: schön, dass du da bist. 🌿
+        Deine Buchung ist eingegangen — du bekommst gleich eine Bestätigungs-E-Mail mit allen Details.
       </p>
 
       <div class="danke-steps">
