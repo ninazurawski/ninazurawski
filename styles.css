@@ -1740,6 +1740,14 @@ ul { list-style: none; }
   margin-bottom: 1rem;
 }
 
+.footer-email {
+  font-size: 0.875rem;
+  color: rgba(255,255,255,0.45);
+  transition: color 0.3s;
+}
+
+.footer-email:hover { color: rgba(255,255,255,0.75); }
+
 .footer-contact-links {
   display: flex;
   flex-direction: column;
