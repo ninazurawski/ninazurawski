@@ -2,6 +2,12 @@
 <html lang="de">
 <head>
 <meta charset="utf-8">
+<!-- Consent Mode: Standard = alles abgelehnt bis zur Einwilligung -->
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',functionality_storage:'granted',security_storage:'granted',wait_for_update:500});
+try{var _c=JSON.parse(localStorage.getItem('cookie_consent')||'null');if(_c)gtag('consent','update',{analytics_storage:_c.statistik?'granted':'denied',ad_storage:_c.marketing?'granted':'denied',ad_user_data:_c.marketing?'granted':'denied',ad_personalization:_c.marketing?'granted':'denied'});}catch(e){}
+</script>
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -895,23 +901,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       localStorage.setItem(STORAGE_KEY, JSON.stringify(Object.assign({}, c, { timestamp: new Date().toISOString() })));
     } catch (e) {}
   }
+  // Consent an den Google Tag Manager weitergeben (Consent Mode v2).
+  // GA4 und Google Ads laufen ausschliesslich ueber den GTM-Container.
   function applyConsent(c) {
-    if (c.statistik) loadStatistik();
-    if (c.marketing) loadMarketing();
+    var g = window.gtag || function () { (window.dataLayer = window.dataLayer || []).push(arguments); };
+    g('consent', 'update', {
+      analytics_storage:  c.statistik ? 'granted' : 'denied',
+      ad_storage:         c.marketing ? 'granted' : 'denied',
+      ad_user_data:       c.marketing ? 'granted' : 'denied',
+      ad_personalization: c.marketing ? 'granted' : 'denied'
+    });
   }
-  function loadStatistik() {
-    if (window._ga4Loaded) return;
-    window._ga4Loaded = true;
-    var s = document.createElement('script');
-    s.async = true;
-    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-ZLHY2HRWDB';
-    document.head.appendChild(s);
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = function () { window.dataLayer.push(arguments); };
-    window.gtag('js', new Date());
-    window.gtag('config', 'G-ZLHY2HRWDB', { anonymize_ip: true });
-  }
-  function loadMarketing() { /* Google Ads Conversion-Tracking hier einbinden */ }
 
   var banner = document.getElementById('cookieBanner');
   var overlay = document.getElementById('cookieOverlay');

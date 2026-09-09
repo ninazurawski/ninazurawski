@@ -3,20 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- Consent Mode: Standard = alles abgelehnt bis zur Einwilligung -->
-<script>
-window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
-gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',functionality_storage:'granted',security_storage:'granted',wait_for_update:500});
-try{var _c=JSON.parse(localStorage.getItem('cookie_consent')||'null');if(_c)gtag('consent','update',{analytics_storage:_c.statistik?'granted':'denied',ad_storage:_c.marketing?'granted':'denied',ad_user_data:_c.marketing?'granted':'denied',ad_personalization:_c.marketing?'granted':'denied'});}catch(e){}
-</script>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-NLFQXM86');</script>
-<!-- End Google Tag Manager -->
-  <title>Danke — deine Ads-Analyse ist gebucht — Nina Zurawski</title>
+  <title>Danke für deine Buchung — Nina Zurawski</title>
   <meta name="robots" content="noindex, nofollow">
 
   <link rel="icon" type="image/png" href="images/logo-nina.png">
@@ -142,27 +129,32 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       transition: color 0.2s;
     }
     .danke-back:hover { color: var(--green); }
-    .danke-header {
-      position: absolute;
-      top: 0;
-      left: 0;
-      padding: 1.75rem clamp(1.5rem, 5vw, 3rem);
-      z-index: 10;
-    }
-    .danke-header img { width: 44px; height: 44px; }
   </style>
 </head>
 <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NLFQXM86"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
 
-  <!-- ═══ LOGO ═══ -->
-  <header class="danke-header">
-    <a href="index.html" aria-label="Zur Startseite">
-      <img src="images/logo-nina.png" alt="Nina Zurawski">
-    </a>
+  <!-- ═══ NAVIGATION ═══ -->
+  <header id="siteNav">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-mark">
+          <img src="images/logo-nina.png" alt="Nina Zurawski" class="logo-img">
+        </span>
+        <span class="logo-text">Nina Zurawski</span>
+      </a>
+      <nav class="nav-links" aria-label="Hauptnavigation">
+        <a href="index.html#services" class="nav-link">Leistungen</a>
+        <a href="index.html#process" class="nav-link">Ablauf</a>
+        <a href="index.html#about" class="nav-link">Über mich</a>
+        <a href="index.html#faq" class="nav-link">FAQ</a>
+      </nav>
+      <a href="index.html#contact" class="btn-nav magnetic">
+        <span>15 Min. Kennenlerncall sichern</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menü">
+        <span></span><span></span>
+      </button>
+    </div>
   </header>
 
   <main class="danke-page">
@@ -175,10 +167,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
 
       <div class="danke-label">Buchung bestätigt</div>
-      <h1 class="danke-title">Deine Ads-Analyse<br>ist <em>gebucht!</em></h1>
+      <h1 class="danke-title">Ich freue mich auf<br>unser <em>Gespräch!</em></h1>
 
       <p class="danke-text">
-        Deine Buchung ist eingegangen — du bekommst gleich eine Bestätigungs-E-Mail mit allen Details.
+        Deine Buchung ist eingegangen — du bekommst gleich eine Bestätigungs-E-Mail mit allen Details. Bis dahin: schön, dass du da bist. 🌿
       </p>
 
       <div class="danke-steps">
@@ -193,15 +185,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="danke-step">
           <div class="step-number">2</div>
           <div class="step-text">
-            <strong>Kurz vorbereiten</strong>
-            Damit ich direkt in dein Google Ads Konto schauen kann, richtest du mir vorab am besten Lesezugriff ein — oder wir gehen es im Termin gemeinsam per Bildschirmfreigabe durch.
+            <strong>15 Minuten kennenlernen</strong>
+            Wir schauen gemeinsam, ob und wie ich dir helfen kann — unverbindlich und ohne Druck.
           </div>
         </div>
         <div class="danke-step">
           <div class="step-number">3</div>
           <div class="step-text">
-            <strong>Deine Ads-Analyse im Termin</strong>
-            Ich zeige dir konkret, wo in deinem Konto und Budget Potenzial liegt und wie du mehr Anfragen herausholst. Reiner Mehrwert, komplett unverbindlich.
+            <strong>Dein individuelles Angebot</strong>
+            Passt es? Dann bekommst du ein konkretes Angebot, das genau zu deiner Situation passt.
           </div>
         </div>
       </div>
@@ -222,7 +214,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="footer-grid">
         <div class="footer-brand">
           <div class="footer-logo">Nina Zurawski</div>
-          <p>Performance Marketing für Dienstleister*innen &amp; Solo-Selbstständige, die planbar wachsen wollen.</p>
+          <p>Performance Marketing für Coaches, Berater*innen &amp; Solo-Selbstständige, die planbar wachsen wollen.</p>
           <a href="mailto:info@nina-zurawski.de" class="footer-email">info@nina-zurawski.de</a>
         </div>
         <div class="footer-nav">

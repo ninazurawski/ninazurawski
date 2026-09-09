@@ -3,19 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- Consent Mode: Standard = alles abgelehnt bis zur Einwilligung -->
-<script>
-window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
-gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',functionality_storage:'granted',security_storage:'granted',wait_for_update:500});
-try{var _c=JSON.parse(localStorage.getItem('cookie_consent')||'null');if(_c)gtag('consent','update',{analytics_storage:_c.statistik?'granted':'denied',ad_storage:_c.marketing?'granted':'denied',ad_user_data:_c.marketing?'granted':'denied',ad_personalization:_c.marketing?'granted':'denied'});}catch(e){}
-</script>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-NLFQXM86');</script>
-<!-- End Google Tag Manager -->
 
   <!-- ══ Favicon ══ -->
   <link rel="icon" type="image/png" href="images/logo-nina.png">
@@ -28,7 +15,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   <!-- ══ Primary SEO ══ -->
   <title>Nina Zurawski — Google Ads & Landingpages für Selbstständige & Dienstleister*innen</title>
-  <meta name="description" content="Google Ads & High-Converting Landingpages für Dienstleister*innen & Solo-Selbstständige. In 9 Wochen zu planbaren Anfragen — messbar, persönlich und ohne Agentur-Overhead.">
+  <meta name="description" content="Google Ads & High-Converting Landingpages für Coaches, Berater*innen & Solo-Selbstständige. In 9 Wochen zu planbaren Anfragen — messbar, persönlich und ohne Agentur-Overhead.">
   <meta name="robots" content="index, follow">
   <meta name="author" content="Nina Zurawski">
   <link rel="canonical" href="https://www.nina-zurawski.de">
@@ -60,7 +47,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "name": "Nina Zurawski",
-    "description": "Google Ads & Landingpage Spezialistin für Dienstleister*innen und Solo-Selbstständige",
+    "description": "Google Ads & Landingpage Spezialistin für Selbstständige, Coaches und Berater*innen",
     "url": "https://www.nina-zurawski.de",
     "email": "info@nina-zurawski.de",
     "founder": {
@@ -122,15 +109,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         "name": "Was investiere ich in deine Zusammenarbeit?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Das hängt von deinem Werbebudget und der Anzahl der Kampagnen ab. Die monatliche Betreuung startet ab 449 €/Monat. Das initiale Aufsetzen einer Kampagne inklusive Landingpage beginnt ab 1.299 € einmalig. Zum Vergleich: Bei Agenturen kostet eine vergleichbare monatliche Betreuung meist ab 1.500 € aufwärts, bei mir bekommst du persönliche Betreuung direkt von mir, ohne Agentur-Aufschlag."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Mit wem arbeitest du zusammen, gibt es bestimmte Branchen?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Ich arbeite branchenübergreifend und das ganz bewusst. Ich kann mich gut in unterschiedliche Businesses hineindenken und verstehen, was potenzielle Kund*innen bewegt, egal ob Coaching, Beratung, Therapie, Handwerk oder andere Dienstleistungen. Bisher habe ich mit verschiedenen Dienstleister*innen zusammengearbeitet und schätze genau diese Vielfalt. Was zählt, ist nicht die Branche, sondern dass du mit deinem Angebot Menschen wirklich helfen willst und bereit bist, planbar in dein Marketing zu investieren."
+          "text": "Das hängt von deinem Werbebudget und der Anzahl der Kampagnen ab. Die monatliche Betreuung startet ab 449 €/Monat. Das initiale Aufsetzen einer Kampagne inklusive Landingpage beginnt ab 1.299 € einmalig. Zum Vergleich: Bei Agenturen kostet eine vergleichbare monatliche Betreuung meist ab 1.500 € aufwärts — bei mir bekommst du persönliche Betreuung direkt von mir, ohne Agentur-Aufschlag."
         }
       },
       {
@@ -146,10 +125,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   </script>
 </head>
 <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NLFQXM86"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
 
   <!-- ═══ NAVIGATION ═══ -->
   <header id="siteNav">
@@ -167,7 +142,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <a href="#faq" class="nav-link">FAQ</a>
       </nav>
       <a href="https://meet.brevo.com/nina-zurawski/kennenlerncall" target="_blank" rel="noopener" class="btn-nav">
-        <span>30 Min. Kennenlerncall sichern</span>
+        <span>15 Min. Kennenlerncall sichern</span>
       </a>
       <button class="nav-toggle" id="navToggle" aria-label="Menü">
         <span></span><span></span>
@@ -182,7 +157,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <a href="#process" class="mobile-link">Ablauf</a>
       <a href="#about" class="mobile-link">Über mich</a>
       <a href="#faq" class="mobile-link">FAQ</a>
-      <a href="https://meet.brevo.com/nina-zurawski/kennenlerncall" target="_blank" rel="noopener" class="btn-primary mobile-cta">30 Min. Kennenlerncall sichern</a>
+      <a href="https://meet.brevo.com/nina-zurawski/kennenlerncall" target="_blank" rel="noopener" class="btn-primary mobile-cta">15 Min. Kennenlerncall sichern</a>
     </nav>
   </div>
 
@@ -203,18 +178,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <!-- LEFT: all copy -->
       <div class="hero-content">
 
+        <div class="hero-eyebrow" data-reveal>
+          <span class="eyebrow-dot"></span>
+          <span>Google Ads &amp; Landingpages für Selbstständige &amp; Dienstleister*innen</span>
+        </div>
+
         <h1 class="hero-headline" data-split-heading>
           Schluss mit der<br>
           <em>Anfragen-Lotterie</em>
         </h1>
 
         <p class="hero-sub" data-reveal>
-          In 9 Wochen zu planbaren Anfragen: Google Ads &amp; Landingpages, die deine Wunschkund*innen planbar zu dir bringen.
+          <strong>In 9 Wochen zu planbaren Anfragen:</strong><br>
+          Google Ads &amp; Landingpages, die deine Wunschkund*innen zu dir bringen — messbar und ohne dass du selbst zur Marketing-Expert*in werden musst.
         </p>
 
         <div class="hero-ctas" data-reveal>
-          <a href="#quiz" class="btn-primary">
-            <span class="btn-text">Zum Google-Ads Check</span>
+          <a href="https://meet.brevo.com/nina-zurawski/kennenlerncall" target="_blank" rel="noopener" class="btn-primary">
+            <span class="btn-text">15 Min. Kennenlerncall sichern</span>
             <span class="btn-glow"></span>
           </a>
           <a href="#services" class="btn-ghost">
@@ -223,6 +204,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
             </svg>
           </a>
+        </div>
+
+        <!-- Scarcity: Verfügbarkeit -->
+        <div class="hero-availability" data-reveal>
+          <span class="avail-pulse"></span>
+          <span>Aktuell nehme ich neue Kund*innen an — <strong>sichere dir jetzt deinen Slot</strong></span>
         </div>
 
         <div class="hero-social-proof" data-reveal>
@@ -234,15 +221,30 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       </div><!-- /hero-content -->
 
-      <!-- RIGHT: portrait photo -->
-      <div class="hero-portrait" data-reveal>
-        <div class="hero-portrait-frame">
-          <img src="images/portrait-nina.webp" alt="Nina Zurawski — Google Ads &amp; Landingpage Spezialistin" class="hero-portrait-img" fetchpriority="high" decoding="async">
+      <!-- RIGHT: decorative floating badge cluster -->
+      <div class="hero-visual" data-reveal>
+        <div class="hv-ring hv-ring--outermost"></div>
+        <div class="hv-ring hv-ring--outer"></div>
+        <div class="hv-ring hv-ring--inner"></div>
+        <div class="hv-center">
+          <svg viewBox="0 0 48 48" fill="none" width="36" height="36">
+            <rect x="4" y="28" width="8" height="16" rx="2" fill="#1F3D2E" opacity=".35"/>
+            <rect x="14" y="20" width="8" height="24" rx="2" fill="#1F3D2E" opacity=".6"/>
+            <rect x="24" y="12" width="8" height="32" rx="2" fill="#1F3D2E"/>
+            <path d="M36 10 L44 4" stroke="#D96B52" stroke-width="2.5" stroke-linecap="round"/>
+            <circle cx="44" cy="4" r="3.5" fill="#D96B52"/>
+          </svg>
         </div>
-        <div class="hero-portrait-badge">
-          <span class="hv-badge-dot"></span>Google Ads · Landingpages
+        <div class="hv-badge hv-badge--1">
+          <span class="hv-badge-dot"></span>Google Ads
         </div>
-      </div><!-- /hero-portrait -->
+        <div class="hv-badge hv-badge--2">
+          <span class="hv-badge-dot"></span>Landingpages
+        </div>
+        <div class="hv-badge hv-badge--3">
+          <span class="hv-badge-dot"></span>Conversion-Tracking
+        </div>
+      </div><!-- /hero-visual -->
 
     </div><!-- /hero-container -->
 
@@ -357,17 +359,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </svg>
           </div>
           <h3>Google Ads Kampagne</h3>
-          <p>Für Dienstleister*innen &amp; Solo-Selbstständige, die bereits eine starke Website haben und sofort mehr Sichtbarkeit wollen.</p>
+          <p>Für Coaches &amp; Berater*innen, die bereits eine starke Website haben und sofort mehr Sichtbarkeit wollen.</p>
           <ul class="service-features">
             <li>Keyword-Recherche &amp; Strategie</li>
             <li>Anzeigentexte &amp; Kampagnen-Setup</li>
             <li>Conversion-Tracking einrichten</li>
-            <li>Wöchentliche Optimierung &amp; A/B-Testing</li>
-            <li>Prio-Support &amp; monatliches Reporting</li>
+            <li>Monatliche Optimierung</li>
           </ul>
           <div class="service-cta">
             <a href="https://meet.brevo.com/nina-zurawski/kennenlerncall" target="_blank" rel="noopener" class="btn-outline">
-              <span class="btn-text">30 Min. Kennenlerncall sichern</span>
+              <span class="btn-text">15 Min. Kennenlerncall sichern</span>
             </a>
           </div>
         </div>
@@ -385,14 +386,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <h3>Komplett-Paket</h3>
           <p>Google Ads &amp; eine maßgeschneiderte Landingpage aus einer Hand. Für maximale Ergebnisse von Anfang an.</p>
           <ul class="service-features">
-            <li>Alles aus Paket 1 (Google Ads komplett)</li>
-            <li>Dazu: maßgeschneiderte Landingpage</li>
+            <li>Alles aus Paket 1 &amp; 3</li>
             <li>Perfektes Zusammenspiel Ads ↔ Page</li>
-            <li>Maximale Conversion durch aufeinander abgestimmte Kampagne &amp; Seite</li>
+            <li>A/B-Testing für bessere Conversion</li>
+            <li>Prio-Support &amp; monatliches Reporting</li>
           </ul>
           <div class="service-cta">
             <a href="#contact" class="btn-primary">
-              <span class="btn-text">30 Min. Kennenlerncall sichern</span>
+              <span class="btn-text">15 Min. Kennenlerncall sichern</span>
               <span class="btn-glow"></span>
             </a>
           </div>
@@ -419,7 +420,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </ul>
           <div class="service-cta">
             <a href="https://meet.brevo.com/nina-zurawski/kennenlerncall" target="_blank" rel="noopener" class="btn-outline">
-              <span class="btn-text">30 Min. Kennenlerncall sichern</span>
+              <span class="btn-text">15 Min. Kennenlerncall sichern</span>
             </a>
           </div>
         </div>
@@ -428,33 +429,35 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </section>
 
-  <!-- ═══ QUIZ ═══ -->
-  <section id="quiz" class="section-quiz">
+  <!-- ═══ ADS ANALYSE ═══ -->
+  <section class="section-analyse" id="analyse">
     <div class="container">
-      <div class="quiz-inner">
-
-        <div class="section-label" style="justify-content:center" data-reveal>Kostenloser Selbstcheck</div>
-        <h2 class="section-heading" data-split-heading>
-          Dein Google Ads Check:<br><em>Was ist dein nächster Schritt?</em>
-        </h2>
-
-        <!-- Question -->
-        <div id="quizQWrap">
-          <div class="quiz-progress">
-            <div class="quiz-progress-bar">
-              <div class="quiz-progress-fill" id="quizFill"></div>
-            </div>
-            <span class="quiz-progress-label" id="quizLabel">Frage 1 von 5</span>
-          </div>
-          <div class="glass-card quiz-card" id="quizCard">
-            <h3 class="quiz-q-text" id="quizQText"></h3>
-            <div class="quiz-options" id="quizOpts"></div>
-          </div>
+      <div class="analyse-inner" data-reveal>
+        <div class="analyse-text">
+          <span class="section-label">Für alle, die schon Ads schalten</span>
+          <h2 class="section-heading analyse-heading">Du schaltest bereits<br><em>Google Ads?</em></h2>
+          <p class="analyse-sub">Dann hol dir eine kostenlose Analyse deines Kontos.<br>
+            Ich schaue mir an, wo Potenzial liegt, wie du dein Budget<br>
+            besser einsetzen kannst und gebe dir<br>
+            konkrete Verbesserungsvorschläge.</p>
+          <p class="analyse-scarcity">
+            <svg viewBox="0 0 16 16" fill="none" width="13" height="13"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.4"/><path d="M8 5v3.5l2 1.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+            Ich vergebe maximal 3 kostenlose Analysen pro Monat.
+          </p>
         </div>
-
-        <!-- Result -->
-        <div id="quizResult" class="quiz-hidden"></div>
-
+        <div class="analyse-cta-col">
+          <div class="analyse-highlights">
+            <div class="analyse-highlight"><span class="ah-icon">✓</span> Wo du Werbebudget verlierst</div>
+            <div class="analyse-highlight"><span class="ah-icon">✓</span> Welche Keywords wirklich konvertieren</div>
+            <div class="analyse-highlight"><span class="ah-icon">✓</span> Konkrete Verbesserungsvorschläge</div>
+            <div class="analyse-highlight"><span class="ah-icon">✓</span> Ca. 30 Minuten, kostenlos &amp; unverbindlich</div>
+          </div>
+          <a href="#contact" class="btn-primary">
+            <span class="btn-text">Kostenlose Ads-Analyse buchen</span>
+            <span class="btn-glow"></span>
+          </a>
+          <span class="analyse-note">Unverbindlich &amp; kostenlos</span>
+        </div>
       </div>
     </div>
   </section>
@@ -535,7 +538,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="about-visual" data-reveal>
           <div class="about-image-wrap">
             <div class="about-image-placeholder">
-              <img src="images/nina-ueber-mich.webp" alt="Nina Zurawski — Google Ads & Landingpage Spezialistin" class="about-photo" loading="lazy" decoding="async" width="1000" height="1256">
+              <img src="images/nina.png" alt="Nina Zurawski — Google Ads & Landingpage Spezialistin" class="about-photo" loading="lazy" width="480" height="560">
               <div class="about-img-glow"></div>
             </div>
             <div class="about-badge glass-card">
@@ -551,8 +554,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </h2>
           <div class="about-text" data-reveal>
             <p>Ich bin Nina Zurawski, Google Ads zertifiziert und mit echter Leidenschaft für Unternehmer*innen, die ihr Business endlich planbar wachsen sehen wollen.</p>
-            <p>Als Mama, leidenschaftliche Reisende und Norddeutsche mit Meerblick weiß ich, wie wertvoll Zeit ist und wie wichtig es ist, sie für das einzusetzen, was wirklich zählt. Genau das bringe ich in meine Arbeit: Klarheit, Struktur und echtes Engagement. Ich arbeite bewusst mit einer überschaubaren Anzahl an Kund*innen — denn so bekommt jede*r die volle Aufmerksamkeit, die echte Ergebnisse brauchen. Persönlich, direkt und ohne Zwischenstufen.</p>
-            <p>Besonders am Herzen liegt mir die Arbeit mit Dienstleister*innen und Solo-Selbstständigen, die anderen Menschen helfen. Wer Gutes in der Welt bewirkt, verdient Sichtbarkeit. Dabei zu helfen, ist mein Antrieb.</p>
+            <p>Als Mama, leidenschaftliche Reisende und Norddeutsche mit Meerblick weiß ich, wie wertvoll Zeit ist und wie wichtig es ist, sie für das einzusetzen, was wirklich zählt. Genau das bringe ich in meine Arbeit: Klarheit, Struktur und echtes Engagement. Ich bin am Anfang meiner Freelancer-Reise, und das ist mein Vorteil: Jede*r Kund*in bekommt meine volle Aufmerksamkeit. Persönlich, direkt und ohne Zwischenstufen.</p>
+            <p>Besonders am Herzen liegt mir die Arbeit mit Selbstständigen und Dienstleister*innen, die anderen Menschen helfen: Coaches, Berater*innen, Therapeut*innen. Wer Gutes in der Welt bewirkt, verdient Sichtbarkeit. Dabei zu helfen, ist mein Antrieb.</p>
+          </div>
+          <div class="about-exclusivity" data-reveal>
+            <svg viewBox="0 0 20 20" fill="none" width="16" height="16"><path d="M10 2C5.58 2 2 5.58 2 10s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zm0 3a3 3 0 110 6 3 3 0 010-6zm0 10c-2.33 0-4.31-1.46-5.11-3.5C6.27 10.39 8.05 9.5 10 9.5s3.73.89 5.11 2C14.31 13.54 12.33 15 10 15z" fill="currentColor" opacity=".15"/><path d="M10 2C5.58 2 2 5.58 2 10s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zm-1 5l4 3-4 3V7z" stroke="currentColor" stroke-width="1.2"/></svg>
+            Ich nehme bewusst nur wenige Kund*innen gleichzeitig an — damit du immer meine volle Aufmerksamkeit bekommst, nicht eine*r von vielen bist.
           </div>
           <div class="about-values" data-reveal>
             <div class="value-chip">Messbare Ergebnisse</div>
@@ -561,7 +568,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="value-chip">Kein Bullshit-Marketing</div>
           </div>
           <a href="#contact" class="btn-primary" data-reveal>
-            <span class="btn-text">30 Min. Kennenlerncall sichern</span>
+            <span class="btn-text">15 Min. Kennenlerncall sichern</span>
             <span class="btn-glow"></span>
           </a>
         </div>
@@ -592,11 +599,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </blockquote>
           <div class="review-author">
             <div class="review-avatar">
-              <img src="images/kristin-henke.webp" alt="Kristin Henke" class="review-avatar-img" loading="lazy" decoding="async" width="44" height="44">
+              <img src="images/kristin-henke.png" alt="Kristin Henke" class="review-avatar-img" loading="lazy" width="44" height="44">
             </div>
             <div class="review-meta">
               <strong>Kristin Henke</strong>
-              <span>Female Leadership Expertin</span>
+              <span>Coach für Female Leadership</span>
             </div>
           </div>
         </div>
@@ -638,7 +645,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </blockquote>
           <div class="review-author">
             <div class="review-avatar">
-              <img src="images/nicole-bondani.webp" alt="Nicole Bondani" class="review-avatar-img" loading="lazy" decoding="async" width="44" height="44">
+              <img src="images/nicole-bondani.png" alt="Nicole Bondani" class="review-avatar-img" loading="lazy" width="44" height="44">
             </div>
             <div class="review-meta">
               <strong>Nicole Bondani</strong>
@@ -676,7 +683,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <svg viewBox="0 0 24 24" fill="none"><path d="M20 7H4a2 2 0 00-2 2v6a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2zM12 15a2 2 0 100-4 2 2 0 000 4z" stroke="currentColor" stroke-width="1.5"/></svg>
           </div>
           <h3>Persönliche Betreuung</h3>
-          <p>Du arbeitest direkt mit mir, nicht mit wechselnden Mitarbeitenden einer Agentur. Immer dieselbe Ansprechperson.</p>
+          <p>Du arbeitest direkt mit mir — nicht mit wechselnden Mitarbeitenden einer Agentur. Immer dieselbe Ansprechperson.</p>
         </div>
 
         <div class="promise-card glass-card">
@@ -692,7 +699,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <svg viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
           </div>
           <h3>Kein Agentur-Overhead</h3>
-          <p>Durch die direkte 1:1-Zusammenarbeit sparst du Geld und Nerven und bekommst trotzdem professionelle Ergebnisse.</p>
+          <p>Durch die direkte 1:1-Zusammenarbeit sparst du Geld und Nerven — und bekommst trotzdem professionelle Ergebnisse.</p>
         </div>
 
         <div class="promise-card glass-card">
@@ -700,7 +707,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <svg viewBox="0 0 24 24" fill="none"><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-6v-4m0-2h.01" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
           </div>
           <h3>Erklärt, nicht versteckt</h3>
-          <p>Ich erkläre dir alles verständlich, damit du auch nach unserer Zusammenarbeit weißt, was in deinem Account passiert.</p>
+          <p>Ich erkläre dir alles verständlich — damit du auch nach unserer Zusammenarbeit weißt, was in deinem Account passiert.</p>
         </div>
 
         <div class="promise-card glass-card">
@@ -708,7 +715,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <svg viewBox="0 0 24 24" fill="none"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
           </div>
           <h3>Mit Herzblut dabei</h3>
-          <p>Jedes Projekt ist für mich besonders. Ich bringe echtes Engagement mit, weil mir dein Erfolg wirklich am Herzen liegt.</p>
+          <p>Jedes Projekt ist für mich besonders. Ich bringe echtes Engagement mit — weil mir dein Erfolg wirklich am Herzen liegt.</p>
         </div>
 
         <!-- Duplicates for infinite scroll -->
@@ -736,39 +743,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <p>Klares Reporting, echte Zahlen. Du siehst genau, welche Anfragen reinkommen.</p>
         </div>
 
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══ ADS ANALYSE ═══ -->
-  <section class="section-analyse" id="analyse">
-    <div class="container">
-      <div class="analyse-inner" data-reveal>
-        <div class="analyse-text">
-          <span class="section-label">Für alle, die schon Ads schalten</span>
-          <h2 class="section-heading analyse-heading">Du schaltest bereits<br><em>Google Ads?</em></h2>
-          <p class="analyse-sub">Dann hol dir eine kostenlose Analyse deines Kontos.<br>
-            Ich schaue mir an, wo Potenzial liegt, wie du dein Budget<br>
-            besser einsetzen kannst und gebe dir<br>
-            konkrete Verbesserungsvorschläge.</p>
-          <p class="analyse-scarcity">
-            <svg viewBox="0 0 16 16" fill="none" width="13" height="13"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.4"/><path d="M8 5v3.5l2 1.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
-            Ich vergebe maximal 3 kostenlose Analysen pro Monat.
-          </p>
-        </div>
-        <div class="analyse-cta-col">
-          <div class="analyse-highlights">
-            <div class="analyse-highlight"><span class="ah-icon">✓</span> Wo du Werbebudget verlierst</div>
-            <div class="analyse-highlight"><span class="ah-icon">✓</span> Welche Keywords wirklich konvertieren</div>
-            <div class="analyse-highlight"><span class="ah-icon">✓</span> Konkrete Verbesserungsvorschläge</div>
-            <div class="analyse-highlight"><span class="ah-icon">✓</span> Ca. 30 Minuten, kostenlos &amp; unverbindlich</div>
-          </div>
-          <a href="#contact" class="btn-primary">
-            <span class="btn-text">Kostenlose Ads-Analyse buchen</span>
-            <span class="btn-glow"></span>
-          </a>
-          <span class="analyse-note">Unverbindlich &amp; kostenlos</span>
-        </div>
       </div>
     </div>
   </section>
@@ -847,17 +821,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <span class="faq-icon"><span></span><span></span></span>
             </button>
             <div class="faq-answer">
-              <p>Das hängt von deinem Werbebudget und der Anzahl der Kampagnen ab. Die monatliche Betreuung startet ab 449 €/Monat. Das initiale Aufsetzen einer Kampagne inklusive Landingpage beginnt ab 1.299 € einmalig. Zum Vergleich: Bei Agenturen kostet eine vergleichbare monatliche Betreuung meist ab 1.500 € aufwärts, bei mir bekommst du persönliche Betreuung direkt von mir, ohne Agentur-Aufschlag. Im Kennenlerngespräch schauen wir gemeinsam, was für dich sinnvoll ist, und du bekommst ein transparentes Angebot.</p>
-            </div>
-          </div>
-
-          <div class="faq-item" data-reveal>
-            <button class="faq-question">
-              <span>Mit wem arbeitest du zusammen, gibt es bestimmte Branchen?</span>
-              <span class="faq-icon"><span></span><span></span></span>
-            </button>
-            <div class="faq-answer">
-              <p>Ich arbeite branchenübergreifend und das ganz bewusst. Ich kann mich gut in unterschiedliche Businesses hineindenken und verstehen, was potenzielle Kund*innen bewegt, egal ob Coaching, Beratung, Therapie, Handwerk oder andere Dienstleistungen. Bisher habe ich mit verschiedenen Dienstleister*innen zusammengearbeitet und schätze genau diese Vielfalt. Was zählt, ist nicht die Branche, sondern dass du mit deinem Angebot Menschen wirklich helfen willst und bereit bist, planbar in dein Marketing zu investieren.</p>
+              <p>Das hängt von deinem Werbebudget und der Anzahl der Kampagnen ab. Die monatliche Betreuung startet ab 449 €/Monat. Das initiale Aufsetzen einer Kampagne inklusive Landingpage beginnt ab 1.299 € einmalig. Zum Vergleich: Bei Agenturen kostet eine vergleichbare monatliche Betreuung meist ab 1.500 € aufwärts — bei mir bekommst du persönliche Betreuung direkt von mir, ohne Agentur-Aufschlag. Im Kennenlerngespräch schauen wir gemeinsam, was für dich sinnvoll ist, und du bekommst ein transparentes Angebot.</p>
             </div>
           </div>
 
@@ -888,7 +852,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           ob Google Ads für dich der<br class="m-br">
           richtige Weg ist und<br class="m-br">
           ob wir zueinander passen.<br class="m-br">
-          30 Minuten, völlig unverbindlich.
+          15 Minuten, völlig unverbindlich.
         </p>
 
         <div class="contact-cta" data-reveal>
@@ -911,7 +875,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
           <div class="reassurance-item">
             <svg viewBox="0 0 20 20" fill="none" width="15" height="15"><path d="M10 2a8 8 0 100 16A8 8 0 0010 2zm0 4v4l3 2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
-            <span>Nur 30 Minuten</span>
+            <span>Nur 15 Minuten</span>
           </div>
           <div class="reassurance-item">
             <svg viewBox="0 0 20 20" fill="none" width="15" height="15"><path d="M4 10h12M10 4v12" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.3"/></svg>
@@ -937,7 +901,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="footer-grid">
         <div class="footer-brand">
           <div class="footer-logo">Nina Zurawski</div>
-          <p>Performance Marketing für Dienstleister*innen &amp; Solo-Selbstständige, die planbar wachsen wollen.</p>
+          <p>Performance Marketing für Coaches, Berater*innen &amp; Solo-Selbstständige, die planbar wachsen wollen.</p>
           <div class="footer-contact-links">
             <a href="mailto:info@nina-zurawski.de" class="footer-contact-link">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
@@ -1063,7 +1027,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <span class="ct-track"><span class="ct-thumb"></span></span>
               </label>
             </div>
-            <p class="cookie-cat-desc">Google Analytics 4 (Anbieter: Google Ireland Limited), um anonymisiert zu verstehen, wie Besucher*innen die Website nutzen. Cookies: <code>_ga</code> und <code>_ga_ZLHY2HRWDB</code>, Laufzeit jeweils bis zu 2 Jahre. Datenübermittlung an Google LLC (USA) auf Basis der EU-Standardvertragsklauseln. Details in der Datenschutzerklärung.</p>
+            <p class="cookie-cat-desc">Helfen mir zu verstehen, wie Besucher*innen die Website nutzen, um sie kontinuierlich zu verbessern. Alle Daten werden anonymisiert erhoben.</p>
           </div>
 
           <div class="cookie-cat">
@@ -1096,8 +1060,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 
   <!-- ═══ SCRIPTS ═══ -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" crossorigin="anonymous" defer></script>
-  <script src="main.js?v=5" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js" crossorigin="anonymous"></script>
+  <script src="main.js" defer></script>
 </body>
 </html>

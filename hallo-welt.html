@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Hallo Welt</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: #111;
+    }
+
+    h1 {
+      font-family: sans-serif;
+      font-size: 4rem;
+      color: #22c55e;
+      animation: pulse 2s ease-in-out infinite;
+      cursor: default;
+      transition: color 0.4s ease;
+    }
+
+    h1:hover {
+      color: #3b82f6;
+      animation: none;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50%       { transform: scale(1.08); opacity: 0.8; }
+    }
+  </style>
+</head>
+<body>
+  <h1>Hallo Welt</h1>
+</body>
+</html>

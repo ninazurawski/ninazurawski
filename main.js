@@ -537,32 +537,18 @@ function getConsentData() {
   } catch { return null; }
 }
 
+// Consent an den Google Tag Manager weitergeben (Consent Mode v2).
+// GA4 und Google Ads laufen ausschließlich über den GTM-Container –
+// hier werden keine Skripte mehr direkt geladen.
 function applyConsent(consent) {
-  if (consent.marketing)  loadMarketingScripts();
-  if (consent.statistik)  loadStatistikScripts();
-  if (consent.functional) loadFunctionalScripts();
+  const g = window.gtag || function () { (window.dataLayer = window.dataLayer || []).push(arguments); };
+  g('consent', 'update', {
+    analytics_storage:  consent.statistik ? 'granted' : 'denied',
+    ad_storage:         consent.marketing ? 'granted' : 'denied',
+    ad_user_data:       consent.marketing ? 'granted' : 'denied',
+    ad_personalization: consent.marketing ? 'granted' : 'denied',
+  });
 }
-
-function loadMarketingScripts()  { /* Google Ads Conversion-Tracking hier einbinden */ }
-
-function loadStatistikScripts() {
-  if (window._ga4Loaded) return;
-  window._ga4Loaded = true;
-
-  // GA4 Script laden
-  const s = document.createElement('script');
-  s.async = true;
-  s.src = 'https://www.googletagmanager.com/gtag/js?id=G-ZLHY2HRWDB';
-  document.head.appendChild(s);
-
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){ window.dataLayer.push(arguments); }
-  window.gtag = gtag;
-  gtag('js', new Date());
-  gtag('config', 'G-ZLHY2HRWDB', { anonymize_ip: true });
-}
-
-function loadFunctionalScripts() { /* z.B. erweiterte Einbettungen */ }
 
 /* ============================================================
    RESIZE — ScrollTrigger refresh
