@@ -7,7 +7,7 @@
 <script>
 window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
 gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',functionality_storage:'granted',security_storage:'granted',wait_for_update:500});
-try{var _c=JSON.parse(localStorage.getItem('cookie_consent')||'null');if(_c)gtag('consent','update',{analytics_storage:_c.statistik?'granted':'denied',ad_storage:_c.marketing?'granted':'denied',ad_user_data:_c.marketing?'granted':'denied',ad_personalization:_c.marketing?'granted':'denied'});}catch(e){}
+try{var _c=JSON.parse(localStorage.getItem('cookie_consent')||'null');if(_c)gtag('consent','update',{ad_storage:_c.marketing?'granted':'denied',ad_user_data:_c.marketing?'granted':'denied',ad_personalization:_c.marketing?'granted':'denied'});}catch(e){}
 </script>
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -1001,12 +1001,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- ── Ansicht 1: Übersicht ── -->
     <div id="cookieViewMain" class="cookie-view">
       <div class="cookie-inner">
-        <h2 class="cookie-title">Wir nutzen Cookies und andere Technologien.</h2>
-        <p class="cookie-body">Diese Website nutzt Cookies und vergleichbare Funktionen zur Verarbeitung von Endgeräteinformationen und personenbezogenen Daten. Die Verarbeitung dient der Einbindung externer Dienste und der Analyse des Nutzungsverhaltens. Je nach Funktion werden Daten an Dritte weitergegeben. Deine Einwilligung ist freiwillig, für die Nutzung der Website nicht erforderlich und kann jederzeit widerrufen werden.</p>
+        <h2 class="cookie-title">Cookies &amp; Tracking</h2>
+        <p class="cookie-body">Technisch notwendige Funktionen sind immer aktiv. Für Marketing-Cookies (Google&nbsp;Ads Conversion-Tracking über den Google Tag Manager) brauche ich deine Einwilligung. Sie ist freiwillig, für die Nutzung der Website nicht erforderlich und jederzeit widerrufbar.</p>
         <div class="cookie-actions">
-          <button id="cookieRejectAll" class="btn-cookie">Alles ablehnen</button>
-          <button id="cookieShowSettings" class="btn-cookie">Informationen</button>
           <button id="cookieAcceptAll" class="btn-cookie">Alles akzeptieren</button>
+          <button id="cookieShowSettings" class="btn-cookie">Bearbeiten</button>
+          <button id="cookieRejectAll" class="btn-cookie">Alles ablehnen</button>
         </div>
         <div class="cookie-footer-links">
           <a href="impressum.html">Impressum</a>
@@ -1022,8 +1022,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           Zurück
         </button>
-        <h2 class="cookie-title">Weitere Einstellungen</h2>
-        <p class="cookie-body">Hier kannst du einzelne Cookie-Kategorien aktivieren oder deaktivieren. Essentielle Cookies sind immer aktiv, da sie für den Betrieb der Website notwendig sind.</p>
+        <h2 class="cookie-title">Cookie-Einstellungen</h2>
+        <p class="cookie-body">Wähle, welche Kategorien du zulassen möchtest. Essenzielle Cookies sind für den Betrieb der Website notwendig und immer aktiv.</p>
 
         <div class="cookie-categories">
 
@@ -1037,33 +1037,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <span class="ct-track ct-track--on"><span class="ct-thumb"></span></span>
               </div>
             </div>
-            <p class="cookie-cat-desc">Technisch notwendig für den Betrieb der Website: Hosting, Schriftarten (Bunny Fonts) und Animationsbibliotheken. Ohne diese Cookies ist die Website nicht nutzbar.</p>
-          </div>
-
-          <div class="cookie-cat">
-            <div class="cookie-cat-head">
-              <div class="cookie-cat-info">
-                <span class="cookie-cat-name">Funktionale Cookies</span>
-              </div>
-              <label class="cookie-toggle">
-                <input type="checkbox" id="functionalToggle" class="ct-input">
-                <span class="ct-track"><span class="ct-thumb"></span></span>
-              </label>
-            </div>
-            <p class="cookie-cat-desc">Ermöglichen erweiterte Funktionen wie das Speichern deiner Einstellungen oder die Einbettung externer Inhalte (z.&thinsp;B. Buchungskalender).</p>
-          </div>
-
-          <div class="cookie-cat">
-            <div class="cookie-cat-head">
-              <div class="cookie-cat-info">
-                <span class="cookie-cat-name">Statistik</span>
-              </div>
-              <label class="cookie-toggle">
-                <input type="checkbox" id="statistikToggle" class="ct-input">
-                <span class="ct-track"><span class="ct-thumb"></span></span>
-              </label>
-            </div>
-            <p class="cookie-cat-desc">Google Analytics 4 (Anbieter: Google Ireland Limited), um anonymisiert zu verstehen, wie Besucher*innen die Website nutzen. Cookies: <code>_ga</code> und <code>_ga_ZLHY2HRWDB</code>, Laufzeit jeweils bis zu 2 Jahre. Datenübermittlung an Google LLC (USA) auf Basis der EU-Standardvertragsklauseln. Details in der Datenschutzerklärung.</p>
+            <p class="cookie-cat-desc">Technisch notwendig für den Betrieb der Website (Hosting, selbst gehostete Schriftarten, Animationsskripte). Speichert außerdem deine Cookie-Auswahl im lokalen Speicher deines Browsers (<code>cookie_consent</code>, kein Cookie, wird nicht an Server übertragen). Es werden keine Cookies gesetzt.</p>
           </div>
 
           <div class="cookie-cat">
@@ -1076,15 +1050,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <span class="ct-track"><span class="ct-thumb"></span></span>
               </label>
             </div>
-            <p class="cookie-cat-desc">Werden für Conversion-Tracking und Werbemessung genutzt (z.&thinsp;B. Google Ads). Ermöglichen mir zu messen, über welche Anzeigen Anfragen eingehen.</p>
+            <p class="cookie-cat-desc">Google&nbsp;Ads Conversion-Tracking über den Google Tag Manager (Anbieter: Google Ireland Ltd.). Misst, über welche Anzeige eine Terminbuchung zustande kommt. Cookies mit Präfix <code>_gcl_</code> (First-Party, Laufzeit bis zu 90&nbsp;Tage). Datenübermittlung an Google&nbsp;LLC (USA) auf Basis der EU-Standardvertragsklauseln. Details in der Datenschutzerklärung.</p>
           </div>
 
         </div>
 
         <div class="cookie-actions">
-          <button id="cookieRejectAll2" class="btn-cookie">Alles ablehnen</button>
-          <button id="cookieAcceptSelection" class="btn-cookie">Auswahl akzeptieren</button>
           <button id="cookieAcceptAll2" class="btn-cookie">Alles akzeptieren</button>
+          <button id="cookieAcceptSelection" class="btn-cookie">Auswahl akzeptieren</button>
+          <button id="cookieRejectAll2" class="btn-cookie">Alles ablehnen</button>
         </div>
         <div class="cookie-footer-links">
           <a href="impressum.html">Impressum</a>

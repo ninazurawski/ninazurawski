@@ -372,15 +372,6 @@ function initQuiz() {
       else if (opt.score < 0) neg++;
     }
 
-    // GA4: Antwort tracken
-    if (window.gtag) {
-      window.gtag('event', 'quiz_answer', {
-        question_id:   currentQId,
-        question_text: Q[currentQId].text,
-        answer:        opt.label
-      });
-    }
-
     setTimeout(() => {
       if (opt.next === 'END') {
         showResult(opt.resultId ?? (pos >= 3 ? 1 : 3));
@@ -394,15 +385,6 @@ function initQuiz() {
   function showResult(id) {
     const r = RESULTS[id];
     hide(qWrapEl); show(resEl);
-
-    // GA4: Ergebnis tracken
-    if (window.gtag) {
-      window.gtag('event', 'quiz_result', {
-        result_id:    id,
-        result_badge: r.badge,
-        result_title: r.title
-      });
-    }
 
     const ctaHtml = r.cta
       ? `<a href="${r.cta.href}" target="_blank" rel="noopener" class="btn-primary quiz-res-cta"><span class="btn-glow"></span>${r.cta.label}</a>`
@@ -496,20 +478,18 @@ function initCookieConsent() {
 
   function getSelection() {
     return {
-      essential:  true,
-      functional: document.getElementById('functionalToggle')?.checked || false,
-      statistik:  document.getElementById('statistikToggle')?.checked  || false,
-      marketing:  document.getElementById('marketingToggle')?.checked  || false,
+      essential: true,
+      marketing: document.getElementById('marketingToggle')?.checked || false,
     };
   }
 
   function acceptAll() {
-    const c = { essential: true, functional: true, statistik: true, marketing: true };
+    const c = { essential: true, marketing: true };
     saveConsent(c); applyConsent(c); hideBanner();
   }
 
   function rejectAll() {
-    const c = { essential: true, functional: false, statistik: false, marketing: false };
+    const c = { essential: true, marketing: false };
     saveConsent(c); applyConsent(c); hideBanner();
   }
 
@@ -538,12 +518,11 @@ function getConsentData() {
 }
 
 // Consent an den Google Tag Manager weitergeben (Consent Mode v2).
-// GA4 und Google Ads laufen ausschließlich über den GTM-Container –
-// hier werden keine Skripte mehr direkt geladen.
+// Google Ads läuft ausschließlich über den GTM-Container; hier werden
+// keine Tracking-Skripte direkt geladen. Kein Google Analytics.
 function applyConsent(consent) {
   const g = window.gtag || function () { (window.dataLayer = window.dataLayer || []).push(arguments); };
   g('consent', 'update', {
-    analytics_storage:  consent.statistik ? 'granted' : 'denied',
     ad_storage:         consent.marketing ? 'granted' : 'denied',
     ad_user_data:       consent.marketing ? 'granted' : 'denied',
     ad_personalization: consent.marketing ? 'granted' : 'denied',

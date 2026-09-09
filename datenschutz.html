@@ -7,7 +7,7 @@
 <script>
 window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
 gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',functionality_storage:'granted',security_storage:'granted',wait_for_update:500});
-try{var _c=JSON.parse(localStorage.getItem('cookie_consent')||'null');if(_c)gtag('consent','update',{analytics_storage:_c.statistik?'granted':'denied',ad_storage:_c.marketing?'granted':'denied',ad_user_data:_c.marketing?'granted':'denied',ad_personalization:_c.marketing?'granted':'denied'});}catch(e){}
+try{var _c=JSON.parse(localStorage.getItem('cookie_consent')||'null');if(_c)gtag('consent','update',{ad_storage:_c.marketing?'granted':'denied',ad_user_data:_c.marketing?'granted':'denied',ad_personalization:_c.marketing?'granted':'denied'});}catch(e){}
 </script>
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -197,16 +197,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="legal-section">
         <h2>5. Cookie-Hinweis &amp; Einwilligungsverwaltung</h2>
         <p>
-          Beim ersten Besuch dieser Website wird ein Cookie-Banner angezeigt, über den du der Nutzung optionaler Dienste zustimmen oder diese ablehnen kannst. Deine Einwilligung wird im <strong>LocalStorage</strong> deines Browsers gespeichert und nicht an Server übertragen. Es gibt folgende Kategorien:
+          Beim ersten Besuch dieser Website wird ein Cookie-Banner angezeigt, über den du optionale Dienste zulassen oder ablehnen kannst. Deine Auswahl wird im <strong>lokalen Speicher (LocalStorage)</strong> deines Browsers unter dem Schlüssel <code>cookie_consent</code> gespeichert; dabei handelt es sich nicht um ein Cookie und die Angabe wird nicht an einen Server übertragen. Es gibt folgende Kategorien:
         </p>
         <ul>
-          <li><strong>Essenziell:</strong> Technisch notwendig für den Betrieb der Website (immer aktiv).</li>
-          <li><strong>Funktional:</strong> Ermöglicht erweiterte Funktionen wie externe Einbettungen (z. B. Buchungskalender).</li>
-          <li><strong>Statistik:</strong> Google Analytics 4 zur anonymisierten Nutzungsanalyse — nur nach deiner Zustimmung.</li>
-          <li><strong>Marketing:</strong> Conversion-Tracking für Google Ads — nur nach deiner Zustimmung.</li>
+          <li><strong>Essenziell (immer aktiv):</strong> Technisch notwendig für den Betrieb der Website (Hosting, selbst gehostete Schriftarten, Animationsskripte) sowie das Speichern deiner Cookie-Auswahl. In dieser Kategorie werden <strong>keine Cookies</strong> gesetzt.</li>
+          <li><strong>Marketing (nur nach Einwilligung):</strong> Google&nbsp;Ads Conversion-Tracking über den Google Tag Manager (siehe Abschnitte 7 und 8). Setzt First-Party-Cookies mit dem Präfix <code>_gcl_</code> mit einer Laufzeit von bis zu 90&nbsp;Tagen.</li>
         </ul>
         <p>
-          Du kannst deine Einwilligung jederzeit durch Löschen des LocalStorage-Eintrags in deinem Browser widerrufen.
+          Ohne Einwilligung werden keine Cookies gesetzt und es findet kein Marketing-Tracking statt. Die technische Umsetzung erfolgt über den <strong>Google Consent Mode&nbsp;v2</strong>: Vor dem Laden des Google Tag Managers ist der Einwilligungsstatus für Analyse und Werbung standardmäßig auf „abgelehnt" gesetzt; erst mit deiner Einwilligung wird er auf „erteilt" aktualisiert.
+        </p>
+        <p>
+          Du kannst deine Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen, indem du im Browser den LocalStorage-Eintrag <code>cookie_consent</code> für diese Website löschst. Beim nächsten Aufruf erscheint der Banner erneut.
         </p>
       </div>
 
@@ -226,28 +227,40 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <hr class="legal-divider">
 
       <div class="legal-section">
-        <h2>7. Google Analytics 4</h2>
+        <h2>7. Google Tag Manager</h2>
         <p>
-          Diese Website nutzt <strong>Google Analytics 4</strong> (GA4), einen Webanalysedienst der Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland. GA4 wird nur geladen, wenn du im Cookie-Banner der Kategorie <strong>„Statistik"</strong> zugestimmt hast.
+          Diese Website nutzt den <strong>Google Tag Manager</strong> (GTM), einen Dienst der Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland. Der GTM ist ein Werkzeug zur Verwaltung von Website-Tags über eine Oberfläche. Er wird auf jeder Seite geladen; dabei wird deine IP-Adresse an Google übermittelt, um das Container-Skript auszuliefern.
         </p>
         <p>
-          GA4 erfasst u. a. Seitenaufrufe, Scroll-Tiefe, Klicks auf externe Links sowie benutzerdefinierte Ereignisse (z. B. Antworten im Quiz-Selbstcheck und das angezeigte Ergebnis). Die Daten werden anonymisiert übertragen — die IP-Adresse wird vor der Speicherung gekürzt (<code>anonymize_ip: true</code>). Es werden keine personenbezogenen Daten wie Name oder E-Mail-Adresse erfasst.
+          Der Google Tag Manager selbst setzt <strong>keine Cookies</strong> und verarbeitet keine personenbezogenen Daten für eigene Zwecke. Er steuert lediglich das Auslösen der nachfolgend genannten Tags. Tags, die eine Einwilligung erfordern (Google&nbsp;Ads, siehe Abschnitt 8), werden über den <strong>Google Consent Mode&nbsp;v2</strong> blockiert, bis du im Cookie-Banner der Kategorie „Marketing" zugestimmt hast.
         </p>
         <p>
-          GA4 setzt nach deiner Einwilligung folgende Cookies in deinem Browser:
+          Rechtsgrundlage für den Einsatz des GTM ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer effizienten und datensparsamen Verwaltung der Website-Tags). Eine Übermittlung an die Google&nbsp;LLC in den USA kann nicht ausgeschlossen werden; sie erfolgt auf Grundlage der EU-Standardvertragsklauseln (Art. 46 DSGVO). Google&nbsp;LLC ist zudem unter dem EU-US Data Privacy Framework zertifiziert.
+        </p>
+        <p>
+          Es findet <strong>keine</strong> Web-Analyse mit Google Analytics statt.
+        </p>
+      </div>
+
+      <hr class="legal-divider">
+
+      <div class="legal-section">
+        <h2>8. Google Ads Conversion-Tracking</h2>
+        <p>
+          Über den Google Tag Manager wird das <strong>Conversion-Tracking von Google&nbsp;Ads</strong> (Google Ireland Limited, Anschrift wie oben; Konto-ID <code>AW-18424897580</code>) eingebunden. Damit messe ich, ob und über welche Anzeige eine Interaktion — insbesondere eine Terminbuchung — zustande gekommen ist. Es werden dabei keine Daten erfasst, mit denen ich dich persönlich identifizieren kann.
+        </p>
+        <p>
+          Das Conversion-Tracking wird <strong>nur nach deiner Einwilligung</strong> in die Kategorie „Marketing" aktiv. Ergänzend kommt der <strong>Conversion Linker</strong> zum Einsatz, der Klick-Informationen in First-Party-Cookies speichert, damit Buchungen der jeweiligen Anzeige zugeordnet werden können.
+        </p>
+        <p>
+          Bei erteilter Einwilligung werden folgende First-Party-Cookies gesetzt:
         </p>
         <ul>
-          <li><strong><code>_ga</code></strong> — unterscheidet Besucher:innen (Client-ID); Laufzeit bis zu 2 Jahre.</li>
-          <li><strong><code>_ga_ZLHY2HRWDB</code></strong> — hält den Sitzungsstatus für die GA4-Property fest; Laufzeit bis zu 2 Jahre.</li>
+          <li><strong><code>_gcl_au</code></strong> — speichert Informationen zur Anzeigen-Interaktion für die Conversion-Messung; Laufzeit bis zu 90 Tage.</li>
+          <li><strong><code>_gcl_aw</code>, <code>_gcl_dc</code>, <code>_gcl_gb</code></strong> — werden gesetzt, wenn du die Website über eine Google-Anzeige erreichst, und speichern die Klick-Kennung (z. B. <code>gclid</code>); Laufzeit jeweils bis zu 90 Tage.</li>
         </ul>
         <p>
-          Aktuelle Browser begrenzen die Laufzeit per Skript gesetzter Cookies in der Regel auf rund 13 Monate.
-        </p>
-        <p>
-          Für GA4 gilt die Reporting-Identity „Device-based" (keine geräteübergreifende Zuordnung), Google-Signale sind deaktiviert. Mit Google besteht ein Auftragsverarbeitungsvertrag gemäß Art. 28 DSGVO. Die Datenspeicherung ist auf 14 Monate begrenzt. Eine Übermittlung von Daten an die Google LLC in den USA kann nicht ausgeschlossen werden; sie erfolgt auf Grundlage der EU-Standardvertragsklauseln (Art. 46 DSGVO). Google LLC ist zudem unter dem EU-US Data Privacy Framework zertifiziert.
-        </p>
-        <p>
-          Rechtsgrundlage ist Art. 6 Abs. 1 lit. a DSGVO (Einwilligung). Du kannst deine Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen, indem du den LocalStorage-Eintrag deines Browsers löschst oder die Seite erneut aufrufst und deine Cookie-Einstellungen änderst.
+          Je nach Herkunft des Besuchs können weitere Google-Cookies gesetzt werden. Rechtsgrundlage ist Art. 6 Abs. 1 lit. a DSGVO (Einwilligung). Eine Übermittlung an die Google&nbsp;LLC in den USA kann nicht ausgeschlossen werden (EU-Standardvertragsklauseln nach Art. 46 DSGVO, EU-US Data Privacy Framework). Du kannst deine Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen (siehe Abschnitt 5).
         </p>
         <p>
           Weitere Informationen: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Datenschutzerklärung</a>
@@ -257,19 +270,31 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <hr class="legal-divider">
 
       <div class="legal-section">
-        <h2>8. Interaktiver Quiz-Selbstcheck</h2>
+        <h2>9. Terminbuchung über Brevo</h2>
         <p>
-          Diese Website enthält einen interaktiven Selbstcheck („Google Ads Check"), der vollständig im Browser läuft. Die Antworten werden <strong>nicht</strong> an einen Server übertragen und nicht gespeichert — sie existieren nur temporär im Arbeitsspeicher deines Browsers während der Nutzung.
+          Für die Buchung von Kennenlern- und Analyse-Terminen verlinke ich auf das Buchungstool <strong>Brevo Meetings</strong> (Anbieter: Sendinblue GmbH, Köhlstraße 1, 50827 Köln, Deutschland, Teil der Brevo-Gruppe). Das Tool ist <strong>nicht</strong> in diese Website eingebettet — du wirst erst nach einem Klick auf einen Buchungs-Button auf eine Seite unter <code>meet.brevo.com</code> weitergeleitet.
         </p>
         <p>
-          Wenn du der Kategorie „Statistik" im Cookie-Banner zugestimmt hast, werden die gewählten Antworten und das Ergebnis als anonyme Ereignisse an Google Analytics 4 übermittelt (siehe Abschnitt 7). Es werden keine personenbezogenen Daten erfasst.
+          Wenn du dort einen Termin buchst, verarbeitet Brevo die von dir angegebenen Daten (z. B. Name, E-Mail-Adresse, gewählter Termin und optionale Nachricht) in meinem Auftrag, um den Termin zu organisieren und dir eine Bestätigung zu senden. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (Durchführung vorvertraglicher Maßnahmen). Mit Brevo besteht ein Auftragsverarbeitungsvertrag gemäß Art. 28 DSGVO. Die Daten werden gelöscht, sobald sie für die Terminabwicklung und etwaige Nachfragen nicht mehr erforderlich sind.
+        </p>
+        <p>
+          Weitere Informationen: <a href="https://www.brevo.com/de/legal/privacypolicy/" target="_blank" rel="noopener">Datenschutzerklärung von Brevo</a>
         </p>
       </div>
 
       <hr class="legal-divider">
 
       <div class="legal-section">
-        <h2>9. Deine Rechte</h2>
+        <h2>10. Interaktiver Quiz-Selbstcheck</h2>
+        <p>
+          Diese Website enthält einen interaktiven Selbstcheck („Google Ads Check"), der vollständig in deinem Browser läuft. Die Antworten werden <strong>nicht</strong> an einen Server übertragen, nicht gespeichert und nicht ausgewertet — sie existieren nur temporär im Arbeitsspeicher deines Browsers während der Nutzung. Es werden keine personenbezogenen Daten erfasst.
+        </p>
+      </div>
+
+      <hr class="legal-divider">
+
+      <div class="legal-section">
+        <h2>11. Deine Rechte</h2>
         <p>Du hast gegenüber mir folgende Rechte hinsichtlich deiner personenbezogenen Daten:</p>
         <ul>
           <li>Recht auf Auskunft (Art. 15 DSGVO)</li>
@@ -288,9 +313,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <hr class="legal-divider">
 
       <div class="legal-section">
-        <h2>10. Aktualität dieser Datenschutzerklärung</h2>
+        <h2>12. Aktualität dieser Datenschutzerklärung</h2>
         <p>
-          Diese Datenschutzerklärung ist aktuell gültig und hat den Stand Juni 2026. Durch die Weiterentwicklung der Website oder aufgrund geänderter gesetzlicher Vorgaben kann es notwendig werden, diese Datenschutzerklärung zu ändern.
+          Diese Datenschutzerklärung ist aktuell gültig und hat den Stand September 2026. Durch die Weiterentwicklung der Website oder aufgrund geänderter gesetzlicher Vorgaben kann es notwendig werden, diese Datenschutzerklärung zu ändern.
         </p>
       </div>
 

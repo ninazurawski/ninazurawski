@@ -6,7 +6,7 @@
 <script>
 window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
 gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',functionality_storage:'granted',security_storage:'granted',wait_for_update:500});
-try{var _c=JSON.parse(localStorage.getItem('cookie_consent')||'null');if(_c)gtag('consent','update',{analytics_storage:_c.statistik?'granted':'denied',ad_storage:_c.marketing?'granted':'denied',ad_user_data:_c.marketing?'granted':'denied',ad_personalization:_c.marketing?'granted':'denied'});}catch(e){}
+try{var _c=JSON.parse(localStorage.getItem('cookie_consent')||'null');if(_c)gtag('consent','update',{ad_storage:_c.marketing?'granted':'denied',ad_user_data:_c.marketing?'granted':'denied',ad_personalization:_c.marketing?'granted':'denied'});}catch(e){}
 </script>
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -760,12 +760,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div id="cookieBanner" class="cookie-banner" role="dialog" aria-modal="true" aria-label="Datenschutzeinstellungen">
   <div id="cookieViewMain" class="cookie-view">
     <div class="cookie-inner">
-      <h2 class="cookie-title">Wir nutzen Cookies und andere Technologien.</h2>
-      <p class="cookie-body">Diese Website nutzt Cookies und vergleichbare Funktionen zur Verarbeitung von Endgeräteinformationen und personenbezogenen Daten. Deine Einwilligung ist freiwillig und kann jederzeit widerrufen werden.</p>
+      <h2 class="cookie-title">Cookies &amp; Tracking</h2>
+      <p class="cookie-body">Technisch notwendige Funktionen sind immer aktiv. Für Marketing-Cookies (Google&nbsp;Ads Conversion-Tracking über den Google Tag Manager) brauche ich deine Einwilligung. Sie ist freiwillig, für die Nutzung der Website nicht erforderlich und jederzeit widerrufbar.</p>
       <div class="cookie-actions">
         <button id="cookieAcceptAll" class="btn-cookie">Alles akzeptieren</button>
+        <button id="cookieShowSettings" class="btn-cookie">Bearbeiten</button>
         <button id="cookieRejectAll" class="btn-cookie">Alles ablehnen</button>
-        <button id="cookieShowSettings" class="btn-cookie">Informationen</button>
       </div>
       <div class="cookie-footer-links">
         <a href="../impressum.html">Impressum</a>
@@ -779,35 +779,28 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
         Zurück
       </button>
-      <h2 class="cookie-title">Weitere Einstellungen</h2>
-      <p class="cookie-body">Essentielle Cookies sind immer aktiv. Alle anderen Kategorien kannst du selbst steuern.</p>
+      <h2 class="cookie-title">Cookie-Einstellungen</h2>
+      <p class="cookie-body">Wähle, welche Kategorien du zulassen möchtest. Essenzielle Cookies sind für den Betrieb der Website notwendig und immer aktiv.</p>
       <div class="cookie-categories">
         <div class="cookie-cat">
           <div class="cookie-cat-head">
             <div class="cookie-cat-info"><span class="cookie-cat-name">Essenziell</span><span class="cookie-cat-badge">Immer aktiv</span></div>
             <div class="cookie-toggle cookie-toggle--fixed"><span class="ct-track ct-track--on"><span class="ct-thumb"></span></span></div>
           </div>
-          <p class="cookie-cat-desc">Technisch notwendig für den Betrieb der Website.</p>
-        </div>
-        <div class="cookie-cat">
-          <div class="cookie-cat-head">
-            <div class="cookie-cat-info"><span class="cookie-cat-name">Statistik</span></div>
-            <label class="cookie-toggle"><input type="checkbox" id="statistikToggle" class="ct-input"><span class="ct-track"><span class="ct-thumb"></span></span></label>
-          </div>
-          <p class="cookie-cat-desc">Google Analytics 4 (Anbieter: Google Ireland Limited) zur anonymisierten Reichweiten- und Nutzungsanalyse. Cookies: <code>_ga</code> und <code>_ga_ZLHY2HRWDB</code>, Laufzeit jeweils bis zu 2 Jahre. Datenübermittlung an Google LLC (USA) auf Basis der EU-Standardvertragsklauseln. Details in der Datenschutzerklärung.</p>
+          <p class="cookie-cat-desc">Technisch notwendig für den Betrieb der Website (Hosting, selbst gehostete Schriftarten, Animationsskripte). Speichert außerdem deine Cookie-Auswahl im lokalen Speicher deines Browsers (<code>cookie_consent</code>, kein Cookie, wird nicht an Server übertragen). Es werden keine Cookies gesetzt.</p>
         </div>
         <div class="cookie-cat">
           <div class="cookie-cat-head">
             <div class="cookie-cat-info"><span class="cookie-cat-name">Marketing</span></div>
             <label class="cookie-toggle"><input type="checkbox" id="marketingToggle" class="ct-input"><span class="ct-track"><span class="ct-thumb"></span></span></label>
           </div>
-          <p class="cookie-cat-desc">Conversion-Tracking für Google Ads.</p>
+          <p class="cookie-cat-desc">Google&nbsp;Ads Conversion-Tracking über den Google Tag Manager (Anbieter: Google Ireland Ltd.). Misst, über welche Anzeige eine Terminbuchung zustande kommt. Cookies mit Präfix <code>_gcl_</code> (First-Party, Laufzeit bis zu 90&nbsp;Tage). Datenübermittlung an Google&nbsp;LLC (USA) auf Basis der EU-Standardvertragsklauseln. Details in der Datenschutzerklärung.</p>
         </div>
       </div>
       <div class="cookie-actions">
         <button id="cookieAcceptAll2" class="btn-cookie">Alles akzeptieren</button>
-        <button id="cookieRejectAll2" class="btn-cookie">Alles ablehnen</button>
         <button id="cookieAcceptSelection" class="btn-cookie">Auswahl akzeptieren</button>
+        <button id="cookieRejectAll2" class="btn-cookie">Alles ablehnen</button>
       </div>
       <div class="cookie-footer-links">
         <a href="../impressum.html">Impressum</a>
@@ -902,11 +895,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     } catch (e) {}
   }
   // Consent an den Google Tag Manager weitergeben (Consent Mode v2).
-  // GA4 und Google Ads laufen ausschliesslich ueber den GTM-Container.
+  // Google Ads laeuft ueber den GTM-Container. Kein Google Analytics.
   function applyConsent(c) {
     var g = window.gtag || function () { (window.dataLayer = window.dataLayer || []).push(arguments); };
     g('consent', 'update', {
-      analytics_storage:  c.statistik ? 'granted' : 'denied',
       ad_storage:         c.marketing ? 'granted' : 'denied',
       ad_user_data:       c.marketing ? 'granted' : 'denied',
       ad_personalization: c.marketing ? 'granted' : 'denied'
@@ -933,17 +925,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     overlay.classList.remove('is-visible');
   }
   function acceptAll() {
-    var c = { essential: true, statistik: true, marketing: true };
+    var c = { essential: true, marketing: true };
     saveConsent(c); applyConsent(c); hide();
   }
   function rejectAll() {
-    var c = { essential: true, statistik: false, marketing: false };
+    var c = { essential: true, marketing: false };
     saveConsent(c); applyConsent(c); hide();
   }
   function acceptSelection() {
     var c = {
       essential: true,
-      statistik: document.getElementById('statistikToggle').checked,
       marketing: document.getElementById('marketingToggle').checked
     };
     saveConsent(c); applyConsent(c); hide();
