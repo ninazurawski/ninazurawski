@@ -99,6 +99,42 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       border-top: 1px solid var(--border-light);
       margin: 2rem 0;
     }
+    .cookie-table-wrap {
+      overflow-x: auto;
+      margin: 1rem 0 1.25rem;
+      border: 1px solid var(--border-light);
+      border-radius: 10px;
+    }
+    .cookie-table {
+      border-collapse: collapse;
+      width: 100%;
+      min-width: 640px;
+      font-family: var(--ff-body);
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+    }
+    .cookie-table th,
+    .cookie-table td {
+      text-align: left;
+      padding: 0.7rem 0.85rem;
+      border-bottom: 1px solid var(--border-light);
+      vertical-align: top;
+      line-height: 1.55;
+    }
+    .cookie-table th {
+      font-family: var(--ff-label);
+      font-size: 0.7rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      background: var(--bg-secondary);
+      white-space: nowrap;
+    }
+    .cookie-table tr:last-child td { border-bottom: none; }
+    .cookie-table td code {
+      font-size: 0.9em;
+      white-space: nowrap;
+    }
   </style>
 </head>
 <body>
@@ -201,7 +237,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </p>
         <ul>
           <li><strong>Essenziell (immer aktiv):</strong> Technisch notwendig für den Betrieb der Website (Hosting, selbst gehostete Schriftarten, Animationsskripte) sowie das Speichern deiner Cookie-Auswahl. In dieser Kategorie werden <strong>keine Cookies</strong> gesetzt.</li>
-          <li><strong>Marketing (nur nach Einwilligung):</strong> Google&nbsp;Ads Conversion-Tracking über den Google Tag Manager (siehe Abschnitte 7 und 8). Setzt First-Party-Cookies mit dem Präfix <code>_gcl_</code> mit einer Laufzeit von bis zu 90&nbsp;Tagen.</li>
+          <li><strong>Marketing (nur nach Einwilligung):</strong> Google&nbsp;Ads Conversion-Tracking über den Google Tag Manager (siehe Abschnitte 7 und 8). Setzt First-Party-Cookies mit dem Präfix <code>_gcl_</code> (Laufzeit bis zu 90&nbsp;Tagen). Eine vollständige Cookie-Tabelle findest du in Abschnitt 8.</li>
         </ul>
         <p>
           Ohne Einwilligung werden keine Cookies gesetzt und es findet kein Marketing-Tracking statt. Die technische Umsetzung erfolgt über den <strong>Google Consent Mode&nbsp;v2</strong>: Vor dem Laden des Google Tag Managers ist der Einwilligungsstatus für Analyse und Werbung standardmäßig auf „abgelehnt" gesetzt; erst mit deiner Einwilligung wird er auf „erteilt" aktualisiert.
@@ -253,14 +289,53 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           Das Conversion-Tracking wird <strong>nur nach deiner Einwilligung</strong> in die Kategorie „Marketing" aktiv. Ergänzend kommt der <strong>Conversion Linker</strong> zum Einsatz, der Klick-Informationen in First-Party-Cookies speichert, damit Buchungen der jeweiligen Anzeige zugeordnet werden können.
         </p>
         <p>
-          Bei erteilter Einwilligung werden folgende First-Party-Cookies gesetzt:
+          Bei erteilter Einwilligung („Marketing") werden folgende Cookies auf der Domain <code>nina-zurawski.de</code> gesetzt (First-Party):
         </p>
-        <ul>
-          <li><strong><code>_gcl_au</code></strong> — speichert Informationen zur Anzeigen-Interaktion für die Conversion-Messung; Laufzeit bis zu 90 Tage.</li>
-          <li><strong><code>_gcl_aw</code>, <code>_gcl_dc</code>, <code>_gcl_gb</code></strong> — werden gesetzt, wenn du die Website über eine Google-Anzeige erreichst, und speichern die Klick-Kennung (z. B. <code>gclid</code>); Laufzeit jeweils bis zu 90 Tage.</li>
-        </ul>
+        <div class="cookie-table-wrap">
+          <table class="cookie-table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Anbieter</th>
+                <th>Zweck</th>
+                <th>Kategorie</th>
+                <th>Laufzeit</th>
+                <th>Rechtsgrundlage</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>_gcl_au</code></td>
+                <td>Google Ireland Limited / Google-Dienste</td>
+                <td>Messung und Zuordnung von Werbeinteraktionen (Conversions); Grundlage für den Conversion Linker von Google&nbsp;Ads</td>
+                <td>Marketing</td>
+                <td>90 Tage</td>
+                <td>§&nbsp;25 Abs.&nbsp;1 TDDDG, Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;a DSGVO</td>
+              </tr>
+              <tr>
+                <td><code>_gcl_aw</code></td>
+                <td>Google Ireland Limited / Google-Dienste</td>
+                <td>Speichert die Google-Ads-Klick-ID (<code>gclid</code>) zur Zuordnung einer Buchung zur Anzeige; wird nur beim Zugriff über eine Google-Anzeige gesetzt</td>
+                <td>Marketing</td>
+                <td>90 Tage</td>
+                <td>§&nbsp;25 Abs.&nbsp;1 TDDDG, Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;a DSGVO</td>
+              </tr>
+              <tr>
+                <td><code>_gcl_dc</code></td>
+                <td>Google Ireland Limited / Google-Dienste</td>
+                <td>Speichert die Klick-ID aus dem Google Campaign Manager / Display &amp; Video&nbsp;360; wird nur bei entsprechendem Zugriff gesetzt</td>
+                <td>Marketing</td>
+                <td>90 Tage</td>
+                <td>§&nbsp;25 Abs.&nbsp;1 TDDDG, Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;a DSGVO</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
         <p>
-          Je nach Herkunft des Besuchs können weitere Google-Cookies gesetzt werden. Rechtsgrundlage ist Art. 6 Abs. 1 lit. a DSGVO (Einwilligung). Eine Übermittlung an die Google&nbsp;LLC in den USA kann nicht ausgeschlossen werden (EU-Standardvertragsklauseln nach Art. 46 DSGVO, EU-US Data Privacy Framework). Du kannst deine Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen (siehe Abschnitt 5).
+          Bei der Übertragung der Conversion-Daten an Google kann Google auf seinen eigenen Domains (u.&nbsp;a. <code>google.com</code>) weitere Cookies setzen oder auslesen — z.&nbsp;B. <code>NID</code>, <code>AEC</code>, <code>__Secure-ENID</code> oder <code>ADS_VISITOR_ID</code>. Diese werden von Google in eigener Verantwortung gesetzt; Einzelheiten dazu findest du in der Datenschutzerklärung von Google. Wenn du in deinem Browser bei einem Google-Konto angemeldet bist, sind zusätzlich Google-Konto-Cookies vorhanden, die unabhängig von dieser Website bestehen.
+        </p>
+        <p>
+          Rechtsgrundlage ist deine Einwilligung nach §&nbsp;25 Abs.&nbsp;1 TDDDG und Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;a DSGVO. Eine Übermittlung an die Google&nbsp;LLC in den USA kann nicht ausgeschlossen werden; sie erfolgt auf Grundlage der EU-Standardvertragsklauseln (Art.&nbsp;46 DSGVO). Google&nbsp;LLC ist zudem unter dem EU-US Data Privacy Framework zertifiziert. Du kannst deine Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen (siehe Abschnitt 5).
         </p>
         <p>
           Weitere Informationen: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Datenschutzerklärung</a>
