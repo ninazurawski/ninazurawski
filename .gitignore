@@ -5,3 +5,7 @@
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# Editor / temp backups
+*.tmp.*
+hallo-welt.html
