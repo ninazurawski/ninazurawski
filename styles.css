@@ -628,7 +628,7 @@ ul { list-style: none; }
   position: relative;
   width: 100%;
   max-width: 480px;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 4 / 5;
   border-radius: var(--radius-xl);
   overflow: hidden;
   border: 1px solid var(--border-light);
@@ -727,6 +727,22 @@ ul { list-style: none; }
   flex-wrap: wrap;
   margin-bottom: 2rem;
   opacity: 0;
+}
+
+/* Location badge above headline */
+.hero-location-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  background: #F1F5F1;
+  border: 1px solid #DCE6DD;
+  border-radius: 100px;
+  padding: 0.45rem 1rem 0.45rem 0.85rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 1.5rem;
 }
 
 /* Badge / social proof below CTAs */
