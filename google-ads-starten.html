@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<!-- Consent Mode: Standard = alles abgelehnt bis zur Einwilligung -->
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',functionality_storage:'granted',security_storage:'granted',wait_for_update:500});
+try{var _c=JSON.parse(localStorage.getItem('cookie_consent')||'null');if(_c)gtag('consent','update',{ad_storage:_c.marketing?'granted':'denied',ad_user_data:_c.marketing?'granted':'denied',ad_personalization:_c.marketing?'granted':'denied'});}catch(e){}
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NLFQXM86');</script>
+<!-- End Google Tag Manager -->
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+window.META_PIXEL_ID = 'DEINE_META_PIXEL_ID'; /* TODO: echte Meta Pixel ID eintragen */
+fbq('consent', 'revoke');
+fbq('init', window.META_PIXEL_ID);
+try{var _c2=JSON.parse(localStorage.getItem('cookie_consent')||'null');if(_c2&&_c2.marketing)fbq('consent','grant');}catch(e){}
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=DEINE_META_PIXEL_ID&ev=PageView&noscript=1" alt=""></noscript>
+<!-- End Meta Pixel Code -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Startklar für Google Ads? — Nina Zurawski</title>
+<meta name="description" content="Mehr Anfragen, planbar. Google Ads und Landingpage für Dienstleister:innen, die bisher auf Empfehlungen hoffen. Finde in 2 Minuten heraus, ob du startklar bist.">
+<meta name="robots" content="noindex">
+
+<link rel="icon" type="image/png" href="images/logo-nina.png">
+<link rel="apple-touch-icon" href="images/logo-nina.png">
+
+<link rel="preload" href="fonts/playfair-display-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="fonts/dm-sans-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="fonts/dm-sans-500.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+<style>
+  /* ---------- Fonts (self-hosted) ---------- */
+  @font-face { font-family:'Playfair Display'; src:url('fonts/playfair-display-400.woff2') format('woff2'); font-weight:400; font-style:normal; font-display:swap; }
+  @font-face { font-family:'Playfair Display'; src:url('fonts/playfair-display-400italic.woff2') format('woff2'); font-weight:400; font-style:italic; font-display:swap; }
+  @font-face { font-family:'Playfair Display'; src:url('fonts/playfair-display-500.woff2') format('woff2'); font-weight:500; font-style:normal; font-display:swap; }
+  @font-face { font-family:'Playfair Display'; src:url('fonts/playfair-display-600.woff2') format('woff2'); font-weight:600; font-style:normal; font-display:swap; }
+  @font-face { font-family:'DM Sans'; src:url('fonts/dm-sans-300.woff2') format('woff2'); font-weight:300; font-style:normal; font-display:swap; }
+  @font-face { font-family:'DM Sans'; src:url('fonts/dm-sans-400.woff2') format('woff2'); font-weight:400; font-style:normal; font-display:swap; }
+  @font-face { font-family:'DM Sans'; src:url('fonts/dm-sans-500.woff2') format('woff2'); font-weight:500; font-style:normal; font-display:swap; }
+
+  /* ---------- Reset ---------- */
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  section[id], footer[id] { scroll-margin-top: 90px; }
+  body { margin: 0; background: #FFFFFF; -webkit-font-smoothing: antialiased; overflow-x: clip; }
+  a { color: #1E3A2C; text-decoration: none; }
+  h1, h2, h3, h4, p, blockquote, figure { margin: 0; }
+  button { font: inherit; }
+  img { max-width: 100%; }
+
+  /* ---------- Hover states ---------- */
+  .h-btn-dark { transition: background .2s, transform .2s; }
+  .h-btn-dark:hover { background: #16291F !important; transform: translateY(-2px); }
+  .h-btn-ghost { transition: background .2s, border-color .2s; }
+  .h-btn-ghost:hover { background: #F1F5F1 !important; border-color: #1E3A2C !important; }
+  .h-btn-white { transition: background .2s, transform .2s; }
+  .h-btn-white:hover { background: #FBF9F5 !important; transform: translateY(-2px); }
+  .h-btn-ghost-dark { transition: background .2s, border-color .2s; }
+  .h-btn-ghost-dark:hover { background: rgba(255,255,255,0.1) !important; border-color: #fff !important; }
+  .h-card { transition: transform .25s, box-shadow .25s, border-color .25s; }
+  .h-card:hover { transform: translateY(-4px); border-color: #E3DCCF !important; box-shadow: 0 24px 48px -28px rgba(22,33,27,0.35) !important; }
+  .h-link { transition: color .2s, border-color .2s; }
+  .h-link:hover { color: #D96B52 !important; border-color: #D96B52 !important; }
+
+  /* ---------- Accordion (FAQ) ---------- */
+  .faq-a { overflow: hidden; transition: max-height .35s ease, opacity .3s ease; }
+
+  /* ---------- Reviews carousel ---------- */
+  .reviews-slider-wrap { display: flex; align-items: center; gap: 1rem; }
+  .reviews-track-outer { overflow: hidden; flex: 1; border-radius: 20px; }
+  .reviews-track { display: flex; transition: transform .45s cubic-bezier(.4,0,.2,1); }
+  .review-slide { flex: 0 0 100%; box-sizing: border-box; background: #FBF9F5; border: 1px solid #EEEAE2; border-radius: 20px; padding: clamp(1.6rem,3vw,2.2rem); display: flex; flex-direction: column; gap: 1.2rem; }
+  .reviews-arrow {
+    flex-shrink: 0; width: 44px; height: 44px; border-radius: 50%; border: 1px solid #E9E5DD; background: #fff;
+    color: #1E3A2C; display: flex; align-items: center; justify-content: center; cursor: pointer;
+    transition: background .2s, border-color .2s, transform .2s; box-shadow: 0 2px 8px rgba(22,33,27,0.08);
+  }
+  .reviews-arrow:hover { background: #1E3A2C; border-color: #1E3A2C; color: #fff; transform: scale(1.05); }
+  .reviews-dots { display: flex; justify-content: center; gap: 0.5rem; margin-top: 1.5rem; }
+  .reviews-dot { width: 8px; height: 8px; border-radius: 50%; border: none; background: #E3DCCF; cursor: pointer; padding: 0; transition: background .2s, transform .2s; }
+  .reviews-dot--active { background: #D96B52; transform: scale(1.3); }
+  @media (max-width: 640px) { .reviews-arrow { display: none; } }
+
+  /* ---------- Rechner ---------- */
+  .calc-field { display: flex; flex-direction: column; gap: 0.5rem; }
+  .calc-field label { font-size: 0.84rem; color: #3B463F; font-weight: 500; }
+  .calc-field input {
+    font-family: 'DM Sans', sans-serif; font-size: 1rem; padding: 0.8rem 1rem;
+    border: 1px solid #DCE6DD; border-radius: 12px; background: #FFFFFF; color: #16211B;
+    -moz-appearance: textfield;
+  }
+  .calc-field input:focus { outline: none; border-color: #1E3A2C; }
+  .calc-field input::-webkit-outer-spin-button, .calc-field input::-webkit-inner-spin-button { margin: 0; }
+  .calc-result { background: #1E3A2C; border-radius: 18px; padding: clamp(1.4rem,3vw,2rem); color: #fff; }
+
+  /* ---------- Header responsive ---------- */
+  .hdr-brand { white-space: nowrap; }
+  @media (max-width: 560px) {
+    .hdr-inner { height: 64px !important; }
+  }
+  @media (max-width: 360px) {
+    .hdr-brand { display: none; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { transition: none !important; }
+  }
+
+  /* ==========================================================
+     COOKIE CONSENT
+     ========================================================== */
+  .cookie-overlay {
+    position: fixed; inset: 0; background: rgba(16,24,20,0.45);
+    opacity: 0; pointer-events: none; transition: opacity .3s ease; z-index: 900;
+  }
+  .cookie-overlay.is-visible { opacity: 1; pointer-events: auto; }
+  .cookie-banner {
+    position: fixed; left: 50%; bottom: clamp(1rem, 4vw, 2.5rem);
+    transform: translate(-50%, 140%); width: min(560px, calc(100vw - 2rem));
+    background: #fff; border: 1px solid #E9E5DD; border-radius: 20px;
+    box-shadow: 0 30px 70px -30px rgba(22,33,27,0.5); z-index: 901;
+    max-height: calc(100vh - 2rem); overflow-y: auto;
+    transition: transform .4s cubic-bezier(.16,1,.3,1);
+    font-family: 'DM Sans', sans-serif; color: #16211B;
+  }
+  .cookie-banner.is-visible { transform: translate(-50%, 0); }
+  .cookie-view--hidden { display: none; }
+  .cookie-inner { padding: clamp(1.5rem, 4vw, 2rem); }
+  .cookie-title { font-family: 'Playfair Display', serif; font-weight: 500; font-size: 1.2rem; line-height: 1.3; margin-bottom: 0.75rem; }
+  .cookie-body { font-size: 0.88rem; line-height: 1.7; color: #55625A; margin-bottom: 1.25rem; }
+  .cookie-back {
+    display: inline-flex; align-items: center; gap: 0.4rem; background: none; border: none;
+    color: #8C978F; font-size: 0.82rem; cursor: pointer; padding: 0; margin-bottom: 1rem;
+  }
+  .cookie-back:hover { color: #1E3A2C; }
+  .cookie-categories { display: flex; flex-direction: column; gap: 0.9rem; margin-bottom: 1.25rem; }
+  .cookie-cat { border: 1px solid #EEEAE2; border-radius: 12px; padding: 1rem 1.1rem; }
+  .cookie-cat-head { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+  .cookie-cat-info { display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; }
+  .cookie-cat-name { font-weight: 500; font-size: 0.92rem; }
+  .cookie-cat-badge { font-size: 0.66rem; letter-spacing: 0.08em; text-transform: uppercase; color: #8C978F; border: 1px solid #E3DCCF; border-radius: 100px; padding: 0.15rem 0.55rem; }
+  .cookie-cat-desc { font-size: 0.8rem; line-height: 1.6; color: #8C978F; margin-top: 0.55rem; }
+  .cookie-toggle { display: flex; align-items: center; flex-shrink: 0; cursor: pointer; }
+  .cookie-toggle--fixed { cursor: default; }
+  .ct-input { position: absolute; opacity: 0; width: 0; height: 0; }
+  .ct-track { width: 40px; height: 22px; border-radius: 100px; background: #D8D2C6; position: relative; transition: background .2s; display: inline-block; }
+  .ct-track--on, .ct-input:checked + .ct-track { background: #D96B52; }
+  .ct-thumb { position: absolute; top: 2px; left: 2px; width: 18px; height: 18px; border-radius: 50%; background: #fff; transition: transform .2s; }
+  .ct-track--on .ct-thumb, .ct-input:checked + .ct-track .ct-thumb { transform: translateX(18px); }
+  .cookie-actions { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+  .btn-cookie {
+    flex: 1 1 auto; min-width: 130px; border: 1px solid #1E3A2C; background: #1E3A2C; color: #fff;
+    border-radius: 100px; padding: 0.7rem 1.1rem; font-size: 0.82rem; cursor: pointer; transition: opacity .2s, transform .2s;
+  }
+  .btn-cookie:hover { opacity: 0.88; transform: translateY(-1px); }
+  .cookie-footer-links { display: flex; gap: 1.25rem; margin-top: 1.1rem; }
+  .cookie-footer-links a { font-size: 0.74rem; letter-spacing: 0.06em; color: #8C978F; }
+  .cookie-footer-links a:hover { color: #1E3A2C; }
+  @media (max-width: 480px) { .cookie-actions { flex-direction: column; } .btn-cookie { width: 100%; } }
+</style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NLFQXM86"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<div style="font-family:'DM Sans',sans-serif; color:#16211B; background:#FFFFFF">
+
+  <header style="position:sticky; top:0; z-index:50; background:rgba(255,255,255,0.88); backdrop-filter:blur(14px); border-bottom:1px solid #EEEAE2">
+    <div class="hdr-inner" style="max-width:1180px; margin:0 auto; padding:0 clamp(1.25rem,4vw,2.5rem); height:74px; display:flex; align-items:center; justify-content:center; gap:0.7rem">
+      <img src="images/logo-nina.png" alt="Nina Zurawski Logo" style="width:38px; height:38px; border-radius:50%; object-fit:contain; display:block">
+      <span class="hdr-brand" style="font-family:'Playfair Display',serif; font-size:1.08rem; color:#16211B">Nina Zurawski</span>
+    </div>
+  </header>
+
+  <!-- ═══ 1. HERO ═══ -->
+  <section id="top" style="position:relative; padding:clamp(3.5rem,8vw,6rem) 0 clamp(3rem,6vw,5rem); background:#FFFFFF; overflow:hidden">
+    <div style="position:absolute; inset:0; pointer-events:none; background-image:linear-gradient(#F4F1EA 1px, transparent 1px), linear-gradient(90deg, #F4F1EA 1px, transparent 1px); background-size:96px 96px; mask-image:radial-gradient(120% 90% at 70% 0%, #000 0%, transparent 70%); -webkit-mask-image:radial-gradient(120% 90% at 70% 0%, #000 0%, transparent 70%)"></div>
+    <div style="position:absolute; width:640px; height:640px; border-radius:50%; background:#1E3A2C; opacity:0.05; filter:blur(90px); top:-220px; right:-160px; pointer-events:none"></div>
+    <div style="position:absolute; width:420px; height:420px; border-radius:50%; background:#D96B52; opacity:0.06; filter:blur(90px); bottom:-180px; left:-120px; pointer-events:none"></div>
+
+    <div style="position:relative; max-width:1180px; margin:0 auto; padding:0 clamp(1.25rem,4vw,2.5rem); display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:clamp(2rem,5vw,3.5rem); align-items:center">
+      <div>
+        <h1 style="font-family:'Playfair Display',serif; font-weight:400; font-size:clamp(2.2rem,5.6vw,3.6rem); line-height:1.08; letter-spacing:-0.015em; margin-bottom:1.4rem; text-wrap:balance">
+          Endlich planbare Anfragen. <em style="font-style:italic; color:#D96B52">Ohne dass du dich selbst darum kümmern musst.</em>
+        </h1>
+        <p style="font-size:1.08rem; line-height:1.75; color:#55625A; max-width:34rem; margin-bottom:2.2rem; text-wrap:pretty">
+          Google Ads und Landingpages für Dienstleister:innen, die nicht mehr von Empfehlungen und Social Media abhängig sein wollen.
+        </p>
+        <div style="display:flex; flex-direction:column; gap:1rem; max-width:26rem">
+          <a href="quiz-start.html" id="btn-hero-quiz" style="display:flex; align-items:center; justify-content:center; gap:0.5rem; background:#D96B52; color:#fff; border-radius:100px; padding:1.05rem 1.6rem; font-size:1.02rem; font-weight:500; box-shadow:0 18px 36px -14px rgba(217,107,82,0.55); transition:background .2s, transform .2s" onmouseover="this.style.background='#C55A42';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#D96B52';this.style.transform='none'">
+            0€ QUIZ: In 2 Minuten prüfen, ob du startklar bist
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path></svg>
+          </a>
+          <a href="https://meet.brevo.com/nina-zurawski/kennenlerncall" target="_blank" rel="noopener" id="btn-hero-booking" class="h-link" style="text-align:center; color:#55625A; font-size:0.92rem; border-bottom:1px solid #C9D3CA; padding-bottom:2px; align-self:center">Direkt ein kostenloses Gespräch buchen</a>
+        </div>
+      </div>
+
+      <div style="position:relative">
+        <img src="images/portrait-nina.webp" alt="Nina Zurawski" style="width:100%; max-width:340px; aspect-ratio:4/5; object-fit:cover; object-position:center 12%; border-radius:20px; display:block; margin:0 auto">
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 2. DAS PROBLEM ═══ -->
+  <section id="problem" style="background:#FBF9F5; padding:clamp(4rem,8vw,6.5rem) 0">
+    <div style="max-width:760px; margin:0 auto; padding:0 clamp(1.25rem,4vw,2.5rem)">
+      <h2 style="font-family:'Playfair Display',serif; font-weight:400; font-size:clamp(1.9rem,4.4vw,2.8rem); line-height:1.15; letter-spacing:-0.01em; margin-bottom:2rem; text-wrap:balance">Kommt dir das <em style="font-style:italic; color:#D96B52">bekannt vor?</em></h2>
+
+      <ul style="list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:0">
+        <li style="display:flex; gap:0.9rem; padding:1.1rem 0; border-bottom:1px solid #EEEAE2; font-size:1rem; line-height:1.65; color:#3B463F">
+          <span style="flex-shrink:0; margin-top:3px; color:#D96B52"><svg viewBox="0 0 16 16" fill="none" width="16" height="16"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg></span>
+          Empfehlungen kommen, wann sie wollen. Nicht, wenn du sie brauchst?
+        </li>
+        <li style="display:flex; gap:0.9rem; padding:1.1rem 0; border-bottom:1px solid #EEEAE2; font-size:1rem; line-height:1.65; color:#3B463F">
+          <span style="flex-shrink:0; margin-top:3px; color:#D96B52"><svg viewBox="0 0 16 16" fill="none" width="16" height="16"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg></span>
+          Ein Monat ist voll, der nächste ist still?
+        </li>
+        <li style="display:flex; gap:0.9rem; padding:1.1rem 0; border-bottom:1px solid #EEEAE2; font-size:1rem; line-height:1.65; color:#3B463F">
+          <span style="flex-shrink:0; margin-top:3px; color:#D96B52"><svg viewBox="0 0 16 16" fill="none" width="16" height="16"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg></span>
+          Du weißt nie genau, wie es in drei Monaten aussieht?
+        </li>
+        <li style="display:flex; gap:0.9rem; padding:1.1rem 0; border-bottom:1px solid #EEEAE2; font-size:1rem; line-height:1.65; color:#3B463F">
+          <span style="flex-shrink:0; margin-top:3px; color:#D96B52"><svg viewBox="0 0 16 16" fill="none" width="16" height="16"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg></span>
+          Du postest ständig auf Social Media, machst Storys, um sichtbar zu bleiben. Und hast keine Lust und keine Zeit, davon abhängig zu sein?
+        </li>
+        <li style="display:flex; gap:0.9rem; padding:1.1rem 0; font-size:1rem; line-height:1.65; color:#3B463F">
+          <span style="flex-shrink:0; margin-top:3px; color:#D96B52"><svg viewBox="0 0 16 16" fill="none" width="16" height="16"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg></span>
+          Und wenn jemand bei Google nach deinem Angebot sucht, findet er andere?
+        </li>
+      </ul>
+
+      <p style="font-size:1.05rem; line-height:1.75; color:#16211B; margin-top:2rem; text-wrap:pretty"><strong style="font-weight:500">Das liegt nicht an deiner Arbeit.</strong> Es liegt daran, dass Kund:innen dich gerade nicht finden, wenn sie suchen.</p>
+    </div>
+  </section>
+
+  <!-- ═══ ÜBER MICH ═══ -->
+  <section id="ueber-mich" style="background:#FFFFFF; padding:clamp(4rem,8vw,6.5rem) 0">
+    <div style="max-width:1080px; margin:0 auto; padding:0 clamp(1.25rem,4vw,2.5rem); display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:clamp(2rem,5vw,3.5rem); align-items:center">
+      <div style="max-width:340px; width:100%; margin:0 auto; position:relative">
+        <div style="width:100%; aspect-ratio:3/4; border-radius:20px; overflow:hidden">
+          <img src="images/nina-ueber-mich.webp" alt="Nina Zurawski" width="1000" height="1256" loading="lazy" style="width:100%; height:100%; object-fit:cover; object-position:center; display:block">
+        </div>
+        <img src="images/google-ads-badge.png" alt="Google Ads Search Certified" loading="lazy" style="position:absolute; right:-14px; bottom:-14px; width:96px; height:96px; border-radius:50%; object-fit:cover; background:#fff; padding:4px; box-shadow:0 12px 30px -14px rgba(22,33,27,0.4)">
+      </div>
+      <div>
+        <div style="font-size:0.7rem; letter-spacing:0.16em; text-transform:uppercase; color:#8C978F; margin-bottom:0.9rem">Über mich</div>
+        <h2 style="font-family:'Playfair Display',serif; font-weight:400; font-size:clamp(1.9rem,4.2vw,2.7rem); line-height:1.15; margin-bottom:1.2rem">Hi, ich bin <em style="font-style:italic; color:#D96B52">Nina</em></h2>
+        <p style="font-size:0.98rem; line-height:1.8; color:#55625A; margin-bottom:1rem; text-wrap:pretty">Ich bin Google Ads zertifiziert und spezialisiert auf Dienstleister:innen, die planbar mehr Anfragen wollen, direkt betreut von mir, ohne Agentur-Overhead und ohne Zwischenstufen.</p>
+        <p style="font-size:0.98rem; line-height:1.8; color:#55625A; margin-bottom:1rem; text-wrap:pretty">Als Mama, leidenschaftliche Reisende und Wahlflensburgerin bringe ich echtes Interesse an Menschen und ihren Businesses mit. Ich kann mich gut in unterschiedliche Branchen hineindenken, von Handwerk und IT bis Beratung und Coaching. Was zählt, ist nicht die Branche, sondern dass dein Angebot klar ist und Menschen es aktiv suchen.</p>
+        <p style="font-size:0.98rem; line-height:1.8; color:#55625A; text-wrap:pretty">Mir ist wichtig, dass du verstehst, was mit deinem Budget passiert. Keine Fachsprache, keine Überraschungen, keine Blackbox. Ich kenne dein Business, denke mit und optimiere wöchentlich. Persönlich, transparent und mit echtem Engagement.</p>
+
+        <div style="display:flex; flex-wrap:wrap; gap:0.6rem; margin-top:1.4rem">
+          <span style="background:#F1F5F1; border:1px solid #DCE6DD; border-radius:100px; padding:0.5rem 1rem; font-size:0.8rem; color:#1E3A2C">Messbare Ergebnisse</span>
+          <span style="background:#F1F5F1; border:1px solid #DCE6DD; border-radius:100px; padding:0.5rem 1rem; font-size:0.8rem; color:#1E3A2C">Transparente Kommunikation</span>
+          <span style="background:#F1F5F1; border:1px solid #DCE6DD; border-radius:100px; padding:0.5rem 1rem; font-size:0.8rem; color:#1E3A2C">Echtes Engagement</span>
+        </div>
+
+        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(120px,1fr)); gap:1rem; margin-top:1.8rem; max-width:26rem">
+          <div style="background:#FBF9F5; border:1px solid #EEEAE2; border-radius:14px; padding:1.1rem; text-align:center">
+            <div style="font-family:'Playfair Display',serif; font-size:1.5rem; color:#1E3A2C; line-height:1">100%</div>
+            <div style="font-size:0.68rem; letter-spacing:0.06em; color:#8C978F; margin-top:0.4rem">Google Ads Fokus</div>
+          </div>
+          <div style="background:#FBF9F5; border:1px solid #EEEAE2; border-radius:14px; padding:1.1rem; text-align:center">
+            <div style="font-family:'Playfair Display',serif; font-size:1.5rem; color:#1E3A2C; line-height:1">Direkt</div>
+            <div style="font-size:0.68rem; letter-spacing:0.06em; color:#8C978F; margin-top:0.4rem">Mit Nina, immer</div>
+          </div>
+        </div>
+
+        <a href="quiz-start.html" id="btn-about-quiz" style="display:inline-flex; align-items:center; gap:0.5rem; background:#D96B52; color:#fff; border-radius:100px; padding:0.95rem 1.6rem; font-size:0.94rem; font-weight:500; margin-top:2rem; transition:background .2s, transform .2s" onmouseover="this.style.background='#C55A42';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#D96B52';this.style.transform='none'">
+          Prüfen, ob du startklar bist
+          <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 3. DIE LÖSUNG ═══ -->
+  <section id="loesung" style="background:#FFFFFF; padding:clamp(4rem,8vw,6.5rem) 0">
+    <div style="max-width:900px; margin:0 auto; padding:0 clamp(1.25rem,4vw,2.5rem)">
+      <h2 style="font-family:'Playfair Display',serif; font-weight:400; font-size:clamp(1.9rem,4.4vw,2.8rem); line-height:1.15; letter-spacing:-0.01em; margin-bottom:1.6rem; text-wrap:balance">Deine Kund:innen <em style="font-style:italic; color:#D96B52">suchen schon nach dir</em></h2>
+
+      <div style="background:#FBF9F5; border:1px solid #EEEAE2; border-left:3px solid #D96B52; border-radius:14px; padding:1.4rem 1.7rem; margin-bottom:2.2rem">
+        <p style="font-family:'Playfair Display',serif; font-weight:400; font-size:clamp(1.1rem,2.4vw,1.3rem); line-height:1.55; color:#16211B; text-wrap:pretty">Menschen scrollen nicht zufällig vorbei. Sie suchen aktiv nach einer Lösung, <em style="font-style:italic; color:#D96B52">und zwar genau jetzt.</em></p>
+      </div>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1.1rem">
+        <div class="h-card" style="background:#FBF9F5; border:1px solid #EEEAE2; border-radius:18px; padding:1.6rem">
+          <span style="width:42px; height:42px; border-radius:12px; background:#F1F5F1; color:#1E3A2C; display:flex; align-items:center; justify-content:center; margin-bottom:1rem">
+            <svg viewBox="0 0 20 20" fill="none" width="19" height="19"><circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="1.5"></circle><path d="M17 17l-4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg>
+          </span>
+          <h3 style="font-family:'Playfair Display',serif; font-weight:500; font-size:1.05rem; margin-bottom:0.5rem">Echtes Kaufinteresse</h3>
+          <p style="font-size:0.9rem; line-height:1.65; color:#55625A; text-wrap:pretty">Jeden Tag geben Menschen bei Google ein, was sie brauchen. Keine zufälligen Klicks, sondern aktive Suche.</p>
+        </div>
+        <div class="h-card" style="background:#FBF9F5; border:1px solid #EEEAE2; border-radius:18px; padding:1.6rem">
+          <span style="width:42px; height:42px; border-radius:12px; background:#F1F5F1; color:#1E3A2C; display:flex; align-items:center; justify-content:center; margin-bottom:1rem">
+            <svg viewBox="0 0 20 20" fill="none" width="19" height="19"><path d="M4 16V9M10 16V4M16 16v-7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path></svg>
+          </span>
+          <h3 style="font-family:'Playfair Display',serif; font-weight:500; font-size:1.05rem; margin-bottom:0.5rem">Ab dem ersten Tag ganz oben</h3>
+          <p style="font-size:0.9rem; line-height:1.65; color:#55625A; text-wrap:pretty">Mit Google Ads stehst du sofort oben, wenn sie suchen, ohne monatelang auf bessere Platzierungen zu warten.</p>
+        </div>
+        <div class="h-card" style="background:#FBF9F5; border:1px solid #EEEAE2; border-radius:18px; padding:1.6rem">
+          <span style="width:42px; height:42px; border-radius:12px; background:#F1F5F1; color:#1E3A2C; display:flex; align-items:center; justify-content:center; margin-bottom:1rem">
+            <svg viewBox="0 0 20 20" fill="none" width="19" height="19"><rect x="3" y="4" width="14" height="13" rx="2" stroke="currentColor" stroke-width="1.5"></rect><path d="M3 8h14M7 2v3M13 2v3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path><path d="M6 14l8-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg>
+          </span>
+          <h3 style="font-family:'Playfair Display',serif; font-weight:500; font-size:1.05rem; margin-bottom:0.5rem">Kein täglicher Post-Zwang</h3>
+          <p style="font-size:0.9rem; line-height:1.65; color:#55625A; text-wrap:pretty">Deine Anzeigen arbeiten auch dann, wenn du gerade keine Lust auf Instagram hast.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 4. WARUM ANZEIGEN + LANDINGPAGE ═══ -->
+  <section id="warum-zusammen" style="background:#1E3A2C; padding:clamp(4rem,8vw,6.5rem) 0; position:relative; overflow:hidden">
+    <div style="position:absolute; width:520px; height:520px; border-radius:50%; background:#D96B52; opacity:0.12; filter:blur(110px); top:-200px; right:-140px; pointer-events:none"></div>
+    <div style="position:relative; max-width:900px; margin:0 auto; padding:0 clamp(1.25rem,4vw,2.5rem)">
+      <h2 style="font-family:'Playfair Display',serif; font-weight:400; font-size:clamp(1.9rem,4.4vw,2.8rem); line-height:1.15; color:#fff; margin-bottom:1.4rem; text-wrap:balance">Ein Klick ist <em style="font-style:italic; color:#F0A090">noch keine Anfrage</em></h2>
+      <p style="font-size:1.05rem; line-height:1.8; color:rgba(255,255,255,0.82); max-width:38rem; margin-bottom:2rem; text-wrap:pretty">Viele schicken ihre Anzeigen einfach auf die Startseite ihrer Website. Dort gibt es zehn Menüpunkte, viel Text und keinen klaren nächsten Schritt. Die Folge: Menschen klicken, schauen kurz und sind wieder weg. Das Budget ist ausgegeben, die Anfrage bleibt aus.</p>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1.25rem; margin-bottom:2.2rem">
+        <div style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.14); border-radius:18px; padding:1.5rem 1.6rem">
+          <h3 style="font-size:0.72rem; letter-spacing:0.14em; text-transform:uppercase; color:rgba(255,255,255,0.5); margin-bottom:1.1rem">Nur die Anzeige</h3>
+          <div style="display:flex; gap:0.7rem; align-items:flex-start; font-size:0.92rem; line-height:1.55; color:rgba(255,255,255,0.75); margin-bottom:0.8rem">
+            <span style="flex-shrink:0; margin-top:2px; color:rgba(255,255,255,0.4)"><svg viewBox="0 0 16 16" fill="none" width="14" height="14"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path></svg></span>
+            Landet auf der Startseite mit zehn Menüpunkten
+          </div>
+          <div style="display:flex; gap:0.7rem; align-items:flex-start; font-size:0.92rem; line-height:1.55; color:rgba(255,255,255,0.75); margin-bottom:0.8rem">
+            <span style="flex-shrink:0; margin-top:2px; color:rgba(255,255,255,0.4)"><svg viewBox="0 0 16 16" fill="none" width="14" height="14"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path></svg></span>
+            Kein klarer nächster Schritt
+          </div>
+          <div style="display:flex; gap:0.7rem; align-items:flex-start; font-size:0.92rem; line-height:1.55; color:rgba(255,255,255,0.75)">
+            <span style="flex-shrink:0; margin-top:2px; color:rgba(255,255,255,0.4)"><svg viewBox="0 0 16 16" fill="none" width="14" height="14"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path></svg></span>
+            Klick kostet Geld, Anfrage bleibt aus
+          </div>
+        </div>
+        <div style="background:rgba(255,255,255,0.09); border:1px solid rgba(255,255,255,0.22); border-radius:18px; padding:1.5rem 1.6rem">
+          <h3 style="font-size:0.72rem; letter-spacing:0.14em; text-transform:uppercase; color:#F0A090; margin-bottom:1.1rem">Anzeige + Landingpage</h3>
+          <div style="display:flex; gap:0.7rem; align-items:flex-start; font-size:0.92rem; line-height:1.55; color:#fff; margin-bottom:0.8rem">
+            <span style="flex-shrink:0; margin-top:2px; color:#F0A090"><svg viewBox="0 0 16 16" fill="none" width="15" height="15"><path d="M3 8l4 4 6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+            Eine Seite, ein Ziel: die Anfrage
+          </div>
+          <div style="display:flex; gap:0.7rem; align-items:flex-start; font-size:0.92rem; line-height:1.55; color:#fff; margin-bottom:0.8rem">
+            <span style="flex-shrink:0; margin-top:2px; color:#F0A090"><svg viewBox="0 0 16 16" fill="none" width="15" height="15"><path d="M3 8l4 4 6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+            Gleiche Botschaft wie in der Anzeige
+          </div>
+          <div style="display:flex; gap:0.7rem; align-items:flex-start; font-size:0.92rem; line-height:1.55; color:#fff">
+            <span style="flex-shrink:0; margin-top:2px; color:#F0A090"><svg viewBox="0 0 16 16" fill="none" width="15" height="15"><path d="M3 8l4 4 6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+            Aus Klicks werden Anfragen
+          </div>
+        </div>
+      </div>
+
+      <p style="font-size:1.05rem; line-height:1.8; color:rgba(255,255,255,0.82); max-width:38rem; margin-bottom:2rem; text-wrap:pretty">Deshalb baue ich Anzeigen und Landingpage oft zusammen. Die Anzeige bringt die richtigen Menschen zu dir. Die Landingpage sorgt dafür, dass sie sich melden.</p>
+
+      <a href="quiz-start.html" id="btn-warum-quiz" style="display:inline-flex; align-items:center; gap:0.5rem; background:#D96B52; color:#fff; border-radius:100px; padding:0.95rem 1.7rem; font-size:0.96rem; font-weight:500; transition:background .2s, transform .2s" onmouseover="this.style.background='#C55A42';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#D96B52';this.style.transform='none'">
+        Prüfen, ob du startklar bist
+        <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ═══ 5. DER RECHNER ═══ -->
+  <section id="rechner" style="background:#FBF9F5; padding:clamp(4rem,8vw,6.5rem) 0">
+    <div style="max-width:760px; margin:0 auto; padding:0 clamp(1.25rem,4vw,2.5rem)">
+      <h2 style="font-family:'Playfair Display',serif; font-weight:400; font-size:clamp(1.9rem,4.4vw,2.8rem); line-height:1.15; letter-spacing:-0.01em; margin-bottom:1.2rem; text-wrap:balance">Lohnt sich das <em style="font-style:italic; color:#D96B52">für dich?</em></h2>
+      <p style="font-size:1.02rem; line-height:1.78; color:#55625A; margin-bottom:2.2rem; text-wrap:pretty">Ja, Werbung kostet Geld. Die eigentliche Frage ist aber: Wie viele neue Kund:innen brauchst du, damit sie sich bezahlt macht? Meist weniger, als du denkst.</p>
+
+      <div style="background:#FFFFFF; border:1px solid #E9E5DD; border-radius:20px; padding:clamp(1.5rem,4vw,2.2rem); box-shadow:0 2px 4px rgba(22,33,27,0.03), 0 30px 60px -34px rgba(30,58,44,0.15)">
+        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:1.2rem; margin-bottom:1.8rem">
+          <div class="calc-field">
+            <label for="calcAuftragswert">Was bringt dir ein Auftrag im Durchschnitt? (€)</label>
+            <input type="number" id="calcAuftragswert" inputmode="decimal" min="0" placeholder="z. B. 800">
+          </div>
+          <div class="calc-field">
+            <label for="calcBudget">Monatliches Werbebudget (€)</label>
+            <input type="number" id="calcBudget" inputmode="decimal" min="0" value="500">
+          </div>
+          <div class="calc-field">
+            <label for="calcKosten">Weitere monatliche Kosten, z. B. Betreuung (€)</label>
+            <input type="number" id="calcKosten" inputmode="decimal" min="0" placeholder="optional">
+          </div>
+        </div>
+
+        <div class="calc-result">
+          <p id="calcOutput" style="font-family:'Playfair Display',serif; font-size:clamp(1.1rem,2.6vw,1.4rem); line-height:1.5; margin:0">Trag deinen durchschnittlichen Auftragswert ein.</p>
+        </div>
+        <p style="font-size:0.84rem; line-height:1.6; color:#8C978F; margin-top:1rem">Und wenn Kund:innen öfter wiederkommen oder dich weiterempfehlen, lohnt sich jeder neue Kontakt noch mehr.</p>
+      </div>
+
+      <div style="text-align:center; margin-top:2.2rem">
+        <a href="quiz-start.html" id="btn-calc-quiz" style="display:inline-flex; align-items:center; gap:0.5rem; background:#D96B52; color:#fff; border-radius:100px; padding:0.95rem 1.7rem; font-size:0.96rem; font-weight:500; transition:background .2s, transform .2s" onmouseover="this.style.background='#C55A42';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#D96B52';this.style.transform='none'">
+          Prüfen, ob du startklar bist
+          <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 6. ENTLASTUNG ═══ -->
+  <section id="entlastung" style="background:#FFFFFF; padding:clamp(4rem,8vw,6.5rem) 0">
+    <div style="max-width:760px; margin:0 auto; padding:0 clamp(1.25rem,4vw,2.5rem)">
+      <span style="width:52px; height:52px; border-radius:50%; background:#F1F5F1; color:#1E3A2C; display:flex; align-items:center; justify-content:center; margin-bottom:1.4rem">
+        <svg viewBox="0 0 24 24" fill="none" width="24" height="24"><path d="M12 21s-7-4.35-9.5-9C.7 8.1 2.5 4 6.5 4c2 0 3.5 1.2 4.5 2.5C12 5.2 13.5 4 15.5 4c4 0 5.8 4.1 4 8-2.5 4.65-9.5 9-9.5 9z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"></path></svg>
+      </span>
+      <h2 style="font-family:'Playfair Display',serif; font-weight:400; font-size:clamp(1.9rem,4.4vw,2.8rem); line-height:1.15; letter-spacing:-0.01em; margin-bottom:1.4rem; text-wrap:balance">Du machst deine Arbeit. <em style="font-style:italic; color:#D96B52">Ich kümmere mich um neue Anfragen.</em></h2>
+      <p style="font-size:1.05rem; line-height:1.8; color:#55625A; margin-bottom:1.6rem; text-wrap:pretty">Du hast dich nicht selbstständig gemacht, um abends Werbeanzeigen zu bauen oder dir den nächsten Post auszudenken. Ich übernehme Strategie, Anzeigen und Landingpage, und du hast wieder Zeit für das, was du eigentlich machst: deine Kund:innen.</p>
+
+      <div style="display:flex; flex-wrap:wrap; gap:0.6rem; margin-bottom:2rem">
+        <span style="background:#FBF9F5; border:1px solid #EEEAE2; border-radius:100px; padding:0.5rem 1.1rem; font-size:0.84rem; color:#3B463F">Strategie</span>
+        <span style="background:#FBF9F5; border:1px solid #EEEAE2; border-radius:100px; padding:0.5rem 1.1rem; font-size:0.84rem; color:#3B463F">Anzeigen</span>
+        <span style="background:#FBF9F5; border:1px solid #EEEAE2; border-radius:100px; padding:0.5rem 1.1rem; font-size:0.84rem; color:#3B463F">Landingpage</span>
+        <span style="background:#FBF9F5; border:1px solid #EEEAE2; border-radius:100px; padding:0.5rem 1.1rem; font-size:0.84rem; color:#3B463F">Laufende Optimierung</span>
+      </div>
+
+      <a href="quiz-start.html" id="btn-entlastung-quiz" style="display:inline-flex; align-items:center; gap:0.5rem; background:#D96B52; color:#fff; border-radius:100px; padding:0.95rem 1.7rem; font-size:0.96rem; font-weight:500; transition:background .2s, transform .2s" onmouseover="this.style.background='#C55A42';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#D96B52';this.style.transform='none'">
+        Prüfen, ob du startklar bist
+        <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ═══ 7. SO LÄUFT ES AB ═══ -->
+  <section id="ablauf" style="background:#FBF9F5; padding:clamp(4rem,8vw,6.5rem) 0">
+    <div style="max-width:760px; margin:0 auto; padding:0 clamp(1.25rem,4vw,2.5rem)">
+      <h2 style="font-family:'Playfair Display',serif; font-weight:400; font-size:clamp(1.9rem,4.4vw,2.8rem); line-height:1.15; letter-spacing:-0.01em; margin-bottom:2.2rem; text-wrap:balance">In vier Schritten <em style="font-style:italic; color:#D96B52">zu mehr Anfragen</em></h2>
+
+      <div style="display:flex; flex-direction:column; gap:0">
+        <div style="display:flex; gap:1.1rem; padding-bottom:1.8rem; border-left:1px solid #E9E5DD; margin-left:15px; padding-left:2.2rem; position:relative">
+          <span style="position:absolute; left:-16px; top:0; width:32px; height:32px; border-radius:50%; background:#1E3A2C; color:#fff; font-size:0.8rem; display:flex; align-items:center; justify-content:center">1</span>
+          <div>
+            <h3 style="font-family:'Playfair Display',serif; font-weight:500; font-size:1.08rem; margin-bottom:0.4rem">Kostenloses Gespräch</h3>
+            <p style="font-size:0.95rem; line-height:1.68; color:#55625A; text-wrap:pretty">Wir schauen, ob Google Ads für dich passt. Ehrlich, ohne Verkaufsdruck.</p>
+          </div>
+        </div>
+        <div style="display:flex; gap:1.1rem; padding-bottom:1.8rem; border-left:1px solid #E9E5DD; margin-left:15px; padding-left:2.2rem; position:relative">
+          <span style="position:absolute; left:-16px; top:0; width:32px; height:32px; border-radius:50%; background:#1E3A2C; color:#fff; font-size:0.8rem; display:flex; align-items:center; justify-content:center">2</span>
+          <div>
+            <h3 style="font-family:'Playfair Display',serif; font-weight:500; font-size:1.08rem; margin-bottom:0.4rem">Strategie</h3>
+            <p style="font-size:0.95rem; line-height:1.68; color:#55625A; text-wrap:pretty">Ich finde heraus, wonach deine Kund:innen suchen und wie wir sie erreichen.</p>
+          </div>
+        </div>
+        <div style="display:flex; gap:1.1rem; padding-bottom:1.8rem; border-left:1px solid #E9E5DD; margin-left:15px; padding-left:2.2rem; position:relative">
+          <span style="position:absolute; left:-16px; top:0; width:32px; height:32px; border-radius:50%; background:#1E3A2C; color:#fff; font-size:0.8rem; display:flex; align-items:center; justify-content:center">3</span>
+          <div>
+            <h3 style="font-family:'Playfair Display',serif; font-weight:500; font-size:1.08rem; margin-bottom:0.4rem">Landingpage und Anzeigen</h3>
+            <p style="font-size:0.95rem; line-height:1.68; color:#55625A; text-wrap:pretty">Ich baue beides, abgestimmt aufeinander.</p>
+          </div>
+        </div>
+        <div style="display:flex; gap:1.1rem; margin-left:15px; padding-left:2.2rem; position:relative">
+          <span style="position:absolute; left:-16px; top:0; width:32px; height:32px; border-radius:50%; background:#D96B52; color:#fff; font-size:0.8rem; display:flex; align-items:center; justify-content:center">4</span>
+          <div>
+            <h3 style="font-family:'Playfair Display',serif; font-weight:500; font-size:1.08rem; margin-bottom:0.4rem">Start und Optimierung</h3>
+            <p style="font-size:0.95rem; line-height:1.68; color:#55625A; text-wrap:pretty">Deine Anzeigen laufen, ich verbessere sie laufend. Du weißt immer, was sie dir bringen.</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align:center; margin-top:2.6rem">
+        <a href="quiz-start.html" id="btn-ablauf-quiz" style="display:inline-flex; align-items:center; gap:0.5rem; background:#D96B52; color:#fff; border-radius:100px; padding:0.95rem 1.7rem; font-size:0.96rem; font-weight:500; transition:background .2s, transform .2s" onmouseover="this.style.background='#C55A42';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#D96B52';this.style.transform='none'">
+          Prüfen, ob du startklar bist
+          <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 8. STIMMEN VON KUND:INNEN ═══ -->
+  <section id="kundenstimmen" style="background:#FFFFFF; padding:clamp(4rem,8vw,6.5rem) 0">
+    <div style="max-width:760px; margin:0 auto; padding:0 clamp(1.25rem,4vw,2.5rem)">
+      <h2 style="font-family:'Playfair Display',serif; font-weight:400; font-size:clamp(1.9rem,4.4vw,2.8rem); line-height:1.15; letter-spacing:-0.01em; margin-bottom:2.2rem; text-wrap:balance">Das sagen <em style="font-style:italic; color:#D96B52">meine Kund:innen</em></h2>
+
+      <div class="reviews-slider-wrap">
+        <button type="button" class="reviews-arrow" id="reviewsPrev" aria-label="Vorherige Bewertung">
+          <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M12 4L6 10l6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+        </button>
+
+        <div class="reviews-track-outer">
+          <div class="reviews-track" id="reviewsTrack">
+
+            <div class="review-slide">
+              <div style="display:flex; gap:0.2rem; color:#D96B52">
+                <svg viewBox="0 0 20 20" fill="currentColor" width="15" height="15"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg><svg viewBox="0 0 20 20" fill="currentColor" width="15" height="15"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg><svg viewBox="0 0 20 20" fill="currentColor" width="15" height="15"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg><svg viewBox="0 0 20 20" fill="currentColor" width="15" height="15"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg><svg viewBox="0 0 20 20" fill="currentColor" width="15" height="15"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+              </div>
+              <blockquote style="font-family:'Playfair Display',serif; font-weight:400; font-size:1.05rem; line-height:1.6; color:#16211B; text-wrap:pretty; flex:1">„Ich habe mehrere Monate mit Nina im Bereich Google Ads zusammengearbeitet und war sehr zufrieden mit der Betreuung. Nina hat sich intensiv in mein Business hineingedacht, Kampagnen kontinuierlich optimiert und regelmäßig nachjustiert. Besonders schätze ich ihre proaktive Arbeitsweise und ihr echtes Engagement, nicht nur Anzeigen zu schalten, sondern messbare Ergebnisse zu erzielen. Ich kann Nina allen empfehlen, die sich eine zuverlässige, strukturierte und mitdenkende Google Ads Betreuung wünschen."</blockquote>
+              <div style="display:flex; align-items:center; gap:0.85rem; padding-top:0.9rem; border-top:1px solid #EEEAE2">
+                <img src="images/kristin-henke.webp" alt="Kristin Henke" width="44" height="44" loading="lazy" style="width:44px; height:44px; border-radius:50%; object-fit:cover; border:1px solid #E9E5DD; flex-shrink:0">
+                <span style="font-size:0.9rem; line-height:1.4"><strong style="font-weight:500">Kristin Henke</strong><br><span style="color:#8C978F; font-size:0.84rem">Female Leadership Expertin</span></span>
+              </div>
+            </div>
+
+            <div class="review-slide">
+              <div style="display:flex; gap:0.2rem; color:#D96B52">
+                <svg viewBox="0 0 20 20" fill="currentColor" width="15" height="15"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg><svg viewBox="0 0 20 20" fill="currentColor" width="15" height="15"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg><svg viewBox="0 0 20 20" fill="currentColor" width="15" height="15"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg><svg viewBox="0 0 20 20" fill="currentColor" width="15" height="15"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg><svg viewBox="0 0 20 20" fill="currentColor" width="15" height="15"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+              </div>
+              <blockquote style="font-family:'Playfair Display',serif; font-weight:400; font-size:1.05rem; line-height:1.6; color:#16211B; text-wrap:pretty; flex:1">„Wir, die Unternehmenskommunikation des Klinikums Nordfriesland, arbeiten mit Nina seit dem Spätsommer 2025 eng zusammen. Wir haben Nina als sehr kompetente und erfahrene Ansprechpartnerin kennengelernt. Wir schätzen ihre kreative und auf den Punkt gehende Herangehensweise. Dabei arbeitet sie sehr selbständig und ‚eng am Thema'. Neben der fachlich sehr guten und engagierten Arbeitsweise, haben wir das große Glück, ein sehr freundschaftliches Miteinander zu pflegen."</blockquote>
+              <div style="display:flex; align-items:center; gap:0.85rem; padding-top:0.9rem; border-top:1px solid #EEEAE2">
+                <img src="images/logo-klinikum-nf.png" alt="Klinikum Nordfriesland" width="44" height="44" loading="lazy" style="width:44px; height:44px; border-radius:12px; object-fit:contain; background:#fff; border:1px solid #E9E5DD; flex-shrink:0">
+                <span style="font-size:0.9rem; line-height:1.4"><strong style="font-weight:500">Klinikum Nordfriesland</strong><br><span style="color:#8C978F; font-size:0.84rem">Unternehmenskommunikation</span></span>
+              </div>
+            </div>
+
+            <div class="review-slide">
+              <div style="display:flex; gap:0.2rem; color:#D96B52">
+                <svg viewBox="0 0 20 20" fill="currentColor" width="15" height="15"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg><svg viewBox="0 0 20 20" fill="currentColor" width="15" height="15"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg><svg viewBox="0 0 20 20" fill="currentColor" width="15" height="15"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg><svg viewBox="0 0 20 20" fill="currentColor" width="15" height="15"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg><svg viewBox="0 0 20 20" fill="currentColor" width="15" height="15"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+              </div>
+              <blockquote style="font-family:'Playfair Display',serif; font-weight:400; font-size:1.05rem; line-height:1.6; color:#16211B; text-wrap:pretty; flex:1">„Ich schätze die Arbeit von Nina wirklich sehr. Sie bringt nicht nur viel Kompetenz mit, sondern versteht auch genau, worauf es bei Ads und Landingpages ankommt. Seit der Zusammenarbeit merke ich einen deutlichen Unterschied, endlich kommen wöchentlich mehrere Anfragen für mein Coaching rein. Gleichzeitig spare ich mir unglaublich viel Zeit und Stress, weil ich nicht mehr auf allen anderen Kanälen ständig aktiv sein muss. Absolute Empfehlung."</blockquote>
+              <div style="display:flex; align-items:center; gap:0.85rem; padding-top:0.9rem; border-top:1px solid #EEEAE2">
+                <img src="images/nicole-bondani.webp" alt="Nicole Bondani" width="44" height="44" loading="lazy" style="width:44px; height:44px; border-radius:50%; object-fit:cover; border:1px solid #E9E5DD; flex-shrink:0">
+                <span style="font-size:0.9rem; line-height:1.4"><strong style="font-weight:500">Nicole Bondani</strong><br><span style="color:#8C978F; font-size:0.84rem">Spiritueller Coach</span></span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <button type="button" class="reviews-arrow" id="reviewsNext" aria-label="Nächste Bewertung">
+          <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M8 4l6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+        </button>
+      </div>
+
+      <div class="reviews-dots" id="reviewsDots">
+        <button type="button" class="reviews-dot reviews-dot--active" aria-label="Bewertung 1"></button>
+        <button type="button" class="reviews-dot" aria-label="Bewertung 2"></button>
+        <button type="button" class="reviews-dot" aria-label="Bewertung 3"></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 9. HÄUFIGE FRAGEN ═══ -->
+  <section id="faq" style="background:#FBF9F5; padding:clamp(4rem,8vw,6.5rem) 0">
+    <div style="max-width:760px; margin:0 auto; padding:0 clamp(1.25rem,4vw,2.5rem)">
+      <h2 style="font-family:'Playfair Display',serif; font-weight:400; font-size:clamp(1.9rem,4.4vw,2.8rem); line-height:1.15; letter-spacing:-0.01em; margin-bottom:2rem; text-wrap:balance">Deine Fragen, <em style="font-style:italic; color:#D96B52">ehrlich beantwortet</em></h2>
+
+      <div style="border-top:1px solid #EEEAE2">
+        <div class="faq-item" style="border-bottom:1px solid #EEEAE2">
+          <button type="button" class="faq-q" aria-expanded="false" style="width:100%; display:flex; justify-content:space-between; align-items:center; gap:1rem; padding:1.25rem 0; background:none; border:none; cursor:pointer; font-size:1rem; color:#16211B; text-align:left; font-weight:500; font-family:'DM Sans',sans-serif">
+            Lohnt sich das Investment für mein Unternehmen?
+            <svg class="faq-chevron" viewBox="0 0 16 16" fill="none" width="18" height="18" style="flex-shrink:0; color:#1E3A2C; transition:transform .25s; transform:rotate(0deg)"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg>
+          </button>
+          <div class="faq-a" style="max-height:0; opacity:0">
+            <p style="font-size:0.94rem; line-height:1.75; color:#55625A; padding-bottom:1.25rem; text-wrap:pretty">Das hängt davon ab, was dir ein Auftrag bringt. Oft reichen ein bis zwei neue Kund:innen im Monat, damit sich die Werbung trägt. In der Regel liegen die Ergebnisse mit Google deutlich darüber. Rechne es oben im Rechner einfach selbst aus.</p>
+          </div>
+        </div>
+        <div class="faq-item" style="border-bottom:1px solid #EEEAE2">
+          <button type="button" class="faq-q" aria-expanded="false" style="width:100%; display:flex; justify-content:space-between; align-items:center; gap:1rem; padding:1.25rem 0; background:none; border:none; cursor:pointer; font-size:1rem; color:#16211B; text-align:left; font-weight:500; font-family:'DM Sans',sans-serif">
+            Ich habe keine Zeit, mich auch noch um Werbung zu kümmern.
+            <svg class="faq-chevron" viewBox="0 0 16 16" fill="none" width="18" height="18" style="flex-shrink:0; color:#1E3A2C; transition:transform .25s; transform:rotate(0deg)"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg>
+          </button>
+          <div class="faq-a" style="max-height:0; opacity:0">
+            <p style="font-size:0.94rem; line-height:1.75; color:#55625A; padding-bottom:1.25rem; text-wrap:pretty">Musst du auch nicht. Genau das übernehme ich. Du brauchst nur Zeit für die neuen Anfragen.</p>
+          </div>
+        </div>
+        <div class="faq-item" style="border-bottom:1px solid #EEEAE2">
+          <button type="button" class="faq-q" aria-expanded="false" style="width:100%; display:flex; justify-content:space-between; align-items:center; gap:1rem; padding:1.25rem 0; background:none; border:none; cursor:pointer; font-size:1rem; color:#16211B; text-align:left; font-weight:500; font-family:'DM Sans',sans-serif">
+            Bei mir läuft das meiste über Empfehlungen. Brauche ich das überhaupt?
+            <svg class="faq-chevron" viewBox="0 0 16 16" fill="none" width="18" height="18" style="flex-shrink:0; color:#1E3A2C; transition:transform .25s; transform:rotate(0deg)"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg>
+          </button>
+          <div class="faq-a" style="max-height:0; opacity:0">
+            <p style="font-size:0.94rem; line-height:1.75; color:#55625A; padding-bottom:1.25rem; text-wrap:pretty">Empfehlungen sind super. Aber sie sind nicht planbar. Google Ads ist das, was läuft, wenn gerade niemand empfiehlt.</p>
+          </div>
+        </div>
+        <div class="faq-item" style="border-bottom:1px solid #EEEAE2">
+          <button type="button" class="faq-q" aria-expanded="false" style="width:100%; display:flex; justify-content:space-between; align-items:center; gap:1rem; padding:1.25rem 0; background:none; border:none; cursor:pointer; font-size:1rem; color:#16211B; text-align:left; font-weight:500; font-family:'DM Sans',sans-serif">
+            Reicht es nicht, auf Social Media aktiv zu sein?
+            <svg class="faq-chevron" viewBox="0 0 16 16" fill="none" width="18" height="18" style="flex-shrink:0; color:#1E3A2C; transition:transform .25s; transform:rotate(0deg)"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg>
+          </button>
+          <div class="faq-a" style="max-height:0; opacity:0">
+            <p style="font-size:0.94rem; line-height:1.75; color:#55625A; padding-bottom:1.25rem; text-wrap:pretty">Social Media kann funktionieren, kostet aber jeden Tag Zeit und Energie. Und wer gerade scrollt, sucht meist nicht nach dir. Bei Google ist das anders: Dort suchen Menschen aktiv nach einer Lösung. Deine Anzeigen laufen, ohne dass du ständig Inhalte produzieren musst.</p>
+          </div>
+        </div>
+        <div class="faq-item" style="border-bottom:1px solid #EEEAE2">
+          <button type="button" class="faq-q" aria-expanded="false" style="width:100%; display:flex; justify-content:space-between; align-items:center; gap:1rem; padding:1.25rem 0; background:none; border:none; cursor:pointer; font-size:1rem; color:#16211B; text-align:left; font-weight:500; font-family:'DM Sans',sans-serif">
+            Ich habe gehört, mit Ads verbrennt man nur Geld.
+            <svg class="faq-chevron" viewBox="0 0 16 16" fill="none" width="18" height="18" style="flex-shrink:0; color:#1E3A2C; transition:transform .25s; transform:rotate(0deg)"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg>
+          </button>
+          <div class="faq-a" style="max-height:0; opacity:0">
+            <p style="font-size:0.94rem; line-height:1.75; color:#55625A; padding-bottom:1.25rem; text-wrap:pretty">Ads ohne Strategie verbrennen Geld. Deshalb gehören bei mir Anzeigen und Landingpage zusammen, und ich optimiere laufend.</p>
+          </div>
+        </div>
+        <div class="faq-item" style="border-bottom:1px solid #EEEAE2">
+          <button type="button" class="faq-q" aria-expanded="false" style="width:100%; display:flex; justify-content:space-between; align-items:center; gap:1rem; padding:1.25rem 0; background:none; border:none; cursor:pointer; font-size:1rem; color:#16211B; text-align:left; font-weight:500; font-family:'DM Sans',sans-serif">
+            Ist mein Unternehmen nicht zu klein dafür?
+            <svg class="faq-chevron" viewBox="0 0 16 16" fill="none" width="18" height="18" style="flex-shrink:0; color:#1E3A2C; transition:transform .25s; transform:rotate(0deg)"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg>
+          </button>
+          <div class="faq-a" style="max-height:0; opacity:0">
+            <p style="font-size:0.94rem; line-height:1.75; color:#55625A; padding-bottom:1.25rem; text-wrap:pretty">Gerade kleine Betriebe und Solo-Selbstständige profitieren. Du kannst mit einem überschaubaren Budget starten und stehst trotzdem neben den Großen.</p>
+          </div>
+        </div>
+        <div class="faq-item" style="border-bottom:1px solid #EEEAE2">
+          <button type="button" class="faq-q" aria-expanded="false" style="width:100%; display:flex; justify-content:space-between; align-items:center; gap:1rem; padding:1.25rem 0; background:none; border:none; cursor:pointer; font-size:1rem; color:#16211B; text-align:left; font-weight:500; font-family:'DM Sans',sans-serif">
+            Welches Budget brauche ich?
+            <svg class="faq-chevron" viewBox="0 0 16 16" fill="none" width="18" height="18" style="flex-shrink:0; color:#1E3A2C; transition:transform .25s; transform:rotate(0deg)"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg>
+          </button>
+          <div class="faq-a" style="max-height:0; opacity:0">
+            <p style="font-size:0.94rem; line-height:1.75; color:#55625A; padding-bottom:1.25rem; text-wrap:pretty">Die meisten starten mit einem Werbebudget ab ca. 500 € im Monat. Was für dich sinnvoll ist, klären wir im kostenlosen Gespräch.</p>
+          </div>
+        </div>
+        <div class="faq-item" style="border-bottom:1px solid #EEEAE2">
+          <button type="button" class="faq-q" aria-expanded="false" style="width:100%; display:flex; justify-content:space-between; align-items:center; gap:1rem; padding:1.25rem 0; background:none; border:none; cursor:pointer; font-size:1rem; color:#16211B; text-align:left; font-weight:500; font-family:'DM Sans',sans-serif">
+            Brauche ich schon eine Website?
+            <svg class="faq-chevron" viewBox="0 0 16 16" fill="none" width="18" height="18" style="flex-shrink:0; color:#1E3A2C; transition:transform .25s; transform:rotate(0deg)"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg>
+          </button>
+          <div class="faq-a" style="max-height:0; opacity:0">
+            <p style="font-size:0.94rem; line-height:1.75; color:#55625A; padding-bottom:1.25rem; text-wrap:pretty">Nein. Die Landingpage für deine Anzeigen baue ich je nach Ausgangslage mit. Wenn du schon eine Website hast, bleibt sie, wie sie ist.</p>
+          </div>
+        </div>
+        <div class="faq-item" style="border-bottom:1px solid #EEEAE2">
+          <button type="button" class="faq-q" aria-expanded="false" style="width:100%; display:flex; justify-content:space-between; align-items:center; gap:1rem; padding:1.25rem 0; background:none; border:none; cursor:pointer; font-size:1rem; color:#16211B; text-align:left; font-weight:500; font-family:'DM Sans',sans-serif">
+            Wie schnell sehe ich Ergebnisse?
+            <svg class="faq-chevron" viewBox="0 0 16 16" fill="none" width="18" height="18" style="flex-shrink:0; color:#1E3A2C; transition:transform .25s; transform:rotate(0deg)"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg>
+          </button>
+          <div class="faq-a" style="max-height:0; opacity:0">
+            <p style="font-size:0.94rem; line-height:1.75; color:#55625A; padding-bottom:1.25rem; text-wrap:pretty">Deine Anzeigen werden ab dem Start ausgespielt. In den ersten Wochen lernen wir, was am besten funktioniert, und verbessern gezielt.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 11. ABSCHLUSS-CTA ═══ -->
+  <section id="abschluss-cta" style="background:#1E3A2C; padding:clamp(4rem,8vw,6.5rem) 0; text-align:center; position:relative; overflow:hidden">
+    <div style="position:absolute; width:520px; height:520px; border-radius:50%; background:#D96B52; opacity:0.14; filter:blur(100px); top:-200px; left:50%; transform:translateX(-50%); pointer-events:none"></div>
+    <div style="position:relative; max-width:760px; margin:0 auto; padding:0 clamp(1.25rem,4vw,2.5rem)">
+      <h2 style="font-family:'Playfair Display',serif; font-weight:400; font-size:clamp(2rem,4.8vw,3rem); line-height:1.12; color:#fff; margin-bottom:1.1rem; text-wrap:balance">Finde heraus, ob du <em style="font-style:italic; color:#F0A090">startklar bist</em></h2>
+      <p style="font-size:1.05rem; line-height:1.75; color:rgba(255,255,255,0.78); max-width:32rem; margin:0 auto 2.2rem; text-wrap:pretty">Beantworte sieben kurze Fragen und erfahre in zwei Minuten, ob Google Ads für dich gerade der richtige Schritt ist.</p>
+      <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:0.9rem">
+        <a href="quiz-start.html" id="btn-final-quiz" class="h-btn-white" style="display:inline-flex; align-items:center; gap:0.5rem; background:#D96B52; color:#fff; border-radius:100px; padding:1rem 1.8rem; font-size:0.98rem; font-weight:500; transition:background .2s, transform .2s" onmouseover="this.style.background='#C55A42';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#D96B52';this.style.transform='none'">Quiz starten</a>
+        <a href="https://meet.brevo.com/nina-zurawski/kennenlerncall" target="_blank" rel="noopener" id="btn-final-booking" class="h-btn-ghost-dark" style="display:inline-flex; align-items:center; gap:0.5rem; background:transparent; color:#fff; border:1px solid rgba(255,255,255,0.4); border-radius:100px; padding:1rem 1.8rem; font-size:0.98rem">Lieber direkt ein Gespräch buchen</a>
+      </div>
+    </div>
+  </section>
+
+  <footer id="footer" style="background:#16291F; border-top:1px solid rgba(255,255,255,0.12); padding:1.8rem 0">
+    <div style="max-width:1180px; margin:0 auto; padding:0 clamp(1.25rem,4vw,2.5rem); display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:1rem">
+      <span style="font-family:'Playfair Display',serif; font-size:1.05rem; color:#fff">Nina Zurawski</span>
+      <div style="display:flex; gap:1.5rem">
+        <a href="impressum.html" style="font-size:0.78rem; letter-spacing:0.08em; color:rgba(255,255,255,0.6)">Impressum</a>
+        <a href="datenschutz.html" style="font-size:0.78rem; letter-spacing:0.08em; color:rgba(255,255,255,0.6)">Datenschutz</a>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<!-- ═══ COOKIE CONSENT ═══ -->
+<div id="cookieOverlay" class="cookie-overlay" aria-hidden="true"></div>
+<div id="cookieBanner" class="cookie-banner" role="dialog" aria-modal="true" aria-label="Datenschutzeinstellungen">
+  <div id="cookieViewMain" class="cookie-view">
+    <div class="cookie-inner">
+      <h2 class="cookie-title">Cookies &amp; Tracking</h2>
+      <p class="cookie-body">Technisch notwendige Funktionen sind immer aktiv. Für Marketing-Cookies (Google&nbsp;Ads Conversion-Tracking und Meta-Pixel für diese Kampagne) brauche ich deine Einwilligung. Sie ist freiwillig, für die Nutzung der Website nicht erforderlich und jederzeit widerrufbar.</p>
+      <div class="cookie-actions">
+        <button id="cookieAcceptAll" class="btn-cookie">Alles akzeptieren</button>
+        <button id="cookieShowSettings" class="btn-cookie">Bearbeiten</button>
+        <button id="cookieRejectAll" class="btn-cookie">Alles ablehnen</button>
+      </div>
+      <div class="cookie-footer-links">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutzerklärung</a>
+      </div>
+    </div>
+  </div>
+  <div id="cookieViewSettings" class="cookie-view cookie-view--hidden">
+    <div class="cookie-inner">
+      <button id="cookieBack" class="cookie-back">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+        Zurück
+      </button>
+      <h2 class="cookie-title">Cookie-Einstellungen</h2>
+      <p class="cookie-body">Wähle, welche Kategorien du zulassen möchtest. Essenzielle Cookies sind für den Betrieb der Website notwendig und immer aktiv.</p>
+      <div class="cookie-categories">
+        <div class="cookie-cat">
+          <div class="cookie-cat-head">
+            <div class="cookie-cat-info"><span class="cookie-cat-name">Essenziell</span><span class="cookie-cat-badge">Immer aktiv</span></div>
+            <div class="cookie-toggle cookie-toggle--fixed"><span class="ct-track ct-track--on"><span class="ct-thumb"></span></span></div>
+          </div>
+          <p class="cookie-cat-desc">Technisch notwendig für den Betrieb der Website (Hosting, selbst gehostete Schriftarten). Speichert außerdem deine Cookie-Auswahl im lokalen Speicher deines Browsers (<code>cookie_consent</code>, kein Cookie, wird nicht an Server übertragen). Es werden keine Cookies gesetzt.</p>
+        </div>
+        <div class="cookie-cat">
+          <div class="cookie-cat-head">
+            <div class="cookie-cat-info"><span class="cookie-cat-name">Marketing</span></div>
+            <label class="cookie-toggle"><input type="checkbox" id="marketingToggle" class="ct-input"><span class="ct-track"><span class="ct-thumb"></span></span></label>
+          </div>
+          <p class="cookie-cat-desc">Google&nbsp;Ads Conversion-Tracking über den Google Tag Manager (Anbieter: Google Ireland Ltd.) sowie das Meta-Pixel von Facebook/Instagram (Anbieter: Meta Platforms Ireland Ltd.) zur Erfolgsmessung dieser Kampagne. Datenübermittlung an die USA möglich. Details in der Datenschutzerklärung.</p>
+        </div>
+      </div>
+      <div class="cookie-actions">
+        <button id="cookieAcceptAll2" class="btn-cookie">Alles akzeptieren</button>
+        <button id="cookieAcceptSelection" class="btn-cookie">Auswahl akzeptieren</button>
+        <button id="cookieRejectAll2" class="btn-cookie">Alles ablehnen</button>
+      </div>
+      <div class="cookie-footer-links">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutzerklärung</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ---------- Rechner ---------- */
+  var elAuftrag = document.getElementById('calcAuftragswert');
+  var elBudget  = document.getElementById('calcBudget');
+  var elKosten  = document.getElementById('calcKosten');
+  var elOutput  = document.getElementById('calcOutput');
+
+  function calcUpdate() {
+    var order  = parseFloat(elAuftrag.value);
+    var budget = parseFloat(elBudget.value);
+    var extra  = parseFloat(elKosten.value);
+    if (isNaN(budget) || budget < 0) budget = 0;
+    if (isNaN(extra) || extra < 0) extra = 0;
+
+    if (!order || isNaN(order) || order <= 0) {
+      elOutput.textContent = 'Trag deinen durchschnittlichen Auftragswert ein.';
+      return;
+    }
+    var needed = Math.max(1, Math.ceil((budget + extra) / order));
+    elOutput.innerHTML = 'Du brauchst <strong>' + needed + '</strong> neue Kund:innen im Monat, damit sich deine Werbung trägt. Alles darüber ist Gewinn.';
+  }
+  [elAuftrag, elBudget, elKosten].forEach(function (el) {
+    el.addEventListener('input', calcUpdate);
+  });
+  calcUpdate();
+
+  /* ---------- FAQ accordion (exclusive) ---------- */
+  var faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach(function (item) {
+    var btn = item.querySelector('.faq-q');
+    var panel = item.querySelector('.faq-a');
+    var chevron = item.querySelector('.faq-chevron');
+    btn.addEventListener('click', function () {
+      var isOpen = btn.getAttribute('aria-expanded') === 'true';
+      faqItems.forEach(function (other) {
+        var ob = other.querySelector('.faq-q');
+        var op = other.querySelector('.faq-a');
+        var oc = other.querySelector('.faq-chevron');
+        ob.setAttribute('aria-expanded', 'false');
+        op.style.maxHeight = '0px';
+        op.style.opacity = '0';
+        oc.style.transform = 'rotate(0deg)';
+      });
+      if (!isOpen) {
+        btn.setAttribute('aria-expanded', 'true');
+        panel.style.maxHeight = panel.scrollHeight + 'px';
+        panel.style.opacity = '1';
+        chevron.style.transform = 'rotate(45deg)';
+      }
+    });
+  });
+
+  /* ---------- Reviews carousel ---------- */
+  (function () {
+    var track = document.getElementById('reviewsTrack');
+    if (!track) return;
+    var dots = document.querySelectorAll('.reviews-dot');
+    var total = track.children.length, current = 0;
+    function go(n) {
+      current = (n + total) % total;
+      track.style.transform = 'translateX(-' + (current * 100) + '%)';
+      dots.forEach(function (d, i) { d.classList.toggle('reviews-dot--active', i === current); });
+    }
+    document.getElementById('reviewsPrev').addEventListener('click', function () { go(current - 1); });
+    document.getElementById('reviewsNext').addEventListener('click', function () { go(current + 1); });
+    dots.forEach(function (d, i) { d.addEventListener('click', function () { go(i); }); });
+    var startX = 0;
+    track.addEventListener('touchstart', function (e) { startX = e.touches[0].clientX; }, { passive: true });
+    track.addEventListener('touchend', function (e) {
+      var dx = e.changedTouches[0].clientX - startX;
+      if (Math.abs(dx) > 40) go(dx < 0 ? current + 1 : current - 1);
+    }, { passive: true });
+  })();
+
+  /* ---------- Tracking-Helper (Meta Pixel) ---------- */
+  window.ninaTrack = function (kind, name, params) {
+    if (typeof fbq !== 'function') return;
+    if (kind === 'custom') fbq('trackCustom', name, params || {});
+    else fbq('track', name, params || {});
+  };
+  document.getElementById('btn-hero-booking').addEventListener('click', function () { ninaTrack('standard', 'Schedule'); });
+  document.getElementById('btn-final-booking').addEventListener('click', function () { ninaTrack('standard', 'Schedule'); });
+
+  /* ---------- Cookie consent (localStorage key shared site-wide) ---------- */
+  var STORAGE_KEY = 'cookie_consent';
+
+  function getConsent() {
+    try {
+      var raw = localStorage.getItem(STORAGE_KEY);
+      return raw ? JSON.parse(raw) : null;
+    } catch (e) { return null; }
+  }
+  function saveConsent(c) {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(Object.assign({}, c, { timestamp: new Date().toISOString() })));
+    } catch (e) {}
+  }
+  function applyConsent(c) {
+    var g = window.gtag || function () { (window.dataLayer = window.dataLayer || []).push(arguments); };
+    g('consent', 'update', {
+      ad_storage:         c.marketing ? 'granted' : 'denied',
+      ad_user_data:       c.marketing ? 'granted' : 'denied',
+      ad_personalization: c.marketing ? 'granted' : 'denied'
+    });
+    if (typeof fbq === 'function') fbq('consent', c.marketing ? 'grant' : 'revoke');
+  }
+
+  var banner = document.getElementById('cookieBanner');
+  var overlay = document.getElementById('cookieOverlay');
+  var viewMain = document.getElementById('cookieViewMain');
+  var viewSettings = document.getElementById('cookieViewSettings');
+
+  var stored = getConsent();
+  if (stored) {
+    applyConsent(stored);
+  } else {
+    setTimeout(function () {
+      banner.classList.add('is-visible');
+      overlay.classList.add('is-visible');
+    }, 900);
+  }
+
+  function hide() {
+    banner.classList.remove('is-visible');
+    overlay.classList.remove('is-visible');
+  }
+  function acceptAll() {
+    var c = { essential: true, marketing: true };
+    saveConsent(c); applyConsent(c); hide();
+  }
+  function rejectAll() {
+    var c = { essential: true, marketing: false };
+    saveConsent(c); applyConsent(c); hide();
+  }
+  function acceptSelection() {
+    var c = {
+      essential: true,
+      marketing: document.getElementById('marketingToggle').checked
+    };
+    saveConsent(c); applyConsent(c); hide();
+  }
+  function showSettings() { viewMain.classList.add('cookie-view--hidden'); viewSettings.classList.remove('cookie-view--hidden'); banner.scrollTop = 0; }
+  function showMain() { viewSettings.classList.add('cookie-view--hidden'); viewMain.classList.remove('cookie-view--hidden'); banner.scrollTop = 0; }
+
+  document.getElementById('cookieAcceptAll').addEventListener('click', acceptAll);
+  document.getElementById('cookieRejectAll').addEventListener('click', rejectAll);
+  document.getElementById('cookieShowSettings').addEventListener('click', showSettings);
+  document.getElementById('cookieAcceptAll2').addEventListener('click', acceptAll);
+  document.getElementById('cookieRejectAll2').addEventListener('click', rejectAll);
+  document.getElementById('cookieAcceptSelection').addEventListener('click', acceptSelection);
+  document.getElementById('cookieBack').addEventListener('click', showMain);
+})();
+</script>
+
+</body>
+</html>

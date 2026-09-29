@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<!-- Consent Mode: Standard = alles abgelehnt bis zur Einwilligung -->
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',functionality_storage:'granted',security_storage:'granted',wait_for_update:500});
+try{var _c=JSON.parse(localStorage.getItem('cookie_consent')||'null');if(_c)gtag('consent','update',{ad_storage:_c.marketing?'granted':'denied',ad_user_data:_c.marketing?'granted':'denied',ad_personalization:_c.marketing?'granted':'denied'});}catch(e){}
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NLFQXM86');</script>
+<!-- End Google Tag Manager -->
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+window.META_PIXEL_ID = 'DEINE_META_PIXEL_ID'; /* TODO: echte Meta Pixel ID eintragen */
+fbq('consent', 'revoke');
+fbq('init', window.META_PIXEL_ID);
+try{var _c2=JSON.parse(localStorage.getItem('cookie_consent')||'null');if(_c2&&_c2.marketing)fbq('consent','grant');}catch(e){}
+fbq('track', 'PageView');
+fbq('track', 'CompleteRegistration');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=DEINE_META_PIXEL_ID&ev=PageView&noscript=1" alt=""></noscript>
+<!-- End Meta Pixel Code -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Geschafft, deine Checkliste ist unterwegs! — Nina Zurawski</title>
+<meta name="description" content="Deine Checkliste Startklar für Google Ads ist unterwegs. Schau in dein Postfach.">
+<meta name="robots" content="noindex">
+
+<link rel="icon" type="image/png" href="images/logo-nina.png">
+<link rel="apple-touch-icon" href="images/logo-nina.png">
+
+<link rel="preload" href="fonts/playfair-display-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="fonts/dm-sans-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="fonts/dm-sans-500.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+<style>
+  /* ---------- Fonts (self-hosted) ---------- */
+  @font-face { font-family:'Playfair Display'; src:url('fonts/playfair-display-400.woff2') format('woff2'); font-weight:400; font-style:normal; font-display:swap; }
+  @font-face { font-family:'Playfair Display'; src:url('fonts/playfair-display-400italic.woff2') format('woff2'); font-weight:400; font-style:italic; font-display:swap; }
+  @font-face { font-family:'Playfair Display'; src:url('fonts/playfair-display-500.woff2') format('woff2'); font-weight:500; font-style:normal; font-display:swap; }
+  @font-face { font-family:'DM Sans'; src:url('fonts/dm-sans-400.woff2') format('woff2'); font-weight:400; font-style:normal; font-display:swap; }
+  @font-face { font-family:'DM Sans'; src:url('fonts/dm-sans-500.woff2') format('woff2'); font-weight:500; font-style:normal; font-display:swap; }
+
+  /* ---------- Reset ---------- */
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: #FBF9F5; -webkit-font-smoothing: antialiased; overflow-x: clip; }
+  a { color: #1F3D2E; text-decoration: none; }
+  h1, h2, p, figure { margin: 0; }
+  button { font: inherit; }
+  img { max-width: 100%; }
+
+  .h-btn-dark { transition: background .2s, transform .2s; }
+  .h-btn-dark:hover { background: #C96246 !important; transform: translateY(-2px); }
+  .h-link { transition: color .2s, border-color .2s; }
+  .h-link:hover { color: #E07856 !important; border-color: #E07856 !important; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { transition: none !important; }
+  }
+
+  /* ---------- Header ---------- */
+  .hdr-brand { white-space: nowrap; }
+  @media (max-width: 360px) { .hdr-brand { display: none; } }
+
+  /* ==========================================================
+     COOKIE CONSENT
+     ========================================================== */
+  .cookie-overlay {
+    position: fixed; inset: 0; background: rgba(16,24,20,0.45);
+    opacity: 0; pointer-events: none; transition: opacity .3s ease; z-index: 900;
+  }
+  .cookie-overlay.is-visible { opacity: 1; pointer-events: auto; }
+  .cookie-banner {
+    position: fixed; left: 50%; bottom: clamp(1rem, 4vw, 2.5rem);
+    transform: translate(-50%, 140%); width: min(560px, calc(100vw - 2rem));
+    background: #fff; border: 1px solid #E9E5DD; border-radius: 20px;
+    box-shadow: 0 30px 70px -30px rgba(22,33,27,0.5); z-index: 901;
+    max-height: calc(100vh - 2rem); overflow-y: auto;
+    transition: transform .4s cubic-bezier(.16,1,.3,1);
+    font-family: 'DM Sans', sans-serif; color: #16211B;
+  }
+  .cookie-banner.is-visible { transform: translate(-50%, 0); }
+  .cookie-view--hidden { display: none; }
+  .cookie-inner { padding: clamp(1.5rem, 4vw, 2rem); }
+  .cookie-title { font-family: 'Playfair Display', serif; font-weight: 500; font-size: 1.2rem; line-height: 1.3; margin-bottom: 0.75rem; }
+  .cookie-body { font-size: 0.88rem; line-height: 1.7; color: #55625A; margin-bottom: 1.25rem; }
+  .cookie-back {
+    display: inline-flex; align-items: center; gap: 0.4rem; background: none; border: none;
+    color: #8C978F; font-size: 0.82rem; cursor: pointer; padding: 0; margin-bottom: 1rem;
+  }
+  .cookie-back:hover { color: #1F3D2E; }
+  .cookie-categories { display: flex; flex-direction: column; gap: 0.9rem; margin-bottom: 1.25rem; }
+  .cookie-cat { border: 1px solid #EEEAE2; border-radius: 12px; padding: 1rem 1.1rem; }
+  .cookie-cat-head { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+  .cookie-cat-info { display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; }
+  .cookie-cat-name { font-weight: 500; font-size: 0.92rem; }
+  .cookie-cat-badge { font-size: 0.66rem; letter-spacing: 0.08em; text-transform: uppercase; color: #8C978F; border: 1px solid #E3DCCF; border-radius: 100px; padding: 0.15rem 0.55rem; }
+  .cookie-cat-desc { font-size: 0.8rem; line-height: 1.6; color: #8C978F; margin-top: 0.55rem; }
+  .cookie-toggle { display: flex; align-items: center; flex-shrink: 0; cursor: pointer; }
+  .cookie-toggle--fixed { cursor: default; }
+  .ct-input { position: absolute; opacity: 0; width: 0; height: 0; }
+  .ct-track { width: 40px; height: 22px; border-radius: 100px; background: #D8D2C6; position: relative; transition: background .2s; display: inline-block; }
+  .ct-track--on, .ct-input:checked + .ct-track { background: #E07856; }
+  .ct-thumb { position: absolute; top: 2px; left: 2px; width: 18px; height: 18px; border-radius: 50%; background: #fff; transition: transform .2s; }
+  .ct-track--on .ct-thumb, .ct-input:checked + .ct-track .ct-thumb { transform: translateX(18px); }
+  .cookie-actions { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+  .btn-cookie {
+    flex: 1 1 auto; min-width: 130px; border: 1px solid #1F3D2E; background: #1F3D2E; color: #fff;
+    border-radius: 100px; padding: 0.7rem 1.1rem; font-size: 0.82rem; cursor: pointer; transition: opacity .2s, transform .2s;
+  }
+  .btn-cookie:hover { opacity: 0.88; transform: translateY(-1px); }
+  .cookie-footer-links { display: flex; gap: 1.25rem; margin-top: 1.1rem; }
+  .cookie-footer-links a { font-size: 0.74rem; letter-spacing: 0.06em; color: #8C978F; }
+  .cookie-footer-links a:hover { color: #1F3D2E; }
+  @media (max-width: 480px) { .cookie-actions { flex-direction: column; } .btn-cookie { width: 100%; } }
+</style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NLFQXM86"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<div style="font-family:'DM Sans',sans-serif; color:#16211B; min-height:100vh; display:flex; flex-direction:column">
+
+  <header style="padding:1.6rem 0">
+    <div style="max-width:1180px; margin:0 auto; padding:0 clamp(1.25rem,4vw,2.5rem); display:flex; align-items:center; justify-content:center; gap:0.7rem">
+      <img src="images/logo-nina.png" alt="Nina Zurawski Logo" style="width:38px; height:38px; border-radius:50%; object-fit:contain; display:block">
+      <span class="hdr-brand" style="font-family:'Playfair Display',serif; font-size:1.08rem; color:#1F3D2E">Nina Zurawski</span>
+    </div>
+  </header>
+
+  <main style="flex:1; display:flex; align-items:center; padding:clamp(2rem,6vw,3.5rem) 0">
+    <div style="max-width:640px; margin:0 auto; padding:0 clamp(1.25rem,4vw,2.5rem); width:100%">
+
+      <div style="background:#FFFFFF; border:1px solid #E9E5DD; border-radius:24px; padding:clamp(2rem,5vw,3rem); text-align:center; box-shadow:0 2px 4px rgba(22,33,27,0.03), 0 30px 60px -34px rgba(30,58,44,0.2)">
+
+        <span style="display:inline-flex; width:58px; height:58px; border-radius:50%; background:#F1F5F1; color:#1F3D2E; align-items:center; justify-content:center; margin-bottom:1.4rem">
+          <svg viewBox="0 0 24 24" fill="none" width="26" height="26"><path d="M4 12.5l5 5L20 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+        </span>
+
+        <h1 style="font-family:'Playfair Display',serif; font-weight:400; font-size:clamp(1.8rem,5vw,2.5rem); line-height:1.18; color:#1F3D2E; margin-bottom:1rem; text-wrap:balance">Geschafft, deine Checkliste ist unterwegs!</h1>
+        <p style="font-size:1.02rem; line-height:1.75; color:#55625A; text-wrap:pretty">Schau in dein Postfach, in wenigen Minuten ist sie da. Falls nicht, wirf einen Blick in den Spam-Ordner.</p>
+
+        <hr style="border:none; border-top:1px solid #EEEAE2; margin:2.2rem 0">
+
+        <img src="images/portrait-nina.webp" alt="Nina Zurawski" width="72" height="72" loading="lazy" style="width:72px; height:72px; border-radius:50%; object-fit:cover; object-position:center 12%; margin:0 auto 1.2rem; display:block">
+
+        <h2 style="font-family:'Playfair Display',serif; font-weight:500; font-size:clamp(1.3rem,3.2vw,1.6rem); line-height:1.25; color:#2D4A3E; margin-bottom:0.9rem">Du willst nicht warten?</h2>
+        <p style="font-size:0.98rem; line-height:1.75; color:#55625A; margin-bottom:1.8rem; text-wrap:pretty">Wenn du lieber direkt wissen möchtest, wie Google Ads für dein Angebot aussehen könnten, lass uns sprechen. Das Gespräch ist kostenlos, dauert rund 30 Minuten und du bekommst eine ehrliche Einschätzung.</p>
+
+        <a href="https://meet.brevo.com/nina-zurawski/kennenlerncall" target="_blank" rel="noopener" id="danke-termin-button" class="h-btn-dark" style="display:inline-flex; align-items:center; gap:0.5rem; background:#E07856; color:#fff; border-radius:100px; padding:1rem 1.9rem; font-size:0.98rem; font-weight:500; box-shadow:0 18px 36px -14px rgba(224,120,86,0.5)">
+          Kostenloses Gespräch buchen
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path></svg>
+        </a>
+
+        <p style="font-size:0.82rem; line-height:1.6; color:#8C978F; margin-top:1.6rem">In den nächsten Tagen schicke ich dir außerdem ein paar kurze Tipps, wie du mit Google Ads planbar neue Kund:innen gewinnst.</p>
+      </div>
+
+    </div>
+  </main>
+
+  <footer id="footer" style="background:#16291F; border-top:1px solid rgba(255,255,255,0.12); padding:1.8rem 0">
+    <div style="max-width:1180px; margin:0 auto; padding:0 clamp(1.25rem,4vw,2.5rem); display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:1rem">
+      <span style="font-family:'Playfair Display',serif; font-size:1.05rem; color:#fff">Nina Zurawski</span>
+      <div style="display:flex; gap:1.5rem">
+        <a href="impressum.html" style="font-size:0.78rem; letter-spacing:0.08em; color:rgba(255,255,255,0.6)">Impressum</a>
+        <a href="datenschutz.html" style="font-size:0.78rem; letter-spacing:0.08em; color:rgba(255,255,255,0.6)">Datenschutz</a>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<!-- ═══ COOKIE CONSENT ═══ -->
+<div id="cookieOverlay" class="cookie-overlay" aria-hidden="true"></div>
+<div id="cookieBanner" class="cookie-banner" role="dialog" aria-modal="true" aria-label="Datenschutzeinstellungen">
+  <div id="cookieViewMain" class="cookie-view">
+    <div class="cookie-inner">
+      <h2 class="cookie-title">Cookies &amp; Tracking</h2>
+      <p class="cookie-body">Technisch notwendige Funktionen sind immer aktiv. Für Marketing-Cookies (Google&nbsp;Ads Conversion-Tracking und Meta-Pixel für diese Kampagne) brauche ich deine Einwilligung. Sie ist freiwillig, für die Nutzung der Website nicht erforderlich und jederzeit widerrufbar.</p>
+      <div class="cookie-actions">
+        <button id="cookieAcceptAll" class="btn-cookie">Alles akzeptieren</button>
+        <button id="cookieShowSettings" class="btn-cookie">Bearbeiten</button>
+        <button id="cookieRejectAll" class="btn-cookie">Alles ablehnen</button>
+      </div>
+      <div class="cookie-footer-links">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutzerklärung</a>
+      </div>
+    </div>
+  </div>
+  <div id="cookieViewSettings" class="cookie-view cookie-view--hidden">
+    <div class="cookie-inner">
+      <button id="cookieBack" class="cookie-back">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+        Zurück
+      </button>
+      <h2 class="cookie-title">Cookie-Einstellungen</h2>
+      <p class="cookie-body">Wähle, welche Kategorien du zulassen möchtest. Essenzielle Cookies sind für den Betrieb der Website notwendig und immer aktiv.</p>
+      <div class="cookie-categories">
+        <div class="cookie-cat">
+          <div class="cookie-cat-head">
+            <div class="cookie-cat-info"><span class="cookie-cat-name">Essenziell</span><span class="cookie-cat-badge">Immer aktiv</span></div>
+            <div class="cookie-toggle cookie-toggle--fixed"><span class="ct-track ct-track--on"><span class="ct-thumb"></span></span></div>
+          </div>
+          <p class="cookie-cat-desc">Technisch notwendig für den Betrieb der Website (Hosting, selbst gehostete Schriftarten). Speichert außerdem deine Cookie-Auswahl im lokalen Speicher deines Browsers (<code>cookie_consent</code>, kein Cookie, wird nicht an Server übertragen). Es werden keine Cookies gesetzt.</p>
+        </div>
+        <div class="cookie-cat">
+          <div class="cookie-cat-head">
+            <div class="cookie-cat-info"><span class="cookie-cat-name">Marketing</span></div>
+            <label class="cookie-toggle"><input type="checkbox" id="marketingToggle" class="ct-input"><span class="ct-track"><span class="ct-thumb"></span></span></label>
+          </div>
+          <p class="cookie-cat-desc">Google&nbsp;Ads Conversion-Tracking über den Google Tag Manager (Anbieter: Google Ireland Ltd.) sowie das Meta-Pixel von Facebook/Instagram (Anbieter: Meta Platforms Ireland Ltd.) zur Erfolgsmessung dieser Kampagne. Datenübermittlung an die USA möglich. Details in der Datenschutzerklärung.</p>
+        </div>
+      </div>
+      <div class="cookie-actions">
+        <button id="cookieAcceptAll2" class="btn-cookie">Alles akzeptieren</button>
+        <button id="cookieAcceptSelection" class="btn-cookie">Auswahl akzeptieren</button>
+        <button id="cookieRejectAll2" class="btn-cookie">Alles ablehnen</button>
+      </div>
+      <div class="cookie-footer-links">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutzerklärung</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ---------- Tracking-Helper (Meta Pixel) ---------- */
+  document.getElementById('danke-termin-button').addEventListener('click', function () {
+    if (typeof fbq === 'function') fbq('track', 'Schedule');
+  });
+
+  /* ---------- Cookie consent (localStorage key shared site-wide) ---------- */
+  var STORAGE_KEY = 'cookie_consent';
+
+  function getConsent() {
+    try {
+      var raw = localStorage.getItem(STORAGE_KEY);
+      return raw ? JSON.parse(raw) : null;
+    } catch (e) { return null; }
+  }
+  function saveConsent(c) {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(Object.assign({}, c, { timestamp: new Date().toISOString() })));
+    } catch (e) {}
+  }
+  function applyConsent(c) {
+    var g = window.gtag || function () { (window.dataLayer = window.dataLayer || []).push(arguments); };
+    g('consent', 'update', {
+      ad_storage:         c.marketing ? 'granted' : 'denied',
+      ad_user_data:       c.marketing ? 'granted' : 'denied',
+      ad_personalization: c.marketing ? 'granted' : 'denied'
+    });
+    if (typeof fbq === 'function') fbq('consent', c.marketing ? 'grant' : 'revoke');
+  }
+
+  var banner = document.getElementById('cookieBanner');
+  var overlay = document.getElementById('cookieOverlay');
+  var viewMain = document.getElementById('cookieViewMain');
+  var viewSettings = document.getElementById('cookieViewSettings');
+
+  var stored = getConsent();
+  if (stored) {
+    applyConsent(stored);
+  } else {
+    setTimeout(function () {
+      banner.classList.add('is-visible');
+      overlay.classList.add('is-visible');
+    }, 900);
+  }
+
+  function hide() {
+    banner.classList.remove('is-visible');
+    overlay.classList.remove('is-visible');
+  }
+  function acceptAll() {
+    var c = { essential: true, marketing: true };
+    saveConsent(c); applyConsent(c); hide();
+  }
+  function rejectAll() {
+    var c = { essential: true, marketing: false };
+    saveConsent(c); applyConsent(c); hide();
+  }
+  function acceptSelection() {
+    var c = {
+      essential: true,
+      marketing: document.getElementById('marketingToggle').checked
+    };
+    saveConsent(c); applyConsent(c); hide();
+  }
+  function showSettings() { viewMain.classList.add('cookie-view--hidden'); viewSettings.classList.remove('cookie-view--hidden'); banner.scrollTop = 0; }
+  function showMain() { viewSettings.classList.add('cookie-view--hidden'); viewMain.classList.remove('cookie-view--hidden'); banner.scrollTop = 0; }
+
+  document.getElementById('cookieAcceptAll').addEventListener('click', acceptAll);
+  document.getElementById('cookieRejectAll').addEventListener('click', rejectAll);
+  document.getElementById('cookieShowSettings').addEventListener('click', showSettings);
+  document.getElementById('cookieAcceptAll2').addEventListener('click', acceptAll);
+  document.getElementById('cookieRejectAll2').addEventListener('click', rejectAll);
+  document.getElementById('cookieAcceptSelection').addEventListener('click', acceptSelection);
+  document.getElementById('cookieBack').addEventListener('click', showMain);
+})();
+</script>
+
+</body>
+</html>

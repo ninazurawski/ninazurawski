@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<!-- Consent Mode: Standard = alles abgelehnt bis zur Einwilligung -->
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',functionality_storage:'granted',security_storage:'granted',wait_for_update:500});
+try{var _c=JSON.parse(localStorage.getItem('cookie_consent')||'null');if(_c)gtag('consent','update',{ad_storage:_c.marketing?'granted':'denied',ad_user_data:_c.marketing?'granted':'denied',ad_personalization:_c.marketing?'granted':'denied'});}catch(e){}
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NLFQXM86');</script>
+<!-- End Google Tag Manager -->
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+window.META_PIXEL_ID = 'DEINE_META_PIXEL_ID'; /* TODO: echte Meta Pixel ID eintragen */
+fbq('consent', 'revoke');
+fbq('init', window.META_PIXEL_ID);
+try{var _c2=JSON.parse(localStorage.getItem('cookie_consent')||'null');if(_c2&&_c2.marketing)fbq('consent','grant');}catch(e){}
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=DEINE_META_PIXEL_ID&ev=PageView&noscript=1" alt=""></noscript>
+<!-- End Meta Pixel Code -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bist du startklar für Google Ads? — Nina Zurawski</title>
+<meta name="description" content="Sieben kurze Fragen, zwei Minuten. Finde heraus, ob Google Ads gerade der richtige Schritt für dich ist.">
+<meta name="robots" content="noindex">
+
+<link rel="icon" type="image/png" href="images/logo-nina.png">
+<link rel="apple-touch-icon" href="images/logo-nina.png">
+
+<link rel="preload" href="fonts/playfair-display-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="fonts/dm-sans-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="fonts/dm-sans-500.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+<style>
+  /* ---------- Fonts (self-hosted) ---------- */
+  @font-face { font-family:'Playfair Display'; src:url('fonts/playfair-display-400.woff2') format('woff2'); font-weight:400; font-style:normal; font-display:swap; }
+  @font-face { font-family:'Playfair Display'; src:url('fonts/playfair-display-500.woff2') format('woff2'); font-weight:500; font-style:normal; font-display:swap; }
+  @font-face { font-family:'DM Sans'; src:url('fonts/dm-sans-400.woff2') format('woff2'); font-weight:400; font-style:normal; font-display:swap; }
+  @font-face { font-family:'DM Sans'; src:url('fonts/dm-sans-500.woff2') format('woff2'); font-weight:500; font-style:normal; font-display:swap; }
+
+  /* ---------- Reset ---------- */
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0; background-color: #FBF9F5; font-family: 'DM Sans', sans-serif; -webkit-font-smoothing: antialiased; overflow-x: clip; min-height: 100vh;
+    background-image:
+      radial-gradient(640px 480px at 88% -8%, rgba(30,58,44,0.06), transparent 60%),
+      radial-gradient(520px 420px at -6% 100%, rgba(217,107,82,0.08), transparent 60%);
+    background-repeat: no-repeat;
+  }
+  a { color: #1E3A2C; text-decoration: none; }
+  h1, h2, h3, p, blockquote { margin: 0; }
+  button { font: inherit; }
+  img { max-width: 100%; }
+
+  .h-link { transition: color .2s, border-color .2s; }
+  .h-link:hover { color: #D96B52 !important; border-color: #D96B52 !important; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { transition: none !important; }
+  }
+
+  /* ---------- Layout ---------- */
+  .quiz-page { min-height: 100vh; display: flex; flex-direction: column; }
+  .quiz-main { flex: 1; display: flex; align-items: center; padding: clamp(2.5rem,6vw,4rem) 0; }
+  .quiz-wrap { width: 100%; max-width: 640px; margin: 0 auto; padding: 0 clamp(1.25rem,4vw,2.5rem); }
+
+  /* ---------- Progress ---------- */
+  .quiz-progress-bar { width: 100%; height: 6px; background: #E9E5DD; border-radius: 100px; overflow: hidden; }
+  .quiz-progress-fill { height: 100%; background: #D96B52; border-radius: 100px; transition: width .35s ease; width: 0%; }
+  .quiz-progress-label { display: block; margin-top: 0.6rem; font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: #8C978F; }
+
+  /* ---------- Card ---------- */
+  .quiz-card {
+    background: #FFFFFF; border: 1px solid #E9E5DD; border-radius: 22px;
+    padding: clamp(1.6rem,4vw,2.4rem); box-shadow: 0 2px 4px rgba(22,33,27,0.03), 0 30px 60px -34px rgba(30,58,44,0.25);
+    transition: opacity .2s ease, transform .2s ease;
+  }
+  .quiz-card--out { opacity: 0; transform: translateY(6px); }
+
+  .quiz-q-text { font-family: 'Playfair Display', serif; font-weight: 500; font-size: clamp(1.2rem,3vw,1.5rem); line-height: 1.35; color: #16211B; margin-bottom: 0.5rem; }
+  .quiz-q-hint { font-size: 0.86rem; color: #8C978F; margin-bottom: 1.4rem; }
+
+  .quiz-options { display: flex; flex-direction: column; gap: 0.7rem; margin-top: 1.4rem; }
+  .quiz-option {
+    width: 100%; text-align: left; background: #FBF9F5; border: 1px solid #E9E5DD; border-radius: 14px;
+    padding: 0.95rem 1.15rem; font-family: 'DM Sans', sans-serif; font-size: 0.98rem; color: #16211B;
+    cursor: pointer; transition: border-color .2s, background .2s, transform .15s;
+  }
+  .quiz-option:hover { border-color: #1E3A2C; background: #F1F5F1; }
+  .quiz-option:focus-visible { outline: 2px solid #1E3A2C; outline-offset: 2px; }
+  .quiz-opt--chosen { border-color: #D96B52 !important; background: #FDF0EC !important; }
+  .quiz-opt--dim { opacity: 0.45; }
+  .quiz-option:disabled { cursor: default; }
+
+  .quiz-back {
+    display: inline-flex; align-items: center; gap: 0.4rem; background: none; border: none;
+    color: #8C978F; font-size: 0.85rem; cursor: pointer; padding: 0; margin-bottom: 1.2rem;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .quiz-back:hover { color: #1E3A2C; }
+
+  .quiz-hidden { display: none !important; }
+
+  /* ---------- Intro ---------- */
+  .quiz-intro h1 { font-family: 'Playfair Display', serif; font-weight: 400; font-size: clamp(2rem,5vw,2.8rem); line-height: 1.15; letter-spacing: -0.01em; margin-bottom: 1.2rem; text-wrap: balance; }
+  .quiz-intro p { font-size: 1.02rem; line-height: 1.75; color: #55625A; margin-bottom: 2rem; text-wrap: pretty; }
+  .quiz-btn-start {
+    display: inline-flex; align-items: center; gap: 0.5rem; background: #D96B52; color: #fff;
+    border-radius: 100px; padding: 1rem 1.9rem; font-size: 1rem; font-weight: 500; border: none; cursor: pointer;
+    box-shadow: 0 18px 36px -14px rgba(217,107,82,0.55); transition: background .2s, transform .2s;
+  }
+  .quiz-btn-start:hover { background: #C55A42; transform: translateY(-2px); }
+
+  /* ---------- Result ---------- */
+  .quiz-result-card {
+    background: #FFFFFF; border: 1px solid #E9E5DD; border-radius: 24px;
+    padding: clamp(1.8rem,5vw,2.8rem); box-shadow: 0 2px 4px rgba(22,33,27,0.03), 0 34px 68px -30px rgba(30,58,44,0.28);
+    animation: quizResultIn .4s ease both;
+  }
+  @keyframes quizResultIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+
+  .quiz-result-badge {
+    display: inline-flex; align-items: center; justify-content: center; width: 54px; height: 54px;
+    border-radius: 50%; margin-bottom: 1.1rem;
+  }
+  .quiz-result-badge--a { background: #F1F5F1; color: #1E3A2C; }
+  .quiz-result-badge--b { background: #FDF0EC; color: #D96B52; }
+
+  .quiz-result-eyebrow { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: #8C978F; margin-bottom: 0.6rem; }
+
+  .quiz-result-card h2 { font-family: 'Playfair Display', serif; font-weight: 400; font-size: clamp(1.7rem,4.4vw,2.3rem); line-height: 1.18; margin-bottom: 1rem; text-wrap: balance; }
+  .quiz-result-card > p.lead { font-size: 1.02rem; line-height: 1.75; color: #55625A; margin-bottom: 1.2rem; text-wrap: pretty; }
+  .quiz-result-card h3 { font-family: 'Playfair Display', serif; font-weight: 500; font-size: 1.25rem; margin-bottom: 0.9rem; }
+
+  .quiz-result-divider { border: none; border-top: 1px solid #EEEAE2; margin: 2.2rem 0; }
+
+  .quiz-cta-box {
+    background: #1E3A2C; border-radius: 20px; padding: clamp(1.6rem,4.5vw,2.3rem); margin-top: 0.4rem;
+    box-shadow: 0 24px 48px -26px rgba(30,58,44,0.55);
+  }
+  .quiz-cta-box h3 { color: #fff; }
+  .quiz-cta-box p.lead { color: rgba(255,255,255,0.8); margin-bottom: 1.6rem; }
+
+  .quiz-cta-primary {
+    display: flex; align-items: center; justify-content: center; gap: 0.55rem; width: 100%;
+    background: #D96B52; color: #fff; border-radius: 100px; padding: 1.05rem 1.6rem;
+    font-size: 1rem; font-weight: 500; box-shadow: 0 18px 36px -14px rgba(217,107,82,0.55);
+    transition: background .2s, transform .2s;
+  }
+  .quiz-cta-primary:hover { background: #C55A42; transform: translateY(-2px); }
+  .quiz-cta-meta { text-align: center; font-size: 0.78rem; letter-spacing: 0.04em; color: rgba(255,255,255,0.55); margin-top: 1rem; }
+
+  .quiz-small-link-wrap { text-align: center; margin-top: 2.2rem; padding-top: 1.8rem; border-top: 1px solid #EEEAE2; }
+  .quiz-small-link { display: inline-block; font-size: 0.86rem; line-height: 1.5; color: #55625A; cursor: pointer; background: none; border: none; padding: 0; font-family: 'DM Sans', sans-serif; text-decoration: underline; text-decoration-color: #C9D3CA; text-underline-offset: 3px; }
+  .quiz-small-link:hover { color: #1E3A2C; text-decoration-color: #1E3A2C; }
+
+  .quiz-checklist { list-style: none; margin: 0 0 1.5rem; padding: 0; display: flex; flex-direction: column; gap: 0.7rem; }
+  .quiz-checklist li { display: flex; gap: 0.7rem; font-size: 0.94rem; line-height: 1.6; color: #3B463F; }
+  .quiz-checklist li svg { flex-shrink: 0; margin-top: 3px; color: #1E3A2C; }
+  .quiz-cta-box .quiz-checklist li { color: rgba(255,255,255,0.85); }
+  .quiz-cta-box .quiz-checklist li svg { color: #F0A090; }
+
+  /* Brevo form nested inside the dark box: flip its inline dark-green/gray text to light */
+  .quiz-cta-box #sib-form-container { color: rgba(255,255,255,0.85); }
+  .quiz-cta-box #sib-container .sib-form-block,
+  .quiz-cta-box #sib-container .sib-text-form-block p,
+  .quiz-cta-box #sib-container .entry__label,
+  .quiz-cta-box #sib-container .sib-optin span,
+  .quiz-cta-box #sib-container .entry__specification {
+    color: rgba(255,255,255,0.85) !important;
+  }
+  .quiz-cta-box #sib-container .sib-brevo-heading { color: #fff !important; }
+  .quiz-cta-box #sib-container .entry__specification { color: rgba(255,255,255,0.55) !important; }
+  .quiz-cta-box #sib-container .sib-optin a { color: #F0A090 !important; }
+  .quiz-cta-box #sib-container input::placeholder { color: #A9B4AC !important; }
+
+  header.quiz-header { padding: 1.4rem 0; text-align: center; }
+  header.quiz-header img { width: 38px; height: 38px; border-radius: 50%; object-fit: contain; vertical-align: middle; margin-right: 0.6rem; }
+  header.quiz-header span { font-family: 'Playfair Display', serif; font-size: 1.02rem; color: #16211B; vertical-align: middle; }
+
+  .quiz-footer { background: #16291F; border-top: 1px solid rgba(255,255,255,0.12); padding: 1.6rem 0; text-align: center; }
+  .quiz-footer a { font-size: 0.78rem; letter-spacing: 0.08em; color: rgba(255,255,255,0.6); margin: 0 0.75rem; }
+</style>
+
+<!-- ---------- Brevo form assets ---------- -->
+<style>
+  @font-face {
+    font-display: block;
+    font-family: Roboto;
+    src: url(https://assets.brevo.com/font/Roboto/Latin/normal/normal/7529907e9eaf8ebb5220c5f9850e3811.woff2) format("woff2"), url(https://assets.brevo.com/font/Roboto/Latin/normal/normal/25c678feafdc175a70922a116c9be3e7.woff) format("woff")
+  }
+  @font-face {
+    font-display: fallback;
+    font-family: Roboto;
+    font-weight: 600;
+    src: url(https://assets.brevo.com/font/Roboto/Latin/medium/normal/6e9caeeafb1f3491be3e32744bc30440.woff2) format("woff2"), url(https://assets.brevo.com/font/Roboto/Latin/medium/normal/71501f0d8d5aa95960f6475d5487d4c2.woff) format("woff")
+  }
+  @font-face {
+    font-display: fallback;
+    font-family: Roboto;
+    font-weight: 700;
+    src: url(https://assets.brevo.com/font/Roboto/Latin/bold/normal/3ef7cf158f310cf752d5ad08cd0e7e60.woff2) format("woff2"), url(https://assets.brevo.com/font/Roboto/Latin/bold/normal/ece3a1d82f18b60bcce0211725c476aa.woff) format("woff")
+  }
+  :where(.sib-form-message-panel) { display: none; }
+  :where(.sib-form-message-panel .sib-notification__icon) { width: 20px; height: 20px; }
+  #sib-container input:-ms-input-placeholder { font-family: 'DM Sans', sans-serif; text-align: left; color: #c0ccda; }
+  #sib-container input::placeholder { font-family: 'DM Sans', sans-serif; text-align: left; color: #c0ccda; }
+  #sib-container textarea::placeholder { font-family: 'DM Sans', sans-serif; text-align: left; color: #c0ccda; }
+  #sib-container a { text-decoration: underline; color: #2BB2FC; }
+</style>
+<link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
+<!-- Override: align Brevo's form with the site's look (font, inputs, button, spacing) -->
+<style>
+  #sib-container input,
+  #sib-container textarea,
+  #sib-container .input,
+  #sib-container select {
+    font-family: 'DM Sans', sans-serif !important;
+  }
+
+  #sib-container { box-shadow: none !important; }
+
+  #sib-container .entry__label {
+    display: block !important;
+    margin-bottom: 0.45rem !important;
+  }
+
+  #sib-container input:not([type="checkbox"]):not([type="hidden"]),
+  #sib-container .input {
+    width: 100% !important;
+    background: #FFFFFF !important;
+    border: 1px solid #DCE6DD !important;
+    border-radius: 12px !important;
+    padding: 0.85rem 1rem !important;
+    font-size: 1rem !important;
+    color: #16211B !important;
+    box-shadow: none !important;
+    transition: border-color .2s;
+  }
+  #sib-container input:not([type="checkbox"]):not([type="hidden"]):focus,
+  #sib-container .input:focus {
+    border-color: #1E3A2C !important;
+    outline: none !important;
+    box-shadow: none !important;
+  }
+  #sib-container input::placeholder { color: #A9B4AC !important; opacity: 1 !important; }
+
+  #sib-container .sib-optin input[type="checkbox"] { accent-color: #E07856; }
+
+  #sib-container .sib-form-block__button {
+    display: block !important;
+    width: 100% !important;
+    text-align: center !important;
+    border-radius: 100px !important;
+    padding: 1rem 1.4rem !important;
+    box-shadow: 0 18px 36px -14px rgba(224,120,86,0.5);
+    transition: background .2s, transform .2s !important;
+    cursor: pointer;
+  }
+  #sib-container .sib-form-block__button:hover { background-color: #C55A42 !important; transform: translateY(-2px); }
+
+  #sib-container .sib-form-block[style*="text-align: left"] { text-align: center !important; }
+
+  /* Brevo pads .sib-form and every .sib-form-block horizontally by default; redundant now
+     that the form sits flush inside our own card/action-box, so it only steals width. */
+  #brevoFormWrap .sib-form,
+  #sib-container .sib-form-block {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+</style>
+</head>
+<body class="quiz-page">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NLFQXM86"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<header class="quiz-header">
+  <img src="images/logo-nina.png" alt="Nina Zurawski Logo">
+  <span>Nina Zurawski</span>
+</header>
+
+<main class="quiz-main">
+  <div class="quiz-wrap">
+
+    <!-- ═══ INTRO ═══ -->
+    <div id="quizIntro" class="quiz-intro">
+      <h1>Bist du startklar für Google Ads?</h1>
+      <p>Sieben kurze Fragen, zwei Minuten. Danach weißt du, ob Google Ads gerade der richtige Schritt für dich ist und was du als Nächstes tun kannst.</p>
+      <button type="button" id="btn-quiz-start" class="quiz-btn-start">
+        Los geht's
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path></svg>
+      </button>
+    </div>
+
+    <!-- ═══ QUESTION ═══ -->
+    <div id="quizQWrap" class="quiz-hidden">
+      <button type="button" id="btn-quiz-back" class="quiz-back quiz-hidden">
+        <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+        Zurück
+      </button>
+      <div class="quiz-progress-bar"><div class="quiz-progress-fill" id="quizFill"></div></div>
+      <span class="quiz-progress-label" id="quizLabel">Frage 1 von 7</span>
+      <div class="quiz-card" id="quizCard" style="margin-top:1.4rem">
+        <h2 class="quiz-q-text" id="quizQText"></h2>
+        <p class="quiz-q-hint quiz-hidden" id="quizQHint"></p>
+        <div class="quiz-options" id="quizOpts"></div>
+      </div>
+    </div>
+
+    <!-- ═══ RESULT ═══ -->
+    <div id="quizResult" class="quiz-hidden quiz-result"></div>
+
+    <!-- ═══ BREVO FORM (single instance, moved into place per result via JS) ═══ -->
+    <div id="brevoFormWrap" style="display:none">
+      <!-- Begin Brevo Form -->
+      <div class="sib-form" style="text-align: center; background-color: transparent;">
+        <div id="sib-form-container" class="sib-form-container" style="display:block !important; width:100% !important; box-sizing:border-box !important">
+          <div id="error-message" class="sib-form-message-panel" style="font-family:'DM Sans', sans-serif; font-size:16px; text-align:left; color:#661d1d; background-color:#ffeded; border-color:#ff4949; border-radius:3px; max-width:540px;">
+            <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
+              <svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon">
+                <path d="M256 40c118.621 0 216 96.075 216 216 0 119.291-96.61 216-216 216-119.244 0-216-96.562-216-216 0-119.203 96.602-216 216-216m0-32C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm-11.49 120h22.979c6.823 0 12.274 5.682 11.99 12.5l-7 168c-.268 6.428-5.556 11.5-11.99 11.5h-8.979c-6.433 0-11.722-5.073-11.99-11.5l-7-168c-.283-6.818 5.167-12.5 11.99-12.5zM256 340c-15.464 0-28 12.536-28 28s12.536 28 28 28 28-12.536 28-28-12.536-28-28-28z" />
+              </svg>
+              <span class="sib-form-message-panel__inner-text">Deine Anmeldung konnte nicht gespeichert werden. Bitte versuche es erneut.</span>
+            </div>
+          </div>
+          <div></div>
+          <div id="success-message" class="sib-form-message-panel" style="font-family:'DM Sans', sans-serif; font-size:16px; text-align:left; color:#085229; background-color:#e7faf0; border-color:#13ce66; border-radius:3px; max-width:540px;">
+            <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
+              <svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon">
+                <path d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 464c-118.664 0-216-96.055-216-216 0-118.663 96.055-216 216-216 118.664 0 216 96.055 216 216 0 118.663-96.055 216-216 216zm141.63-274.961L217.15 376.071c-4.705 4.667-12.303 4.637-16.97-.068l-85.878-86.572c-4.667-4.705-4.637-12.303.068-16.97l8.52-8.451c4.705-4.667 12.303-4.637 16.97.068l68.976 69.533 163.441-162.13c4.705-4.667 12.303-4.637 16.97.068l8.451 8.52c4.668 4.705 4.637 12.303-.068 16.97z" />
+              </svg>
+              <span class="sib-form-message-panel__inner-text">Deine Anmeldung war erfolgreich.</span>
+            </div>
+          </div>
+          <div></div>
+          <div id="sib-container" class="sib-container--large sib-container--vertical" style="display:block !important; width:100% !important; max-width:540px !important; box-sizing:border-box !important; text-align:center; background-color:transparent; border-width:0; padding:0; direction:ltr">
+            <form id="sib-form" method="POST" action="https://1e9dfe58.sibforms.com/serve/MUIFABG_eskhUx8la5JpDTFnnp1djhqWOHyQuWS-DL3YZO9gbsm6LRO4eVEFTlbGU0mabBLHGhgfv1vv2DiaV-5HH59aZw5ZyAuXEQF-66dqrkeKFpx5ejz5TUzcvQXDDuuM9-tmFVneWpWvLp8yMwX4nkvwHsdEZfuAqt5Ary8EwBngUwRpcMiZ1ewE2B2S3fz3GO01nO2gR83T" data-type="subscription">
+              <div style="padding: 8px 0;">
+                <div class="sib-form-block sib-brevo-heading" style="font-family:'Playfair Display', serif; font-size:clamp(1.3rem,4vw,1.6rem); line-height:1.3; font-weight:500; text-align:left; color:#1f3d2e; background-color:transparent;">
+                  <p>Deine Checkliste:</p>
+                  <p>Startklar für Google Ads</p>
+                </div>
+              </div>
+              <div style="padding: 8px 0;">
+                <div class="sib-form-block" style="font-family:'DM Sans', sans-serif; font-size:16px; text-align:left; color:#3C4858; background-color:transparent;">
+                  <div class="sib-text-form-block">
+                    <p>Trag dich ein und du bekommst die Checkliste direkt in dein Postfach. Dazu ein paar kurze Tipps, wie du mit Google Ads planbar neue Kund:innen gewinnst.</p>
+                  </div>
+                </div>
+              </div>
+              <div style="padding: 8px 0;">
+                <div class="sib-input sib-form-block">
+                  <div class="form__entry entry_block">
+                    <div class="form__label-row ">
+                      <label class="entry__label" style="font-weight: 700; text-align: left; font-family:'DM Sans', sans-serif; font-size:16px; font-weight:700; text-align:left; color:#1f3d2e;" for="VORNAME" data-required="*">Dein Vorname</label>
+                      <div class="entry__field">
+                        <input class="input " maxlength="200" type="text" id="VORNAME" name="VORNAME" autocomplete="off" placeholder="z. B. Nina" data-required="true" required />
+                      </div>
+                    </div>
+                    <label class="entry__error entry__error--primary" style="font-family:'DM Sans', sans-serif; font-size:16px; text-align:left; color:#661d1d; background-color:#ffeded; border-color:#ff4949; border-radius:3px;"></label>
+                  </div>
+                </div>
+              </div>
+              <div style="padding: 8px 0;">
+                <div class="sib-input sib-form-block">
+                  <div class="form__entry entry_block">
+                    <div class="form__label-row ">
+                      <label class="entry__label" style="font-weight: 700; text-align: left; font-family:'DM Sans', sans-serif; font-size:16px; font-weight:700; text-align:left; color:#1f3d2e;" for="EMAIL" data-required="*">Deine E-Mail-Adresse</label>
+                      <div class="entry__field">
+                        <input class="input " type="text" id="EMAIL" name="EMAIL" autocomplete="off" value="" placeholder="du@beispiel.de" data-required="true" required />
+                      </div>
+                    </div>
+                    <label class="entry__error entry__error--primary" style="font-family:'DM Sans', sans-serif; font-size:16px; text-align:left; color:#661d1d; background-color:#ffeded; border-color:#ff4949; border-radius:3px;"></label>
+                  </div>
+                </div>
+              </div>
+              <!-- Verstecktes Feld: Antwort auf Frage 5, wird per JS vor der Anzeige befüllt -->
+              <div style="padding: 8px 0; display:none;">
+                <div class="sib-input sib-form-block">
+                  <div class="form__entry entry_block">
+                    <div class="form__label-row ">
+                      <div class="entry__field">
+                        <input class="input " maxlength="200" type="text" id="SEITE" name="SEITE" autocomplete="off" />
+                      </div>
+                    </div>
+                    <label class="entry__error entry__error--primary"></label>
+                  </div>
+                </div>
+              </div>
+              <!-- Verstecktes Feld: Quiz-Ergebnis, wird per JS vor der Anzeige befüllt -->
+              <div style="padding: 8px 0; display:none;">
+                <div class="sib-input sib-form-block">
+                  <div class="form__entry entry_block">
+                    <div class="form__label-row ">
+                      <div class="entry__field">
+                        <input class="input " maxlength="200" type="text" id="QUIZ_ERGEBNIS" name="QUIZ_ERGEBNIS" autocomplete="off" />
+                      </div>
+                    </div>
+                    <label class="entry__error entry__error--primary"></label>
+                  </div>
+                </div>
+              </div>
+              <div style="padding: 8px 0;">
+                <div class="sib-optin sib-form-block" data-required="true">
+                  <div class="form__entry entry_mcq">
+                    <div class="form__label-row ">
+                      <div class="entry__choice" style="">
+                        <label>
+                          <input type="checkbox" class="input_replaced" value="1" id="OPT_IN" name="OPT_IN" required />
+                          <span class="checkbox checkbox_tick_positive" style="margin-left:"></span><span style="font-family:'DM Sans', sans-serif; font-size:14px; text-align:left; color:#3C4858; background-color:transparent;"><p>Ja, ich möchte die Checkliste und weitere Tipps zu Google Ads per E-Mail erhalten. Hinweise zum Umgang mit meinen Daten finde ich in der <a href="https://www.nina-zurawski.de/datenschutz.html" target="_blank" rel="nofollow noopener">Datenschutzerklärung</a>.</p><span data-required="*" style="display: inline;" class="entry__label entry__label_optin"></span></span>
+                        </label>
+                      </div>
+                    </div>
+                    <label class="entry__error entry__error--primary" style="font-family:'DM Sans', sans-serif; font-size:16px; text-align:left; color:#661d1d; background-color:#ffeded; border-color:#ff4949; border-radius:3px;"></label>
+                    <label class="entry__specification" style="font-family:'DM Sans', sans-serif; font-size:12px; text-align:left; color:#8390A4; text-align:left">
+                      Du kannst dich jederzeit mit einem Klick über den Link in jeder E-Mail abmelden.
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div style="padding: 8px 0;">
+                <div class="sib-form-block" style="text-align: left">
+                  <button class="sib-form-block__button sib-form-block__button-with-loader" style="font-family:'DM Sans', sans-serif; font-size:16px; font-weight:700; text-align:left; color:#FFFFFF; background-color:#E07856; border-width:0px; border-radius:100px;" form="sib-form" type="submit">
+                    <svg class="icon clickable__icon progress-indicator__icon sib-hide-loader-icon" viewBox="0 0 512 512">
+                      <path d="M460.116 373.846l-20.823-12.022c-5.541-3.199-7.54-10.159-4.663-15.874 30.137-59.886 28.343-131.652-5.386-189.946-33.641-58.394-94.896-95.833-161.827-99.676C261.028 55.961 256 50.751 256 44.352V20.309c0-6.904 5.808-12.337 12.703-11.982 83.556 4.306 160.163 50.864 202.11 123.677 42.063 72.696 44.079 162.316 6.031 236.832-3.14 6.148-10.75 8.461-16.728 5.01z" />
+                    </svg>
+                    Checkliste kostenlos erhalten
+                  </button>
+                </div>
+              </div>
+              <input type="text" name="email_address_check" value="" class="input--hidden">
+              <input type="hidden" name="locale" value="de">
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- End Brevo Form -->
+    </div>
+
+  </div>
+</main>
+
+<footer class="quiz-footer">
+  <span style="color:rgba(255,255,255,0.85); font-family:'Playfair Display',serif; font-size:1rem">Nina Zurawski</span>
+  <div style="margin-top:0.6rem">
+    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html">Datenschutz</a>
+  </div>
+</footer>
+
+<!-- Begin Brevo Form scripts -->
+<script>
+  window.REQUIRED_CODE_ERROR_MESSAGE = 'Wähle bitte einen Ländervorwahl aus.';
+  window.LOCALE = 'de';
+  window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = "Die eingegebenen Informationen sind nicht gültig. Bitte überprüfe das Feldformat und versuche es erneut.";
+  window.REQUIRED_ERROR_MESSAGE = "Dieses Feld darf nicht leer sein. ";
+  window.GENERIC_INVALID_MESSAGE = "Die eingegebenen Informationen sind nicht gültig. Bitte überprüfe das Feldformat und versuche es erneut.";
+  window.INVALID_NUMBER = "Die eingegebenen Informationen sind nicht gültig. Bitte überprüfe das Feldformat und versuche es erneut.";
+  window.INVALID_DATE = "Bitte gib ein gültiges Datum ein";
+  window.REQUIRED_MULTISELECT_MESSAGE = 'Wähle bitte mindestens eine Option aus';
+  window.translation = {
+    common: {
+      selectedList: '{quantity} Liste ausgewählt',
+      selectedLists: '{quantity} Listen ausgewählt',
+      selectedOption: '{quantity} ausgewählt',
+      selectedOptions: '{quantity} ausgewählt',
+    }
+  };
+  var AUTOHIDE = Boolean(0);
+</script>
+<script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
+<!-- End Brevo Form scripts -->
+
+<script>
+(function () {
+  'use strict';
+
+  /* ---------- Tracking-Helper (Meta Pixel) ---------- */
+  function track(kind, name, params) {
+    if (typeof fbq !== 'function') return;
+    if (kind === 'custom') fbq('trackCustom', name, params || {});
+    else fbq('track', name, params || {});
+  }
+
+  /* ---------- Cookie consent (site-wide localStorage key) ---------- */
+  var STORAGE_KEY = 'cookie_consent';
+  function getConsent() {
+    try {
+      var raw = localStorage.getItem(STORAGE_KEY);
+      return raw ? JSON.parse(raw) : null;
+    } catch (e) { return null; }
+  }
+  var storedConsent = getConsent();
+  if (storedConsent) {
+    var g = window.gtag || function () { (window.dataLayer = window.dataLayer || []).push(arguments); };
+    g('consent', 'update', {
+      ad_storage:         storedConsent.marketing ? 'granted' : 'denied',
+      ad_user_data:       storedConsent.marketing ? 'granted' : 'denied',
+      ad_personalization: storedConsent.marketing ? 'granted' : 'denied'
+    });
+    if (typeof fbq === 'function') fbq('consent', storedConsent.marketing ? 'grant' : 'revoke');
+  }
+
+  /* ─── Question data ─────────────────────────────────── */
+  var QUESTIONS = [
+    { key: 'q1', text: 'Wie kommen deine Kund:innen aktuell zu dir?', options: [
+      { letter: 'A', label: 'Fast nur über Empfehlungen', points: 1 },
+      { letter: 'B', label: 'Über Social Media', points: 1 },
+      { letter: 'C', label: 'Unregelmäßig, kaum planbar', points: 2 }
+    ]},
+    { key: 'q2', text: 'Suchen Menschen bei Google gezielt nach dem, was du anbietest?', hint: 'Überleg kurz, was jemand eintippen würde, der genau dich braucht.', options: [
+      { letter: 'A', label: 'Ja, danach wird ganz sicher gesucht', points: 2 },
+      { letter: 'B', label: 'Ich glaube schon, bin mir aber nicht sicher', points: 1 },
+      { letter: 'C', label: 'Eher nicht, mein Angebot ist neu oder schwer zu beschreiben', points: 0 }
+    ]},
+    { key: 'q3', text: 'Wirst du aktuell bei Google gefunden, wenn jemand danach sucht?', options: [
+      { letter: 'A', label: 'Ja, ich stehe weit oben' },
+      { letter: 'B', label: 'Irgendwo, aber nicht auf den ersten Plätzen' },
+      { letter: 'C', label: 'Ehrlich gesagt keine Ahnung' },
+      { letter: 'D', label: 'Nein, eher nicht' }
+    ]},
+    { key: 'q4', text: 'Wie klar ist dein Angebot, und für wen ist es gedacht?', options: [
+      { letter: 'A', label: 'Ich weiß genau, was ich anbiete und für wen', points: 2 },
+      { letter: 'B', label: 'Mein Angebot ist klar, die Zielgruppe aber eher breit', points: 2 },
+      { letter: 'C', label: 'Beides ist noch nicht ganz klar', points: 0 }
+    ]},
+    { key: 'q5', text: 'Wohin könntest du Interessierte heute schicken?', options: [
+      { letter: 'A', label: 'Auf eine Seite, die gezielt zu Anfragen führt' },
+      { letter: 'B', label: 'Auf meine allgemeine Website' },
+      { letter: 'C', label: 'Ich habe noch keine passende Seite' }
+    ]},
+    { key: 'q6', text: 'Könntest du monatlich ein Werbebudget einsetzen?', options: [
+      { letter: 'A', label: 'Ja, ab ca. 500 €', points: 2 },
+      { letter: 'B', label: 'Einen kleineren Betrag', points: 1 },
+      { letter: 'C', label: 'Aktuell nicht', points: 0 }
+    ]},
+    { key: 'q7', text: 'Hättest du Kapazität für mehr Anfragen?', options: [
+      { letter: 'A', label: 'Ja, sofort', points: 2 },
+      { letter: 'B', label: 'In ein paar Wochen', points: 1 },
+      { letter: 'C', label: 'Eher nicht', points: 0 }
+    ]}
+  ];
+  var TOTAL = QUESTIONS.length;
+
+  /* Kontext-Sätze zu Frage 3 (Google-Sichtbarkeit) und Frage 5 (aktuelle Seite),
+     eigene Formulierung je Ergebnis, damit der Bezug zum Ergebnis klar bleibt. */
+  var CONTEXT_A = {
+    q3: {
+      A: 'Bei Google stehst du laut deiner Antwort schon weit oben. Mit Anzeigen sicherst du dir zusätzlich die Plätze ganz oben, noch vor den normalen Suchergebnissen.',
+      B: 'Bei Google bist du zu finden, aber noch nicht auf den vordersten Plätzen. Mit Anzeigen holst du dir genau diese Position, und zwar ab dem ersten Tag.',
+      C: 'Ob du bei Google gefunden wirst, weißt du selbst noch nicht genau. Das lohnt sich auszuprobieren: Gib bei Google ein, was deine Kund:innen suchen würden, und schau, wo du auftauchst.',
+      D: 'Bei Google wirst du aktuell eher nicht gefunden, das heißt, diese Anfragen gehen gerade an andere. Mit Anzeigen änderst du das ab dem ersten Tag, ohne auf bessere Platzierungen warten zu müssen.'
+    },
+    q5: {
+      A: 'Und du hast schon eine Seite, die gezielt zu Anfragen führt, eine gute Basis für deine Kampagne.',
+      B: 'Interessierte schickst du bisher auf deine allgemeine Website. Für Anzeigen lohnt sich aber eine eigene Seite mit nur einem Ziel: der Anfrage. Genau die baue ich gemeinsam mit deinen Anzeigen.',
+      C: 'Eine passende Seite für Interessierte hast du noch nicht, kein Problem: Anzeige und Landingpage entstehen bei mir sowieso zusammen.'
+    },
+    q4b: ' Dazu kommt: Deine Zielgruppe ist noch eher breit gefasst. Das kann Anzeigen unnötig teuer machen, deshalb schärfen wir im Gespräch gemeinsam, wen deine Anzeigen und deine Seite konkret ansprechen sollen.'
+  };
+  var CONTEXT_B = {
+    q3: {
+      A: 'Bei Google stehst du zwar schon weit oben, eine gute Basis, die wir mit Anzeigen zusätzlich absichern können.',
+      B: 'Bei Google wirst du gefunden, aber noch nicht auf den vordersten Plätzen. Die meisten klicken auf die ersten Ergebnisse, genau dahin bringen dich Anzeigen ab dem ersten Tag.',
+      C: 'Ob du bei Google überhaupt gefunden wirst, weißt du noch nicht genau. Probier es aus: Gib bei Google ein, was deine Kund:innen suchen würden, und schau, wo du auftauchst, auch das gehört zur Vorbereitung.',
+      D: 'Bei Google wirst du aktuell eher nicht gefunden, diese Anfragen gehen also gerade an andere. Genau da setzt die Checkliste an.'
+    },
+    q5: {
+      A: 'Du hast schon eine Seite, die gezielt zu Anfragen führt, das ist eine gute Ausgangslage für später.',
+      B: 'Interessierte schickst du bisher auf deine allgemeine Website. In der Checkliste zeige ich dir, warum sich für Anzeigen eine eigene Seite lohnt und was sie braucht.',
+      C: 'Eine passende Seite hast du noch nicht, auch das ist Teil der Checkliste: was deine Seite braucht, damit aus Klicks Anfragen werden.'
+    },
+    q4b: ' Dazu kommt: Deine Zielgruppe ist noch eher breit gefasst. Auch dabei hilft dir die Checkliste, sie zu schärfen.'
+  };
+
+  var BOOKING_LINK = 'https://meet.brevo.com/nina-zurawski/kennenlerncall';
+
+  /* ─── State ─────────────────────────────────────────── */
+  var answers = {};
+  var step = 0;
+
+  /* ─── DOM ───────────────────────────────────────────── */
+  var introEl   = document.getElementById('quizIntro');
+  var qWrapEl   = document.getElementById('quizQWrap');
+  var resultEl  = document.getElementById('quizResult');
+  var fillEl    = document.getElementById('quizFill');
+  var lblEl     = document.getElementById('quizLabel');
+  var textEl    = document.getElementById('quizQText');
+  var hintEl    = document.getElementById('quizQHint');
+  var optsEl    = document.getElementById('quizOpts');
+  var cardEl    = document.getElementById('quizCard');
+  var backBtn   = document.getElementById('btn-quiz-back');
+  var startBtn  = document.getElementById('btn-quiz-start');
+
+  startBtn.addEventListener('click', function () {
+    track('custom', 'QuizStart');
+    introEl.classList.add('quiz-hidden');
+    qWrapEl.classList.remove('quiz-hidden');
+    renderQ(0, false);
+  });
+
+  backBtn.addEventListener('click', function () {
+    if (step > 0) renderQ(step - 1, true);
+  });
+
+  function renderQ(index, animate) {
+    step = index;
+    var q = QUESTIONS[index];
+
+    fillEl.style.width = ((index + 1) / TOTAL * 100) + '%';
+    lblEl.textContent = 'Frage ' + (index + 1) + ' von ' + TOTAL;
+    backBtn.classList.toggle('quiz-hidden', index === 0);
+
+    var draw = function () {
+      textEl.textContent = q.text;
+      if (q.hint) {
+        hintEl.textContent = q.hint;
+        hintEl.classList.remove('quiz-hidden');
+      } else {
+        hintEl.classList.add('quiz-hidden');
+      }
+      optsEl.innerHTML = '';
+      q.options.forEach(function (opt) {
+        var btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'quiz-option';
+        btn.textContent = opt.label;
+        if (answers[q.key] && answers[q.key].letter === opt.letter) {
+          btn.classList.add('quiz-opt--chosen');
+        }
+        btn.addEventListener('click', function () { pick(q, opt, btn); });
+        optsEl.appendChild(btn);
+      });
+      cardEl.classList.remove('quiz-card--out');
+    };
+
+    if (animate) {
+      cardEl.classList.add('quiz-card--out');
+      setTimeout(draw, 180);
+    } else {
+      draw();
+    }
+  }
+
+  function pick(q, opt, btn) {
+    optsEl.querySelectorAll('.quiz-option').forEach(function (b) {
+      b.disabled = true;
+      b.classList.remove('quiz-opt--chosen');
+      if (b !== btn) b.classList.add('quiz-opt--dim');
+    });
+    btn.classList.add('quiz-opt--chosen');
+
+    answers[q.key] = { letter: opt.letter, points: opt.points || 0 };
+
+    setTimeout(function () {
+      if (step + 1 < TOTAL) {
+        renderQ(step + 1, true);
+      } else {
+        showResult();
+      }
+    }, 320);
+  }
+
+  /* ─── Result ────────────────────────────────────────── */
+  function buildContextParagraphs(map) {
+    var html = '';
+    if (answers.q3 && map.q3[answers.q3.letter]) {
+      html += '<p class="lead">' + map.q3[answers.q3.letter] + '</p>';
+    }
+    if (answers.q5 && map.q5[answers.q5.letter]) {
+      var text = map.q5[answers.q5.letter];
+      if (answers.q4 && answers.q4.letter === 'B') text += map.q4b;
+      html += '<p class="lead">' + text + '</p>';
+    }
+    return html;
+  }
+
+  /* ─── Brevo form: single DOM instance, moved into place per result ─── */
+  var brevoFormWrap = document.getElementById('brevoFormWrap');
+  var SEITE_MAP = { A: 'anfrageseite', B: 'allgemeine_website', C: 'keine_seite' };
+
+  function populateBrevoHiddenFields() {
+    var seiteEl = document.getElementById('SEITE');
+    var ergebnisEl = document.getElementById('QUIZ_ERGEBNIS');
+    if (seiteEl) seiteEl.value = answers.q5 ? (SEITE_MAP[answers.q5.letter] || '') : '';
+    if (ergebnisEl) ergebnisEl.value = resultType === 'A' ? 'startklar' : 'fast_startklar';
+  }
+
+  /* Brevo's script toggles #success-message visibility after a successful AJAX submit.
+     We watch that element and fire the Lead event only once it actually becomes visible,
+     not on click, so a failed or invalid submit never counts as a Lead. */
+  var brevoLeadFired = false;
+  function setupBrevoSuccessTracking() {
+    var successEl = document.getElementById('success-message');
+    if (!successEl) return;
+    var observer = new MutationObserver(function () {
+      if (brevoLeadFired) return;
+      if (getComputedStyle(successEl).display !== 'none') {
+        brevoLeadFired = true;
+        track('standard', 'Lead');
+      }
+    });
+    observer.observe(successEl, { attributes: true, attributeFilter: ['style', 'class'] });
+  }
+  setupBrevoSuccessTracking();
+
+  var resultType = null;
+
+  function computeResult() {
+    var score = (answers.q1 ? answers.q1.points : 0) +
+                (answers.q2 ? answers.q2.points : 0) +
+                (answers.q4 ? answers.q4.points : 0) +
+                (answers.q6 ? answers.q6.points : 0) +
+                (answers.q7 ? answers.q7.points : 0);
+    if (answers.q7 && answers.q7.letter === 'C') return 'B';
+    return score >= 7 ? 'A' : 'B';
+  }
+
+  function showResult() {
+    resultType = computeResult();
+    qWrapEl.classList.add('quiz-hidden');
+    resultEl.classList.remove('quiz-hidden');
+
+    if (resultType === 'A') {
+      resultEl.innerHTML =
+        '<div class="quiz-result-card">' +
+        '<span class="quiz-result-badge quiz-result-badge--a"><svg viewBox="0 0 24 24" fill="none" width="26" height="26"><path d="M4 12.5l5 5L20 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>' +
+        '<div class="quiz-result-eyebrow">Dein Ergebnis</div>' +
+        '<h2>Du bist startklar für Google Ads!</h2>' +
+        '<p class="lead">Deine Antworten zeigen: Die Grundlagen stimmen. Menschen suchen nach dem, was du anbietest, und du hast Kapazität für neue Anfragen. Jetzt fehlt nur noch der richtige Auftritt bei Google.</p>' +
+        buildContextParagraphs(CONTEXT_A) +
+        '<hr class="quiz-result-divider">' +
+        '<div class="quiz-cta-box">' +
+        '<h3>Lass uns schauen, wie deine Kampagne aussehen könnte</h3>' +
+        '<p class="lead">In einem kostenlosen Gespräch schauen wir gemeinsam auf dein Angebot, deine Zielgruppe und dein Budget. Du bekommst eine ehrliche Einschätzung, ohne Verkaufsdruck.</p>' +
+        '<a href="' + BOOKING_LINK + '" target="_blank" rel="noopener" id="btn-result-a-booking" class="quiz-cta-primary">Kostenloses Gespräch buchen<svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path></svg></a>' +
+        '<p class="quiz-cta-meta">Kostenlos · 30 Minuten · Ohne Verpflichtung</p>' +
+        '</div>' +
+        '<div class="quiz-small-link-wrap"><button type="button" id="btn-result-a-toggle" class="quiz-small-link">Noch nicht bereit für ein Gespräch? Hol dir meine kostenlose Checkliste „Startklar für Google Ads".</button></div>' +
+        '<div id="resultAChecklist" class="quiz-hidden" style="margin-top:1.4rem"></div>' +
+        '</div>';
+
+      document.getElementById('resultAChecklist').appendChild(brevoFormWrap);
+      brevoFormWrap.style.display = '';
+      populateBrevoHiddenFields();
+
+      document.getElementById('btn-result-a-booking').addEventListener('click', function () { track('standard', 'Schedule'); });
+      document.getElementById('btn-result-a-toggle').addEventListener('click', function () {
+        document.getElementById('resultAChecklist').classList.toggle('quiz-hidden');
+      });
+    } else {
+      var mainText;
+      if (answers.q7 && answers.q7.letter === 'C') {
+        mainText = 'Du hast gerade keine Kapazität für mehr Anfragen. Dann ist jetzt der perfekte Zeitpunkt, dich vorzubereiten. So bist du startklar, wenn es bei dir wieder passt.';
+      } else {
+        mainText = 'Ein paar Dinge fehlen noch, bevor Google Ads für dich richtig gut funktionieren. Das ist völlig normal. Mit meiner kostenlosen Checkliste weißt du genau, was du vorbereiten kannst, damit du bald loslegen kannst.';
+      }
+      var q2Extra = '';
+      if (answers.q2 && answers.q2.letter === 'C') {
+        q2Extra = '<p class="lead">Wenn kaum jemand nach deinem Angebot sucht, sind Google Ads nicht immer der beste Weg. In der Checkliste zeige ich dir, wie du das in wenigen Minuten selbst prüfst.</p>';
+      }
+
+      resultEl.innerHTML =
+        '<div class="quiz-result-card">' +
+        '<span class="quiz-result-badge quiz-result-badge--b"><svg viewBox="0 0 24 24" fill="none" width="24" height="24"><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-1-7l7-7-1.414-1.414L11 12.172l-2.586-2.586L7 11l4 4z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"></path></svg></span>' +
+        '<div class="quiz-result-eyebrow">Dein Ergebnis</div>' +
+        '<h2>Du bist fast startklar!</h2>' +
+        '<p class="lead">' + mainText + '</p>' +
+        buildContextParagraphs(CONTEXT_B) +
+        q2Extra +
+        '<hr class="quiz-result-divider">' +
+        '<div class="quiz-cta-box">' +
+        '<ul class="quiz-checklist">' +
+        '  <li><svg viewBox="0 0 16 16" fill="none" width="16" height="16"><path d="M3 8l4 4 6-6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></svg>Wie du prüfst, ob deine Kund:innen bei Google nach dir suchen</li>' +
+        '  <li><svg viewBox="0 0 16 16" fill="none" width="16" height="16"><path d="M3 8l4 4 6-6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></svg>Was deine Seite braucht, damit aus Klicks Anfragen werden</li>' +
+        '  <li><svg viewBox="0 0 16 16" fill="none" width="16" height="16"><path d="M3 8l4 4 6-6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></svg>Wie viele Kund:innen du brauchst, damit sich Werbung lohnt</li>' +
+        '  <li><svg viewBox="0 0 16 16" fill="none" width="16" height="16"><path d="M3 8l4 4 6-6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></svg>Welches Budget für den Start realistisch ist</li>' +
+        '</ul>' +
+        '<div id="resultBFormSlot"></div>' +
+        '</div>' +
+        '<div class="quiz-small-link-wrap"><a href="' + BOOKING_LINK + '" target="_blank" rel="noopener" id="btn-result-b-booking" class="quiz-small-link">Du möchtest lieber direkt sprechen? Dann buch dir ein kostenloses Gespräch.</a></div>' +
+        '</div>';
+
+      document.getElementById('resultBFormSlot').appendChild(brevoFormWrap);
+      brevoFormWrap.style.display = '';
+      populateBrevoHiddenFields();
+
+      document.getElementById('btn-result-b-booking').addEventListener('click', function () { track('standard', 'Schedule'); });
+    }
+
+    track('custom', 'QuizComplete', { result: resultType === 'A' ? 'startklar' : 'fast_startklar' });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+})();
+</script>
+
+</body>
+</html>
