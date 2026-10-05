@@ -15,24 +15,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-NLFQXM86');</script>
 <!-- End Google Tag Manager -->
-<!-- Meta Pixel Code -->
+<!-- Meta Pixel Code: wird erst nach Einwilligung (Marketing) geladen -->
 <script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-window.META_PIXEL_ID = 'DEINE_META_PIXEL_ID'; /* TODO: echte Meta Pixel ID eintragen */
-fbq('consent', 'revoke');
-fbq('init', window.META_PIXEL_ID);
-try{var _c2=JSON.parse(localStorage.getItem('cookie_consent')||'null');if(_c2&&_c2.marketing)fbq('consent','grant');}catch(e){}
-fbq('track', 'PageView');
-fbq('track', 'CompleteRegistration');
+window.loadMetaPixel = function () {
+  if (window.fbq) return;
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '4253386314961970');
+  fbq('track', 'PageView');
+  fbq('track', 'CompleteRegistration');
+};
+try{var _c2=JSON.parse(localStorage.getItem('cookie_consent')||'null');if(_c2&&_c2.marketing)window.loadMetaPixel();}catch(e){}
 </script>
-<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=DEINE_META_PIXEL_ID&ev=PageView&noscript=1" alt=""></noscript>
 <!-- End Meta Pixel Code -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Deine Checkliste zum Download — Nina Zurawski</title>
@@ -174,7 +174,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path></svg>
         </a>
 
-        <p style="font-size:0.82rem; line-height:1.6; color:#8C978F; margin-top:1.6rem">In den nächsten Tagen schicke ich dir außerdem ein paar kurze Tipps, wie du mit Google Ads planbar neue Kund:innen gewinnst.</p>
+        <p style="font-size:0.82rem; line-height:1.6; color:#8C978F; margin-top:1.6rem">Danach schicke ich dir einmal pro Woche meinen Newsletter mit kurzen Tipps, wie du mit Google Ads planbar neue Kund:innen gewinnst.</p>
       </div>
 
     </div>
@@ -256,7 +256,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     if (typeof fbq === 'function') fbq('trackCustom', 'ChecklisteDownload');
   });
   document.getElementById('checkliste-termin-button').addEventListener('click', function () {
-    if (typeof fbq === 'function') fbq('track', 'Schedule');
+    if (typeof fbq === 'function') fbq('trackCustom', 'TerminKlick');
   });
 
   /* ---------- Cookie consent (localStorage key shared site-wide) ---------- */
@@ -280,7 +280,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       ad_user_data:       c.marketing ? 'granted' : 'denied',
       ad_personalization: c.marketing ? 'granted' : 'denied'
     });
-    if (typeof fbq === 'function') fbq('consent', c.marketing ? 'grant' : 'revoke');
+    if (c.marketing) { if (window.loadMetaPixel) window.loadMetaPixel(); } else if (typeof fbq === 'function') { fbq('consent', 'revoke'); }
   }
 
   var banner = document.getElementById('cookieBanner');

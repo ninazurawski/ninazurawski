@@ -15,23 +15,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-NLFQXM86');</script>
 <!-- End Google Tag Manager -->
-<!-- Meta Pixel Code -->
+<!-- Meta Pixel Code: wird erst nach Einwilligung (Marketing) geladen -->
 <script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-window.META_PIXEL_ID = 'DEINE_META_PIXEL_ID'; /* TODO: echte Meta Pixel ID eintragen */
-fbq('consent', 'revoke');
-fbq('init', window.META_PIXEL_ID);
-try{var _c2=JSON.parse(localStorage.getItem('cookie_consent')||'null');if(_c2&&_c2.marketing)fbq('consent','grant');}catch(e){}
-fbq('track', 'PageView');
+window.loadMetaPixel = function () {
+  if (window.fbq) return;
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '4253386314961970');
+  fbq('track', 'PageView');
+};
+try{var _c2=JSON.parse(localStorage.getItem('cookie_consent')||'null');if(_c2&&_c2.marketing)window.loadMetaPixel();}catch(e){}
 </script>
-<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=DEINE_META_PIXEL_ID&ev=PageView&noscript=1" alt=""></noscript>
 <!-- End Meta Pixel Code -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Startklar für Google Ads? — Nina Zurawski</title>
@@ -812,8 +812,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     if (kind === 'custom') fbq('trackCustom', name, params || {});
     else fbq('track', name, params || {});
   };
-  document.getElementById('btn-hero-booking').addEventListener('click', function () { ninaTrack('standard', 'Schedule'); });
-  document.getElementById('btn-final-booking').addEventListener('click', function () { ninaTrack('standard', 'Schedule'); });
+  document.getElementById('btn-hero-booking').addEventListener('click', function () { ninaTrack('custom', 'TerminKlick'); });
+  document.getElementById('btn-final-booking').addEventListener('click', function () { ninaTrack('custom', 'TerminKlick'); });
 
   /* ---------- Cookie consent (localStorage key shared site-wide) ---------- */
   var STORAGE_KEY = 'cookie_consent';
@@ -836,7 +836,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       ad_user_data:       c.marketing ? 'granted' : 'denied',
       ad_personalization: c.marketing ? 'granted' : 'denied'
     });
-    if (typeof fbq === 'function') fbq('consent', c.marketing ? 'grant' : 'revoke');
+    if (c.marketing) { if (window.loadMetaPixel) window.loadMetaPixel(); } else if (typeof fbq === 'function') { fbq('consent', 'revoke'); }
   }
 
   var banner = document.getElementById('cookieBanner');

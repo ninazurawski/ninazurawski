@@ -237,10 +237,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </p>
         <ul>
           <li><strong>Essenziell (immer aktiv):</strong> Technisch notwendig für den Betrieb der Website (Hosting, selbst gehostete Schriftarten, Animationsskripte) sowie das Speichern deiner Cookie-Auswahl. In dieser Kategorie werden <strong>keine Cookies</strong> gesetzt.</li>
-          <li><strong>Marketing (nur nach Einwilligung):</strong> Google&nbsp;Ads Conversion-Tracking über den Google Tag Manager (siehe Abschnitte 7 und 8). Setzt First-Party-Cookies mit dem Präfix <code>_gcl_</code> (Laufzeit bis zu 90&nbsp;Tagen). Eine vollständige Cookie-Tabelle findest du in Abschnitt 8.</li>
+          <li><strong>Marketing (nur nach Einwilligung):</strong> Google&nbsp;Ads Conversion-Tracking über den Google Tag Manager (siehe Abschnitte 7 und 8) sowie das Meta-Pixel von Facebook und Instagram (siehe Abschnitt 9). Setzt First-Party-Cookies mit dem Präfix <code>_gcl_</code> (Google) bzw. <code>_fbp</code> und <code>_fbc</code> (Meta), jeweils mit einer Laufzeit von bis zu 90&nbsp;Tagen. Vollständige Cookie-Tabellen findest du in den Abschnitten 8 und 9.</li>
         </ul>
         <p>
-          Ohne Einwilligung werden keine Cookies gesetzt und es findet kein Marketing-Tracking statt. Die technische Umsetzung erfolgt über den <strong>Google Consent Mode&nbsp;v2</strong>: Vor dem Laden des Google Tag Managers ist der Einwilligungsstatus für Analyse und Werbung standardmäßig auf „abgelehnt" gesetzt; erst mit deiner Einwilligung wird er auf „erteilt" aktualisiert.
+          Ohne Einwilligung werden keine Cookies gesetzt und es findet kein Marketing-Tracking statt. Die technische Umsetzung erfolgt über den <strong>Google Consent Mode&nbsp;v2</strong>: Vor dem Laden des Google Tag Managers ist der Einwilligungsstatus für Analyse und Werbung standardmäßig auf „abgelehnt" gesetzt; erst mit deiner Einwilligung wird er auf „erteilt" aktualisiert. Das Meta-Pixel (Abschnitt 9) wird ohne Einwilligung gar nicht erst geladen, es findet dann keine Verbindung zu den Servern von Meta statt.
         </p>
         <p>
           Du kannst deine Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen, indem du im Browser den LocalStorage-Eintrag <code>cookie_consent</code> für diese Website löschst. Beim nächsten Aufruf erscheint der Banner erneut.
@@ -345,9 +345,81 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <hr class="legal-divider">
 
       <div class="legal-section">
-        <h2>9. Terminbuchung über Brevo</h2>
+        <h2>9. Meta-Pixel (Facebook und Instagram)</h2>
         <p>
-          Für die Buchung von Kennenlern- und Analyse-Terminen verlinke ich auf das Buchungstool <strong>Brevo Meetings</strong> (Anbieter: Sendinblue GmbH, Köhlstraße 1, 50827 Köln, Deutschland, Teil der Brevo-Gruppe). Das Tool ist <strong>nicht</strong> in diese Website eingebettet — du wirst erst nach einem Klick auf einen Buchungs-Button auf eine Seite unter <code>meet.brevo.com</code> weitergeleitet.
+          Auf den Seiten meines Werbe-Funnels (Landingpage „Startklar für Google Ads?", Quiz, Checklisten-Seiten und die Danke-Seite nach einer Terminbuchung) setze ich das <strong>Meta-Pixel</strong> ein, einen Dienst der Meta Platforms Ireland Limited, Merrion Road, Dublin 4, D04 X2K5, Irland („Meta"). Damit messe ich, ob Besucher:innen, die über meine Anzeigen bei Facebook oder Instagram kommen, auf meiner Website etwas tun, und optimiere meine Anzeigen entsprechend.
+        </p>
+        <p>
+          Das Meta-Pixel wird <strong>nur nach deiner Einwilligung</strong> in die Kategorie „Marketing" geladen (siehe Abschnitt 5). Ohne Einwilligung wird das Skript nicht geladen und es findet keine Verbindung zu den Servern von Meta statt.
+        </p>
+        <p>
+          Bei erteilter Einwilligung werden folgende Daten an Meta übermittelt: deine IP-Adresse, Angaben zu Browser und Gerät, die aufgerufene Seite und die Herkunftsseite (Referrer), Kennungen aus den unten genannten Cookies sowie diese Ereignisse:
+        </p>
+        <ul>
+          <li>Seitenaufruf (<code>PageView</code>)</li>
+          <li>Start und Abschluss des Quiz (<code>QuizStart</code>, <code>QuizComplete</code>); beim Abschluss wird nur die Ergebniskategorie „startklar" oder „fast startklar" übermittelt, nicht deine einzelnen Antworten</li>
+          <li>Anmeldung zur Checkliste (<code>Lead</code>) und bestätigte Anmeldung (<code>CompleteRegistration</code>)</li>
+          <li>Klick auf den Download der PDF-Checkliste (<code>ChecklisteDownload</code>)</li>
+          <li>Klick auf einen Buchungs-Button (<code>TerminKlick</code>) und Aufruf der Danke-Seite nach einer Terminbuchung (<code>Schedule</code>)</li>
+        </ul>
+        <p>
+          Dein Name, deine E-Mail-Adresse und deine Antworten im Quiz werden <strong>nicht</strong> an Meta übermittelt.
+        </p>
+        <p>
+          Bei erteilter Einwilligung („Marketing") werden folgende Cookies auf der Domain <code>nina-zurawski.de</code> gesetzt (First-Party):
+        </p>
+        <div class="cookie-table-wrap">
+          <table class="cookie-table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Anbieter</th>
+                <th>Zweck</th>
+                <th>Kategorie</th>
+                <th>Laufzeit</th>
+                <th>Rechtsgrundlage</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>_fbp</code></td>
+                <td>Meta Platforms Ireland Limited</td>
+                <td>Erkennt den Browser wieder, um Anzeigen-Ereignisse einer Anzeige zuzuordnen und die Wirkung der Werbung zu messen</td>
+                <td>Marketing</td>
+                <td>90 Tage</td>
+                <td>§&nbsp;25 Abs.&nbsp;1 TDDDG, Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;a DSGVO</td>
+              </tr>
+              <tr>
+                <td><code>_fbc</code></td>
+                <td>Meta Platforms Ireland Limited</td>
+                <td>Speichert die Klick-ID einer Meta-Anzeige (<code>fbclid</code>); wird nur gesetzt, wenn du über eine Meta-Anzeige auf die Website kommst</td>
+                <td>Marketing</td>
+                <td>90 Tage</td>
+                <td>§&nbsp;25 Abs.&nbsp;1 TDDDG, Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;a DSGVO</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          Meta kann auf eigenen Domains (z.&nbsp;B. <code>facebook.com</code>) weitere Cookies setzen oder auslesen. Wenn du bei Facebook oder Instagram angemeldet bist, kann Meta den Besuch deinem Profil zuordnen. Meta verarbeitet die Daten nach eigenen Angaben auch zu eigenen Zwecken, etwa zur Personalisierung von Werbung.
+        </p>
+        <p>
+          Für die Erhebung der Daten auf dieser Website und deren Übermittlung an Meta bin ich gemeinsam mit Meta verantwortlich (Art.&nbsp;26 DSGVO). Die Vereinbarung findest du hier: <a href="https://www.facebook.com/legal/controller_addendum" target="_blank" rel="noopener">Zusatz für Verantwortliche von Meta</a>. Für die weitere Verarbeitung nach der Übermittlung ist Meta allein verantwortlich.
+        </p>
+        <p>
+          Rechtsgrundlage ist deine Einwilligung nach §&nbsp;25 Abs.&nbsp;1 TDDDG und Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;a DSGVO. Eine Übermittlung an die Meta Platforms, Inc. in den USA kann nicht ausgeschlossen werden; sie erfolgt auf Grundlage der EU-Standardvertragsklauseln (Art.&nbsp;46 DSGVO). Meta Platforms, Inc. ist zudem unter dem EU-US Data Privacy Framework zertifiziert. Du kannst deine Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen (siehe Abschnitt 5).
+        </p>
+        <p>
+          Weitere Informationen: <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener">Datenschutzerklärung von Meta</a>
+        </p>
+      </div>
+
+      <hr class="legal-divider">
+
+      <div class="legal-section">
+        <h2>10. Terminbuchung über Brevo</h2>
+        <p>
+          Für die Buchung von Kennenlern- und Analyse-Terminen verlinke ich auf das Buchungstool <strong>Brevo Meetings</strong> (Anbieter: Brevo GmbH, Köpenicker Str. 126, 10179 Berlin, Deutschland, Tochtergesellschaft der Sendinblue SAS, Frankreich). Das Tool ist <strong>nicht</strong> in diese Website eingebettet — du wirst erst nach einem Klick auf einen Buchungs-Button auf eine Seite unter <code>meet.brevo.com</code> weitergeleitet. Nach einer erfolgreichen Buchung leitet Brevo dich auf eine Danke-Seite dieser Website zurück (siehe Abschnitt 9 zum dortigen Tracking).
         </p>
         <p>
           Wenn du dort einen Termin buchst, verarbeitet Brevo die von dir angegebenen Daten (z. B. Name, E-Mail-Adresse, gewählter Termin und optionale Nachricht) in meinem Auftrag, um den Termin zu organisieren und dir eine Bestätigung zu senden. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (Durchführung vorvertraglicher Maßnahmen). Mit Brevo besteht ein Auftragsverarbeitungsvertrag gemäß Art. 28 DSGVO. Die Daten werden gelöscht, sobald sie für die Terminabwicklung und etwaige Nachfragen nicht mehr erforderlich sind.
@@ -360,15 +432,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <hr class="legal-divider">
 
       <div class="legal-section">
-        <h2>10. Newsletter-Anmeldung &amp; Checkliste über Brevo</h2>
+        <h2>11. Newsletter-Anmeldung &amp; Checkliste über Brevo</h2>
         <p>
-          Auf einzelnen Seiten dieser Website (z.&nbsp;B. im Anschluss an den Google-Ads-Selbstcheck) kannst du dich über ein Formular mit <strong>Vorname</strong> und <strong>E-Mail-Adresse</strong> für eine kostenlose Checkliste sowie weitere Tipps rund um Google Ads per E-Mail anmelden. Für den Versand nutze ich den E-Mail-Marketing-Dienst <strong>Brevo</strong> (Anbieter: Sendinblue GmbH, Köhlstraße 1, 50827 Köln, Deutschland, Teil der Brevo-Gruppe).
+          Auf einzelnen Seiten dieser Website (z.&nbsp;B. im Anschluss an den Google-Ads-Selbstcheck) kannst du dich über ein Formular mit <strong>Vorname</strong> und <strong>E-Mail-Adresse</strong> für eine kostenlose Checkliste sowie für meinen Newsletter mit Tipps rund um Google Ads (ca. einmal pro Woche) per E-Mail anmelden. Für den Versand nutze ich den E-Mail-Marketing-Dienst <strong>Brevo</strong> (Anbieter: Brevo GmbH, Köpenicker Str. 126, 10179 Berlin, Deutschland, Tochtergesellschaft der Sendinblue SAS, Frankreich).
         </p>
         <p>
-          Die Anmeldung erfolgt im <strong>Double-Opt-In-Verfahren</strong>: Nach dem Absenden des Formulars erhältst du eine Bestätigungs-E-Mail und wirst erst nach Klick auf den darin enthaltenen Link in die Empfängerliste aufgenommen. Damit stelle ich sicher, dass niemand ohne seine Zustimmung E-Mails von mir erhält. Zum Nachweis dieser Einwilligung speichert Brevo zusätzlich zu Vorname und E-Mail-Adresse den Zeitpunkt der Anmeldung und Bestätigung sowie die dabei verwendete IP-Adresse.
+          Die Anmeldung erfolgt im <strong>Double-Opt-In-Verfahren</strong>: Nach dem Absenden des Formulars erhältst du eine Bestätigungs-E-Mail und wirst erst nach Klick auf den darin enthaltenen Link in die Empfängerliste aufgenommen. Damit stelle ich sicher, dass niemand ohne seine Zustimmung E-Mails von mir erhält. Zum Nachweis dieser Einwilligung speichert Brevo zusätzlich zu Vorname und E-Mail-Adresse den Zeitpunkt der Anmeldung und Bestätigung sowie die dabei verwendete IP-Adresse. Meldest du dich nach dem Quiz an, speichert Brevo außerdem dein Quiz-Ergebnis und deine Antwort zur Frage nach deiner Anfrage-Seite (siehe Abschnitt 12).
         </p>
         <p>
-          Die Daten nutze ich, um dir die angeforderte Checkliste zuzusenden und dich anschließend regelmäßig per E-Mail über Google Ads, Landingpages und verwandte Themen zu informieren. Rechtsgrundlage ist deine <strong>Einwilligung</strong> nach Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;a DSGVO, die du beim Absenden des Formulars über die zugehörige Checkbox erteilst. Mit Brevo besteht ein Auftragsverarbeitungsvertrag gemäß Art.&nbsp;28 DSGVO.
+          Die Daten nutze ich, um dir die angeforderte Checkliste zuzusenden und dich anschließend etwa einmal pro Woche mit meinem Newsletter per E-Mail über Google Ads, Landingpages und verwandte Themen zu informieren. Rechtsgrundlage ist deine <strong>Einwilligung</strong> nach Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;a DSGVO, die du beim Absenden des Formulars über die zugehörige Checkbox erteilst. Mit Brevo besteht ein Auftragsverarbeitungsvertrag gemäß Art.&nbsp;28 DSGVO.
         </p>
         <p>
           Du kannst deine Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen, entweder über den Abmeldelink am Ende jeder E-Mail oder per Nachricht an <a href="mailto:info@nina-zurawski.de">info@nina-zurawski.de</a>. Deine Daten werden dann bei Brevo gelöscht, soweit keine gesetzlichen Aufbewahrungspflichten entgegenstehen.
@@ -381,16 +453,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <hr class="legal-divider">
 
       <div class="legal-section">
-        <h2>11. Interaktiver Quiz-Selbstcheck</h2>
+        <h2>12. Interaktive Quiz-Selbstchecks</h2>
         <p>
-          Diese Website enthält einen interaktiven Selbstcheck („Google Ads Check"), der vollständig in deinem Browser läuft. Die Antworten werden <strong>nicht</strong> an einen Server übertragen, nicht gespeichert und nicht ausgewertet — sie existieren nur temporär im Arbeitsspeicher deines Browsers während der Nutzung. Es werden keine personenbezogenen Daten erfasst.
+          Diese Website enthält interaktive Selbstchecks („Google Ads Check" bzw. „Startklar für Google Ads?"), die in deinem Browser laufen. Deine Antworten werden dort ausgewertet und <strong>nicht</strong> an meinen Server übertragen.
+        </p>
+        <p>
+          Wenn du dich nach dem Quiz für die Checkliste anmeldest (siehe Abschnitt 11), werden dein Quiz-Ergebnis („startklar" oder „fast startklar") und deine Antwort auf die Frage, wohin du Interessierte schicken könntest (eigene Anfrage-Seite, allgemeine Website oder keine Seite), zusammen mit deinem Vornamen und deiner E-Mail-Adresse bei Brevo gespeichert. Ich nutze das, um dir passende Tipps per E-Mail zu senden. Rechtsgrundlage ist deine Einwilligung (Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;a DSGVO) im Rahmen der Anmeldung.
+        </p>
+        <p>
+          Bei erteilter Einwilligung in „Marketing" wird außerdem die Ergebniskategorie des Quiz als Ereignis an Meta übermittelt (siehe Abschnitt 9). Deine einzelnen Antworten werden nicht übermittelt.
         </p>
       </div>
 
       <hr class="legal-divider">
 
       <div class="legal-section">
-        <h2>12. Deine Rechte</h2>
+        <h2>13. Deine Rechte</h2>
         <p>Du hast gegenüber mir folgende Rechte hinsichtlich deiner personenbezogenen Daten:</p>
         <ul>
           <li>Recht auf Auskunft (Art. 15 DSGVO)</li>
@@ -409,9 +487,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <hr class="legal-divider">
 
       <div class="legal-section">
-        <h2>13. Aktualität dieser Datenschutzerklärung</h2>
+        <h2>14. Aktualität dieser Datenschutzerklärung</h2>
         <p>
-          Diese Datenschutzerklärung ist aktuell gültig und hat den Stand September 2026. Durch die Weiterentwicklung der Website oder aufgrund geänderter gesetzlicher Vorgaben kann es notwendig werden, diese Datenschutzerklärung zu ändern.
+          Diese Datenschutzerklärung ist aktuell gültig und hat den Stand Oktober 2026. Durch die Weiterentwicklung der Website oder aufgrund geänderter gesetzlicher Vorgaben kann es notwendig werden, diese Datenschutzerklärung zu ändern.
         </p>
       </div>
 

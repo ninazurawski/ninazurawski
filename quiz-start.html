@@ -15,23 +15,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-NLFQXM86');</script>
 <!-- End Google Tag Manager -->
-<!-- Meta Pixel Code -->
+<!-- Meta Pixel Code: wird erst nach Einwilligung (Marketing) geladen -->
 <script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-window.META_PIXEL_ID = 'DEINE_META_PIXEL_ID'; /* TODO: echte Meta Pixel ID eintragen */
-fbq('consent', 'revoke');
-fbq('init', window.META_PIXEL_ID);
-try{var _c2=JSON.parse(localStorage.getItem('cookie_consent')||'null');if(_c2&&_c2.marketing)fbq('consent','grant');}catch(e){}
-fbq('track', 'PageView');
+window.loadMetaPixel = function () {
+  if (window.fbq) return;
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '4253386314961970');
+  fbq('track', 'PageView');
+};
+try{var _c2=JSON.parse(localStorage.getItem('cookie_consent')||'null');if(_c2&&_c2.marketing)window.loadMetaPixel();}catch(e){}
 </script>
-<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=DEINE_META_PIXEL_ID&ev=PageView&noscript=1" alt=""></noscript>
 <!-- End Meta Pixel Code -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Bist du startklar für Google Ads? — Nina Zurawski</title>
@@ -362,7 +362,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <div style="padding: 8px 0;">
                 <div class="sib-form-block" style="font-family:'DM Sans', sans-serif; font-size:16px; text-align:left; color:#3C4858; background-color:transparent;">
                   <div class="sib-text-form-block">
-                    <p>Trag dich ein und du bekommst die Checkliste direkt in dein Postfach. Dazu ein paar kurze Tipps, wie du mit Google Ads planbar neue Kund:innen gewinnst.</p>
+                    <p>Trag dich ein und du bekommst die Checkliste direkt in dein Postfach. Danach bekommst du einmal pro Woche kurze Tipps, wie du mit Google Ads planbar neue Kund:innen gewinnst.</p>
                   </div>
                 </div>
               </div>
@@ -425,7 +425,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                       <div class="entry__choice" style="">
                         <label>
                           <input type="checkbox" class="input_replaced" value="1" id="OPT_IN" name="OPT_IN" required />
-                          <span class="checkbox checkbox_tick_positive" style="margin-left:"></span><span style="font-family:'DM Sans', sans-serif; font-size:14px; text-align:left; color:#3C4858; background-color:transparent;"><p>Ja, ich möchte die Checkliste und weitere Tipps zu Google Ads per E-Mail erhalten. Hinweise zum Umgang mit meinen Daten finde ich in der <a href="https://www.nina-zurawski.de/datenschutz.html" target="_blank" rel="nofollow noopener">Datenschutzerklärung</a>.</p><span data-required="*" style="display: inline;" class="entry__label entry__label_optin"></span></span>
+                          <span class="checkbox checkbox_tick_positive" style="margin-left:"></span><span style="font-family:'DM Sans', sans-serif; font-size:14px; text-align:left; color:#3C4858; background-color:transparent;"><p>Ja, ich möchte die Checkliste und danach regelmäßig (ca. einmal pro Woche) meinen Newsletter mit Tipps zu Google Ads per E-Mail erhalten. Ich kann mich jederzeit wieder abmelden. Hinweise zum Umgang mit meinen Daten finde ich in der <a href="https://www.nina-zurawski.de/datenschutz.html" target="_blank" rel="nofollow noopener">Datenschutzerklärung</a>.</p><span data-required="*" style="display: inline;" class="entry__label entry__label_optin"></span></span>
                         </label>
                       </div>
                     </div>
@@ -516,7 +516,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       ad_user_data:       storedConsent.marketing ? 'granted' : 'denied',
       ad_personalization: storedConsent.marketing ? 'granted' : 'denied'
     });
-    if (typeof fbq === 'function') fbq('consent', storedConsent.marketing ? 'grant' : 'revoke');
+    
   }
 
   /* ─── Question data ─────────────────────────────────── */
@@ -762,7 +762,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       brevoFormWrap.style.display = '';
       populateBrevoHiddenFields();
 
-      document.getElementById('btn-result-a-booking').addEventListener('click', function () { track('standard', 'Schedule'); });
+      document.getElementById('btn-result-a-booking').addEventListener('click', function () { track('custom', 'TerminKlick'); });
       document.getElementById('btn-result-a-toggle').addEventListener('click', function () {
         document.getElementById('resultAChecklist').classList.toggle('quiz-hidden');
       });
@@ -803,7 +803,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       brevoFormWrap.style.display = '';
       populateBrevoHiddenFields();
 
-      document.getElementById('btn-result-b-booking').addEventListener('click', function () { track('standard', 'Schedule'); });
+      document.getElementById('btn-result-b-booking').addEventListener('click', function () { track('custom', 'TerminKlick'); });
     }
 
     track('custom', 'QuizComplete', { result: resultType === 'A' ? 'startklar' : 'fast_startklar' });
