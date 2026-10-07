@@ -112,6 +112,11 @@ try{var _c2=JSON.parse(localStorage.getItem('cookie_consent')||'null');if(_c2&&_
 
   /* ---------- Header responsive ---------- */
   .hdr-brand { white-space: nowrap; }
+  .hdr-quiz-short { display: none; }
+  @media (max-width: 760px) {
+    .hdr-quiz-long { display: none; }
+    .hdr-quiz-short { display: inline; }
+  }
   @media (max-width: 560px) {
     .hdr-inner { height: 64px !important; }
   }
@@ -190,9 +195,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div style="font-family:'DM Sans',sans-serif; color:#16211B; background:#FFFFFF">
 
   <header style="position:sticky; top:0; z-index:50; background:rgba(255,255,255,0.88); backdrop-filter:blur(14px); border-bottom:1px solid #EEEAE2">
-    <div class="hdr-inner" style="max-width:1180px; margin:0 auto; padding:0 clamp(1.25rem,4vw,2.5rem); height:74px; display:flex; align-items:center; justify-content:center; gap:0.7rem">
-      <img src="images/logo-nina.png" alt="Nina Zurawski Logo" style="width:38px; height:38px; border-radius:50%; object-fit:contain; display:block">
-      <span class="hdr-brand" style="font-family:'Playfair Display',serif; font-size:1.08rem; color:#16211B">Nina Zurawski</span>
+    <div class="hdr-inner" style="max-width:1180px; margin:0 auto; padding:0 clamp(1.25rem,4vw,2.5rem); height:74px; display:flex; align-items:center; justify-content:space-between; gap:1rem">
+      <div style="display:flex; align-items:center; gap:0.7rem; min-width:0">
+        <img src="images/logo-nina.png" alt="Nina Zurawski Logo" style="width:38px; height:38px; border-radius:50%; object-fit:contain; display:block; flex-shrink:0">
+        <span class="hdr-brand" style="font-family:'Playfair Display',serif; font-size:1.08rem; color:#16211B">Nina Zurawski</span>
+      </div>
+      <a href="quiz-start.html" id="btn-header-quiz" style="flex-shrink:0; display:inline-flex; align-items:center; gap:0.45rem; background:#D96B52; color:#fff; border-radius:100px; padding:0.7rem 1.3rem; font-size:0.88rem; font-weight:500; white-space:nowrap; transition:background .2s, transform .2s" onmouseover="this.style.background='#C55A42';this.style.transform='translateY(-1px)'" onmouseout="this.style.background='#D96B52';this.style.transform='none'">
+        <span class="hdr-quiz-long">Zum Quiz: Startklar für Google Ads?</span><span class="hdr-quiz-short">Zum Quiz</span>
+        <svg width="13" height="13" viewBox="0 0 16 16" fill="none" style="flex-shrink:0"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path></svg>
+      </a>
     </div>
   </header>
 
@@ -662,9 +673,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </section>
 
-  <footer id="footer" style="background:#16291F; border-top:1px solid rgba(255,255,255,0.12); padding:1.8rem 0">
+  <footer id="footer" style="background:#1E3A2C; border-top:1px solid rgba(255,255,255,0.12); padding:1.8rem 0">
     <div style="max-width:1180px; margin:0 auto; padding:0 clamp(1.25rem,4vw,2.5rem); display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:1rem">
-      <span style="font-family:'Playfair Display',serif; font-size:1.05rem; color:#fff">Nina Zurawski</span>
+      <div style="display:flex; align-items:center; gap:0.7rem">
+        <img src="images/logo-nina.png" alt="Nina Zurawski Logo" width="38" height="38" loading="lazy" style="width:38px; height:38px; border-radius:50%; object-fit:contain; display:block; filter:brightness(0) invert(1)">
+        <span style="font-family:'Playfair Display',serif; font-size:1.05rem; color:#fff">Nina Zurawski</span>
+      </div>
       <div style="display:flex; gap:1.5rem">
         <a href="impressum.html" style="font-size:0.78rem; letter-spacing:0.08em; color:rgba(255,255,255,0.6)">Impressum</a>
         <a href="datenschutz.html" style="font-size:0.78rem; letter-spacing:0.08em; color:rgba(255,255,255,0.6)">Datenschutz</a>
