@@ -2515,8 +2515,8 @@ br.m-br { display: none; }
   /* FAQ left column: remove inline break */
   .faq-left p br { display: none; }
 
-  /* Reviews: hide arrows on mobile, full-width slide */
-  .reviews-arrow { display: none; }
+  /* Reviews: show arrows on mobile too */
+  .reviews-arrow { display: flex; }
   .review-slide { padding: 1.75rem; }
 
   .pain-grid {

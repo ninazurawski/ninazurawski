@@ -360,7 +360,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         Was Kund*innen <em style="font-style:italic; color:#D96B52">sagen.</em>
       </h2>
 
-      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:1.25rem">
+      <style>
+        @media(max-width:640px){#revTrackFLNF>div{flex:0 0 100%;box-sizing:border-box}}
+        @media(min-width:641px){#revOuterFLNF{overflow:visible!important}#revTrackFLNF{display:grid!important;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.25rem;transform:none!important;transition:none!important}#revTrackFLNF>div{flex:none!important}#revPrevFLNF,#revNextFLNF,#revDotsFLNF{display:none!important}}
+      </style>
+      <div style="display:flex; align-items:center; gap:1rem">
+        <button id="revPrevFLNF" style="flex-shrink:0;width:44px;height:44px;border-radius:50%;border:1px solid #E9E5DD;background:#fff;color:#1E3A2C;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s;box-shadow:0 2px 8px rgba(22,33,27,.08)" aria-label="Vorherige Bewertung"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M12 4L6 10l6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>
+        <div id="revOuterFLNF" style="overflow:hidden;flex:1;border-radius:16px">
+          <div id="revTrackFLNF" style="display:flex;transition:transform .45s cubic-bezier(.4,0,.2,1);will-change:transform">
         <div style="background:#FFFFFF; border:1px solid #EEEAE2; border-radius:16px; padding:2rem">
           <div style="display:flex; gap:2px; margin-bottom:1rem">
             <svg viewBox="0 0 20 20" fill="#D96B52" width="15" height="15"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20" fill="#D96B52" width="15" height="15"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20" fill="#D96B52" width="15" height="15"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20" fill="#D96B52" width="15" height="15"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20" fill="#D96B52" width="15" height="15"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
@@ -410,7 +417,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             </div>
           </div>
         </div>
+          </div>
+        </div>
+        <button id="revNextFLNF" style="flex-shrink:0;width:44px;height:44px;border-radius:50%;border:1px solid #E9E5DD;background:#fff;color:#1E3A2C;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s;box-shadow:0 2px 8px rgba(22,33,27,.08)" aria-label="Nächste Bewertung"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M8 4l6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>
       </div>
+      <div id="revDotsFLNF" style="display:flex;justify-content:center;gap:.5rem;margin-top:1.5rem">
+        <button style="width:8px;height:8px;border-radius:50%;border:none;background:#D96B52;cursor:pointer;padding:0;transition:background .2s,transform .2s;transform:scale(1.3)" aria-label="Bewertung 1"></button>
+        <button style="width:8px;height:8px;border-radius:50%;border:none;background:#E3DCCF;cursor:pointer;padding:0;transition:background .2s,transform .2s" aria-label="Bewertung 2"></button>
+        <button style="width:8px;height:8px;border-radius:50%;border:none;background:#E3DCCF;cursor:pointer;padding:0;transition:background .2s,transform .2s" aria-label="Bewertung 3"></button>
+      </div>
+      <script>(function(){var t=document.getElementById('revTrackFLNF'),ds=document.querySelectorAll('#revDotsFLNF button'),total=t.children.length,cur=0;function go(n){cur=(n+total)%total;t.style.transform='translateX(-'+(cur*100)+'%)';ds.forEach(function(d,i){d.style.background=i===cur?'#D96B52':'#E3DCCF';d.style.transform=i===cur?'scale(1.3)':''})}document.getElementById('revPrevFLNF').addEventListener('click',function(){go(cur-1)});document.getElementById('revNextFLNF').addEventListener('click',function(){go(cur+1)});ds.forEach(function(d,i){d.addEventListener('click',function(){go(i)})});var sx=0;t.addEventListener('touchstart',function(e){sx=e.touches[0].clientX},{passive:true});t.addEventListener('touchend',function(e){var dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>40)go(dx<0?cur+1:cur-1)},{passive:true})})();</script>
     </div>
   </section>
 

@@ -96,7 +96,7 @@ try{var _c2=JSON.parse(localStorage.getItem('cookie_consent')||'null');if(_c2&&_
   .reviews-dots { display: flex; justify-content: center; gap: 0.5rem; margin-top: 1.5rem; }
   .reviews-dot { width: 8px; height: 8px; border-radius: 50%; border: none; background: #E3DCCF; cursor: pointer; padding: 0; transition: background .2s, transform .2s; }
   .reviews-dot--active { background: #D96B52; transform: scale(1.3); }
-  @media (max-width: 640px) { .reviews-arrow { display: none; } }
+  @media (max-width: 640px) { .reviews-arrow { display: flex; } }
 
   /* ---------- Rechner ---------- */
   .calc-field { display: flex; flex-direction: column; gap: 0.5rem; }
