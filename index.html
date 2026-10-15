@@ -663,7 +663,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   (function() {
     var track = document.getElementById('reviewsTrack');
     var dots = document.querySelectorAll('.reviews-dot');
-    var total = 3, current = 0;
+    var total = track.children.length, current = 0;
     function go(n) {
       current = (n + total) % total;
       track.style.transform = 'translateX(-' + (current * 100) + '%)';
