@@ -99,7 +99,7 @@ try{var _c2=JSON.parse(localStorage.getItem('cookie_consent')||'null');if(_c2&&_
   .hero-grid { position:relative; z-index:1; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr)); gap:clamp(2rem,5vw,3.5rem); align-items:center; }
   h1 { font-size:clamp(2rem,6.4vw,3.4rem); line-height:1.1; letter-spacing:-.015em; margin-bottom:1.3rem; text-wrap:balance; }
   .hero .lead { font-size:1.08rem; max-width:34rem; margin-bottom:2rem; }
-  .hero-img { display:block; width:100%; height:auto; border-radius:20px; }
+  .hero-img { display:block; width:100%; height:auto; }
 
   /* Listen */
   .bullets { display:flex; flex-direction:column; gap:.9rem; }
@@ -117,10 +117,11 @@ try{var _c2=JSON.parse(localStorage.getItem('cookie_consent')||'null');if(_c2&&_
   .reason p { font-size:1.02rem; line-height:1.8; color:var(--muted); text-wrap:pretty; }
 
   /* Karten */
-  .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr)); gap:1.25rem; margin:2rem 0 2.4rem; }
+  .cards { display:grid; grid-template-columns:1fr; gap:1.25rem; margin:2rem 0 2.4rem; }
+  @media (min-width:600px){ .cards { grid-template-columns:repeat(2,1fr); } }
   .pcard { background:#fff; border:1px solid var(--line); border-radius:20px; overflow:hidden; display:flex; flex-direction:column; transition:transform .25s, box-shadow .25s; }
   .pcard:hover { transform:translateY(-4px); box-shadow:0 24px 48px -28px rgba(22,33,27,.35); }
-  .pcard img { display:block; width:100%; aspect-ratio:4/3; object-fit:cover; background:var(--sand); }
+  .pcard img { display:block; width:100%; aspect-ratio:1/1; object-fit:contain; background:var(--sand); }
   .pcard div { padding:1.4rem 1.5rem 1.6rem; }
   .pcard h4 { font-family:'Playfair Display',serif; font-weight:500; font-size:1.15rem; line-height:1.3; margin-bottom:.55rem; color:var(--green); }
   .pcard p { font-size:.95rem; line-height:1.7; color:var(--muted); }
@@ -133,12 +134,15 @@ try{var _c2=JSON.parse(localStorage.getItem('cookie_consent')||'null');if(_c2&&_
   .about p { font-size:1rem; line-height:1.8; color:var(--muted); text-wrap:pretty; }
   .facts { display:flex; flex-wrap:wrap; gap:.6rem; margin-top:1.4rem; }
   .facts span { background:var(--mint); border:1px solid #DCE6DD; border-radius:100px; padding:.55rem 1.05rem; font-size:.84rem; color:var(--green); }
-  .quote { margin-top:2.6rem; background:#fff; border:1px solid var(--line); border-radius:20px; padding:clamp(1.5rem,4vw,2.2rem); }
+  .quotes { display:grid; grid-template-columns:1fr; gap:1.25rem; margin-top:2.4rem; }
+  @media (min-width:800px){ .quotes { grid-template-columns:repeat(2,1fr); } }
+  .quote { display:flex; flex-direction:column; background:#fff; border:1px solid var(--line); border-radius:20px; padding:clamp(1.5rem,4vw,2rem); }
   .stars { display:flex; gap:2px; margin-bottom:1rem; color:var(--coral-soft); }
   .stars svg { width:15px; height:15px; fill:currentColor; }
-  .quote blockquote { font-family:'Playfair Display',serif; font-size:1.05rem; line-height:1.65; color:var(--ink); text-wrap:pretty; margin-bottom:1.1rem; }
+  .quote blockquote { font-family:'Playfair Display',serif; font-size:1.05rem; line-height:1.65; color:var(--ink); text-wrap:pretty; margin-bottom:1.1rem; flex:1; }
   .who { display:flex; align-items:center; gap:.85rem; padding-top:.9rem; border-top:1px solid var(--line); font-size:.9rem; line-height:1.4; }
   .who img { width:44px; height:44px; border-radius:50%; object-fit:cover; border:1px solid #E9E5DD; flex-shrink:0; }
+  .who img.logo { border-radius:12px; object-fit:contain; background:#fff; }
   .who small { color:var(--faint); font-size:.84rem; }
 
   /* FAQ */
@@ -227,13 +231,12 @@ try{var _c2=JSON.parse(localStorage.getItem('cookie_consent')||'null');if(_c2&&_
   <div class="wrap hero-grid">
     <div>
       <div class="eyebrow">Kostenloses Starterpaket für Dienstleister:innen</div>
-      <h1>Planbar neue Kund:innen gewinnen, <em>ohne ständig auf Social Media aktiv zu sein</em></h1>
-      <p class="lead">Dein kostenloses Starterpaket zeigt dir, wie aus Menschen, die schon nach deinem Angebot suchen, Anfragen für dich werden. Mit E-Book, Checkliste, Selbsttest und Werbebudget-Rechner.</p>
+      <h1>Planbare Kundengewinnung und <em>endlich mehr Zeit für dein eigentliches Business.</em></h1>
+      <p class="lead">Dein kostenloses Starterpaket zeigt dir, wie aus Menschen, die schon nach deinem Angebot suchen, Anfragen für dein Unternehmen werden. Mit E-Book, Checkliste, Selbsttest und Werbebudget-Rechner zur planbaren Kundengewinnung, selbst wenn du im Urlaub bist.</p>
       <a href="../freebies-anmelden.html" class="btn btn--block js-cta" data-pos="hero">Jetzt kostenlos sichern</a>
       <p class="btn-note">Du brauchst nur deine E-Mail-Adresse. Jederzeit abmeldbar.</p>
     </div>
-    <!-- PLATZHALTER-GRAFIK: images/freebies-mockup.webp (Mockup der vier Freebies), wird später getauscht -->
-    <img class="hero-img" src="../images/freebies-mockup.webp" alt="Das kostenlose Starterpaket: E-Book, Checkliste, Selbsttest und Werbebudget-Rechner" width="1200" height="900" fetchpriority="high" decoding="async">
+    <img class="hero-img" src="../images/freebies-mockup.webp" alt="Das kostenlose Starterpaket: E-Book, Checkliste, Selbsttest und Werbebudget-Rechner" width="2000" height="1131" fetchpriority="high" decoding="async">
   </div>
 </section>
 
@@ -270,7 +273,7 @@ try{var _c2=JSON.parse(localStorage.getItem('cookie_consent')||'null');if(_c2&&_
   <div class="wrap wrap--narrow">
     <h2>Für dich, <em>wenn du …</em></h2>
     <ul class="bullets">
-      <li><span class="dot"></span>Dienstleister:in, Coach, Berater:in oder Selbstständige:r bist und deine Leistung persönlich erbringst</li>
+      <li><span class="dot"></span>eine Dienstleistung anbietest, nach der aktiv gesucht wird. Zum Beispiel Coach, Heilpraktiker:in, IT-Dienstleister:in, Handwerker:in, usw.</li>
       <li><span class="dot"></span>mehr planbare Anfragen statt Zufall und Empfehlungen willst</li>
       <li><span class="dot"></span>keine Lust hast, ständig auf Social Media Content zu produzieren</li>
     </ul>
@@ -311,30 +314,29 @@ try{var _c2=JSON.parse(localStorage.getItem('cookie_consent')||'null');if(_c2&&_
     </div>
 
     <div class="cards">
-      <!-- PLATZHALTER-BILDER: images/freebie-1.webp bis freebie-4.webp -->
       <article class="pcard">
-        <img src="../images/freebie-1.webp" alt="E-Book: Das Anfragen-System" width="800" height="600" loading="lazy" decoding="async">
+        <img src="../images/freebie-1.webp" alt="E-Book: Das Anfragen-System" width="1080" height="1420" loading="lazy" decoding="async">
         <div>
           <h4>E-Book: Das Anfragen-System</h4>
           <p>Wie aus Suchenden Kund:innen werden. Die Geschichte eines Kunden, der von unregelmäßigen zu planbaren Anfragen kam, und das System dahinter.</p>
         </div>
       </article>
       <article class="pcard">
-        <img src="../images/freebie-2.webp" alt="Checkliste: Startklar für Google Ads" width="800" height="600" loading="lazy" decoding="async">
+        <img src="../images/freebie-2.webp" alt="Checkliste: Startklar für Google Ads" width="1080" height="1420" loading="lazy" decoding="async">
         <div>
           <h4>Checkliste: Startklar für Google Ads</h4>
           <p>Prüfe in wenigen Minuten, ob du bereit bist, und was dir noch fehlt.</p>
         </div>
       </article>
       <article class="pcard">
-        <img src="../images/freebie-3.webp" alt="Bonus: Selbsttest" width="800" height="600" loading="lazy" decoding="async">
+        <img src="../images/freebie-3.webp" alt="Bonus: Selbsttest" width="880" height="1500" loading="lazy" decoding="async">
         <div>
           <h4>Bonus: Selbsttest</h4>
           <p>Finde heraus, wo du gerade stehst und ob das System zu deinem Business passt. Dauert etwa 2 Minuten.</p>
         </div>
       </article>
       <article class="pcard">
-        <img src="../images/freebie-4.webp" alt="Bonus: Werbebudget-Rechner" width="800" height="600" loading="lazy" decoding="async">
+        <img src="../images/freebie-4.webp" alt="Bonus: Werbebudget-Rechner" width="1220" height="1120" loading="lazy" decoding="async">
         <div>
           <h4>Bonus: Werbebudget-Rechner</h4>
           <p>Lohnt sich das für dich? Ja, Werbung kostet Geld. Die eigentliche Frage ist aber: Wie viele neue Kund:innen brauchst du, damit sie sich bezahlt macht? Meist weniger, als du denkst.</p>
@@ -366,13 +368,44 @@ try{var _c2=JSON.parse(localStorage.getItem('cookie_consent')||'null');if(_c2&&_
         </div>
       </div>
     </div>
+</section>
 
-    <div class="quote">
-      <div class="stars" aria-label="5 von 5 Sternen"><svg viewBox="0 0 20 20"><path d="M10 1.5l2.5 5.1 5.6.8-4 3.9.9 5.6L10 14.3l-5 2.6.9-5.6-4-3.9 5.6-.8z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1.5l2.5 5.1 5.6.8-4 3.9.9 5.6L10 14.3l-5 2.6.9-5.6-4-3.9 5.6-.8z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1.5l2.5 5.1 5.6.8-4 3.9.9 5.6L10 14.3l-5 2.6.9-5.6-4-3.9 5.6-.8z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1.5l2.5 5.1 5.6.8-4 3.9.9 5.6L10 14.3l-5 2.6.9-5.6-4-3.9 5.6-.8z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1.5l2.5 5.1 5.6.8-4 3.9.9 5.6L10 14.3l-5 2.6.9-5.6-4-3.9 5.6-.8z"/></svg></div>
-      <blockquote>„Ich schätze die Arbeit von Nina wirklich sehr. Sie bringt nicht nur viel Kompetenz mit, sondern versteht auch genau, worauf es bei Ads und Landingpages ankommt. Seit der Zusammenarbeit merke ich einen deutlichen Unterschied, endlich kommen wöchentlich mehrere Anfragen für mein Coaching rein. Gleichzeitig spare ich mir unglaublich viel Zeit und Stress, weil ich nicht mehr auf allen anderen Kanälen ständig aktiv sein muss. Absolute Empfehlung."</blockquote>
-      <div class="who">
-        <img src="../images/nicole-bondani.webp" alt="Nicole Bondani" width="44" height="44" loading="lazy">
-        <span><strong style="font-weight:500">Nicole Bondani</strong><br><small>Spiritueller Coach</small></span>
+<!-- ══ 7b · KUNDENSTIMMEN ══ -->
+<section class="sec">
+  <div class="wrap">
+    <h2 class="center">Das sagen <em>meine Kund:innen</em></h2>
+    <div class="quotes">
+      <div class="quote">
+        <div class="stars" aria-label="5 von 5 Sternen"><svg viewBox="0 0 20 20"><path d="M10 1.5l2.5 5.1 5.6.8-4 3.9.9 5.6L10 14.3l-5 2.6.9-5.6-4-3.9 5.6-.8z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1.5l2.5 5.1 5.6.8-4 3.9.9 5.6L10 14.3l-5 2.6.9-5.6-4-3.9 5.6-.8z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1.5l2.5 5.1 5.6.8-4 3.9.9 5.6L10 14.3l-5 2.6.9-5.6-4-3.9 5.6-.8z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1.5l2.5 5.1 5.6.8-4 3.9.9 5.6L10 14.3l-5 2.6.9-5.6-4-3.9 5.6-.8z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1.5l2.5 5.1 5.6.8-4 3.9.9 5.6L10 14.3l-5 2.6.9-5.6-4-3.9 5.6-.8z"/></svg></div>
+        <blockquote>„Seit Nina unsere Google-Ads-Kampagnen betreut, sehen wir eine messbar höhere Conversion-Rate. Sie kennt unsere Region, denkt mit und erklärt ihre Entscheidungen nachvollziehbar. Für uns eine klare Empfehlung."</blockquote>
+        <div class="who">
+          <img class="logo" src="../images/logo-schimanski-it.png" alt="schimanski IT GmbH &amp; Co. KG" width="44" height="44" loading="lazy">
+          <span><strong style="font-weight:500">Denis Schimanski</strong><br><small>Geschäftsführer, schimanski IT GmbH &amp; Co. KG</small></span>
+        </div>
+      </div>
+      <div class="quote">
+        <div class="stars" aria-label="5 von 5 Sternen"><svg viewBox="0 0 20 20"><path d="M10 1.5l2.5 5.1 5.6.8-4 3.9.9 5.6L10 14.3l-5 2.6.9-5.6-4-3.9 5.6-.8z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1.5l2.5 5.1 5.6.8-4 3.9.9 5.6L10 14.3l-5 2.6.9-5.6-4-3.9 5.6-.8z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1.5l2.5 5.1 5.6.8-4 3.9.9 5.6L10 14.3l-5 2.6.9-5.6-4-3.9 5.6-.8z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1.5l2.5 5.1 5.6.8-4 3.9.9 5.6L10 14.3l-5 2.6.9-5.6-4-3.9 5.6-.8z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1.5l2.5 5.1 5.6.8-4 3.9.9 5.6L10 14.3l-5 2.6.9-5.6-4-3.9 5.6-.8z"/></svg></div>
+        <blockquote>„Ich schätze die Arbeit von Nina wirklich sehr. Sie bringt nicht nur viel Kompetenz mit, sondern versteht auch genau, worauf es bei Ads und Landingpages ankommt. Seit der Zusammenarbeit merke ich einen deutlichen Unterschied, endlich kommen wöchentlich mehrere Anfragen für mein Coaching rein. Gleichzeitig spare ich mir unglaublich viel Zeit und Stress, weil ich nicht mehr auf allen anderen Kanälen ständig aktiv sein muss. Absolute Empfehlung."</blockquote>
+        <div class="who">
+          <img src="../images/nicole-bondani.webp" alt="Nicole Bondani" width="44" height="44" loading="lazy">
+          <span><strong style="font-weight:500">Nicole Bondani</strong><br><small>Spiritueller Coach</small></span>
+        </div>
+      </div>
+      <div class="quote">
+        <div class="stars" aria-label="5 von 5 Sternen"><svg viewBox="0 0 20 20"><path d="M10 1.5l2.5 5.1 5.6.8-4 3.9.9 5.6L10 14.3l-5 2.6.9-5.6-4-3.9 5.6-.8z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1.5l2.5 5.1 5.6.8-4 3.9.9 5.6L10 14.3l-5 2.6.9-5.6-4-3.9 5.6-.8z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1.5l2.5 5.1 5.6.8-4 3.9.9 5.6L10 14.3l-5 2.6.9-5.6-4-3.9 5.6-.8z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1.5l2.5 5.1 5.6.8-4 3.9.9 5.6L10 14.3l-5 2.6.9-5.6-4-3.9 5.6-.8z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1.5l2.5 5.1 5.6.8-4 3.9.9 5.6L10 14.3l-5 2.6.9-5.6-4-3.9 5.6-.8z"/></svg></div>
+        <blockquote>„Nina hat sich intensiv in mein Business hineingedacht, Kampagnen kontinuierlich optimiert und regelmäßig nachjustiert. Besonders schätze ich ihre proaktive Arbeitsweise und ihr echtes Engagement."</blockquote>
+        <div class="who">
+          <img src="../images/kristin-henke.webp" alt="Kristin Henke" width="44" height="44" loading="lazy">
+          <span><strong style="font-weight:500">Kristin Henke</strong><br><small>Female Leadership Expertin</small></span>
+        </div>
+      </div>
+      <div class="quote">
+        <div class="stars" aria-label="5 von 5 Sternen"><svg viewBox="0 0 20 20"><path d="M10 1.5l2.5 5.1 5.6.8-4 3.9.9 5.6L10 14.3l-5 2.6.9-5.6-4-3.9 5.6-.8z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1.5l2.5 5.1 5.6.8-4 3.9.9 5.6L10 14.3l-5 2.6.9-5.6-4-3.9 5.6-.8z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1.5l2.5 5.1 5.6.8-4 3.9.9 5.6L10 14.3l-5 2.6.9-5.6-4-3.9 5.6-.8z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1.5l2.5 5.1 5.6.8-4 3.9.9 5.6L10 14.3l-5 2.6.9-5.6-4-3.9 5.6-.8z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1.5l2.5 5.1 5.6.8-4 3.9.9 5.6L10 14.3l-5 2.6.9-5.6-4-3.9 5.6-.8z"/></svg></div>
+        <blockquote>„Wir haben Nina als sehr kompetente und erfahrene Ansprechpartnerin kennengelernt, kreativ, auf den Punkt und sehr selbständig. Neben der fachlich sehr guten Arbeitsweise pflegen wir ein sehr freundschaftliches Miteinander."</blockquote>
+        <div class="who">
+          <img class="logo" src="../images/logo-klinikum-nf.png" alt="Klinikum Nordfriesland" width="44" height="44" loading="lazy">
+          <span><strong style="font-weight:500">Klinikum Nordfriesland</strong><br><small>Unternehmenskommunikation</small></span>
+        </div>
       </div>
     </div>
   </div>
