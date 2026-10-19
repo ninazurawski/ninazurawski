@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<!-- Consent Mode: Standard = alles abgelehnt bis zur Einwilligung -->
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',functionality_storage:'granted',security_storage:'granted',wait_for_update:500});
+try{var _c=JSON.parse(localStorage.getItem('cookie_consent')||'null');if(_c)gtag('consent','update',{ad_storage:_c.marketing?'granted':'denied',ad_user_data:_c.marketing?'granted':'denied',ad_personalization:_c.marketing?'granted':'denied'});}catch(e){}
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NLFQXM86');</script>
+<!-- End Google Tag Manager -->
+<!-- Meta Pixel Code: wird erst nach Einwilligung (Marketing) geladen -->
+<script>
+window.loadMetaPixel = function () {
+  if (window.fbq) return;
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '4253386314961970');
+  fbq('track', 'PageView');
+};
+try{var _c2=JSON.parse(localStorage.getItem('cookie_consent')||'null');if(_c2&&_c2.marketing)window.loadMetaPixel();}catch(e){}
+</script>
+<!-- End Meta Pixel Code -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Planbare Kundengewinnung: Die kostenlose Checkliste — Nina Zurawski</title>
+<meta name="description" content="Regelmäßig neue Anfragen, auch wenn du im Urlaub bist. Hol dir die kostenlose Checkliste und mach deine Kundengewinnung planbar, ohne zusätzlichen Zeitaufwand.">
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://www.nina-zurawski.de/planbare-kundengewinnung">
+
+<link rel="icon" type="image/png" href="../images/logo-nina.png">
+<link rel="apple-touch-icon" href="../images/logo-nina.png">
+
+<link rel="preload" href="../fonts/playfair-display-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../fonts/dm-sans-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../fonts/dm-sans-500.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+<style>
+  @font-face { font-family:'Playfair Display'; src:url('../fonts/playfair-display-400.woff2') format('woff2'); font-weight:400; font-style:normal; font-display:swap; }
+  @font-face { font-family:'Playfair Display'; src:url('../fonts/playfair-display-400italic.woff2') format('woff2'); font-weight:400; font-style:italic; font-display:swap; }
+  @font-face { font-family:'Playfair Display'; src:url('../fonts/playfair-display-500.woff2') format('woff2'); font-weight:500; font-style:normal; font-display:swap; }
+  @font-face { font-family:'DM Sans'; src:url('../fonts/dm-sans-300.woff2') format('woff2'); font-weight:300; font-style:normal; font-display:swap; }
+  @font-face { font-family:'DM Sans'; src:url('../fonts/dm-sans-400.woff2') format('woff2'); font-weight:400; font-style:normal; font-display:swap; }
+  @font-face { font-family:'DM Sans'; src:url('../fonts/dm-sans-500.woff2') format('woff2'); font-weight:500; font-style:normal; font-display:swap; }
+
+  :root {
+    --green:#1E3A2C; --green-dark:#16291F; --coral:#E07856; --coral-dark:#C55A42; --coral-soft:#D96B52;
+    --ink:#16211B; --muted:#55625A; --faint:#8C978F; --line:#EEEAE2; --cream:#FBF9F5; --mint:#F1F5F1;
+  }
+  * { box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { margin:0; background:#fff; color:var(--ink); font-family:'DM Sans',sans-serif; -webkit-font-smoothing:antialiased; overflow-x:clip; }
+  a { color:var(--green); text-decoration:none; }
+  h1,h2,h3,p,ul,blockquote { margin:0; }
+  ul { padding:0; list-style:none; }
+  button { font:inherit; }
+  img { max-width:100%; }
+
+  .wrap { max-width:1180px; margin:0 auto; padding:0 clamp(1.25rem,4vw,2.5rem); }
+  .sec { padding:clamp(4rem,8vw,6.5rem) 0; }
+  .sec--cream { background:var(--cream); }
+  .eyebrow { font-size:.7rem; letter-spacing:.16em; text-transform:uppercase; color:var(--faint); margin-bottom:.9rem; }
+  h1,h2,h3.serif { font-family:'Playfair Display',serif; font-weight:400; }
+  h2 { font-size:clamp(1.9rem,4vw,2.8rem); line-height:1.12; margin-bottom:1.25rem; text-wrap:balance; }
+  h2 em, h1 em { font-style:italic; color:var(--coral-soft); }
+  .lead { font-size:1.04rem; line-height:1.8; color:var(--muted); text-wrap:pretty; }
+  .center { text-align:center; }
+  .center .lead { max-width:40rem; margin-left:auto; margin-right:auto; }
+
+  .btn { display:inline-flex; align-items:center; justify-content:center; gap:.55rem; background:var(--coral); color:#fff; border:0; border-radius:100px; padding:1rem 1.9rem; font-size:1rem; font-weight:500; cursor:pointer; box-shadow:0 18px 36px -14px rgba(224,120,86,.55); transition:background .2s, transform .2s; text-align:center; }
+  .btn:hover { background:var(--coral-dark); transform:translateY(-2px); }
+  .btn--sm { padding:.7rem 1.3rem; font-size:.86rem; box-shadow:none; }
+  .btn-note { font-size:.8rem; color:var(--faint); margin-top:.85rem; }
+
+  .card { background:#fff; border:1px solid var(--line); border-radius:18px; padding:1.9rem; }
+  .ico { width:40px; height:40px; border-radius:12px; background:var(--mint); color:var(--green); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .ico svg { width:18px; height:18px; }
+  .grid { display:grid; gap:1.25rem; }
+  .g3 { grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); }
+  .g2 { grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); }
+
+  /* Header */
+  header.top { position:sticky; top:0; z-index:50; background:rgba(255,255,255,.9); backdrop-filter:blur(14px); border-bottom:1px solid var(--line); }
+  header.top .wrap { height:68px; display:flex; align-items:center; justify-content:space-between; gap:1rem; }
+  .brand { display:flex; align-items:center; gap:.7rem; font-family:'Playfair Display',serif; font-size:1.08rem; color:var(--ink); white-space:nowrap; }
+  .brand img { width:38px; height:38px; border-radius:50%; object-fit:contain; }
+  @media (max-width:360px){ .brand span{display:none;} }
+
+  /* Hero */
+  .hero { position:relative; overflow:hidden; padding:clamp(3rem,7vw,5.5rem) 0 clamp(3.5rem,6vw,5rem); }
+  .hero::before { content:""; position:absolute; inset:0; pointer-events:none; background-image:linear-gradient(#F4F1EA 1px,transparent 1px),linear-gradient(90deg,#F4F1EA 1px,transparent 1px); background-size:96px 96px; -webkit-mask-image:radial-gradient(120% 90% at 70% 0%,#000 0%,transparent 70%); mask-image:radial-gradient(120% 90% at 70% 0%,#000 0%,transparent 70%); }
+  .hero .blob { position:absolute; width:560px; height:560px; border-radius:50%; background:var(--green); opacity:.05; filter:blur(90px); top:-200px; right:-160px; pointer-events:none; }
+  .hero-grid { position:relative; display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:clamp(2rem,5vw,4rem); align-items:center; }
+  .pill { display:inline-flex; align-items:center; gap:.55rem; background:var(--mint); border:1px solid #DCE6DD; border-radius:100px; padding:.45rem 1rem; font-size:.72rem; letter-spacing:.1em; text-transform:uppercase; color:var(--green); margin-bottom:1.6rem; }
+  h1 { font-size:clamp(2.2rem,5vw,3.7rem); line-height:1.07; letter-spacing:-.015em; margin-bottom:1.4rem; text-wrap:balance; }
+  .hero .lead { max-width:34rem; margin-bottom:2rem; font-size:1.1rem; }
+
+  /* Mockup */
+  .mock { position:relative; max-width:420px; margin:0 auto; }
+  .mock-doc { background:#fff; border:1px solid #E9E5DD; border-radius:18px; padding:2rem 1.8rem; box-shadow:0 40px 70px -34px rgba(22,33,27,.45); transform:rotate(-2.5deg); }
+  .mock-doc .tag { font-size:.62rem; letter-spacing:.16em; text-transform:uppercase; color:var(--coral); margin-bottom:.8rem; }
+  .mock-doc h3 { font-family:'Playfair Display',serif; font-weight:500; font-size:1.55rem; line-height:1.15; color:var(--green); margin-bottom:1.4rem; }
+  .mock-row { display:flex; align-items:center; gap:.7rem; padding:.7rem 0; border-top:1px solid var(--line); font-size:.88rem; color:var(--muted); }
+  .mock-row i { width:20px; height:20px; border-radius:6px; background:var(--coral); color:#fff; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .mock-row i svg { width:12px; height:12px; }
+  .mock-back { position:absolute; inset:14px -14px -14px 14px; border-radius:18px; background:var(--green); transform:rotate(2deg); z-index:-1; }
+  .mock-badge { position:absolute; right:-.6rem; top:-1.1rem; background:var(--coral); color:#fff; border-radius:100px; padding:.55rem 1rem; font-size:.78rem; font-weight:500; box-shadow:0 14px 30px -12px rgba(224,120,86,.6); transform:rotate(4deg); z-index:2; }
+  .mock-wrap { position:relative; z-index:0; padding:1rem; }
+
+  /* Bullets */
+  .checks { display:flex; flex-direction:column; gap:1.1rem; }
+  .checks li { display:flex; gap:1rem; align-items:flex-start; }
+  .checks b { display:block; font-weight:500; font-size:1.02rem; margin-bottom:.2rem; }
+  .checks span.t { font-size:.94rem; line-height:1.65; color:var(--muted); }
+  .checks .ico { width:34px; height:34px; border-radius:50%; background:var(--coral); color:#fff; }
+  .checks .ico svg { width:15px; height:15px; }
+
+  .stars { display:flex; gap:2px; margin-bottom:1rem; }
+  .stars svg { width:15px; height:15px; fill:var(--coral-soft); }
+
+  /* Persona */
+  .persona h3 { font-family:'Playfair Display',serif; font-weight:500; font-size:1.15rem; line-height:1.3; margin:.9rem 0 .6rem; }
+  .persona p { font-size:.93rem; line-height:1.7; color:var(--muted); }
+  .notfor { max-width:46rem; margin:2rem auto 0; background:#fff; border:1px dashed #D8D2C6; border-radius:14px; padding:1.1rem 1.4rem; font-size:.9rem; line-height:1.65; color:var(--muted); text-align:center; }
+
+  /* Argumente */
+  .arg { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:clamp(1.5rem,4vw,3.5rem); align-items:center; padding:clamp(1.8rem,4vw,2.8rem) 0; border-top:1px solid var(--line); }
+  .arg:first-of-type { border-top:0; }
+  .arg .num { font-family:'Playfair Display',serif; font-style:italic; color:var(--coral-soft); font-size:1rem; margin-bottom:.6rem; }
+  .arg h3 { font-family:'Playfair Display',serif; font-weight:400; font-size:clamp(1.5rem,3vw,2.1rem); line-height:1.18; margin-bottom:1rem; text-wrap:balance; }
+  .arg p { font-size:1rem; line-height:1.8; color:var(--muted); margin-bottom:.9rem; text-wrap:pretty; }
+  .arg p:last-child { margin-bottom:0; }
+  .arg-vis { background:var(--cream); border:1px solid var(--line); border-radius:20px; padding:1.8rem; }
+  .arg:nth-of-type(even) .arg-vis { order:-1; }
+  @media (max-width:700px){ .arg:nth-of-type(even) .arg-vis { order:0; } }
+  .vis-line { display:flex; align-items:center; gap:.8rem; font-size:.9rem; color:var(--muted); padding:.75rem 0; }
+  .vis-line + .vis-line { border-top:1px solid var(--line); }
+  .vis-line .ico { width:34px; height:34px; border-radius:10px; background:#fff; border:1px solid var(--line); }
+  .vis-line b { color:var(--ink); font-weight:500; }
+  .vis-line .tick { margin-left:auto; color:var(--coral); }
+
+  /* Inhalt */
+  .inhalt .card { display:flex; flex-direction:column; gap:.8rem; }
+  .inhalt .n { font-family:'Playfair Display',serif; font-size:2.4rem; color:#E7DFD0; line-height:1; }
+  .inhalt h3 { font-family:'Playfair Display',serif; font-weight:500; font-size:1.15rem; line-height:1.3; }
+  .inhalt p { font-size:.93rem; line-height:1.7; color:var(--muted); }
+
+  /* Über mich */
+  .about { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:clamp(2.5rem,5vw,5rem); align-items:center; }
+  .about-img { position:relative; max-width:420px; width:100%; }
+  .about-img img.p { width:100%; aspect-ratio:3/4; object-fit:cover; object-position:center 15%; border-radius:20px; display:block; }
+  .about-img .b { position:absolute; right:-1rem; bottom:2rem; background:#fff; border:1px solid #E9E5DD; border-radius:14px; padding:.75rem 1rem; box-shadow:0 18px 40px -22px rgba(22,33,27,.4); }
+  .about-img .b img { height:44px; width:auto; display:block; }
+  .about p { font-size:1rem; line-height:1.8; color:var(--muted); margin-bottom:1rem; text-wrap:pretty; }
+
+  /* Zahlen */
+  .stats { background:var(--green); color:#fff; padding:clamp(2.8rem,5vw,3.8rem) 0; }
+  .stats-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:2rem; text-align:center; }
+  .stats .v { font-family:'Playfair Display',serif; font-size:clamp(2rem,4vw,2.8rem); line-height:1; color:#fff; margin-bottom:.5rem; }
+  .stats .v em { color:#F0A090; font-style:normal; }
+  .stats .l { font-size:.82rem; letter-spacing:.06em; color:rgba(255,255,255,.65); }
+
+  /* Testimonials */
+  .rev { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1.25rem; }
+  .rev q { display:block; quotes:none; font-size:.97rem; line-height:1.75; color:var(--muted); font-style:italic; margin-bottom:1.25rem; }
+  .who { display:flex; align-items:center; gap:.75rem; }
+  .who img { width:40px; height:40px; border-radius:50%; object-fit:contain; border:1px solid var(--line); background:#fff; }
+  .who img.ph { object-fit:cover; border:0; }
+  .who b { display:block; font-size:.9rem; font-weight:500; }
+  .who span { font-size:.8rem; color:var(--faint); }
+  @media (max-width:640px){
+    .rev { display:flex; overflow-x:auto; scroll-snap-type:x mandatory; gap:1rem; margin:0 calc(-1 * clamp(1.25rem,4vw,2.5rem)); padding:0 clamp(1.25rem,4vw,2.5rem) 1rem; scrollbar-width:none; }
+    .rev::-webkit-scrollbar { display:none; }
+    .rev > .card { flex:0 0 88%; scroll-snap-align:center; }
+  }
+
+  /* Final */
+  .final { background:var(--cream); }
+  .final-box { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:clamp(2rem,5vw,4rem); align-items:center; background:#fff; border:1px solid var(--line); border-radius:28px; padding:clamp(2rem,5vw,3.5rem); box-shadow:0 40px 80px -50px rgba(30,58,44,.35); }
+  .final-box h2 { margin-bottom:1rem; }
+  .final-box .mock { max-width:340px; }
+
+  footer.foot { background:var(--green); border-top:1px solid rgba(255,255,255,.12); padding:1.8rem 0; }
+  footer.foot .wrap { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:1rem; }
+  footer.foot .brand { color:#fff; font-size:1.05rem; }
+  footer.foot .brand img { filter:brightness(0) invert(1); }
+  footer.foot nav { display:flex; gap:1.5rem; }
+  footer.foot nav a { font-size:.78rem; letter-spacing:.08em; color:rgba(255,255,255,.6); }
+  footer.foot nav a:hover { color:#fff; }
+  .legal { background:var(--green); color:rgba(255,255,255,.4); font-size:.72rem; line-height:1.6; padding:0 0 1.6rem; }
+  .legal .wrap { border-top:1px solid rgba(255,255,255,.08); padding-top:1.1rem; }
+
+  /* Sticky mobile CTA */
+  .sticky-cta { display:none; }
+  @media (max-width:700px){
+    .sticky-cta { display:block; position:fixed; left:0; right:0; bottom:0; z-index:60; padding:.7rem 1rem calc(.7rem + env(safe-area-inset-bottom)); background:rgba(255,255,255,.95); backdrop-filter:blur(12px); border-top:1px solid var(--line); transform:translateY(110%); transition:transform .3s ease; }
+    .sticky-cta.is-on { transform:none; }
+    .sticky-cta .btn { width:100%; padding:.9rem 1rem; box-shadow:none; }
+    body { padding-bottom:0; }
+  }
+
+  /* Modal */
+  .modal-ov { position:fixed; inset:0; background:rgba(16,24,20,.55); z-index:800; display:none; align-items:center; justify-content:center; padding:1rem; overflow-y:auto; }
+  .modal-ov.is-open { display:flex; }
+  .modal { position:relative; width:100%; max-width:560px; background:#fff; border-radius:24px; padding:clamp(1.6rem,4vw,2.4rem); box-shadow:0 40px 90px -30px rgba(0,0,0,.5); margin:auto; }
+  .modal-x { position:absolute; top:.9rem; right:.9rem; width:38px; height:38px; border-radius:50%; border:0; background:var(--mint); color:var(--green); cursor:pointer; display:flex; align-items:center; justify-content:center; }
+  .modal-x:hover { background:#E3EBE3; }
+  .modal .tag { font-size:.68rem; letter-spacing:.16em; text-transform:uppercase; color:var(--coral); margin-bottom:.7rem; }
+  .modal h2 { font-size:clamp(1.5rem,4vw,1.9rem); margin-bottom:.7rem; }
+  .modal .lead { font-size:.95rem; line-height:1.7; margin-bottom:1rem; }
+
+  @media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto;} *{transition:none !important;} }
+
+  /* ---------- Cookie Consent ---------- */
+  .cookie-overlay { position:fixed; inset:0; background:rgba(16,24,20,.45); opacity:0; pointer-events:none; transition:opacity .3s ease; z-index:900; }
+  .cookie-overlay.is-visible { opacity:1; pointer-events:auto; }
+  .cookie-banner { position:fixed; left:50%; bottom:clamp(1rem,4vw,2.5rem); transform:translate(-50%,140%); width:min(560px,calc(100vw - 2rem)); background:#fff; border:1px solid #E9E5DD; border-radius:20px; box-shadow:0 30px 70px -30px rgba(22,33,27,.5); z-index:901; max-height:calc(100vh - 2rem); overflow-y:auto; transition:transform .4s cubic-bezier(.16,1,.3,1); color:var(--ink); }
+  .cookie-banner.is-visible { transform:translate(-50%,0); }
+  .cookie-view--hidden { display:none; }
+  .cookie-inner { padding:clamp(1.5rem,4vw,2rem); }
+  .cookie-title { font-family:'Playfair Display',serif; font-weight:500; font-size:1.2rem; line-height:1.3; margin-bottom:.75rem; }
+  .cookie-body { font-size:.88rem; line-height:1.7; color:var(--muted); margin-bottom:1.25rem; }
+  .cookie-back { display:inline-flex; align-items:center; gap:.4rem; background:none; border:none; color:var(--faint); font-size:.82rem; cursor:pointer; padding:0; margin-bottom:1rem; }
+  .cookie-back:hover { color:var(--green); }
+  .cookie-categories { display:flex; flex-direction:column; gap:.9rem; margin-bottom:1.25rem; }
+  .cookie-cat { border:1px solid var(--line); border-radius:12px; padding:1rem 1.1rem; }
+  .cookie-cat-head { display:flex; align-items:center; justify-content:space-between; gap:1rem; }
+  .cookie-cat-info { display:flex; align-items:center; gap:.6rem; flex-wrap:wrap; }
+  .cookie-cat-name { font-weight:500; font-size:.92rem; }
+  .cookie-cat-badge { font-size:.66rem; letter-spacing:.08em; text-transform:uppercase; color:var(--faint); border:1px solid #E3DCCF; border-radius:100px; padding:.15rem .55rem; }
+  .cookie-cat-desc { font-size:.8rem; line-height:1.6; color:var(--faint); margin-top:.55rem; }
+  .cookie-toggle { display:flex; align-items:center; flex-shrink:0; cursor:pointer; }
+  .cookie-toggle--fixed { cursor:default; }
+  .ct-input { position:absolute; opacity:0; width:0; height:0; }
+  .ct-track { width:40px; height:22px; border-radius:100px; background:#D8D2C6; position:relative; transition:background .2s; display:inline-block; }
+  .ct-track--on, .ct-input:checked + .ct-track { background:var(--coral); }
+  .ct-thumb { position:absolute; top:2px; left:2px; width:18px; height:18px; border-radius:50%; background:#fff; transition:transform .2s; }
+  .ct-track--on .ct-thumb, .ct-input:checked + .ct-track .ct-thumb { transform:translateX(18px); }
+  .cookie-actions { display:flex; flex-wrap:wrap; gap:.6rem; }
+  .btn-cookie { flex:1 1 auto; min-width:130px; border:1px solid var(--green); background:var(--green); color:#fff; border-radius:100px; padding:.7rem 1.1rem; font-size:.82rem; cursor:pointer; transition:opacity .2s, transform .2s; }
+  .btn-cookie:hover { opacity:.88; transform:translateY(-1px); }
+  .cookie-footer-links { display:flex; gap:1.25rem; margin-top:1.1rem; }
+  .cookie-footer-links a { font-size:.74rem; letter-spacing:.06em; color:var(--faint); }
+  @media (max-width:480px){ .cookie-actions{flex-direction:column;} .btn-cookie{width:100%;} }
+</style>
+
+<!-- ---------- Brevo form assets ---------- -->
+<style>
+  :where(.sib-form-message-panel) { display:none; }
+  :where(.sib-form-message-panel .sib-notification__icon) { width:20px; height:20px; }
+</style>
+<link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
+<style>
+  #sib-container input, #sib-container .input { font-family:'DM Sans',sans-serif !important; }
+  #sib-container { box-shadow:none !important; }
+  #sib-container .entry__label { display:block !important; margin-bottom:.45rem !important; }
+  #sib-container input:not([type="checkbox"]):not([type="hidden"]), #sib-container .input {
+    width:100% !important; background:#fff !important; border:1px solid #DCE6DD !important; border-radius:12px !important;
+    padding:.85rem 1rem !important; font-size:1rem !important; color:#16211B !important; box-shadow:none !important; transition:border-color .2s;
+  }
+  #sib-container input:not([type="checkbox"]):not([type="hidden"]):focus, #sib-container .input:focus { border-color:#1E3A2C !important; outline:none !important; box-shadow:none !important; }
+  #sib-container input::placeholder { color:#A9B4AC !important; opacity:1 !important; font-family:'DM Sans',sans-serif; }
+  #sib-container .sib-optin input[type="checkbox"] { accent-color:#E07856; }
+  #sib-container .sib-form-block__button { display:block !important; width:100% !important; text-align:center !important; border-radius:100px !important; padding:1rem 1.4rem !important; box-shadow:0 18px 36px -14px rgba(224,120,86,.5); transition:background .2s, transform .2s !important; cursor:pointer; }
+  #sib-container .sib-form-block__button:hover { background-color:#C55A42 !important; transform:translateY(-2px); }
+  #sib-container .sib-form-block[style*="text-align: left"] { text-align:center !important; }
+  #sib-container a { text-decoration:underline; color:#1E3A2C; }
+  #brevoFormWrap .sib-form, #sib-container .sib-form-block { padding-left:0 !important; padding-right:0 !important; }
+</style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NLFQXM86" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- ══ HEADER ══ -->
+<header class="top">
+  <div class="wrap">
+    <a href="../" class="brand"><img src="../images/logo-nina.png" alt="Nina Zurawski Logo"><span>Nina Zurawski</span></a>
+    <button type="button" class="btn btn--sm js-open">Checkliste kostenlos sichern</button>
+  </div>
+</header>
+
+<main>
+
+<!-- ══ 1 · HERO ══ -->
+<section class="hero">
+  <div class="blob"></div>
+  <div class="wrap hero-grid">
+    <div>
+      <div class="pill">Kostenlose Checkliste für Dienstleister:innen</div>
+      <h1>Endlich regelmäßig Anfragen, <em>auch wenn du im Urlaub bist.</em></h1>
+      <p class="lead">So wird deine Kundengewinnung planbar: ohne Dauer-Posten auf Social Media, ohne Akquise-Marathon und ohne dass du jede Woche mehr Zeit investieren musst.</p>
+      <button type="button" class="btn js-open">
+        Jetzt für 0 € herunterladen
+        <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M8 2.5v8M8 10.5L4.5 7M8 10.5L11.5 7M3 13.5h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <p class="btn-note">Du brauchst nur deinen Vornamen und deine E-Mail-Adresse.</p>
+    </div>
+
+    <div class="mock-wrap">
+      <div class="mock">
+        <div class="mock-back"></div>
+        <div class="mock-badge">100 % kostenlos</div>
+        <div class="mock-doc">
+          <div class="tag">Checkliste · PDF</div>
+          <h3>Startklar für planbare Anfragen</h3>
+          <div class="mock-row"><i><svg viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></i>Ein klares Angebot, das Menschen suchen</div>
+          <div class="mock-row"><i><svg viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></i>Eine Seite, die aus Besuchen Anfragen macht</div>
+          <div class="mock-row"><i><svg viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></i>Messen, was wirklich Kund:innen bringt</div>
+          <div class="mock-row"><i><svg viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></i>Das passende Budget für dein Ziel</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 2 · NUTZENLISTE ══ -->
+<section class="sec sec--cream">
+  <div class="wrap">
+    <div class="grid g2" style="align-items:start; gap:clamp(2.5rem,5vw,4.5rem)">
+      <div>
+        <div class="eyebrow">Das nimmst du mit</div>
+        <h2>Mit dieser Checkliste weißt du <em>genau, was dir fehlt.</em></h2>
+        <p class="lead">Schluss mit „mal sehen, ob diese Woche eine Anfrage reinkommt“. Du bekommst eine klare Schritt-für-Schritt-Übersicht, mit der du deine Kundengewinnung auf feste Beine stellst.</p>
+        <div style="margin-top:2rem">
+          <button type="button" class="btn js-open">Ja, ich will die Checkliste</button>
+        </div>
+      </div>
+      <ul class="checks">
+        <li><span class="ico"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><b>Regelmäßige Anfragen statt Zufall</b><span class="t">Du erkennst, welche Bausteine für einen stetigen Strom an Anfragen noch fehlen.</span></div></li>
+        <li><span class="ico"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><b>Mehr Zeit fürs eigentliche Business</b><span class="t">Dein System arbeitet im Hintergrund, während du dich um deine Kund:innen kümmerst.</span></div></li>
+        <li><span class="ico"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><b>Klarheit statt Bauchgefühl</b><span class="t">Du siehst auf einen Blick, wo du stehst und was als Nächstes dran ist.</span></div></li>
+        <li><span class="ico"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><b>Kein Fachwissen nötig</b><span class="t">Verständlich erklärt, ohne Agentursprech und ohne Technik-Kauderwelsch.</span></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 3 · ZIELGRUPPE ══ -->
+<section class="sec">
+  <div class="wrap">
+    <div class="center" style="margin-bottom:3rem">
+      <div class="eyebrow">Für wen ist das?</div>
+      <h2>Diese Checkliste ist für dich, <em>wenn du dich wiedererkennst.</em></h2>
+      <p class="lead">Für Dienstleister:innen, die gute Arbeit machen, aber noch zu oft von Empfehlungen, Glück und Tagesform abhängig sind.</p>
+    </div>
+    <div class="grid g3">
+      <div class="card persona">
+        <span class="ico"><svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7.5" stroke="currentColor" stroke-width="1.5"/><path d="M10 5.5V10l3 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+        <h3>Du wünschst dir mehr Zeit fürs Business</h3>
+        <p>Du steckst jede freie Minute in Akquise, Content und Angebote, und für deine Kund:innen bleibt am Ende zu wenig Energie übrig.</p>
+      </div>
+      <div class="card persona">
+        <span class="ico"><svg viewBox="0 0 20 20" fill="none"><path d="M2 11l4-4 3 3 5-6M14 4h4v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <h3>Du willst regelmäßige Anfragen statt Achterbahn</h3>
+        <p>Mal ist der Kalender voll, mal herrscht Flaute. Du möchtest endlich wissen, was nächsten Monat reinkommt.</p>
+      </div>
+      <div class="card persona">
+        <span class="ico"><svg viewBox="0 0 20 20" fill="none"><path d="M3 15h14M5 15V9l5-5 5 5v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <h3>Du willst Kundengewinnung, die planbar wird</h3>
+        <p>Du hast ein gutes Angebot, aber noch kein System, das dir verlässlich passende Kund:innen bringt.</p>
+      </div>
+    </div>
+    <div class="notfor"><b style="color:var(--ink); font-weight:500">Ehrlicher Hinweis:</b> Wenn dein Kalender bereits dauerhaft ausgebucht ist und du keine neuen Kund:innen annehmen kannst, brauchst du diese Checkliste gerade nicht.</div>
+  </div>
+</section>
+
+<!-- ══ 4 · DREI ARGUMENTE ══ -->
+<section class="sec sec--cream">
+  <div class="wrap">
+    <div class="center" style="margin-bottom:2rem">
+      <div class="eyebrow">Das Ergebnis</div>
+      <h2>Stell dir vor, deine Anfragen <em>kommen einfach.</em></h2>
+    </div>
+
+    <div class="arg">
+      <div>
+        <div class="num">01</div>
+        <h3>Anfragen kommen, auch wenn du im Urlaub bist.</h3>
+        <p>Du kennst das: Sobald du eine Woche nicht postest, nicht telefonierst, nicht akquirierst, wird es still. Der Urlaub ist da, aber der Kopf rechnet schon die Lücke im Kalender aus.</p>
+        <p>Mit einem durchdachten System laufen deine Anfragen weiter. Du schaltest ab, und wenn du zurückkommst, liegen neue Nachrichten im Postfach.</p>
+      </div>
+      <div class="arg-vis">
+        <div class="vis-line"><span class="ico"><svg viewBox="0 0 20 20" fill="none"><path d="M2 14h16M5 14l2-6 3 3 3-5 3 8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><b>Montag am Strand</b><br>Neue Anfrage eingegangen</div><span class="tick">✓</span></div>
+        <div class="vis-line"><span class="ico"><svg viewBox="0 0 20 20" fill="none"><path d="M2 14h16M5 14l2-6 3 3 3-5 3 8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><b>Mittwoch beim Wandern</b><br>Noch eine Anfrage</div><span class="tick">✓</span></div>
+        <div class="vis-line"><span class="ico"><svg viewBox="0 0 20 20" fill="none"><path d="M2 14h16M5 14l2-6 3 3 3-5 3 8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><b>Freitag, Handy aus</b><br>Du bekommst nichts mit und bist trotzdem sichtbar</div><span class="tick">✓</span></div>
+      </div>
+    </div>
+
+    <div class="arg">
+      <div>
+        <div class="num">02</div>
+        <h3>Mehr Zeit fürs Business, ohne mehr Aufwand.</h3>
+        <p>Dein Tag hat nur 24 Stunden, und Reels, Newsletter und Netzwerkabende kosten Stunden, die du nicht hast. Mehr Einsatz ist nicht die Antwort.</p>
+        <p>Die Antwort ist ein System, das einmal sauber aufgesetzt wird und dann für dich arbeitet. Die Checkliste zeigt dir, welche Bausteine du dafür brauchst.</p>
+      </div>
+      <div class="arg-vis">
+        <div class="vis-line"><span class="ico"><svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7.5" stroke="currentColor" stroke-width="1.4"/><path d="M10 5.5V10l3 2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></span><div><b>Weniger Dauer-Akquise</b><br>Du wirst gefunden, statt hinterherzulaufen</div></div>
+        <div class="vis-line"><span class="ico"><svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7.5" stroke="currentColor" stroke-width="1.4"/><path d="M10 5.5V10l3 2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></span><div><b>Mehr Fokus</b><br>Auf Kund:innen, Projekte und Familie</div></div>
+        <div class="vis-line"><span class="ico"><svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7.5" stroke="currentColor" stroke-width="1.4"/><path d="M10 5.5V10l3 2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></span><div><b>Kein Zusatz-Invest an Zeit</b><br>Jede Woche, ohne dass es mehr wird</div></div>
+      </div>
+    </div>
+
+    <div class="arg">
+      <div>
+        <div class="num">03</div>
+        <h3>Kundengewinnung, die du planen kannst.</h3>
+        <p>Planbar heißt: Du weißt, wie viele Anfragen du im Schnitt bekommst, und kannst danach deine Kapazitäten, Preise und Urlaube einteilen.</p>
+        <p>Kein Bauchgefühl mehr, sondern ein klarer Fahrplan. Genau dafür bekommst du in der Checkliste die ersten Schritte an die Hand.</p>
+      </div>
+      <div class="arg-vis">
+        <div class="vis-line"><span class="ico"><svg viewBox="0 0 20 20" fill="none"><rect x="3" y="4" width="14" height="13" rx="2" stroke="currentColor" stroke-width="1.4"/><path d="M3 8h14M7 2.5v3M13 2.5v3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></span><div><b>Kalender gefüllt</b><br>Du weißt, was nächsten Monat reinkommt</div></div>
+        <div class="vis-line"><span class="ico"><svg viewBox="0 0 20 20" fill="none"><rect x="3" y="4" width="14" height="13" rx="2" stroke="currentColor" stroke-width="1.4"/><path d="M3 8h14M7 2.5v3M13 2.5v3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></span><div><b>Entspannte Preise</b><br>Du musst nicht jeden Auftrag nehmen</div></div>
+        <div class="vis-line"><span class="ico"><svg viewBox="0 0 20 20" fill="none"><rect x="3" y="4" width="14" height="13" rx="2" stroke="currentColor" stroke-width="1.4"/><path d="M3 8h14M7 2.5v3M13 2.5v3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></span><div><b>Ruhiger Kopf</b><br>Keine Existenzangst bei Flaute</div></div>
+      </div>
+    </div>
+
+    <div class="center" style="margin-top:2rem">
+      <button type="button" class="btn js-open">Ja, ich möchte jetzt starten</button>
+      <p class="btn-note">Kostenlos · Direkt als PDF in deinem Postfach</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 5 · INHALT ══ -->
+<section class="sec inhalt">
+  <div class="wrap">
+    <div class="center" style="margin-bottom:3rem">
+      <div class="eyebrow">Das steckt drin</div>
+      <h2>Alles, was du für den Start brauchst, <em>auf einen Blick.</em></h2>
+      <p class="lead">Die Checkliste „Startklar“ führt dich durch die vier Bausteine, ohne die planbare Kundengewinnung nicht funktioniert.</p>
+    </div>
+    <div class="grid g3" style="grid-template-columns:repeat(auto-fit,minmax(230px,1fr))">
+      <div class="card"><div class="n">01</div><h3>Dein Angebot</h3><p>Ist es klar genug, dass dich die richtigen Menschen finden und sofort verstehen, was du für sie tust?</p></div>
+      <div class="card"><div class="n">02</div><h3>Deine Seite</h3><p>Was eine Seite braucht, damit aus Besucher:innen echte Anfragen werden, statt nur Klicks.</p></div>
+      <div class="card"><div class="n">03</div><h3>Deine Zahlen</h3><p>Woran du messbar siehst, was Kund:innen bringt, damit du nicht länger im Blindflug unterwegs bist.</p></div>
+      <div class="card"><div class="n">04</div><h3>Dein Budget</h3><p>Wie viel Einsatz für dein Ziel realistisch ist und womit du sinnvoll beginnst.</p></div>
+    </div>
+    <p class="center" style="margin-top:1.5rem; color:var(--faint); font-size:.9rem">… und konkrete nächste Schritte, damit du direkt ins Tun kommst.</p>
+    <div class="center" style="margin-top:2rem">
+      <button type="button" class="btn js-open">Checkliste kostenlos erhalten</button>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 6 · ÜBER MICH ══ -->
+<section class="sec sec--cream">
+  <div class="wrap about">
+    <div class="about-img">
+      <img class="p" src="../images/nina-ueber-mich.webp" alt="Nina Zurawski" loading="lazy" decoding="async">
+      <div class="b"><img src="../images/google-ads-badge.png" alt="Google Ads zertifiziert" loading="lazy"></div>
+    </div>
+    <div>
+      <div class="eyebrow">Wer steckt dahinter?</div>
+      <h2>Hallo, ich bin Nina. <em>Ich mache Kundengewinnung planbar.</em></h2>
+      <p>Ich helfe Dienstleister:innen dabei, nicht mehr von Zufall und Empfehlungen abhängig zu sein. Mein Ziel: Du bekommst regelmäßig Anfragen von Menschen, die wirklich zu dir passen, und musst dafür nicht rund um die Uhr sichtbar sein.</p>
+      <p>Ich habe selbst erlebt, wie anstrengend es ist, wenn jede neue Anfrage von der eigenen Energie abhängt. Genau deshalb baue ich Systeme, die verlässlich im Hintergrund laufen.</p>
+      <p>Mit dieser Checkliste teile ich den Teil, den du direkt selbst umsetzen kannst, damit du weißt, wo du stehst und was als Nächstes sinnvoll ist.</p>
+      <button type="button" class="btn js-open" style="margin-top:.8rem">Checkliste sichern</button>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 7 · ZAHLEN ══ -->
+<section class="stats">
+  <div class="wrap stats-grid">
+    <div><div class="v">0<em> €</em></div><div class="l">kostet dich die Checkliste</div></div>
+    <div><div class="v">2<em> Wochen</em></div><div class="l">bis zum Start deiner Kampagne</div></div>
+    <div><div class="v">1:1</div><div class="l">direkt mit mir, ohne Agentur</div></div>
+  </div>
+</section>
+
+<!-- ══ 8 · STIMMEN ══ -->
+<section class="sec">
+  <div class="wrap">
+    <div class="center" style="margin-bottom:2.8rem">
+      <div class="eyebrow">Kundenstimmen</div>
+      <h2>Was Kund:innen <em>über die Zusammenarbeit sagen.</em></h2>
+    </div>
+    <div class="rev">
+      <div class="card">
+        <div class="stars"><svg viewBox="0 0 20 20"><path d="M10 1.5l2.5 5.1 5.6.8-4 3.9.9 5.6L10 14.3l-5 2.6.9-5.6-4-3.9 5.6-.8z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1.5l2.5 5.1 5.6.8-4 3.9.9 5.6L10 14.3l-5 2.6.9-5.6-4-3.9 5.6-.8z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1.5l2.5 5.1 5.6.8-4 3.9.9 5.6L10 14.3l-5 2.6.9-5.6-4-3.9 5.6-.8z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1.5l2.5 5.1 5.6.8-4 3.9.9 5.6L10 14.3l-5 2.6.9-5.6-4-3.9 5.6-.8z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1.5l2.5 5.1 5.6.8-4 3.9.9 5.6L10 14.3l-5 2.6.9-5.6-4-3.9 5.6-.8z"/></svg></div>
+        <q>„Seit Nina unsere Google-Ads-Kampagnen betreut, sehen wir eine messbar höhere Conversion-Rate. Sie kennt unsere Region, denkt mit und erklärt ihre Entscheidungen nachvollziehbar. Für uns eine klare Empfehlung."</q>
+        <div class="who"><img src="../images/logo-schimanski-it.png" alt="schimanski IT" loading="lazy"><div><b>Denis Schimanski</b><span>Geschäftsführer, schimanski IT GmbH &amp; Co. KG</span></div></div>
+      </div>
+      <div class="card">
+        <div class="stars"><svg viewBox="0 0 20 20"><path d="M10 1.5l2.5 5.1 5.6.8-4 3.9.9 5.6L10 14.3l-5 2.6.9-5.6-4-3.9 5.6-.8z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1.5l2.5 5.1 5.6.8-4 3.9.9 5.6L10 14.3l-5 2.6.9-5.6-4-3.9 5.6-.8z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1.5l2.5 5.1 5.6.8-4 3.9.9 5.6L10 14.3l-5 2.6.9-5.6-4-3.9 5.6-.8z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1.5l2.5 5.1 5.6.8-4 3.9.9 5.6L10 14.3l-5 2.6.9-5.6-4-3.9 5.6-.8z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1.5l2.5 5.1 5.6.8-4 3.9.9 5.6L10 14.3l-5 2.6.9-5.6-4-3.9 5.6-.8z"/></svg></div>
+        <q>„Wir haben Nina als sehr kompetente und erfahrene Ansprechpartnerin kennengelernt — kreativ, auf den Punkt und sehr selbständig. Neben der fachlich sehr guten Arbeitsweise pflegen wir ein sehr freundschaftliches Miteinander."</q>
+        <div class="who"><img src="../images/logo-klinikum-nf.png" alt="Klinikum Nordfriesland" loading="lazy"><div><b>Klinikum Nordfriesland</b><span>Unternehmenskommunikation</span></div></div>
+      </div>
+      <div class="card">
+        <div class="stars"><svg viewBox="0 0 20 20"><path d="M10 1.5l2.5 5.1 5.6.8-4 3.9.9 5.6L10 14.3l-5 2.6.9-5.6-4-3.9 5.6-.8z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1.5l2.5 5.1 5.6.8-4 3.9.9 5.6L10 14.3l-5 2.6.9-5.6-4-3.9 5.6-.8z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1.5l2.5 5.1 5.6.8-4 3.9.9 5.6L10 14.3l-5 2.6.9-5.6-4-3.9 5.6-.8z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1.5l2.5 5.1 5.6.8-4 3.9.9 5.6L10 14.3l-5 2.6.9-5.6-4-3.9 5.6-.8z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1.5l2.5 5.1 5.6.8-4 3.9.9 5.6L10 14.3l-5 2.6.9-5.6-4-3.9 5.6-.8z"/></svg></div>
+        <q>„Nina hat sich intensiv in mein Business hineingedacht, Kampagnen kontinuierlich optimiert und regelmäßig nachjustiert. Besonders schätze ich ihre proaktive Arbeitsweise und ihr echtes Engagement."</q>
+        <div class="who"><img class="ph" src="../images/kristin-henke.webp" alt="Kristin Henke" loading="lazy" decoding="async"><div><b>Kristin Henke</b><span>Female Leadership Expertin</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 9 · ABSCHLUSS-CTA ══ -->
+<section class="sec final" id="final">
+  <div class="wrap">
+    <div class="final-box">
+      <div>
+        <div class="eyebrow">Jetzt loslegen</div>
+        <h2>Mach den ersten Schritt zu <em>planbaren Anfragen.</em></h2>
+        <ul class="checks" style="margin:1.4rem 0 2rem">
+          <li><span class="ico"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><b>Klare Schritte statt Rätselraten</b></div></li>
+          <li><span class="ico"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><b>Einfache Anmeldung, nur E-Mail nötig</b></div></li>
+          <li><span class="ico"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><b>Du musst dich nicht ständig zeigen</b></div></li>
+        </ul>
+        <button type="button" class="btn js-open">Hier klicken &amp; heute starten</button>
+        <p class="btn-note">Kostenlos · Jederzeit abmeldbar</p>
+      </div>
+      <div class="mock-wrap">
+        <div class="mock">
+          <div class="mock-back"></div>
+          <div class="mock-doc">
+            <div class="tag">Checkliste · PDF</div>
+            <h3>Startklar für planbare Anfragen</h3>
+            <div class="mock-row"><i><svg viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></i>Angebot</div>
+            <div class="mock-row"><i><svg viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></i>Seite</div>
+            <div class="mock-row"><i><svg viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></i>Zahlen</div>
+            <div class="mock-row"><i><svg viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></i>Budget</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <a href="../" class="brand"><img src="../images/logo-nina.png" alt="Nina Zurawski Logo" width="38" height="38" loading="lazy"><span>Nina Zurawski</span></a>
+    <nav><a href="../impressum.html">Impressum</a><a href="../datenschutz.html">Datenschutz</a></nav>
+  </div>
+</footer>
+<div class="legal"><div class="wrap">Diese Seite ist nicht Teil von Facebook oder Instagram und wird weder von Meta Platforms, Inc. unterstützt noch betrieben. FACEBOOK und INSTAGRAM sind Marken von Meta Platforms, Inc.</div></div>
+
+<div class="sticky-cta" id="stickyCta"><button type="button" class="btn js-open">Checkliste kostenlos sichern</button></div>
+
+<!-- ═══ OPT-IN POPUP ═══ -->
+<div class="modal-ov" id="optinModal" role="dialog" aria-modal="true" aria-label="Checkliste anfordern">
+  <div class="modal">
+    <button type="button" class="modal-x" id="modalClose" aria-label="Schließen"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 3l10 10M13 3L3 13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+    <div class="tag">Kostenlos · PDF-Download</div>
+    <h2>Hol dir deine Checkliste <em>„Startklar“.</em></h2>
+    <p class="lead">Trag dich ein und du bekommst die Checkliste direkt in dein Postfach. Danach erhältst du einmal pro Woche kurze Tipps, wie du planbar neue Kund:innen gewinnst.</p>
+
+    <div id="brevoFormWrap">
+      <!-- Begin Brevo Form -->
+      <div class="sib-form" style="text-align:center; background-color:transparent;">
+        <div id="sib-form-container" class="sib-form-container" style="display:block !important; width:100% !important; box-sizing:border-box !important">
+          <div id="error-message" class="sib-form-message-panel" style="font-family:'DM Sans', sans-serif; font-size:16px; text-align:left; color:#661d1d; background-color:#ffeded; border-color:#ff4949; border-radius:3px; max-width:540px;">
+            <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
+              <svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon">
+                <path d="M256 40c118.621 0 216 96.075 216 216 0 119.291-96.61 216-216 216-119.244 0-216-96.562-216-216 0-119.203 96.602-216 216-216m0-32C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm-11.49 120h22.979c6.823 0 12.274 5.682 11.99 12.5l-7 168c-.268 6.428-5.556 11.5-11.99 11.5h-8.979c-6.433 0-11.722-5.073-11.99-11.5l-7-168c-.283-6.818 5.167-12.5 11.99-12.5zM256 340c-15.464 0-28 12.536-28 28s12.536 28 28 28 28-12.536 28-28-12.536-28-28-28z" />
+              </svg>
+              <span class="sib-form-message-panel__inner-text">Deine Anmeldung konnte nicht gespeichert werden. Bitte versuche es erneut.</span>
+            </div>
+          </div>
+          <div></div>
+          <div id="success-message" class="sib-form-message-panel" style="font-family:'DM Sans', sans-serif; font-size:16px; text-align:left; color:#085229; background-color:#e7faf0; border-color:#13ce66; border-radius:3px; max-width:540px;">
+            <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
+              <svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon">
+                <path d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 464c-118.664 0-216-96.055-216-216 0-118.663 96.055-216 216-216 118.664 0 216 96.055 216 216 0 118.663-96.055 216-216 216zm141.63-274.961L217.15 376.071c-4.705 4.667-12.303 4.637-16.97-.068l-85.878-86.572c-4.667-4.705-4.637-12.303.068-16.97l8.52-8.451c4.705-4.667 12.303-4.637 16.97.068l68.976 69.533 163.441-162.13c4.705-4.667 12.303-4.637 16.97.068l8.451 8.52c4.668 4.705 4.637 12.303-.068 16.97z" />
+              </svg>
+              <span class="sib-form-message-panel__inner-text">Deine Anmeldung war erfolgreich.</span>
+            </div>
+          </div>
+          <div></div>
+          <div id="sib-container" class="sib-container--large sib-container--vertical" style="display:block !important; width:100% !important; max-width:540px !important; box-sizing:border-box !important; text-align:center; background-color:transparent; border-width:0; padding:0; direction:ltr">
+            <form id="sib-form" method="POST" action="https://1e9dfe58.sibforms.com/serve/MUIFABG_eskhUx8la5JpDTFnnp1djhqWOHyQuWS-DL3YZO9gbsm6LRO4eVEFTlbGU0mabBLHGhgfv1vv2DiaV-5HH59aZw5ZyAuXEQF-66dqrkeKFpx5ejz5TUzcvQXDDuuM9-tmFVneWpWvLp8yMwX4nkvwHsdEZfuAqt5Ary8EwBngUwRpcMiZ1ewE2B2S3fz3GO01nO2gR83T" data-type="subscription">
+              <div style="padding: 8px 0;">
+                <div class="sib-input sib-form-block">
+                  <div class="form__entry entry_block">
+                    <div class="form__label-row ">
+                      <label class="entry__label" style="font-weight:700; text-align:left; font-family:'DM Sans', sans-serif; font-size:16px; color:#1f3d2e;" for="VORNAME" data-required="*">Dein Vorname</label>
+                      <div class="entry__field">
+                        <input class="input " maxlength="200" type="text" id="VORNAME" name="VORNAME" autocomplete="off" placeholder="z. B. Nina" data-required="true" required />
+                      </div>
+                    </div>
+                    <label class="entry__error entry__error--primary" style="font-family:'DM Sans', sans-serif; font-size:16px; text-align:left; color:#661d1d; background-color:#ffeded; border-color:#ff4949; border-radius:3px;"></label>
+                  </div>
+                </div>
+              </div>
+              <div style="padding: 8px 0;">
+                <div class="sib-input sib-form-block">
+                  <div class="form__entry entry_block">
+                    <div class="form__label-row ">
+                      <label class="entry__label" style="font-weight:700; text-align:left; font-family:'DM Sans', sans-serif; font-size:16px; color:#1f3d2e;" for="EMAIL" data-required="*">Deine E-Mail-Adresse</label>
+                      <div class="entry__field">
+                        <input class="input " type="text" id="EMAIL" name="EMAIL" autocomplete="off" value="" placeholder="du@beispiel.de" data-required="true" required />
+                      </div>
+                    </div>
+                    <label class="entry__error entry__error--primary" style="font-family:'DM Sans', sans-serif; font-size:16px; text-align:left; color:#661d1d; background-color:#ffeded; border-color:#ff4949; border-radius:3px;"></label>
+                  </div>
+                </div>
+              </div>
+              <div style="padding: 8px 0;">
+                <div class="sib-optin sib-form-block" data-required="true">
+                  <div class="form__entry entry_mcq">
+                    <div class="form__label-row ">
+                      <div class="entry__choice" style="">
+                        <label>
+                          <input type="checkbox" class="input_replaced" value="1" id="OPT_IN" name="OPT_IN" required />
+                          <span class="checkbox checkbox_tick_positive" style="margin-left:"></span><span style="font-family:'DM Sans', sans-serif; font-size:14px; text-align:left; color:#3C4858; background-color:transparent;"><p>Ja, ich möchte die Checkliste und danach regelmäßig (ca. einmal pro Woche) meinen Newsletter mit Tipps zu Google Ads per E-Mail erhalten. Ich kann mich jederzeit wieder abmelden. Hinweise zum Umgang mit meinen Daten finde ich in der <a href="https://www.nina-zurawski.de/datenschutz.html" target="_blank" rel="nofollow noopener">Datenschutzerklärung</a>.</p><span data-required="*" style="display: inline;" class="entry__label entry__label_optin"></span></span>
+                        </label>
+                      </div>
+                    </div>
+                    <label class="entry__error entry__error--primary" style="font-family:'DM Sans', sans-serif; font-size:16px; text-align:left; color:#661d1d; background-color:#ffeded; border-color:#ff4949; border-radius:3px;"></label>
+                    <label class="entry__specification" style="font-family:'DM Sans', sans-serif; font-size:12px; text-align:left; color:#8390A4;">
+                      Du kannst dich jederzeit mit einem Klick über den Link in jeder E-Mail abmelden.
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div style="padding: 8px 0;">
+                <div class="sib-form-block" style="text-align: left">
+                  <button class="sib-form-block__button sib-form-block__button-with-loader" style="font-family:'DM Sans', sans-serif; font-size:16px; font-weight:700; text-align:left; color:#FFFFFF; background-color:#E07856; border-width:0px; border-radius:100px;" form="sib-form" type="submit">
+                    <svg class="icon clickable__icon progress-indicator__icon sib-hide-loader-icon" viewBox="0 0 512 512">
+                      <path d="M460.116 373.846l-20.823-12.022c-5.541-3.199-7.54-10.159-4.663-15.874 30.137-59.886 28.343-131.652-5.386-189.946-33.641-58.394-94.896-95.833-161.827-99.676C261.028 55.961 256 50.751 256 44.352V20.309c0-6.904 5.808-12.337 12.703-11.982 83.556 4.306 160.163 50.864 202.11 123.677 42.063 72.696 44.079 162.316 6.031 236.832-3.14 6.148-10.75 8.461-16.728 5.01z" />
+                    </svg>
+                    Checkliste kostenlos erhalten
+                  </button>
+                </div>
+              </div>
+              <input type="text" name="email_address_check" value="" class="input--hidden">
+              <input type="hidden" name="locale" value="de">
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- End Brevo Form -->
+    </div>
+  </div>
+</div>
+
+<!-- ═══ COOKIE CONSENT ═══ -->
+<div id="cookieOverlay" class="cookie-overlay" aria-hidden="true"></div>
+<div id="cookieBanner" class="cookie-banner" role="dialog" aria-modal="true" aria-label="Datenschutzeinstellungen">
+  <div id="cookieViewMain" class="cookie-view">
+    <div class="cookie-inner">
+      <h2 class="cookie-title">Cookies &amp; Tracking</h2>
+      <p class="cookie-body">Technisch notwendige Funktionen sind immer aktiv. Für Marketing-Cookies (Google&nbsp;Ads Conversion-Tracking und Meta-Pixel für diese Kampagne) brauche ich deine Einwilligung. Sie ist freiwillig, für die Nutzung der Website nicht erforderlich und jederzeit widerrufbar.</p>
+      <div class="cookie-actions">
+        <button id="cookieAcceptAll" class="btn-cookie">Alles akzeptieren</button>
+        <button id="cookieShowSettings" class="btn-cookie">Bearbeiten</button>
+        <button id="cookieRejectAll" class="btn-cookie">Alles ablehnen</button>
+      </div>
+      <div class="cookie-footer-links">
+        <a href="../impressum.html">Impressum</a>
+        <a href="../datenschutz.html">Datenschutzerklärung</a>
+      </div>
+    </div>
+  </div>
+  <div id="cookieViewSettings" class="cookie-view cookie-view--hidden">
+    <div class="cookie-inner">
+      <button id="cookieBack" class="cookie-back">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+        Zurück
+      </button>
+      <h2 class="cookie-title">Cookie-Einstellungen</h2>
+      <p class="cookie-body">Wähle, welche Kategorien du zulassen möchtest. Essenzielle Cookies sind für den Betrieb der Website notwendig und immer aktiv.</p>
+      <div class="cookie-categories">
+        <div class="cookie-cat">
+          <div class="cookie-cat-head">
+            <div class="cookie-cat-info"><span class="cookie-cat-name">Essenziell</span><span class="cookie-cat-badge">Immer aktiv</span></div>
+            <div class="cookie-toggle cookie-toggle--fixed"><span class="ct-track ct-track--on"><span class="ct-thumb"></span></span></div>
+          </div>
+          <p class="cookie-cat-desc">Technisch notwendig für den Betrieb der Website (Hosting, selbst gehostete Schriftarten). Speichert außerdem deine Cookie-Auswahl im lokalen Speicher deines Browsers (<code>cookie_consent</code>, kein Cookie, wird nicht an Server übertragen). Es werden keine Cookies gesetzt.</p>
+        </div>
+        <div class="cookie-cat">
+          <div class="cookie-cat-head">
+            <div class="cookie-cat-info"><span class="cookie-cat-name">Marketing</span></div>
+            <label class="cookie-toggle"><input type="checkbox" id="marketingToggle" class="ct-input"><span class="ct-track"><span class="ct-thumb"></span></span></label>
+          </div>
+          <p class="cookie-cat-desc">Google&nbsp;Ads Conversion-Tracking über den Google Tag Manager (Anbieter: Google Ireland Ltd.) sowie das Meta-Pixel von Facebook/Instagram (Anbieter: Meta Platforms Ireland Ltd.) zur Erfolgsmessung dieser Kampagne. Datenübermittlung an die USA möglich. Details in der Datenschutzerklärung.</p>
+        </div>
+      </div>
+      <div class="cookie-actions">
+        <button id="cookieAcceptAll2" class="btn-cookie">Alles akzeptieren</button>
+        <button id="cookieAcceptSelection" class="btn-cookie">Auswahl akzeptieren</button>
+        <button id="cookieRejectAll2" class="btn-cookie">Alles ablehnen</button>
+      </div>
+      <div class="cookie-footer-links">
+        <a href="../impressum.html">Impressum</a>
+        <a href="../datenschutz.html">Datenschutzerklärung</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Begin Brevo Form scripts -->
+<script>
+  window.REQUIRED_CODE_ERROR_MESSAGE = 'Wähle bitte einen Ländervorwahl aus.';
+  window.LOCALE = 'de';
+  window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = "Die eingegebenen Informationen sind nicht gültig. Bitte überprüfe das Feldformat und versuche es erneut.";
+  window.REQUIRED_ERROR_MESSAGE = "Dieses Feld darf nicht leer sein. ";
+  window.GENERIC_INVALID_MESSAGE = "Die eingegebenen Informationen sind nicht gültig. Bitte überprüfe das Feldformat und versuche es erneut.";
+  window.INVALID_NUMBER = "Die eingegebenen Informationen sind nicht gültig. Bitte überprüfe das Feldformat und versuche es erneut.";
+  window.INVALID_DATE = "Bitte gib ein gültiges Datum ein";
+  window.REQUIRED_MULTISELECT_MESSAGE = 'Wähle bitte mindestens eine Option aus';
+  window.translation = { common: { selectedList: '{quantity} Liste ausgewählt', selectedLists: '{quantity} Listen ausgewählt', selectedOption: '{quantity} ausgewählt', selectedOptions: '{quantity} ausgewählt' } };
+  var AUTOHIDE = Boolean(0);
+</script>
+<script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
+<!-- End Brevo Form scripts -->
+
+<script>
+(function () {
+  'use strict';
+
+  /* ---------- Popup ---------- */
+  var modal = document.getElementById('optinModal');
+  var lastFocus = null;
+  function openModal() {
+    lastFocus = document.activeElement;
+    modal.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+    if (typeof fbq === 'function') fbq('track', 'InitiateCheckout');
+    setTimeout(function () { var f = document.getElementById('VORNAME'); if (f) f.focus(); }, 60);
+  }
+  function closeModal() {
+    modal.classList.remove('is-open');
+    document.body.style.overflow = '';
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  document.querySelectorAll('.js-open').forEach(function (b) { b.addEventListener('click', openModal); });
+  document.getElementById('modalClose').addEventListener('click', closeModal);
+  modal.addEventListener('mousedown', function (e) { if (e.target === modal) closeModal(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal(); });
+
+  /* ---------- Sticky CTA (mobil): erscheint nach dem Hero, verschwindet beim Abschluss-Block ---------- */
+  var sticky = document.getElementById('stickyCta');
+  var hero = document.querySelector('.hero');
+  var fin = document.getElementById('final');
+  function updateSticky() {
+    var past = hero.getBoundingClientRect().bottom < 0;
+    var atEnd = fin.getBoundingClientRect().top < window.innerHeight * 0.7;
+    sticky.classList.toggle('is-on', past && !atEnd);
+  }
+  window.addEventListener('scroll', updateSticky, { passive: true });
+  updateSticky();
+
+  /* ---------- Lead-Event: erst feuern, wenn Brevo den Erfolg anzeigt ---------- */
+  var leadFired = false;
+  var successEl = document.getElementById('success-message');
+  if (successEl) {
+    new MutationObserver(function () {
+      if (leadFired) return;
+      if (getComputedStyle(successEl).display !== 'none') {
+        leadFired = true;
+        if (typeof fbq === 'function') fbq('track', 'Lead');
+        if (window.dataLayer) window.dataLayer.push({ event: 'generate_lead', lead_source: 'planbare-kundengewinnung' });
+      }
+    }).observe(successEl, { attributes: true, attributeFilter: ['style', 'class'] });
+  }
+
+  /* ---------- Cookie consent (localStorage key shared site-wide) ---------- */
+  var STORAGE_KEY = 'cookie_consent';
+  function getConsent() { try { var raw = localStorage.getItem(STORAGE_KEY); return raw ? JSON.parse(raw) : null; } catch (e) { return null; } }
+  function saveConsent(c) { try { localStorage.setItem(STORAGE_KEY, JSON.stringify(Object.assign({}, c, { timestamp: new Date().toISOString() }))); } catch (e) {} }
+  function applyConsent(c) {
+    var g = window.gtag || function () { (window.dataLayer = window.dataLayer || []).push(arguments); };
+    g('consent', 'update', {
+      ad_storage: c.marketing ? 'granted' : 'denied',
+      ad_user_data: c.marketing ? 'granted' : 'denied',
+      ad_personalization: c.marketing ? 'granted' : 'denied'
+    });
+    if (c.marketing) { if (window.loadMetaPixel) window.loadMetaPixel(); } else if (typeof fbq === 'function') { fbq('consent', 'revoke'); }
+  }
+
+  var banner = document.getElementById('cookieBanner');
+  var overlay = document.getElementById('cookieOverlay');
+  var viewMain = document.getElementById('cookieViewMain');
+  var viewSettings = document.getElementById('cookieViewSettings');
+
+  var stored = getConsent();
+  if (stored) { applyConsent(stored); }
+  else { setTimeout(function () { banner.classList.add('is-visible'); overlay.classList.add('is-visible'); }, 900); }
+
+  function hide() { banner.classList.remove('is-visible'); overlay.classList.remove('is-visible'); }
+  function acceptAll() { var c = { essential: true, marketing: true }; saveConsent(c); applyConsent(c); hide(); }
+  function rejectAll() { var c = { essential: true, marketing: false }; saveConsent(c); applyConsent(c); hide(); }
+  function acceptSelection() { var c = { essential: true, marketing: document.getElementById('marketingToggle').checked }; saveConsent(c); applyConsent(c); hide(); }
+  function showSettings() { viewMain.classList.add('cookie-view--hidden'); viewSettings.classList.remove('cookie-view--hidden'); banner.scrollTop = 0; }
+  function showMain() { viewSettings.classList.add('cookie-view--hidden'); viewMain.classList.remove('cookie-view--hidden'); banner.scrollTop = 0; }
+
+  document.getElementById('cookieAcceptAll').addEventListener('click', acceptAll);
+  document.getElementById('cookieRejectAll').addEventListener('click', rejectAll);
+  document.getElementById('cookieShowSettings').addEventListener('click', showSettings);
+  document.getElementById('cookieAcceptAll2').addEventListener('click', acceptAll);
+  document.getElementById('cookieRejectAll2').addEventListener('click', rejectAll);
+  document.getElementById('cookieAcceptSelection').addEventListener('click', acceptSelection);
+  document.getElementById('cookieBack').addEventListener('click', showMain);
+})();
+</script>
+
+</body>
+</html>
