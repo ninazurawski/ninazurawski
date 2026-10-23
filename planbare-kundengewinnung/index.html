@@ -106,6 +106,16 @@ try{var _c2=JSON.parse(localStorage.getItem('cookie_consent')||'null');if(_c2&&_
   .bridge { margin-top:1.8rem; font-size:1.04rem; line-height:1.8; color:var(--muted); text-wrap:pretty; }
   .note { margin-top:1.4rem; font-size:.92rem; line-height:1.7; color:var(--muted); font-style:italic; }
 
+
+  /* Kurze Stimmen unter dem Hero */
+  .proof { background:#fff; border-bottom:1px solid var(--line); padding:clamp(1.8rem,4vw,2.6rem) 0; }
+  .proof-grid { display:grid; grid-template-columns:1fr; gap:1rem; }
+  @media (min-width:800px){ .proof-grid { grid-template-columns:repeat(2,1fr); gap:1.5rem; } }
+  .proof-card { margin:0; padding:1.3rem 1.5rem; background:var(--cream); border:1px solid var(--line); border-radius:18px; }
+  .proof-card .stars { margin-bottom:.7rem; }
+  .proof-card blockquote { font-family:'Playfair Display',serif; font-size:1.02rem; line-height:1.6; color:var(--ink); text-wrap:pretty; margin-bottom:.8rem; }
+  .proof-card figcaption { font-size:.82rem; color:var(--faint); }
+
   /* Gründe */
   .reason { padding:clamp(1.6rem,4vw,2.4rem) 0; border-top:1px solid var(--line); }
   .reason:first-of-type { border-top:0; padding-top:0; }
@@ -229,6 +239,22 @@ try{var _c2=JSON.parse(localStorage.getItem('cookie_consent')||'null');if(_c2&&_
   </div>
 </section>
 
+<!-- ══ 1b · KURZE STIMMEN ══ -->
+<section class="proof">
+  <div class="wrap proof-grid">
+    <figure class="proof-card">
+      <div class="stars" aria-label="5 von 5 Sternen"><svg viewBox="0 0 20 20"><path d="M10 1.5l2.5 5.1 5.6.8-4 3.9.9 5.6L10 14.3l-5 2.6.9-5.6-4-3.9 5.6-.8z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1.5l2.5 5.1 5.6.8-4 3.9.9 5.6L10 14.3l-5 2.6.9-5.6-4-3.9 5.6-.8z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1.5l2.5 5.1 5.6.8-4 3.9.9 5.6L10 14.3l-5 2.6.9-5.6-4-3.9 5.6-.8z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1.5l2.5 5.1 5.6.8-4 3.9.9 5.6L10 14.3l-5 2.6.9-5.6-4-3.9 5.6-.8z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1.5l2.5 5.1 5.6.8-4 3.9.9 5.6L10 14.3l-5 2.6.9-5.6-4-3.9 5.6-.8z"/></svg></div>
+      <blockquote>„Seit Nina unsere Google-Ads-Kampagnen betreut, sehen wir eine messbar höhere Conversion-Rate."</blockquote>
+      <figcaption>Denis Schimanski, Geschäftsführer schimanski IT</figcaption>
+    </figure>
+    <figure class="proof-card">
+      <div class="stars" aria-label="5 von 5 Sternen"><svg viewBox="0 0 20 20"><path d="M10 1.5l2.5 5.1 5.6.8-4 3.9.9 5.6L10 14.3l-5 2.6.9-5.6-4-3.9 5.6-.8z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1.5l2.5 5.1 5.6.8-4 3.9.9 5.6L10 14.3l-5 2.6.9-5.6-4-3.9 5.6-.8z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1.5l2.5 5.1 5.6.8-4 3.9.9 5.6L10 14.3l-5 2.6.9-5.6-4-3.9 5.6-.8z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1.5l2.5 5.1 5.6.8-4 3.9.9 5.6L10 14.3l-5 2.6.9-5.6-4-3.9 5.6-.8z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1.5l2.5 5.1 5.6.8-4 3.9.9 5.6L10 14.3l-5 2.6.9-5.6-4-3.9 5.6-.8z"/></svg></div>
+      <blockquote>„Besonders schätze ich ihre proaktive Arbeitsweise und ihr echtes Engagement, nicht nur Anzeigen zu schalten, sondern messbare Ergebnisse zu erzielen."</blockquote>
+      <figcaption>Kristin Henke, Female Leadership Expertin</figcaption>
+    </figure>
+  </div>
+</section>
+
 <!-- ══ 2 · KENNST DU DAS? ══ -->
 <section class="sec">
   <div class="wrap wrap--narrow">
@@ -265,6 +291,7 @@ try{var _c2=JSON.parse(localStorage.getItem('cookie_consent')||'null');if(_c2&&_
       <li><span class="dot"></span>eine Dienstleistung anbietest, nach der aktiv gesucht wird. Zum Beispiel Coach, Heilpraktiker:in, IT-Dienstleister:in, Handwerker:in, usw.</li>
       <li><span class="dot"></span>mehr planbare Anfragen statt Zufall und Empfehlungen willst</li>
       <li><span class="dot"></span>keine Lust hast, ständig auf Social Media Content zu produzieren</li>
+      <li><span class="dot"></span>bereit bist, ein monatliches Werbebudget zu investieren</li>
     </ul>
     <p class="note">Nicht gedacht für Online-Shops und Produktverkauf. Das Paket richtet sich an Dienstleistungen.</p>
   </div>
@@ -357,6 +384,7 @@ try{var _c2=JSON.parse(localStorage.getItem('cookie_consent')||'null');if(_c2&&_
         </div>
       </div>
     </div>
+  </div>
 </section>
 
 <!-- ══ 7b · KUNDENSTIMMEN ══ -->
@@ -382,7 +410,7 @@ try{var _c2=JSON.parse(localStorage.getItem('cookie_consent')||'null');if(_c2&&_
       </div>
       <div class="quote">
         <div class="stars" aria-label="5 von 5 Sternen"><svg viewBox="0 0 20 20"><path d="M10 1.5l2.5 5.1 5.6.8-4 3.9.9 5.6L10 14.3l-5 2.6.9-5.6-4-3.9 5.6-.8z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1.5l2.5 5.1 5.6.8-4 3.9.9 5.6L10 14.3l-5 2.6.9-5.6-4-3.9 5.6-.8z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1.5l2.5 5.1 5.6.8-4 3.9.9 5.6L10 14.3l-5 2.6.9-5.6-4-3.9 5.6-.8z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1.5l2.5 5.1 5.6.8-4 3.9.9 5.6L10 14.3l-5 2.6.9-5.6-4-3.9 5.6-.8z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1.5l2.5 5.1 5.6.8-4 3.9.9 5.6L10 14.3l-5 2.6.9-5.6-4-3.9 5.6-.8z"/></svg></div>
-        <blockquote>„Nina hat sich intensiv in mein Business hineingedacht, Kampagnen kontinuierlich optimiert und regelmäßig nachjustiert. Besonders schätze ich ihre proaktive Arbeitsweise und ihr echtes Engagement."</blockquote>
+        <blockquote>„Ich habe mehrere Monate mit Nina im Bereich Google Ads zusammengearbeitet und war sehr zufrieden mit der Betreuung. Nina hat sich intensiv in mein Business hineingedacht, Kampagnen kontinuierlich optimiert und regelmäßig nachjustiert. Besonders schätze ich ihre proaktive Arbeitsweise und ihr echtes Engagement, nicht nur Anzeigen zu schalten, sondern messbare Ergebnisse zu erzielen. Ich kann Nina allen empfehlen, die sich eine zuverlässige, strukturierte und mitdenkende Google Ads Betreuung wünschen."</blockquote>
         <div class="who">
           <img src="../images/kristin-henke.webp" alt="Kristin Henke" width="44" height="44" loading="lazy">
           <span><strong style="font-weight:500">Kristin Henke</strong><br><small>Female Leadership Expertin</small></span>
@@ -390,7 +418,7 @@ try{var _c2=JSON.parse(localStorage.getItem('cookie_consent')||'null');if(_c2&&_
       </div>
       <div class="quote">
         <div class="stars" aria-label="5 von 5 Sternen"><svg viewBox="0 0 20 20"><path d="M10 1.5l2.5 5.1 5.6.8-4 3.9.9 5.6L10 14.3l-5 2.6.9-5.6-4-3.9 5.6-.8z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1.5l2.5 5.1 5.6.8-4 3.9.9 5.6L10 14.3l-5 2.6.9-5.6-4-3.9 5.6-.8z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1.5l2.5 5.1 5.6.8-4 3.9.9 5.6L10 14.3l-5 2.6.9-5.6-4-3.9 5.6-.8z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1.5l2.5 5.1 5.6.8-4 3.9.9 5.6L10 14.3l-5 2.6.9-5.6-4-3.9 5.6-.8z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1.5l2.5 5.1 5.6.8-4 3.9.9 5.6L10 14.3l-5 2.6.9-5.6-4-3.9 5.6-.8z"/></svg></div>
-        <blockquote>„Wir haben Nina als sehr kompetente und erfahrene Ansprechpartnerin kennengelernt, kreativ, auf den Punkt und sehr selbständig. Neben der fachlich sehr guten Arbeitsweise pflegen wir ein sehr freundschaftliches Miteinander."</blockquote>
+        <blockquote>„Wir, die Unternehmenskommunikation des Klinikums Nordfriesland, arbeiten mit Nina seit dem Spätsommer 2025 eng zusammen. Wir haben Nina als sehr kompetente und erfahrene Ansprechpartnerin kennengelernt. Wir schätzen ihre kreative und auf den Punkt gehende Herangehensweise. Dabei arbeitet sie sehr selbständig und ‚eng am Thema'. Neben der fachlich sehr guten und engagierten Arbeitsweise, haben wir das große Glück, ein sehr freundschaftliches Miteinander zu pflegen."</blockquote>
         <div class="who">
           <img class="logo" src="../images/logo-klinikum-nf.png" alt="Klinikum Nordfriesland" width="44" height="44" loading="lazy">
           <span><strong style="font-weight:500">Klinikum Nordfriesland</strong><br><small>Unternehmenskommunikation</small></span>
