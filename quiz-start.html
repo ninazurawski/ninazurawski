@@ -371,7 +371,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   var startBtn  = document.getElementById('btn-quiz-start');
 
   startBtn.addEventListener('click', function () {
-    track('custom', 'QuizStart');
+    track('custom', 'QuizStart', { quiz: 'google-ads' });
     introEl.classList.add('quiz-hidden');
     qWrapEl.classList.remove('quiz-hidden');
     renderQ(0, false);
@@ -453,6 +453,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     return html;
   }
 
+  /* Link zum Starterpaket: Parameter der Adresse weiterreichen und Klick melden */
+  function bindStarterpaketLink(id, position) {
+    var el = document.getElementById(id);
+    if (!el) return;
+    if (window.location.search) el.setAttribute('href', el.getAttribute('href').split('?')[0] + window.location.search);
+    el.addEventListener('click', function () { track('custom', 'FreebieCTAClick', { position: position }); });
+  }
+
   var resultType = null;
 
   function computeResult() {
@@ -480,20 +488,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         buildContextParagraphs(CONTEXT_A) +
         '<hr class="quiz-result-divider">' +
         '<div class="quiz-cta-box">' +
-        '<h3>Lass uns schauen, wie deine Kampagne aussehen könnte</h3>' +
-        '<p class="lead">In einem kostenlosen Gespräch schauen wir gemeinsam auf dein Angebot, deine Zielgruppe und dein Budget. Du bekommst eine ehrliche Einschätzung, ohne Verkaufsdruck.</p>' +
-        '<a href="' + BOOKING_LINK + '" target="_blank" rel="noopener" id="btn-result-a-booking" class="quiz-cta-primary">Kostenloses Gespräch buchen<svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path></svg></a>' +
+        '<h3>Jetzt ist der beste Zeitpunkt, loszulegen</h3>' +
+        '<p class="lead" style="margin-bottom:1rem">Deine Voraussetzungen stimmen, jetzt kommt es auf die saubere Umsetzung an. Ein einziger falscher Haken im Konto reicht oft, dass dein Budget für unqualifizierte Klicks verbrannt wird, noch bevor die ersten Anfragen kommen.</p>' +
+        '<p class="lead" style="margin-bottom:1rem"><strong style="color:#fff; font-weight:600">Ich nehme pro Monat nur 1 neues Google-Ads-Projekt an.</strong> Sichere dir jetzt deinen Termin, bevor der Platz vergeben ist.</p>' +
+        '<p class="lead" style="margin-bottom:1rem">Im kostenlosen 30-minütigen Potential-Check klären wir:</p>' +
+        '<ul class="quiz-checklist">' +
+        '  <li><svg viewBox="0 0 16 16" fill="none" width="16" height="16"><path d="M3 8l4 4 6-6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></svg>Ob sich Google Ads für deine Dienstleistung lohnt</li>' +
+        '  <li><svg viewBox="0 0 16 16" fill="none" width="16" height="16"><path d="M3 8l4 4 6-6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></svg>Mit welchem Mindestbudget du in deiner Branche starten solltest</li>' +
+        '  <li><svg viewBox="0 0 16 16" fill="none" width="16" height="16"><path d="M3 8l4 4 6-6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></svg>Wie dein individueller Fahrplan für den fehlerfreien Start aussieht</li>' +
+        '</ul>' +
+        '<a href="' + BOOKING_LINK + '" target="_blank" rel="noopener" id="btn-result-a-booking" class="quiz-cta-primary">Jetzt kostenlosen Potential-Check buchen<svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path></svg></a>' +
         '<p class="quiz-cta-meta">Kostenlos · 30 Minuten · Ohne Verpflichtung</p>' +
         '</div>' +
+        '<div class="quiz-small-link-wrap"><a href="freebies-anmelden.html" id="btn-result-a-starterpaket" class="quiz-small-link">Noch Fragen offen? Hol dir vorab das kostenlose Starterpaket.</a></div>' +
         '</div>';
 
-      document.getElementById('btn-result-a-booking').addEventListener('click', function () { track('custom', 'TerminKlick'); });
+      document.getElementById('btn-result-a-booking').addEventListener('click', function () { track('custom', 'TerminKlick', { quiz: 'google-ads' }); });
+      bindStarterpaketLink('btn-result-a-starterpaket', 'quiz-startklar');
     } else {
       var mainText;
       if (answers.q7 && answers.q7.letter === 'C') {
         mainText = 'Du hast gerade keine Kapazität für mehr Anfragen. Dann ist jetzt der perfekte Zeitpunkt, dich vorzubereiten. So bist du startklar, wenn es bei dir wieder passt.';
       } else {
-        mainText = 'Ein paar Dinge fehlen noch, bevor Google Ads für dich richtig gut funktionieren. Das ist völlig normal. Mit der Checkliste aus deinem Starterpaket weißt du genau, was du vorbereiten kannst, damit du bald loslegen kannst.';
+        mainText = 'Ein paar Dinge fehlen noch, bevor Google Ads für dich richtig gut funktionieren. Das ist völlig normal. Mit meinem kostenlosen Starterpaket, vor allem der Checkliste „Startklar für Google Ads", weißt du genau, was du vorbereiten kannst, damit du bald loslegen kannst.';
       }
       var q2Extra = '';
       if (answers.q2 && answers.q2.letter === 'C') {
@@ -510,23 +527,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         q2Extra +
         '<hr class="quiz-result-divider">' +
         '<div class="quiz-cta-box">' +
-        '<p class="lead" style="margin-bottom:1rem">Das findest du dazu in deiner Checkliste:</p>' +
+        '<h3>Hol dir deine Checkliste im kostenlosen Starterpaket</h3>' +
+        '<p class="lead" style="margin-bottom:1rem">Das findest du in der Checkliste:</p>' +
         '<ul class="quiz-checklist">' +
         '  <li><svg viewBox="0 0 16 16" fill="none" width="16" height="16"><path d="M3 8l4 4 6-6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></svg>Wie du prüfst, ob deine Kund:innen bei Google nach dir suchen</li>' +
         '  <li><svg viewBox="0 0 16 16" fill="none" width="16" height="16"><path d="M3 8l4 4 6-6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></svg>Was deine Seite braucht, damit aus Klicks Anfragen werden</li>' +
         '  <li><svg viewBox="0 0 16 16" fill="none" width="16" height="16"><path d="M3 8l4 4 6-6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></svg>Wie viele Kund:innen du brauchst, damit sich Werbung lohnt</li>' +
         '  <li><svg viewBox="0 0 16 16" fill="none" width="16" height="16"><path d="M3 8l4 4 6-6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></svg>Welches Budget für den Start realistisch ist</li>' +
         '</ul>' +
-        '<p class="lead">Du möchtest lieber direkt wissen, wo du stehst? Dann lass uns sprechen. Das Gespräch ist kostenlos und du bekommst eine ehrliche Einschätzung.</p>' +
-        '<a href="' + BOOKING_LINK + '" target="_blank" rel="noopener" id="btn-result-b-booking" class="quiz-cta-primary">Kostenloses Gespräch buchen<svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path></svg></a>' +
-        '<p class="quiz-cta-meta">Kostenlos · 30 Minuten · Ohne Verpflichtung</p>' +
+        '<p class="lead">Im Starterpaket bekommst du außerdem das E-Book „Das Anfragen-System", einen Selbsttest und den Werbebudget-Rechner. Alles kostenlos, direkt in dein Postfach.</p>' +
+        '<a href="freebies-anmelden.html" id="btn-result-b-starterpaket" class="quiz-cta-primary">Starterpaket kostenlos sichern<svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path></svg></a>' +
+        '<p class="quiz-cta-meta">Kostenlos · Direkt per E-Mail · Jederzeit abmeldbar</p>' +
         '</div>' +
+        '<div class="quiz-small-link-wrap"><a href="' + BOOKING_LINK + '" target="_blank" rel="noopener" id="btn-result-b-booking" class="quiz-small-link">Du möchtest lieber direkt sprechen? Dann buch dir ein kostenloses Gespräch.</a></div>' +
         '</div>';
 
-      document.getElementById('btn-result-b-booking').addEventListener('click', function () { track('custom', 'TerminKlick'); });
+      bindStarterpaketLink('btn-result-b-starterpaket', 'quiz-fast-startklar');
+      document.getElementById('btn-result-b-booking').addEventListener('click', function () { track('custom', 'TerminKlick', { quiz: 'google-ads' }); });
     }
 
-    track('custom', 'QuizComplete', { result: resultType === 'A' ? 'startklar' : 'fast_startklar' });
+    track('custom', 'QuizComplete', { quiz: 'google-ads', result: resultType === 'A' ? 'startklar' : 'fast_startklar' });
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 })();
