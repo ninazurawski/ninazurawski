@@ -241,9 +241,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 (function () {
   'use strict';
 
-  /* ---------- Tracking: Schedule beim Klick auf den Buchungs-Button ---------- */
+  /* ---------- Tracking: TerminKlick beim Klick auf den Buchungs-Button ---------- */
   document.getElementById('danke-termin-button').addEventListener('click', function () {
-    if (typeof fbq === 'function') fbq('track', 'Schedule');
+    if (typeof fbq === 'function') fbq('trackCustom', 'TerminKlick');
   });
 
   /* ---------- Cookie consent (localStorage key shared site-wide) ---------- */

@@ -358,12 +358,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <ul>
           <li>Seitenaufruf (<code>PageView</code>)</li>
           <li>Start und Abschluss des Quiz (<code>QuizStart</code>, <code>QuizComplete</code>); beim Abschluss wird nur die Ergebniskategorie „startklar" oder „fast startklar" übermittelt, nicht deine einzelnen Antworten</li>
-          <li>Anmeldung zur Checkliste (<code>Lead</code>) und bestätigte Anmeldung (<code>CompleteRegistration</code>)</li>
+          <li>Bestätigte Anmeldung für das Starterpaket auf der Danke-Seite (<code>Lead</code>), pro Browser nur einmal</li>
+          <li>Aufruf der Download-Seite der Checkliste (<code>CompleteRegistration</code>)</li>
+          <li>Klick auf einen Button „Jetzt kostenlos sichern" auf der Seite zum Starterpaket (<code>FreebieCTAClick</code>); dabei wird mitgesendet, an welcher Stelle der Seite der Button steht</li>
+          <li>Klick auf einen Download oder ein Tool auf der Download-Seite des Starterpakets (<code>FreebieOpen</code>); dabei wird mitgesendet, ob es das E-Book, die Checkliste, der Selbsttest oder der Rechner war</li>
           <li>Klick auf den Download der PDF-Checkliste (<code>ChecklisteDownload</code>)</li>
           <li>Klick auf einen Buchungs-Button (<code>TerminKlick</code>) und Aufruf der Danke-Seite nach einer Terminbuchung (<code>Schedule</code>)</li>
         </ul>
         <p>
           Dein Name, deine E-Mail-Adresse und deine Antworten im Quiz werden <strong>nicht</strong> an Meta übermittelt.
+        </p>
+        <p>
+          Damit das Ereignis <code>Lead</code> pro Browser nur einmal gesendet wird, speichert diese Website bei erteilter Einwilligung eine Markierung (<code>nz_lead_sent</code>) im lokalen Speicher deines Browsers. Sie enthält keine personenbezogenen Daten und wird nicht an Server übertragen. Du kannst sie jederzeit über die Browser-Einstellungen löschen.
         </p>
         <p>
           Bei erteilter Einwilligung („Marketing") werden folgende Cookies auf der Domain <code>nina-zurawski.de</code> gesetzt (First-Party):

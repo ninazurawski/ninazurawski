@@ -257,14 +257,14 @@ try{var _c2=JSON.parse(localStorage.getItem('cookie_consent')||'null');if(_c2&&_
 (function () {
   'use strict';
 
-  /* ---------- Tracking: Klicks auf Downloads und Tools, Schedule beim Gespräch ---------- */
+  /* ---------- Tracking: Klicks auf Downloads und Tools, TerminKlick beim Gespräch ---------- */
   document.querySelectorAll('.js-track').forEach(function (a) {
     a.addEventListener('click', function () {
       if (typeof fbq === 'function') fbq('trackCustom', 'FreebieOpen', { item: a.getAttribute('data-item') });
     });
   });
   document.getElementById('downloads-termin-button').addEventListener('click', function () {
-    if (typeof fbq === 'function') fbq('track', 'Schedule');
+    if (typeof fbq === 'function') fbq('trackCustom', 'TerminKlick');
   });
 
   /* ---------- Cookie consent (localStorage key shared site-wide) ---------- */
