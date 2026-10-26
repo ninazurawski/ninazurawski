@@ -17,8 +17,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- End Google Tag Manager -->
 <!-- Meta Pixel Code: wird erst nach Einwilligung (Marketing) geladen -->
 <script>
+/* Eigene Tests ausschliessen: ?notrack=1 setzt ein Flag, danach sendet keine Seite mehr Pixel-Events */
+try{if(/[?&]notrack=1(&|$)/.test(window.location.search))localStorage.setItem('nz_no_track','1');}catch(e){}
+window.nzNoTrack=false;try{window.nzNoTrack=localStorage.getItem('nz_no_track')==='1';}catch(e){}
 window.loadMetaPixel = function () {
-  if (window.fbq) return;
+  if (window.fbq || window.nzNoTrack) return;
   !function(f,b,e,v,n,t,s)
   {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
   n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -76,6 +79,8 @@ try{var _c2=JSON.parse(localStorage.getItem('cookie_consent')||'null');if(_c2&&_
   .h-btn-ghost-dark:hover { background: rgba(255,255,255,0.1) !important; border-color: #fff !important; }
   .h-card { transition: transform .25s, box-shadow .25s, border-color .25s; }
   .h-card:hover { transform: translateY(-4px); border-color: #E3DCCF !important; box-shadow: 0 24px 48px -28px rgba(22,33,27,0.35) !important; }
+  .h-btn-ghost-light { transition: background .2s, border-color .2s; }
+  .h-btn-ghost-light:hover { background: #F1F5F1 !important; border-color: #1E3A2C !important; }
   .h-link { transition: color .2s, border-color .2s; }
   .h-link:hover { color: #D96B52 !important; border-color: #D96B52 !important; }
 
@@ -223,8 +228,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <img src="images/logo-nina.png" alt="Nina Zurawski Logo" style="width:38px; height:38px; border-radius:50%; object-fit:contain; display:block; flex-shrink:0">
         <span class="hdr-brand" style="font-family:'Playfair Display',serif; font-size:1.08rem; color:#16211B">Nina Zurawski</span>
       </div>
-      <a href="quiz-start.html" id="btn-header-quiz" style="flex-shrink:0; display:inline-flex; align-items:center; gap:0.45rem; background:#D96B52; color:#fff; border-radius:100px; padding:0.7rem 1.3rem; font-size:0.88rem; font-weight:500; white-space:nowrap; transition:background .2s, transform .2s" onmouseover="this.style.background='#C55A42';this.style.transform='translateY(-1px)'" onmouseout="this.style.background='#D96B52';this.style.transform='none'">
-        <span class="hdr-quiz-long">Zum Quiz: Startklar für Google Ads?</span><span class="hdr-quiz-short">Zum Quiz</span>
+      <a href="https://meet.brevo.com/nina-zurawski/kennenlerncall" target="_blank" rel="noopener" id="btn-header-booking" data-booking style="flex-shrink:0; display:inline-flex; align-items:center; gap:0.45rem; background:#D96B52; color:#fff; border-radius:100px; padding:0.7rem 1.3rem; font-size:0.88rem; font-weight:500; white-space:nowrap; transition:background .2s, transform .2s" onmouseover="this.style.background='#C55A42';this.style.transform='translateY(-1px)'" onmouseout="this.style.background='#D96B52';this.style.transform='none'">
+        <span class="hdr-quiz-long">Kostenloses Erstgespräch buchen</span><span class="hdr-quiz-short">Erstgespräch</span>
         <svg width="13" height="13" viewBox="0 0 16 16" fill="none" style="flex-shrink:0"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path></svg>
       </a>
     </div>
@@ -245,11 +250,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           Google Ads und Landingpages für Dienstleister:innen, die nicht mehr von Empfehlungen und Social Media abhängig sein wollen.
         </p>
         <div style="display:flex; flex-direction:column; gap:1rem; max-width:26rem">
-          <a href="quiz-start.html" id="btn-hero-quiz" style="display:flex; align-items:center; justify-content:center; gap:0.5rem; background:#D96B52; color:#fff; border-radius:100px; padding:1.05rem 1.6rem; font-size:1.02rem; font-weight:500; box-shadow:0 18px 36px -14px rgba(217,107,82,0.55); transition:background .2s, transform .2s" onmouseover="this.style.background='#C55A42';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#D96B52';this.style.transform='none'">
-            <span style="text-align:center; line-height:1.4">0€ QUIZ:<br>In 2 Minuten prüfen, ob du startklar bist</span>
+          <a href="https://meet.brevo.com/nina-zurawski/kennenlerncall" target="_blank" rel="noopener" id="btn-hero-booking" data-booking style="display:flex; align-items:center; justify-content:center; gap:0.5rem; background:#D96B52; color:#fff; border-radius:100px; padding:1.05rem 1.6rem; font-size:1.02rem; font-weight:500; box-shadow:0 18px 36px -14px rgba(217,107,82,0.55); transition:background .2s, transform .2s" onmouseover="this.style.background='#C55A42';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#D96B52';this.style.transform='none'">
+            <span style="text-align:center; line-height:1.4">Kostenloses Erstgespräch buchen</span>
             <svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="flex-shrink:0"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path></svg>
           </a>
-          <a href="https://meet.brevo.com/nina-zurawski/kennenlerncall" target="_blank" rel="noopener" id="btn-hero-booking" class="h-link hero-link2" style="text-align:center; color:#55625A; font-size:0.92rem; border-bottom:1px solid #C9D3CA; padding-bottom:2px; align-self:center">Direkt ein kostenloses Gespräch buchen</a>
+          <a href="quiz-start.html" id="btn-hero-quiz" class="h-btn-ghost-light" style="display:flex; align-items:center; justify-content:center; gap:0.5rem; background:transparent; color:#1E3A2C; border:1px solid #C9D3CA; border-radius:100px; padding:0.9rem 1.5rem; font-size:0.94rem; font-weight:500; transition:background .2s, border-color .2s">
+            <span style="text-align:center; line-height:1.4">Oder: 0 € Quiz, in 2 Minuten prüfen, ob du startklar bist</span>
+          </a>
         </div>
       </div>
 
@@ -333,10 +340,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
         </div>
 
-        <a href="quiz-start.html" id="btn-about-quiz" style="display:inline-flex; align-items:center; gap:0.5rem; background:#D96B52; color:#fff; border-radius:100px; padding:0.95rem 1.6rem; font-size:0.94rem; font-weight:500; margin-top:2rem; transition:background .2s, transform .2s" onmouseover="this.style.background='#C55A42';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#D96B52';this.style.transform='none'">
-          Zum Quiz: Startklar für Google Ads?
-          <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path></svg>
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:0.9rem 1.4rem; margin-top:2rem;">
+        <a href="https://meet.brevo.com/nina-zurawski/kennenlerncall" target="_blank" rel="noopener" id="btn-about-booking" data-booking style="display:inline-flex; align-items:center; gap:0.5rem; background:#D96B52; color:#fff; border-radius:100px; padding:0.95rem 1.6rem; font-size:0.94rem; font-weight:500; transition:background .2s, transform .2s" onmouseover="this.style.background='#C55A42';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#D96B52';this.style.transform='none'">
+          Kostenloses Erstgespräch buchen
+          <svg width="13" height="13" viewBox="0 0 16 16" fill="none" style="flex-shrink:0"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path></svg>
         </a>
+        <a href="quiz-start.html" id="btn-about-quiz" class="h-link" style="color:#55625A; font-size:0.9rem; border-bottom:1px solid #C9D3CA; padding-bottom:2px">Oder: Quiz, ob du startklar bist</a>
+      </div>
       </div>
     </div>
   </section>
@@ -418,10 +428,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <p style="font-size:1.05rem; line-height:1.8; color:rgba(255,255,255,0.82); max-width:38rem; margin-bottom:2rem; text-wrap:pretty">Deshalb baue ich Anzeigen und Landingpage oft zusammen. Die Anzeige bringt die richtigen Menschen zu dir. Die Landingpage sorgt dafür, dass sie sich melden.</p>
 
-      <a href="quiz-start.html" id="btn-warum-quiz" style="display:inline-flex; align-items:center; gap:0.5rem; background:#D96B52; color:#fff; border-radius:100px; padding:0.95rem 1.7rem; font-size:0.96rem; font-weight:500; transition:background .2s, transform .2s" onmouseover="this.style.background='#C55A42';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#D96B52';this.style.transform='none'">
-        Zum Quiz: Startklar für Google Ads?
-        <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path></svg>
-      </a>
+      <div style="display:flex; flex-wrap:wrap; align-items:center; gap:0.9rem 1.4rem;">
+        <a href="https://meet.brevo.com/nina-zurawski/kennenlerncall" target="_blank" rel="noopener" id="btn-warum-booking" data-booking style="display:inline-flex; align-items:center; gap:0.5rem; background:#D96B52; color:#fff; border-radius:100px; padding:0.95rem 1.7rem; font-size:0.96rem; font-weight:500; transition:background .2s, transform .2s" onmouseover="this.style.background='#C55A42';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#D96B52';this.style.transform='none'">
+          Kostenloses Erstgespräch buchen
+          <svg width="13" height="13" viewBox="0 0 16 16" fill="none" style="flex-shrink:0"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path></svg>
+        </a>
+        <a href="quiz-start.html" id="btn-warum-quiz" class="h-link" style="color:rgba(255,255,255,0.78); font-size:0.9rem; border-bottom:1px solid rgba(255,255,255,0.35); padding-bottom:2px">Oder: Quiz, ob du startklar bist</a>
+      </div>
     </div>
   </section>
 
@@ -454,10 +467,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
 
       <div style="text-align:center; margin-top:2.2rem">
-        <a href="quiz-start.html" id="btn-calc-quiz" style="display:inline-flex; align-items:center; gap:0.5rem; background:#D96B52; color:#fff; border-radius:100px; padding:0.95rem 1.7rem; font-size:0.96rem; font-weight:500; transition:background .2s, transform .2s" onmouseover="this.style.background='#C55A42';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#D96B52';this.style.transform='none'">
-          Zum Quiz: Startklar für Google Ads?
-          <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path></svg>
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:0.9rem 1.4rem; justify-content:center;">
+        <a href="https://meet.brevo.com/nina-zurawski/kennenlerncall" target="_blank" rel="noopener" id="btn-calc-booking" data-booking style="display:inline-flex; align-items:center; gap:0.5rem; background:#D96B52; color:#fff; border-radius:100px; padding:0.95rem 1.7rem; font-size:0.96rem; font-weight:500; transition:background .2s, transform .2s" onmouseover="this.style.background='#C55A42';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#D96B52';this.style.transform='none'">
+          Kostenloses Erstgespräch buchen
+          <svg width="13" height="13" viewBox="0 0 16 16" fill="none" style="flex-shrink:0"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path></svg>
         </a>
+        <a href="quiz-start.html" id="btn-calc-quiz" class="h-link" style="color:#55625A; font-size:0.9rem; border-bottom:1px solid #C9D3CA; padding-bottom:2px">Oder: Quiz, ob du startklar bist</a>
+      </div>
       </div>
     </div>
   </section>
@@ -478,10 +494,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <span style="background:#FBF9F5; border:1px solid #EEEAE2; border-radius:100px; padding:0.5rem 1.1rem; font-size:0.84rem; color:#3B463F">Laufende Optimierung</span>
       </div>
 
-      <a href="quiz-start.html" id="btn-entlastung-quiz" style="display:inline-flex; align-items:center; gap:0.5rem; background:#D96B52; color:#fff; border-radius:100px; padding:0.95rem 1.7rem; font-size:0.96rem; font-weight:500; transition:background .2s, transform .2s" onmouseover="this.style.background='#C55A42';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#D96B52';this.style.transform='none'">
-        Zum Quiz: Startklar für Google Ads?
-        <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path></svg>
-      </a>
+      <div style="display:flex; flex-wrap:wrap; align-items:center; gap:0.9rem 1.4rem;">
+        <a href="https://meet.brevo.com/nina-zurawski/kennenlerncall" target="_blank" rel="noopener" id="btn-entlastung-booking" data-booking style="display:inline-flex; align-items:center; gap:0.5rem; background:#D96B52; color:#fff; border-radius:100px; padding:0.95rem 1.7rem; font-size:0.96rem; font-weight:500; transition:background .2s, transform .2s" onmouseover="this.style.background='#C55A42';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#D96B52';this.style.transform='none'">
+          Kostenloses Erstgespräch buchen
+          <svg width="13" height="13" viewBox="0 0 16 16" fill="none" style="flex-shrink:0"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path></svg>
+        </a>
+        <a href="quiz-start.html" id="btn-entlastung-quiz" class="h-link" style="color:#55625A; font-size:0.9rem; border-bottom:1px solid #C9D3CA; padding-bottom:2px">Oder: Quiz, ob du startklar bist</a>
+      </div>
     </div>
   </section>
 
@@ -522,10 +541,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
 
       <div style="text-align:center; margin-top:2.6rem">
-        <a href="quiz-start.html" id="btn-ablauf-quiz" style="display:inline-flex; align-items:center; gap:0.5rem; background:#D96B52; color:#fff; border-radius:100px; padding:0.95rem 1.7rem; font-size:0.96rem; font-weight:500; transition:background .2s, transform .2s" onmouseover="this.style.background='#C55A42';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#D96B52';this.style.transform='none'">
-          Zum Quiz: Startklar für Google Ads?
-          <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path></svg>
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:0.9rem 1.4rem; justify-content:center;">
+        <a href="https://meet.brevo.com/nina-zurawski/kennenlerncall" target="_blank" rel="noopener" id="btn-ablauf-booking" data-booking style="display:inline-flex; align-items:center; gap:0.5rem; background:#D96B52; color:#fff; border-radius:100px; padding:0.95rem 1.7rem; font-size:0.96rem; font-weight:500; transition:background .2s, transform .2s" onmouseover="this.style.background='#C55A42';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#D96B52';this.style.transform='none'">
+          Kostenloses Erstgespräch buchen
+          <svg width="13" height="13" viewBox="0 0 16 16" fill="none" style="flex-shrink:0"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path></svg>
         </a>
+        <a href="quiz-start.html" id="btn-ablauf-quiz" class="h-link" style="color:#55625A; font-size:0.9rem; border-bottom:1px solid #C9D3CA; padding-bottom:2px">Oder: Quiz, ob du startklar bist</a>
+      </div>
       </div>
     </div>
   </section>
@@ -699,11 +721,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <section id="abschluss-cta" style="background:#1E3A2C; padding:clamp(4rem,8vw,6.5rem) 0; text-align:center; position:relative; overflow:hidden">
     <div style="position:absolute; width:520px; height:520px; border-radius:50%; background:#D96B52; opacity:0.14; filter:blur(100px); top:-200px; left:50%; transform:translateX(-50%); pointer-events:none"></div>
     <div style="position:relative; max-width:760px; margin:0 auto; padding:0 clamp(1.25rem,4vw,2.5rem)">
-      <h2 style="font-family:'Playfair Display',serif; font-weight:400; font-size:clamp(2rem,4.8vw,3rem); line-height:1.12; color:#fff; margin-bottom:1.1rem; text-wrap:balance">Finde heraus, ob du <em style="font-style:italic; color:#F0A090">startklar bist</em></h2>
-      <p style="font-size:1.05rem; line-height:1.75; color:rgba(255,255,255,0.78); max-width:32rem; margin:0 auto 2.2rem; text-wrap:pretty">Beantworte sieben kurze Fragen und erfahre in zwei Minuten, ob Google Ads für dich gerade der richtige Schritt ist.</p>
+      <h2 style="font-family:'Playfair Display',serif; font-weight:400; font-size:clamp(2rem,4.8vw,3rem); line-height:1.12; color:#fff; margin-bottom:1.1rem; text-wrap:balance">Lass uns herausfinden, ob du <em style="font-style:italic; color:#F0A090">startklar bist</em></h2>
+      <p style="font-size:1.05rem; line-height:1.75; color:rgba(255,255,255,0.78); max-width:32rem; margin:0 auto 2.2rem; text-wrap:pretty">In einem kostenlosen Erstgespräch schauen wir gemeinsam auf dein Angebot, deine Zielgruppe und dein Budget. Ehrlich und ohne Verpflichtung.</p>
       <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:0.9rem">
-        <a href="quiz-start.html" id="btn-final-quiz" class="h-btn-white" style="display:inline-flex; align-items:center; gap:0.5rem; background:#D96B52; color:#fff; border-radius:100px; padding:1rem 1.8rem; font-size:0.98rem; font-weight:500; transition:background .2s, transform .2s" onmouseover="this.style.background='#C55A42';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#D96B52';this.style.transform='none'">Zum Quiz: Startklar für Google Ads?</a>
-        <a href="https://meet.brevo.com/nina-zurawski/kennenlerncall" target="_blank" rel="noopener" id="btn-final-booking" class="h-btn-ghost-dark" style="display:inline-flex; align-items:center; gap:0.5rem; background:transparent; color:#fff; border:1px solid rgba(255,255,255,0.4); border-radius:100px; padding:1rem 1.8rem; font-size:0.98rem">Lieber direkt ein Gespräch buchen</a>
+        <a href="https://meet.brevo.com/nina-zurawski/kennenlerncall" target="_blank" rel="noopener" id="btn-final-booking" data-booking class="h-btn-white" style="display:inline-flex; align-items:center; gap:0.5rem; background:#D96B52; color:#fff; border-radius:100px; padding:1rem 1.8rem; font-size:0.98rem; font-weight:500; transition:background .2s, transform .2s" onmouseover="this.style.background='#C55A42';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#D96B52';this.style.transform='none'">Kostenloses Erstgespräch buchen</a>
+        <a href="quiz-start.html" id="btn-final-quiz" class="h-btn-ghost-dark" style="display:inline-flex; align-items:center; gap:0.5rem; background:transparent; color:#fff; border:1px solid rgba(255,255,255,0.4); border-radius:100px; padding:1rem 1.8rem; font-size:0.98rem">Oder: Quiz in 2 Minuten</a>
       </div>
     </div>
   </section>
@@ -861,8 +883,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     if (kind === 'custom') fbq('trackCustom', name, params || {});
     else fbq('track', name, params || {});
   };
-  document.getElementById('btn-hero-booking').addEventListener('click', function () { ninaTrack('custom', 'TerminKlick'); });
-  document.getElementById('btn-final-booking').addEventListener('click', function () { ninaTrack('custom', 'TerminKlick'); });
+  document.querySelectorAll('[data-booking]').forEach(function (el) {
+    el.addEventListener('click', function () { ninaTrack('custom', 'TerminKlick'); });
+  });
 
   /* ---------- Cookie consent (localStorage key shared site-wide) ---------- */
   var STORAGE_KEY = 'cookie_consent';
