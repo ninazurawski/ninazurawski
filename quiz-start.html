@@ -17,8 +17,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- End Google Tag Manager -->
 <!-- Meta Pixel Code: wird erst nach Einwilligung (Marketing) geladen -->
 <script>
+/* Eigene Tests ausschliessen: ?notrack=1 setzt ein Flag, danach sendet keine Seite mehr Pixel-Events */
+try{if(/[?&]notrack=1(&|$)/.test(window.location.search))localStorage.setItem('nz_no_track','1');}catch(e){}
+window.nzNoTrack=false;try{window.nzNoTrack=localStorage.getItem('nz_no_track')==='1';}catch(e){}
 window.loadMetaPixel = function () {
-  if (window.fbq) return;
+  if (window.fbq || window.nzNoTrack) return;
   !function(f,b,e,v,n,t,s)
   {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
   n.callMethod.apply(n,arguments):n.queue.push(arguments)};

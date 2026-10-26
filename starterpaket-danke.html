@@ -15,10 +15,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-NLFQXM86');</script>
 <!-- End Google Tag Manager -->
-<!-- Meta Pixel Code: wird erst nach Einwilligung (Marketing) geladen; Lead feuert, sobald der Pixel da ist -->
+<!-- Meta Pixel Code: wird erst nach Einwilligung (Marketing) geladen; Lead feuert hier einmal pro Browser -->
 <script>
+/* Eigene Tests ausschliessen: ?notrack=1 setzt ein Flag, danach sendet keine Seite mehr Pixel-Events */
+try{if(/[?&]notrack=1(&|$)/.test(window.location.search))localStorage.setItem('nz_no_track','1');}catch(e){}
+window.nzNoTrack=false;try{window.nzNoTrack=localStorage.getItem('nz_no_track')==='1';}catch(e){}
 window.loadMetaPixel = function () {
-  if (window.fbq) return;
+  if (window.fbq || window.nzNoTrack) return;
   !function(f,b,e,v,n,t,s)
   {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
   n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -29,7 +32,13 @@ window.loadMetaPixel = function () {
   'https://connect.facebook.net/en_US/fbevents.js');
   fbq('init', '4253386314961970');
   fbq('track', 'PageView');
-  fbq('track', 'Lead');
+  /* Lead nur einmal pro Browser: Flag in localStorage, ohne localStorage feuert es beim Laden */
+  var leadSent = false;
+  try { leadSent = localStorage.getItem('nz_lead_sent') === '1'; } catch (e) {}
+  if (!leadSent) {
+    fbq('track', 'Lead');
+    try { localStorage.setItem('nz_lead_sent', '1'); } catch (e) {}
+  }
 };
 try{var _c2=JSON.parse(localStorage.getItem('cookie_consent')||'null');if(_c2&&_c2.marketing)window.loadMetaPixel();}catch(e){}
 </script>
