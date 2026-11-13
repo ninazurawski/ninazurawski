@@ -1,4 +1,19 @@
 User-agent: *
 Allow: /
+Disallow: /danke
+Disallow: /danke-ads-analyse
+Disallow: /checkliste-danke
+Disallow: /freebies-danke
+Disallow: /starterpaket-danke
+Disallow: /quiz
+Disallow: /quiz/
+Disallow: /selbsttest
+Disallow: /werbebudget-rechner
+Disallow: /planbare-kundengewinnung/
+Disallow: /hallo-welt
+Disallow: /google-ads-starten
+Disallow: /freebies-anmelden
+Disallow: /checkliste-download
+Disallow: /quiz-start
 
 Sitemap: https://www.nina-zurawski.de/sitemap.xml
