@@ -79,8 +79,6 @@ try{var _c2=JSON.parse(localStorage.getItem('cookie_consent')||'null');if(_c2&&_
   .h-btn-ghost-dark:hover { background: rgba(255,255,255,0.1) !important; border-color: #fff !important; }
   .h-card { transition: transform .25s, box-shadow .25s, border-color .25s; }
   .h-card:hover { transform: translateY(-4px); border-color: #E3DCCF !important; box-shadow: 0 24px 48px -28px rgba(22,33,27,0.35) !important; }
-  .h-btn-ghost-light { transition: background .2s, border-color .2s; }
-  .h-btn-ghost-light:hover { background: #F1F5F1 !important; border-color: #1E3A2C !important; }
   .h-link { transition: color .2s, border-color .2s; }
   .h-link:hover { color: #D96B52 !important; border-color: #D96B52 !important; }
 
@@ -89,7 +87,7 @@ try{var _c2=JSON.parse(localStorage.getItem('cookie_consent')||'null');if(_c2&&_
 
   /* ---------- Reviews carousel ---------- */
   .reviews-slider-wrap { display: flex; align-items: center; gap: 1rem; }
-  .reviews-track-outer { overflow: hidden; flex: 1; border-radius: 20px; }
+  .reviews-track-outer { overflow: hidden; flex: 1; min-width: 0; border-radius: 20px; }
   .reviews-track { display: flex; transition: transform .45s cubic-bezier(.4,0,.2,1); }
   .review-slide { flex: 0 0 100%; box-sizing: border-box; background: #FBF9F5; border: 1px solid #EEEAE2; border-radius: 20px; padding: clamp(1.6rem,3vw,2.2rem); display: flex; flex-direction: column; gap: 1.2rem; }
   .reviews-arrow {
@@ -98,10 +96,37 @@ try{var _c2=JSON.parse(localStorage.getItem('cookie_consent')||'null');if(_c2&&_
     transition: background .2s, border-color .2s, transform .2s; box-shadow: 0 2px 8px rgba(22,33,27,0.08);
   }
   .reviews-arrow:hover { background: #1E3A2C; border-color: #1E3A2C; color: #fff; transform: scale(1.05); }
-  .reviews-dots { display: flex; justify-content: center; gap: 0.5rem; margin-top: 1.5rem; }
+  .reviews-nav { display: flex; align-items: center; justify-content: center; gap: 1rem; margin-top: 1.5rem; }
+  .reviews-arrow-m { display: none; }
+  .reviews-dots { display: flex; justify-content: center; gap: 0.5rem; }
   .reviews-dot { width: 8px; height: 8px; border-radius: 50%; border: none; background: #E3DCCF; cursor: pointer; padding: 0; transition: background .2s, transform .2s; }
   .reviews-dot--active { background: #D96B52; transform: scale(1.3); }
-  @media (max-width: 640px) { .reviews-arrow { display: flex; } }
+  @media (max-width: 640px) {
+    /* Pfeile wandern unter die Karte, damit die Karte die volle Breite bekommt */
+    .reviews-slider-wrap { display: block; }
+    .reviews-slider-wrap > .reviews-arrow { display: none; }
+    .reviews-arrow-m { display: flex; }
+    .reviews-track { touch-action: pan-y; }
+    .reviews-track-outer { border-radius: 16px; }
+    .review-slide { padding: 1.3rem 1.2rem; gap: 1rem; border-radius: 16px; }
+    .review-slide blockquote { font-size: 1rem !important; line-height: 1.6 !important; overflow-wrap: anywhere; }
+    .reviews-nav { margin-top: 1.1rem; }
+  }
+
+  /* ---------- Kundenstimme unter dem Hero ---------- */
+  #hero-stimme { background: #1E3A2C; padding: clamp(2.5rem,5vw,3.75rem) 0; position: relative; overflow: hidden; }
+  .hs-quote { font-family: 'Playfair Display', serif; font-weight: 400; font-size: clamp(1.35rem,3.4vw,2.1rem); line-height: 1.35; letter-spacing: -0.01em; color: #FFFFFF; text-wrap: balance; margin: 0; }
+  .hs-quote em { font-style: italic; color: #F2A38F; }
+  .hs-name { font-size: 0.9rem; line-height: 1.4; color: #FFFFFF; }
+  .hs-role { color: #B9C7BD; font-size: 0.84rem; }
+  @media (max-width: 700px) {
+    #hero-stimme { background: #F4F1EA; border-top: 1px solid #E3DCCF; border-bottom: 1px solid #E3DCCF; box-shadow: 0 -12px 24px -16px rgba(22,33,27,0.3); }
+    #hero-stimme .hs-glow { display: none; }
+    .hs-quote { color: #1E3A2C; font-size: 1.5rem; }
+    .hs-quote em { color: #C55A42; }
+    .hs-name { color: #1E3A2C; }
+    .hs-role { color: #55625A; }
+  }
 
   /* ---------- Rechner ---------- */
   .calc-field { display: flex; flex-direction: column; gap: 0.5rem; }
@@ -141,7 +166,7 @@ try{var _c2=JSON.parse(localStorage.getItem('cookie_consent')||'null');if(_c2&&_
 
   /* Nur Handy: Foto füllt den ganzen Hero, Gesicht oben frei, Text darunter (Desktop bleibt unverändert) */
   @media (max-width: 700px) {
-    .hero { background: #1E3A2C !important; padding: 0 0 2.6rem !important; }
+    .hero { background: #1E3A2C !important; padding: 0 0 1.6rem !important; }
     .hero > div:not(.hero-grid) { display: none !important; }
     .hero-grid { position: static !important; display: block !important; }
     .hero-media { position: absolute !important; top: 0; left: 0; right: 0; bottom: 0; height: auto; max-width: none !important; width: auto !important; margin: 0 !important; z-index: 0; overflow: hidden; }
@@ -153,36 +178,42 @@ try{var _c2=JSON.parse(localStorage.getItem('cookie_consent')||'null');if(_c2&&_
     .hero-photo-float { position: absolute !important; inset: 0; animation: none; }
     /* Bild ca. 9 % höher als der Hero: der untere Rand (Hand/Daumen) liegt außerhalb und wird abgeschnitten */
     .hero-img { position: absolute; top: 0; left: 0; width: 100% !important; height: 109.3% !important; aspect-ratio: auto !important; border-radius: 0 !important; box-shadow: none !important; object-position: 32% top !important; }
-    .hero-text { position: relative; z-index: 1; padding-top: min(20rem, 85vw); }
-    .hero-h1 { color: #fff; font-size: 2rem !important; margin-bottom: 1.1rem !important; }
+    .hero-text { position: relative; z-index: 1; padding-top: min(10.5rem, 48vw); }
+    .hero-h1 { color: #fff; font-size: 1.9rem !important; margin-bottom: 0.8rem !important; }
     .hero-em { color: #F0A090 !important; }
-    .hero-sub { color: rgba(255,255,255,0.9) !important; font-size: 1rem !important; margin-bottom: 1.8rem !important; }
-    .hero-link2 { color: rgba(255,255,255,0.9) !important; border-color: rgba(255,255,255,0.5) !important; }
-    .hero-link2:hover { color: #fff !important; border-color: #fff !important; }
+    .hero-sub { color: rgba(255,255,255,0.9) !important; font-size: 0.95rem !important; line-height: 1.55 !important; margin-bottom: 1.1rem !important; }
+    .hero-sub-extra { display: none; }
+    .hero-btn { padding: 0.95rem 1.2rem !important; font-size: 0.98rem !important; }
+    .hero-micro { color: rgba(255,255,255,0.85) !important; margin-top: 0.7rem !important; }
   }
+  .hero-micro { font-size: 0.84rem; line-height: 1.5; color: #55625A; margin: 0.9rem 0 0; }
 
   /* ==========================================================
      COOKIE CONSENT
      ========================================================== */
-  .cookie-overlay {
-    position: fixed; inset: 0; background: rgba(16,24,20,0.45);
-    opacity: 0; pointer-events: none; transition: opacity .3s ease; z-index: 900;
-  }
-  .cookie-overlay.is-visible { opacity: 1; pointer-events: auto; }
   .cookie-banner {
-    position: fixed; left: 50%; bottom: clamp(1rem, 4vw, 2.5rem);
-    transform: translate(-50%, 140%); width: min(560px, calc(100vw - 2rem));
-    background: #fff; border: 1px solid #E9E5DD; border-radius: 20px;
-    box-shadow: 0 30px 70px -30px rgba(22,33,27,0.5); z-index: 901;
-    max-height: calc(100vh - 2rem); overflow-y: auto;
+    position: fixed; left: 50%; bottom: clamp(0.4rem, 3vw, 1.5rem);
+    transform: translate(-50%, 140%); width: min(520px, calc(100vw - 1.2rem));
+    background: #fff; border: 1px solid #E9E5DD; border-radius: 16px;
+    box-shadow: 0 20px 50px -20px rgba(22,33,27,0.5); z-index: 901;
+    max-height: calc(100svh - 1.2rem); overflow-y: auto;
     transition: transform .4s cubic-bezier(.16,1,.3,1);
     font-family: 'DM Sans', sans-serif; color: #16211B;
   }
   .cookie-banner.is-visible { transform: translate(-50%, 0); }
   .cookie-view--hidden { display: none; }
-  .cookie-inner { padding: clamp(1.5rem, 4vw, 2rem); }
+  .cookie-inner { padding: 0.7rem 0.9rem 0.55rem; }
+  .cookie-inner--settings { padding: clamp(1.2rem, 4vw, 1.6rem); }
+  .cookie-actions--main { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; }
+  .cookie-actions--main .btn-cookie { min-width: 0; padding: 0.6rem 0.5rem; font-size: 0.85rem; }
+  .cookie-links { display: flex; flex-wrap: nowrap; align-items: center; justify-content: space-between; gap: 0.5rem; margin-top: 0.3rem; }
+  .cookie-link { background: none; border: none; padding: 0.2rem 0; font: inherit; font-size: 0.76rem; color: #55625A; text-decoration: underline; cursor: pointer; }
+  .cookie-links a, .cookie-link { font-size: 0.76rem; color: #55625A; }
+  .cookie-links a { text-decoration: none; }
+  .cookie-link:hover, .cookie-links a:hover { color: #1E3A2C; }
   .cookie-title { font-family: 'Playfair Display', serif; font-weight: 500; font-size: 1.2rem; line-height: 1.3; margin-bottom: 0.75rem; }
-  .cookie-body { font-size: 0.88rem; line-height: 1.7; color: #55625A; margin-bottom: 1.25rem; }
+  .cookie-body { font-size: 0.78rem; line-height: 1.45; color: #55625A; margin-bottom: 0.55rem; }
+  .cookie-inner--settings .cookie-body { font-size: 0.88rem; line-height: 1.7; margin-bottom: 1.25rem; }
   .cookie-back {
     display: inline-flex; align-items: center; gap: 0.4rem; background: none; border: none;
     color: #8C978F; font-size: 0.82rem; cursor: pointer; padding: 0; margin-bottom: 1rem;
@@ -211,7 +242,18 @@ try{var _c2=JSON.parse(localStorage.getItem('cookie_consent')||'null');if(_c2&&_
   .cookie-footer-links { display: flex; gap: 1.25rem; margin-top: 1.1rem; }
   .cookie-footer-links a { font-size: 0.74rem; letter-spacing: 0.06em; color: #8C978F; }
   .cookie-footer-links a:hover { color: #1E3A2C; }
-  @media (max-width: 480px) { .cookie-actions { flex-direction: column; } .btn-cookie { width: 100%; } }
+  @media (max-width: 480px) { .cookie-actions:not(.cookie-actions--main) { flex-direction: column; } .cookie-actions:not(.cookie-actions--main) .btn-cookie { width: 100%; } }
+
+  /* ---------- Buchungs-Overlay (eingebetteter Kalender) ---------- */
+  .bk-ov { position: fixed; inset: 0; background: rgba(16,24,20,0.6); z-index: 950; display: none; align-items: center; justify-content: center; padding: 0.75rem; }
+  .bk-ov.is-open { display: flex; }
+  .bk-modal { position: relative; width: min(760px, 100%); height: min(800px, calc(100svh - 1.5rem)); background: #fff; border-radius: 18px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 40px 90px -30px rgba(0,0,0,0.5); }
+  .bk-bar { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: 0.45rem 0.55rem 0.45rem 1.1rem; border-bottom: 1px solid #EEEAE2; font-size: 0.9rem; font-weight: 500; flex-shrink: 0; }
+  .bk-x { width: 44px; height: 44px; border-radius: 50%; border: 0; background: #F1F5F1; color: #1E3A2C; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .bk-x:hover { background: #E3EBE3; }
+  .bk-frame { flex: 1; width: 100%; border: 0; background: #FBF9F5; }
+  .bk-fallback { flex-shrink: 0; font-size: 0.78rem; line-height: 1.4; padding: 0.55rem 1rem; color: #55625A; text-align: center; border-top: 1px solid #EEEAE2; }
+  .bk-fallback a { text-decoration: underline; color: #1E3A2C; }
 </style>
 </head>
 <body>
@@ -228,7 +270,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <img src="images/logo-nina.png" alt="Nina Zurawski Logo" style="width:38px; height:38px; border-radius:50%; object-fit:contain; display:block; flex-shrink:0">
         <span class="hdr-brand" style="font-family:'Playfair Display',serif; font-size:1.08rem; color:#16211B">Nina Zurawski</span>
       </div>
-      <a href="https://meet.brevo.com/nina-zurawski/kennenlerncall" target="_blank" rel="noopener" id="btn-header-booking" data-booking style="flex-shrink:0; display:inline-flex; align-items:center; gap:0.45rem; background:#D96B52; color:#fff; border-radius:100px; padding:0.7rem 1.3rem; font-size:0.88rem; font-weight:500; white-space:nowrap; transition:background .2s, transform .2s" onmouseover="this.style.background='#C55A42';this.style.transform='translateY(-1px)'" onmouseout="this.style.background='#D96B52';this.style.transform='none'">
+      <a href="https://meet.brevo.com/nina-zurawski/kennenlerncall" id="btn-header-booking" data-booking style="flex-shrink:0; display:inline-flex; align-items:center; gap:0.45rem; background:#D96B52; color:#fff; border-radius:100px; padding:0.7rem 1.3rem; font-size:0.88rem; font-weight:500; white-space:nowrap; transition:background .2s, transform .2s" onmouseover="this.style.background='#C55A42';this.style.transform='translateY(-1px)'" onmouseout="this.style.background='#D96B52';this.style.transform='none'">
         <span class="hdr-quiz-long">Kostenlosen Potential-Check buchen</span><span class="hdr-quiz-short">Potential-Check</span>
         <svg width="13" height="13" viewBox="0 0 16 16" fill="none" style="flex-shrink:0"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path></svg>
       </a>
@@ -244,19 +286,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="hero-grid" style="position:relative; max-width:1180px; margin:0 auto; padding:0 clamp(1.25rem,4vw,2.5rem); display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:clamp(2rem,5vw,3.5rem); align-items:center">
       <div class="hero-text">
         <h1 class="hero-h1" style="font-family:'Playfair Display',serif; font-weight:400; font-size:clamp(2.2rem,5.6vw,3.6rem); line-height:1.08; letter-spacing:-0.015em; margin-bottom:1.4rem">
-          Endlich planbare Anfragen.<br><em class="hero-em" style="font-style:italic; color:#D96B52">Ohne dass du dich selbst darum kümmern musst.</em>
+          Planbar neue Kund:innen gewinnen<br><em class="hero-em" style="font-style:italic; color:#D96B52">mit Google Ads.</em>
         </h1>
         <p class="hero-sub" style="font-size:1.08rem; line-height:1.75; color:#55625A; max-width:34rem; margin-bottom:2.2rem; text-wrap:pretty">
-          Google Ads und Landingpages für Dienstleister:innen, die nicht mehr von Empfehlungen und Social Media abhängig sein wollen.
+          Menschen, die genau jetzt nach deiner Dienstleistung suchen, finden dich bei Google. <span class="hero-sub-extra">Das Ziel: Anfragen und ein Terminkalender, den du planen kannst.</span> Im kostenlosen Potential-Check zeige ich dir, wie das für dein Angebot aussehen kann.
         </p>
-        <div style="display:flex; flex-direction:column; gap:1rem; max-width:26rem">
-          <a href="https://meet.brevo.com/nina-zurawski/kennenlerncall" target="_blank" rel="noopener" id="btn-hero-booking" data-booking style="display:flex; align-items:center; justify-content:center; gap:0.5rem; background:#D96B52; color:#fff; border-radius:100px; padding:1.05rem 1.6rem; font-size:1.02rem; font-weight:500; box-shadow:0 18px 36px -14px rgba(217,107,82,0.55); transition:background .2s, transform .2s" onmouseover="this.style.background='#C55A42';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#D96B52';this.style.transform='none'">
+        <div style="display:flex; flex-direction:column; max-width:26rem">
+          <a href="https://meet.brevo.com/nina-zurawski/kennenlerncall" id="btn-hero-booking" data-booking class="hero-btn" style="display:flex; align-items:center; justify-content:center; gap:0.5rem; background:#D96B52; color:#fff; border-radius:100px; padding:1.05rem 1.6rem; font-size:1.02rem; font-weight:500; box-shadow:0 18px 36px -14px rgba(217,107,82,0.55); transition:background .2s, transform .2s" onmouseover="this.style.background='#C55A42';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#D96B52';this.style.transform='none'">
             <span style="text-align:center; line-height:1.4">Kostenlosen Potential-Check buchen</span>
             <svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="flex-shrink:0"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path></svg>
           </a>
-          <a href="quiz-start.html" id="btn-hero-quiz" class="h-btn-ghost-light" style="display:flex; align-items:center; justify-content:center; gap:0.5rem; background:transparent; color:#1E3A2C; border:1px solid #C9D3CA; border-radius:100px; padding:0.9rem 1.5rem; font-size:0.94rem; font-weight:500; transition:background .2s, border-color .2s">
-            <span style="text-align:center; line-height:1.4">Oder: 0 € Quiz, in 2 Minuten prüfen, ob du startklar bist</span>
-          </a>
+          <p class="hero-micro">Kostenlos und unverbindlich. Ehrliche Einschätzung, ohne Verkaufsdruck.</p>
         </div>
       </div>
 
@@ -276,23 +316,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </section>
 
   <!-- ═══ 1b. KUNDENSTIMME UNTER HERO ═══ -->
-  <section id="hero-stimme" aria-label="Kundenstimme" style="background:#1E3A2C; padding:clamp(2.5rem,5vw,3.75rem) 0; position:relative; overflow:hidden">
-    <div style="position:absolute; width:420px; height:420px; border-radius:50%; background:#D96B52; opacity:0.14; filter:blur(100px); top:-200px; left:-120px; pointer-events:none"></div>
+  <section id="hero-stimme" aria-label="Kundenstimme">
+    <div class="hs-glow" style="position:absolute; width:420px; height:420px; border-radius:50%; background:#D96B52; opacity:0.14; filter:blur(100px); top:-200px; left:-120px; pointer-events:none"></div>
     <figure style="position:relative; max-width:860px; margin:0 auto; padding:0 clamp(1.25rem,4vw,2.5rem); text-align:center">
       <div aria-hidden="true" style="font-family:'Playfair Display',serif; font-size:4.5rem; line-height:0.6; color:#D96B52; height:2rem">“</div>
-      <div style="display:flex; justify-content:center; gap:0.2rem; color:#E8B96A; margin-bottom:1rem" aria-label="5 von 5 Sternen">
-        <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.27l-4.77 2.44.91-5.32L2.27 6.62l5.34-.78L10 1z"/></svg>
-        <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.27l-4.77 2.44.91-5.32L2.27 6.62l5.34-.78L10 1z"/></svg>
-        <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.27l-4.77 2.44.91-5.32L2.27 6.62l5.34-.78L10 1z"/></svg>
-        <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.27l-4.77 2.44.91-5.32L2.27 6.62l5.34-.78L10 1z"/></svg>
-        <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.27l-4.77 2.44.91-5.32L2.27 6.62l5.34-.78L10 1z"/></svg>
-      </div>
-      <blockquote style="font-family:'Playfair Display',serif; font-weight:400; font-size:clamp(1.35rem,3.4vw,2.1rem); line-height:1.35; letter-spacing:-0.01em; color:#FFFFFF; text-wrap:balance; margin:0">
-        Seit Nina unsere Google-Ads-Kampagnen betreut, sehen wir eine <em style="font-style:italic; color:#F2A38F">messbar höhere Conversion-Rate.</em>
+      <blockquote class="hs-quote">
+        Endlich kommen <em>wöchentlich mehrere Anfragen</em> für mein Coaching rein.
       </blockquote>
-      <figcaption style="display:inline-flex; align-items:center; gap:0.8rem; margin-top:1.6rem; text-align:left">
-        <img src="images/logo-schimanski-it.png" alt="schimanski IT GmbH &amp; Co. KG" width="44" height="44" loading="lazy" style="width:44px; height:44px; border-radius:12px; object-fit:contain; background:#fff; flex-shrink:0">
-        <span style="font-size:0.9rem; line-height:1.4; color:#FFFFFF"><strong style="font-weight:500">Denis Schimanski</strong><br><span style="color:#B9C7BD; font-size:0.84rem">Geschäftsführer, schimanski IT GmbH &amp; Co. KG</span></span>
+      <figcaption class="hs-name" style="display:inline-flex; align-items:center; gap:0.8rem; margin-top:1.6rem; text-align:left">
+        <img src="images/nicole-bondani.webp" alt="Nicole Bondani" width="44" height="44" loading="lazy" style="width:44px; height:44px; border-radius:50%; object-fit:cover; background:#fff; flex-shrink:0">
+        <span><strong style="font-weight:500">Nicole Bondani</strong><br><span class="hs-role">Spiritueller Coach</span></span>
       </figcaption>
     </figure>
   </section>
@@ -321,16 +354,59 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </li>
         <li style="display:flex; gap:0.9rem; padding:1.1rem 0; font-size:1rem; line-height:1.65; color:#3B463F">
           <span style="flex-shrink:0; margin-top:3px; color:#D96B52"><svg viewBox="0 0 16 16" fill="none" width="16" height="16"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg></span>
-          Und wenn jemand bei Google nach deinem Angebot sucht, findet er andere?
+          Und wenn jemand bei Google nach deinem Angebot sucht, findet die Person andere?
         </li>
       </ul>
 
       <p style="font-size:1.05rem; line-height:1.75; color:#16211B; margin-top:2rem; text-wrap:pretty"><strong style="font-weight:500">Das liegt nicht an deiner Arbeit.</strong> Es liegt daran, dass Kund:innen dich gerade nicht finden, wenn sie suchen.</p>
+      <p style="font-size:1.05rem; line-height:1.75; color:#3B463F; margin-top:1rem; text-wrap:pretty">Wer eine Dienstleistung braucht, meldet sich meist bei den Ersten, die er oder sie findet. Alle anderen erfahren von dieser Anfrage nie.</p>
+    </div>
+  </section>
+
+  <!-- ═══ 2b. DAS PASSIERT IM POTENTIAL-CHECK ═══ -->
+  <section id="potential-check" style="background:#FFFFFF; padding:clamp(4rem,8vw,6.5rem) 0">
+    <div style="max-width:760px; margin:0 auto; padding:0 clamp(1.25rem,4vw,2.5rem)">
+      <h2 style="font-family:'Playfair Display',serif; font-weight:400; font-size:clamp(1.9rem,4.4vw,2.8rem); line-height:1.15; letter-spacing:-0.01em; margin-bottom:2.2rem; text-wrap:balance">Das passiert im <em style="font-style:italic; color:#D96B52">Potential-Check</em></h2>
+
+      <div style="display:flex; flex-direction:column; gap:0">
+        <div style="display:flex; gap:1.1rem; padding-bottom:1.8rem; border-left:1px solid #E9E5DD; margin-left:15px; padding-left:2.2rem; position:relative">
+          <span style="position:absolute; left:-16px; top:0; width:32px; height:32px; border-radius:50%; background:#1E3A2C; color:#fff; font-size:0.8rem; display:flex; align-items:center; justify-content:center">1</span>
+          <div>
+            <h3 style="font-family:'Playfair Display',serif; font-weight:500; font-size:1.08rem; margin-bottom:0.4rem">Wir schauen auf deine Situation.</h3>
+            <p style="font-size:0.95rem; line-height:1.68; color:#55625A; text-wrap:pretty">Wie kommen deine Anfragen heute, und wie sichtbar bist du bei Google?</p>
+          </div>
+        </div>
+        <div style="display:flex; gap:1.1rem; padding-bottom:1.8rem; border-left:1px solid #E9E5DD; margin-left:15px; padding-left:2.2rem; position:relative">
+          <span style="position:absolute; left:-16px; top:0; width:32px; height:32px; border-radius:50%; background:#1E3A2C; color:#fff; font-size:0.8rem; display:flex; align-items:center; justify-content:center">2</span>
+          <div>
+            <h3 style="font-family:'Playfair Display',serif; font-weight:500; font-size:1.08rem; margin-bottom:0.4rem">Du bekommst meine Einschätzung.</h3>
+            <p style="font-size:0.95rem; line-height:1.68; color:#55625A; text-wrap:pretty">Ich zeige dir, was mir bei deiner Sichtbarkeit aufgefallen ist, und rechne mit dir durch, was sich für dein Angebot lohnen würde.</p>
+          </div>
+        </div>
+        <div style="display:flex; gap:1.1rem; border-left:none; margin-left:15px; padding-left:2.2rem; position:relative">
+          <span style="position:absolute; left:-16px; top:0; width:32px; height:32px; border-radius:50%; background:#D96B52; color:#fff; font-size:0.8rem; display:flex; align-items:center; justify-content:center">3</span>
+          <div>
+            <h3 style="font-family:'Playfair Display',serif; font-weight:500; font-size:1.08rem; margin-bottom:0.4rem">Du entscheidest in Ruhe.</h3>
+            <p style="font-size:0.95rem; line-height:1.68; color:#55625A; text-wrap:pretty">Passt es, besprechen wir den nächsten Schritt. Passt es noch nicht, sage ich dir ehrlich, was fehlt.</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:2.4rem">
+        <p style="font-size:0.88rem; color:#8C978F; margin-bottom:0.9rem">Kostenlos, unverbindlich, ohne Verkaufsdruck.</p>
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:0.9rem 1.4rem;">
+        <a href="https://meet.brevo.com/nina-zurawski/kennenlerncall" id="btn-schritte-booking" data-booking style="display:inline-flex; align-items:center; gap:0.5rem; background:#D96B52; color:#fff; border-radius:100px; padding:0.95rem 1.6rem; font-size:0.94rem; font-weight:500; transition:background .2s, transform .2s" onmouseover="this.style.background='#C55A42';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#D96B52';this.style.transform='none'">
+          Kostenlosen Potential-Check buchen
+          <svg width="13" height="13" viewBox="0 0 16 16" fill="none" style="flex-shrink:0"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path></svg>
+        </a>
+        <a href="quiz-start.html" id="btn-schritte-quiz" class="h-link" style="color:#55625A; font-size:0.9rem; border-bottom:1px solid #C9D3CA; padding-bottom:2px">Noch unsicher? In 2 Minuten selbst prüfen</a>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- ═══ ÜBER MICH ═══ -->
-  <section id="ueber-mich" style="background:#FFFFFF; padding:clamp(4rem,8vw,6.5rem) 0">
+  <section id="ueber-mich" style="background:#FBF9F5; padding:clamp(4rem,8vw,6.5rem) 0">
     <div style="max-width:1080px; margin:0 auto; padding:0 clamp(1.25rem,4vw,2.5rem); display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:clamp(2rem,5vw,3.5rem); align-items:center">
       <div style="max-width:340px; width:100%; margin:0 auto; position:relative">
         <div style="width:100%; aspect-ratio:3/4; border-radius:20px; overflow:hidden">
@@ -363,11 +439,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
 
         <div style="display:flex; flex-wrap:wrap; align-items:center; gap:0.9rem 1.4rem; margin-top:2rem;">
-        <a href="https://meet.brevo.com/nina-zurawski/kennenlerncall" target="_blank" rel="noopener" id="btn-about-booking" data-booking style="display:inline-flex; align-items:center; gap:0.5rem; background:#D96B52; color:#fff; border-radius:100px; padding:0.95rem 1.6rem; font-size:0.94rem; font-weight:500; transition:background .2s, transform .2s" onmouseover="this.style.background='#C55A42';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#D96B52';this.style.transform='none'">
+        <a href="https://meet.brevo.com/nina-zurawski/kennenlerncall" id="btn-about-booking" data-booking style="display:inline-flex; align-items:center; gap:0.5rem; background:#D96B52; color:#fff; border-radius:100px; padding:0.95rem 1.6rem; font-size:0.94rem; font-weight:500; transition:background .2s, transform .2s" onmouseover="this.style.background='#C55A42';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#D96B52';this.style.transform='none'">
           Kostenlosen Potential-Check buchen
           <svg width="13" height="13" viewBox="0 0 16 16" fill="none" style="flex-shrink:0"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path></svg>
         </a>
-        <a href="quiz-start.html" id="btn-about-quiz" class="h-link" style="color:#55625A; font-size:0.9rem; border-bottom:1px solid #C9D3CA; padding-bottom:2px">Oder: Quiz, ob du startklar bist</a>
+        <a href="quiz-start.html" id="btn-about-quiz" class="h-link" style="color:#55625A; font-size:0.9rem; border-bottom:1px solid #C9D3CA; padding-bottom:2px">Noch unsicher? In 2 Minuten selbst prüfen</a>
       </div>
       </div>
     </div>
@@ -451,11 +527,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p style="font-size:1.05rem; line-height:1.8; color:rgba(255,255,255,0.82); max-width:38rem; margin-bottom:2rem; text-wrap:pretty">Deshalb baue ich Anzeigen und Landingpage oft zusammen. Die Anzeige bringt die richtigen Menschen zu dir. Die Landingpage sorgt dafür, dass sie sich melden.</p>
 
       <div style="display:flex; flex-wrap:wrap; align-items:center; gap:0.9rem 1.4rem;">
-        <a href="https://meet.brevo.com/nina-zurawski/kennenlerncall" target="_blank" rel="noopener" id="btn-warum-booking" data-booking style="display:inline-flex; align-items:center; gap:0.5rem; background:#D96B52; color:#fff; border-radius:100px; padding:0.95rem 1.7rem; font-size:0.96rem; font-weight:500; transition:background .2s, transform .2s" onmouseover="this.style.background='#C55A42';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#D96B52';this.style.transform='none'">
+        <a href="https://meet.brevo.com/nina-zurawski/kennenlerncall" id="btn-warum-booking" data-booking style="display:inline-flex; align-items:center; gap:0.5rem; background:#D96B52; color:#fff; border-radius:100px; padding:0.95rem 1.7rem; font-size:0.96rem; font-weight:500; transition:background .2s, transform .2s" onmouseover="this.style.background='#C55A42';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#D96B52';this.style.transform='none'">
           Kostenlosen Potential-Check buchen
           <svg width="13" height="13" viewBox="0 0 16 16" fill="none" style="flex-shrink:0"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path></svg>
         </a>
-        <a href="quiz-start.html" id="btn-warum-quiz" class="h-link" style="color:rgba(255,255,255,0.78); font-size:0.9rem; border-bottom:1px solid rgba(255,255,255,0.35); padding-bottom:2px">Oder: Quiz, ob du startklar bist</a>
+        <a href="quiz-start.html" id="btn-warum-quiz" class="h-link" style="color:rgba(255,255,255,0.78); font-size:0.9rem; border-bottom:1px solid rgba(255,255,255,0.35); padding-bottom:2px">Noch unsicher? In 2 Minuten selbst prüfen</a>
       </div>
     </div>
   </section>
@@ -470,7 +546,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:1.2rem; margin-bottom:1.8rem">
           <div class="calc-field">
             <label for="calcAuftragswert">Was bringt dir ein Auftrag im Durchschnitt? (€)</label>
-            <input type="number" id="calcAuftragswert" inputmode="decimal" min="0" placeholder="z. B. 800">
+            <input type="number" id="calcAuftragswert" inputmode="decimal" min="0" placeholder="z. B. 800 (Beispiel)">
           </div>
           <div class="calc-field">
             <label for="calcBudget">Monatliches Werbebudget (€)</label>
@@ -485,16 +561,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="calc-result">
           <p id="calcOutput" style="font-family:'Playfair Display',serif; font-size:clamp(1.1rem,2.6vw,1.4rem); line-height:1.5; margin:0">Trag deinen durchschnittlichen Auftragswert ein.</p>
         </div>
-        <p style="font-size:0.84rem; line-height:1.6; color:#8C978F; margin-top:1rem">Und wenn Kund:innen öfter wiederkommen oder dich weiterempfehlen, lohnt sich jeder neue Kontakt noch mehr.</p>
+        <div id="calcBridge" hidden style="margin-top:1.4rem; text-align:center">
+          <p style="font-size:0.98rem; line-height:1.65; color:#16211B; margin-bottom:1rem; text-wrap:balance">Das ist eine Beispielrechnung. Im Potential-Check rechne ich es mit deinen echten Zahlen durch.</p>
+          <a href="https://meet.brevo.com/nina-zurawski/kennenlerncall" id="btn-calc-booking" data-booking style="display:inline-flex; align-items:center; gap:0.5rem; background:#D96B52; color:#fff; border-radius:100px; padding:0.95rem 1.7rem; font-size:0.96rem; font-weight:500; transition:background .2s, transform .2s" onmouseover="this.style.background='#C55A42';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#D96B52';this.style.transform='none'">
+            Kostenlosen Potential-Check buchen
+            <svg width="13" height="13" viewBox="0 0 16 16" fill="none" style="flex-shrink:0"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path></svg>
+          </a>
+        </div>
+        <p style="font-size:0.84rem; line-height:1.6; color:#8C978F; margin-top:1rem">Die Rechnung ist ein Beispiel und keine Garantie. Und wenn Kund:innen öfter wiederkommen oder dich weiterempfehlen, lohnt sich jeder neue Kontakt noch mehr.</p>
       </div>
 
       <div style="text-align:center; margin-top:2.2rem">
         <div style="display:flex; flex-wrap:wrap; align-items:center; gap:0.9rem 1.4rem; justify-content:center;">
-        <a href="https://meet.brevo.com/nina-zurawski/kennenlerncall" target="_blank" rel="noopener" id="btn-calc-booking" data-booking style="display:inline-flex; align-items:center; gap:0.5rem; background:#D96B52; color:#fff; border-radius:100px; padding:0.95rem 1.7rem; font-size:0.96rem; font-weight:500; transition:background .2s, transform .2s" onmouseover="this.style.background='#C55A42';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#D96B52';this.style.transform='none'">
+        <a href="https://meet.brevo.com/nina-zurawski/kennenlerncall" id="btn-calc-booking-bottom" data-booking style="display:inline-flex; align-items:center; gap:0.5rem; background:#D96B52; color:#fff; border-radius:100px; padding:0.95rem 1.7rem; font-size:0.96rem; font-weight:500; transition:background .2s, transform .2s" onmouseover="this.style.background='#C55A42';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#D96B52';this.style.transform='none'">
           Kostenlosen Potential-Check buchen
           <svg width="13" height="13" viewBox="0 0 16 16" fill="none" style="flex-shrink:0"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path></svg>
         </a>
-        <a href="quiz-start.html" id="btn-calc-quiz" class="h-link" style="color:#55625A; font-size:0.9rem; border-bottom:1px solid #C9D3CA; padding-bottom:2px">Oder: Quiz, ob du startklar bist</a>
+        <a href="quiz-start.html" id="btn-calc-quiz" class="h-link" style="color:#55625A; font-size:0.9rem; border-bottom:1px solid #C9D3CA; padding-bottom:2px">Noch unsicher? In 2 Minuten selbst prüfen</a>
       </div>
       </div>
     </div>
@@ -517,11 +600,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
 
       <div style="display:flex; flex-wrap:wrap; align-items:center; gap:0.9rem 1.4rem;">
-        <a href="https://meet.brevo.com/nina-zurawski/kennenlerncall" target="_blank" rel="noopener" id="btn-entlastung-booking" data-booking style="display:inline-flex; align-items:center; gap:0.5rem; background:#D96B52; color:#fff; border-radius:100px; padding:0.95rem 1.7rem; font-size:0.96rem; font-weight:500; transition:background .2s, transform .2s" onmouseover="this.style.background='#C55A42';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#D96B52';this.style.transform='none'">
+        <a href="https://meet.brevo.com/nina-zurawski/kennenlerncall" id="btn-entlastung-booking" data-booking style="display:inline-flex; align-items:center; gap:0.5rem; background:#D96B52; color:#fff; border-radius:100px; padding:0.95rem 1.7rem; font-size:0.96rem; font-weight:500; transition:background .2s, transform .2s" onmouseover="this.style.background='#C55A42';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#D96B52';this.style.transform='none'">
           Kostenlosen Potential-Check buchen
           <svg width="13" height="13" viewBox="0 0 16 16" fill="none" style="flex-shrink:0"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path></svg>
         </a>
-        <a href="quiz-start.html" id="btn-entlastung-quiz" class="h-link" style="color:#55625A; font-size:0.9rem; border-bottom:1px solid #C9D3CA; padding-bottom:2px">Oder: Quiz, ob du startklar bist</a>
+        <a href="quiz-start.html" id="btn-entlastung-quiz" class="h-link" style="color:#55625A; font-size:0.9rem; border-bottom:1px solid #C9D3CA; padding-bottom:2px">Noch unsicher? In 2 Minuten selbst prüfen</a>
       </div>
     </div>
   </section>
@@ -564,11 +647,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <div style="text-align:center; margin-top:2.6rem">
         <div style="display:flex; flex-wrap:wrap; align-items:center; gap:0.9rem 1.4rem; justify-content:center;">
-        <a href="https://meet.brevo.com/nina-zurawski/kennenlerncall" target="_blank" rel="noopener" id="btn-ablauf-booking" data-booking style="display:inline-flex; align-items:center; gap:0.5rem; background:#D96B52; color:#fff; border-radius:100px; padding:0.95rem 1.7rem; font-size:0.96rem; font-weight:500; transition:background .2s, transform .2s" onmouseover="this.style.background='#C55A42';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#D96B52';this.style.transform='none'">
+        <a href="https://meet.brevo.com/nina-zurawski/kennenlerncall" id="btn-ablauf-booking" data-booking style="display:inline-flex; align-items:center; gap:0.5rem; background:#D96B52; color:#fff; border-radius:100px; padding:0.95rem 1.7rem; font-size:0.96rem; font-weight:500; transition:background .2s, transform .2s" onmouseover="this.style.background='#C55A42';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#D96B52';this.style.transform='none'">
           Kostenlosen Potential-Check buchen
           <svg width="13" height="13" viewBox="0 0 16 16" fill="none" style="flex-shrink:0"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path></svg>
         </a>
-        <a href="quiz-start.html" id="btn-ablauf-quiz" class="h-link" style="color:#55625A; font-size:0.9rem; border-bottom:1px solid #C9D3CA; padding-bottom:2px">Oder: Quiz, ob du startklar bist</a>
+        <a href="quiz-start.html" id="btn-ablauf-quiz" class="h-link" style="color:#55625A; font-size:0.9rem; border-bottom:1px solid #C9D3CA; padding-bottom:2px">Noch unsicher? In 2 Minuten selbst prüfen</a>
       </div>
       </div>
     </div>
@@ -639,11 +722,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </button>
       </div>
 
-      <div class="reviews-dots" id="reviewsDots">
-        <button type="button" class="reviews-dot reviews-dot--active" aria-label="Bewertung 1"></button>
-        <button type="button" class="reviews-dot" aria-label="Bewertung 2"></button>
-        <button type="button" class="reviews-dot" aria-label="Bewertung 3"></button>
-        <button type="button" class="reviews-dot" aria-label="Bewertung 4"></button>
+      <div class="reviews-nav">
+        <button type="button" class="reviews-arrow reviews-arrow-m" id="reviewsPrevM" aria-label="Vorherige Bewertung">
+          <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M12 4L6 10l6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+        </button>
+        <div class="reviews-dots" id="reviewsDots">
+          <button type="button" class="reviews-dot reviews-dot--active" aria-label="Bewertung 1"></button>
+          <button type="button" class="reviews-dot" aria-label="Bewertung 2"></button>
+          <button type="button" class="reviews-dot" aria-label="Bewertung 3"></button>
+          <button type="button" class="reviews-dot" aria-label="Bewertung 4"></button>
+        </div>
+        <button type="button" class="reviews-arrow reviews-arrow-m" id="reviewsNextM" aria-label="Nächste Bewertung">
+          <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M8 4l6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+        </button>
       </div>
     </div>
   </section>
@@ -654,6 +745,33 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <h2 style="font-family:'Playfair Display',serif; font-weight:400; font-size:clamp(1.9rem,4.4vw,2.8rem); line-height:1.15; letter-spacing:-0.01em; margin-bottom:2rem; text-wrap:balance">Deine Fragen, <em style="font-style:italic; color:#D96B52">ehrlich beantwortet</em></h2>
 
       <div style="border-top:1px solid #EEEAE2">
+        <div class="faq-item" style="border-bottom:1px solid #EEEAE2">
+          <button type="button" class="faq-q" aria-expanded="false" style="width:100%; display:flex; justify-content:space-between; align-items:center; gap:1rem; padding:1.25rem 0; background:none; border:none; cursor:pointer; font-size:1rem; color:#16211B; text-align:left; font-weight:500; font-family:'DM Sans',sans-serif">
+            Was passiert im Potential-Check?
+            <svg class="faq-chevron" viewBox="0 0 16 16" fill="none" width="18" height="18" style="flex-shrink:0; color:#1E3A2C; transition:transform .25s; transform:rotate(0deg)"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg>
+          </button>
+          <div class="faq-a" style="max-height:0; opacity:0">
+            <p style="font-size:0.94rem; line-height:1.75; color:#55625A; padding-bottom:1.25rem; text-wrap:pretty">Wir schauen gemeinsam auf dein Angebot, deine Sichtbarkeit bei Google und dein Budget. Ich zeige dir meine Einschätzung und rechne mit dir durch, was sich lohnen würde. Danach entscheidest du in Ruhe.</p>
+          </div>
+        </div>
+        <div class="faq-item" style="border-bottom:1px solid #EEEAE2">
+          <button type="button" class="faq-q" aria-expanded="false" style="width:100%; display:flex; justify-content:space-between; align-items:center; gap:1rem; padding:1.25rem 0; background:none; border:none; cursor:pointer; font-size:1rem; color:#16211B; text-align:left; font-weight:500; font-family:'DM Sans',sans-serif">
+            Muss ich danach etwas buchen?
+            <svg class="faq-chevron" viewBox="0 0 16 16" fill="none" width="18" height="18" style="flex-shrink:0; color:#1E3A2C; transition:transform .25s; transform:rotate(0deg)"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg>
+          </button>
+          <div class="faq-a" style="max-height:0; opacity:0">
+            <p style="font-size:0.94rem; line-height:1.75; color:#55625A; padding-bottom:1.25rem; text-wrap:pretty">Nein. Der Potential-Check ist kostenlos und unverbindlich. Passt es nicht, sage ich dir ehrlich, was noch fehlt.</p>
+          </div>
+        </div>
+        <div class="faq-item" style="border-bottom:1px solid #EEEAE2">
+          <button type="button" class="faq-q" aria-expanded="false" style="width:100%; display:flex; justify-content:space-between; align-items:center; gap:1rem; padding:1.25rem 0; background:none; border:none; cursor:pointer; font-size:1rem; color:#16211B; text-align:left; font-weight:500; font-family:'DM Sans',sans-serif">
+            Was kostet die Zusammenarbeit?
+            <svg class="faq-chevron" viewBox="0 0 16 16" fill="none" width="18" height="18" style="flex-shrink:0; color:#1E3A2C; transition:transform .25s; transform:rotate(0deg)"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg>
+          </button>
+          <div class="faq-a" style="max-height:0; opacity:0">
+            <p style="font-size:0.94rem; line-height:1.75; color:#55625A; padding-bottom:1.25rem; text-wrap:pretty"><span style="background:#FFF3CD; border:1px dashed #D9A400; border-radius:6px; padding:0.15rem 0.5rem; color:#6B5200">[PLATZHALTER: Antwort von Nina, z. B. wie transparent Preise auf der Seite genannt werden sollen.]</span></p>
+          </div>
+        </div>
         <div class="faq-item" style="border-bottom:1px solid #EEEAE2">
           <button type="button" class="faq-q" aria-expanded="false" style="width:100%; display:flex; justify-content:space-between; align-items:center; gap:1rem; padding:1.25rem 0; background:none; border:none; cursor:pointer; font-size:1rem; color:#16211B; text-align:left; font-weight:500; font-family:'DM Sans',sans-serif">
             Lohnt sich das Investment für mein Unternehmen?
@@ -746,7 +864,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <h2 style="font-family:'Playfair Display',serif; font-weight:400; font-size:clamp(2rem,4.8vw,3rem); line-height:1.12; color:#fff; margin-bottom:1.1rem; text-wrap:balance">Lass uns herausfinden, ob du <em style="font-style:italic; color:#F0A090">startklar bist</em></h2>
       <p style="font-size:1.05rem; line-height:1.75; color:rgba(255,255,255,0.78); max-width:32rem; margin:0 auto 2.2rem; text-wrap:pretty">In einem kostenlosen Potential-Check schauen wir gemeinsam auf dein Angebot, deine Zielgruppe und dein Budget. Ehrlich und ohne Verpflichtung.</p>
       <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:0.9rem">
-        <a href="https://meet.brevo.com/nina-zurawski/kennenlerncall" target="_blank" rel="noopener" id="btn-final-booking" data-booking class="h-btn-white" style="display:inline-flex; align-items:center; gap:0.5rem; background:#D96B52; color:#fff; border-radius:100px; padding:1rem 1.8rem; font-size:0.98rem; font-weight:500; transition:background .2s, transform .2s" onmouseover="this.style.background='#C55A42';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#D96B52';this.style.transform='none'">Kostenlosen Potential-Check buchen</a>
+        <a href="https://meet.brevo.com/nina-zurawski/kennenlerncall" id="btn-final-booking" data-booking class="h-btn-white" style="display:inline-flex; align-items:center; gap:0.5rem; background:#D96B52; color:#fff; border-radius:100px; padding:1rem 1.8rem; font-size:0.98rem; font-weight:500; transition:background .2s, transform .2s" onmouseover="this.style.background='#C55A42';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#D96B52';this.style.transform='none'">Kostenlosen Potential-Check buchen</a>
         <a href="quiz-start.html" id="btn-final-quiz" class="h-btn-ghost-dark" style="display:inline-flex; align-items:center; gap:0.5rem; background:transparent; color:#fff; border:1px solid rgba(255,255,255,0.4); border-radius:100px; padding:1rem 1.8rem; font-size:0.98rem">Oder: Quiz in 2 Minuten</a>
       </div>
     </div>
@@ -767,26 +885,36 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 </div>
 
+<!-- ═══ BUCHUNGS-OVERLAY ═══ -->
+<div id="bkOverlay" class="bk-ov" aria-hidden="true">
+  <div class="bk-modal" role="dialog" aria-modal="true" aria-labelledby="bkTitle">
+    <div class="bk-bar">
+      <span id="bkTitle">Potential-Check buchen</span>
+      <button type="button" class="bk-x" id="bkClose" aria-label="Schließen"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 3l10 10M13 3L3 13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path></svg></button>
+    </div>
+    <iframe id="bkFrame" class="bk-frame" title="Kalender: Potential-Check buchen" data-src="https://meet.brevo.com/nina-zurawski/kennenlerncall" allow="payment"></iframe>
+    <div class="bk-fallback">Der Kalender lädt nicht? <a href="https://meet.brevo.com/nina-zurawski/kennenlerncall" id="btn-modal-booking" data-modal-fallback>Hier direkt öffnen</a></div>
+  </div>
+</div>
+
 <!-- ═══ COOKIE CONSENT ═══ -->
-<div id="cookieOverlay" class="cookie-overlay" aria-hidden="true"></div>
-<div id="cookieBanner" class="cookie-banner" role="dialog" aria-modal="true" aria-label="Datenschutzeinstellungen">
+<div id="cookieBanner" class="cookie-banner" role="dialog" aria-label="Datenschutzeinstellungen">
   <div id="cookieViewMain" class="cookie-view">
     <div class="cookie-inner">
-      <h2 class="cookie-title">Cookies &amp; Tracking</h2>
-      <p class="cookie-body">Technisch notwendige Funktionen sind immer aktiv. Für Marketing-Cookies (Google&nbsp;Ads Conversion-Tracking und Meta-Pixel für diese Kampagne) brauche ich deine Einwilligung. Sie ist freiwillig, für die Nutzung der Website nicht erforderlich und jederzeit widerrufbar.</p>
-      <div class="cookie-actions">
-        <button id="cookieAcceptAll" class="btn-cookie">Alles akzeptieren</button>
-        <button id="cookieShowSettings" class="btn-cookie">Bearbeiten</button>
+      <p class="cookie-body">Marketing-Cookies (Google&nbsp;Ads, Meta-Pixel) setze ich nur mit deiner Einwilligung. Freiwillig und jederzeit widerrufbar.</p>
+      <div class="cookie-actions cookie-actions--main">
         <button id="cookieRejectAll" class="btn-cookie">Alles ablehnen</button>
+        <button id="cookieAcceptAll" class="btn-cookie">Alles akzeptieren</button>
       </div>
-      <div class="cookie-footer-links">
-        <a href="impressum.html">Impressum</a>
+      <div class="cookie-links">
+        <button type="button" id="cookieShowSettings" class="cookie-link">Bearbeiten</button>
         <a href="datenschutz.html">Datenschutzerklärung</a>
+        <a href="impressum.html">Impressum</a>
       </div>
     </div>
   </div>
   <div id="cookieViewSettings" class="cookie-view cookie-view--hidden">
-    <div class="cookie-inner">
+    <div class="cookie-inner cookie-inner--settings">
       <button id="cookieBack" class="cookie-back">
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
         Zurück
@@ -810,9 +938,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </div>
       <div class="cookie-actions">
-        <button id="cookieAcceptAll2" class="btn-cookie">Alles akzeptieren</button>
-        <button id="cookieAcceptSelection" class="btn-cookie">Auswahl akzeptieren</button>
         <button id="cookieRejectAll2" class="btn-cookie">Alles ablehnen</button>
+        <button id="cookieAcceptSelection" class="btn-cookie">Auswahl akzeptieren</button>
+        <button id="cookieAcceptAll2" class="btn-cookie">Alles akzeptieren</button>
       </div>
       <div class="cookie-footer-links">
         <a href="impressum.html">Impressum</a>
@@ -839,15 +967,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     if (isNaN(budget) || budget < 0) budget = 0;
     if (isNaN(extra) || extra < 0) extra = 0;
 
+    var bridge = document.getElementById('calcBridge');
+    var bottomBooking = document.getElementById('btn-calc-booking-bottom');
     if (!order || isNaN(order) || order <= 0) {
       elOutput.textContent = 'Trag deinen durchschnittlichen Auftragswert ein.';
+      bridge.hidden = true;
+      if (bottomBooking) bottomBooking.style.display = 'inline-flex';
       return;
     }
     var needed = Math.max(1, Math.ceil((budget + extra) / order));
-    elOutput.innerHTML = 'Du brauchst <strong>' + needed + '</strong> neue Kund:innen im Monat, damit sich deine Werbung trägt. Alles darüber ist Gewinn.';
+    elOutput.innerHTML = 'Beispielrechnung: Du brauchst <strong>' + needed + '</strong> neue Kund:innen im Monat, damit sich deine Werbung trägt. Alles darüber ist Gewinn.';
+    bridge.hidden = false;
+    if (bottomBooking) bottomBooking.style.display = 'none';
   }
+  var calcUsed = false;
   [elAuftrag, elBudget, elKosten].forEach(function (el) {
-    el.addEventListener('input', calcUpdate);
+    el.addEventListener('input', function () {
+      if (!calcUsed) { calcUsed = true; ninaTrack('custom', 'RechnerNutzung'); }
+      calcUpdate();
+    });
   });
   calcUpdate();
 
@@ -888,8 +1026,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       track.style.transform = 'translateX(-' + (current * 100) + '%)';
       dots.forEach(function (d, i) { d.classList.toggle('reviews-dot--active', i === current); });
     }
-    document.getElementById('reviewsPrev').addEventListener('click', function () { go(current - 1); });
-    document.getElementById('reviewsNext').addEventListener('click', function () { go(current + 1); });
+    document.querySelectorAll('#reviewsPrev, #reviewsPrevM').forEach(function (b) { b.addEventListener('click', function () { go(current - 1); }); });
+    document.querySelectorAll('#reviewsNext, #reviewsNextM').forEach(function (b) { b.addEventListener('click', function () { go(current + 1); }); });
     dots.forEach(function (d, i) { d.addEventListener('click', function () { go(i); }); });
     var startX = 0;
     track.addEventListener('touchstart', function (e) { startX = e.touches[0].clientX; }, { passive: true });
@@ -905,9 +1043,78 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     if (kind === 'custom') fbq('trackCustom', name, params || {});
     else fbq('track', name, params || {});
   };
-  document.querySelectorAll('[data-booking]').forEach(function (el) {
-    el.addEventListener('click', function () { ninaTrack('custom', 'TerminKlick'); });
+  /* Position der Buttons für CTAKlick */
+  var POS = {
+    'btn-header-booking': 'header', 'btn-hero-booking': 'hero', 'btn-schritte-booking': 'schritte', 'btn-schritte-quiz': 'schritte',
+    'btn-about-booking': 'ueber-mich', 'btn-about-quiz': 'ueber-mich', 'btn-warum-booking': 'warum-zusammen', 'btn-warum-quiz': 'warum-zusammen',
+    'btn-calc-booking': 'rechner', 'btn-calc-booking-bottom': 'rechner', 'btn-calc-quiz': 'rechner',
+    'btn-entlastung-booking': 'entlastung', 'btn-entlastung-quiz': 'entlastung', 'btn-ablauf-booking': 'ablauf', 'btn-ablauf-quiz': 'ablauf',
+    'btn-final-booking': 'abschluss', 'btn-final-quiz': 'abschluss', 'btn-modal-booking': 'modal'
+  };
+  function ctaTrack(el, typ) {
+    ninaTrack('custom', 'CTAKlick', { position: POS[el.id] || el.id, typ: typ });
+  }
+  document.querySelectorAll('a[href="quiz-start.html"]').forEach(function (el) {
+    el.addEventListener('click', function () { ctaTrack(el, 'quiz'); });
   });
+
+  /* ---------- Buchungs-Overlay (eingebetteter Brevo-Kalender) ---------- */
+  var bkOv = document.getElementById('bkOverlay');
+  var bkFrame = document.getElementById('bkFrame');
+  var bkClose = document.getElementById('bkClose');
+  var bkFallback = document.getElementById('btn-modal-booking');
+  var bkLastFocus = null;
+  function bkOpen() {
+    bkLastFocus = document.activeElement;
+    if (!bkFrame.getAttribute('src')) bkFrame.setAttribute('src', bkFrame.getAttribute('data-src'));
+    bkOv.classList.add('is-open');
+    bkOv.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    bkClose.focus();
+    ninaTrack('custom', 'BuchungOeffnet');
+  }
+  function bkHide() {
+    bkOv.classList.remove('is-open');
+    bkOv.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    if (bkLastFocus && bkLastFocus.focus) bkLastFocus.focus();
+  }
+  document.querySelectorAll('[data-booking]').forEach(function (el) {
+    el.addEventListener('click', function (e) {
+      ninaTrack('custom', 'TerminKlick');
+      ctaTrack(el, 'potential_check');
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1) return;
+      e.preventDefault();
+      bkOpen();
+    });
+  });
+  bkFallback.addEventListener('click', function () { ninaTrack('custom', 'TerminKlick'); ctaTrack(bkFallback, 'potential_check'); });
+  bkClose.addEventListener('click', bkHide);
+  bkOv.addEventListener('mousedown', function (e) { if (e.target === bkOv) bkHide(); });
+  document.addEventListener('keydown', function (e) {
+    if (!bkOv.classList.contains('is-open')) return;
+    if (e.key === 'Escape') { bkHide(); return; }
+    if (e.key === 'Tab') {
+      var items = [bkClose, bkFrame, bkFallback];
+      var i = items.indexOf(document.activeElement);
+      if (e.shiftKey && (i <= 0)) { e.preventDefault(); items[items.length - 1].focus(); }
+      else if (!e.shiftKey && i === items.length - 1) { e.preventDefault(); items[0].focus(); }
+    }
+  });
+
+  /* ---------- Scrolltiefe (einmal pro Aufruf je Schwelle) ---------- */
+  var depthDone = {};
+  function checkDepth() {
+    var doc = document.documentElement;
+    var pct = (window.pageYOffset + window.innerHeight) / doc.scrollHeight * 100;
+    [25, 50, 75, 100].forEach(function (t) {
+      if (!depthDone[t] && pct >= t - 0.5 && typeof fbq === 'function') {
+        depthDone[t] = true;
+        ninaTrack('custom', 'ScrollTiefe', { tiefe: t });
+      }
+    });
+  }
+  window.addEventListener('scroll', checkDepth, { passive: true });
 
   /* ---------- Cookie consent (localStorage key shared site-wide) ---------- */
   var STORAGE_KEY = 'cookie_consent';
@@ -934,7 +1141,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   }
 
   var banner = document.getElementById('cookieBanner');
-  var overlay = document.getElementById('cookieOverlay');
   var viewMain = document.getElementById('cookieViewMain');
   var viewSettings = document.getElementById('cookieViewSettings');
 
@@ -942,15 +1148,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   if (stored) {
     applyConsent(stored);
   } else {
-    setTimeout(function () {
-      banner.classList.add('is-visible');
-      overlay.classList.add('is-visible');
-    }, 900);
+    setTimeout(function () { banner.classList.add('is-visible'); }, 900);
   }
 
   function hide() {
     banner.classList.remove('is-visible');
-    overlay.classList.remove('is-visible');
   }
   function acceptAll() {
     var c = { essential: true, marketing: true };
