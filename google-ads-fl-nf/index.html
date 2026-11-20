@@ -135,6 +135,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   "knowsLanguage": "de"
 }
 </script>
+
+<style>
+  /* Hero: neues Foto. Mobil (bis 700 px) als Hintergrund, Text darunter */
+  @media (max-width: 700px) {
+    .hero { background: #1E3A2C !important; padding: 0 0 2rem !important; }
+    .hero > div[style*="position:absolute"] { display: none !important; }
+    .hero-grid { display: block !important; position: static !important; }
+    .hero-media { position: absolute !important; top: 0; left: 0; right: 0; height: 150vw; margin: 0 !important; z-index: 0; overflow: hidden; }
+    .hero-media::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(22,41,31,0.04) 0%, rgba(22,41,31,0.08) 30%, rgba(22,41,31,0.78) 52%, #1E3A2C 84%, #1E3A2C 100%); }
+    .hero-media img { position: absolute; inset: 0; width: 100% !important; height: 100% !important; aspect-ratio: auto !important; border-radius: 0 !important; object-fit: cover; object-position: 40% top !important; }
+    .hero-badge { display: none !important; }
+    .hero-text { position: relative; z-index: 1; padding-top: 78vw; }
+    .hero-h1 { color: #fff !important; font-size: clamp(2rem, 9vw, 2.5rem) !important; }
+    .hero-h1 em { color: #F0A090 !important; }
+    .hero-sub { color: rgba(255,255,255,0.9) !important; }
+  }
+</style>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -158,23 +175,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   </header>
 
   <!-- ══ HERO ══ -->
-  <section style="position:relative; padding:clamp(4rem,9vw,7.5rem) 0 clamp(3.5rem,6vw,5.5rem); background:#FFFFFF; overflow:hidden">
+  <section class="hero" style="position:relative; padding:clamp(4rem,9vw,7.5rem) 0 clamp(3.5rem,6vw,5.5rem); background:#FFFFFF; overflow:hidden">
     <div style="position:absolute; inset:0; pointer-events:none; background-image:linear-gradient(#F4F1EA 1px, transparent 1px), linear-gradient(90deg, #F4F1EA 1px, transparent 1px); background-size:96px 96px; mask-image:radial-gradient(120% 90% at 70% 0%, #000 0%, transparent 70%); -webkit-mask-image:radial-gradient(120% 90% at 70% 0%, #000 0%, transparent 70%)"></div>
     <div style="position:absolute; width:640px; height:640px; border-radius:50%; background:#1E3A2C; opacity:0.05; filter:blur(90px); top:-220px; right:-160px; pointer-events:none"></div>
     <div style="position:absolute; width:420px; height:420px; border-radius:50%; background:#D96B52; opacity:0.06; filter:blur(90px); bottom:-180px; left:-120px; pointer-events:none"></div>
 
-    <div style="position:relative; max-width:1180px; margin:0 auto; padding:0 clamp(1.25rem,4vw,2.5rem); display:grid; grid-template-columns:repeat(auto-fit,minmax(340px,1fr)); gap:clamp(2rem,5vw,4.5rem); align-items:center">
-      <div>
+    <div class="hero-grid" style="position:relative; max-width:1180px; margin:0 auto; padding:0 clamp(1.25rem,4vw,2.5rem); display:grid; grid-template-columns:repeat(auto-fit,minmax(340px,1fr)); gap:clamp(2rem,5vw,4.5rem); align-items:center">
+      <div class="hero-text">
         <div style="display:inline-flex; align-items:center; gap:0.55rem; background:#F1F5F1; border:1px solid #DCE6DD; border-radius:100px; padding:0.45rem 1rem 0.45rem 0.85rem; font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; color:#1E3A2C; margin-bottom:2rem">
           <svg viewBox="0 0 16 16" fill="none" width="13" height="13"><path d="M8 1.5C5.515 1.5 3.5 3.515 3.5 6c0 3.75 4.5 8.5 4.5 8.5S12.5 9.75 12.5 6C12.5 3.515 10.485 1.5 8 1.5zm0 6a1.5 1.5 0 110-3 1.5 1.5 0 010 3z" stroke="currentColor" stroke-width="1.2" fill="none"></path></svg>
           Nordfriesland · Schleswig-Flensburg &amp; Umgebung
         </div>
 
-        <h1 style="font-family:'Playfair Display',serif; font-weight:400; font-size:clamp(2.3rem,5vw,4rem); line-height:1.06; letter-spacing:-0.015em; margin-bottom:1.5rem; text-wrap:balance">
+        <h1 class="hero-h1" style="font-family:'Playfair Display',serif; font-weight:400; font-size:clamp(2.3rem,5vw,4rem); line-height:1.06; letter-spacing:-0.015em; margin-bottom:1.5rem; text-wrap:balance">
           Google Ads Freelancerin<br>aus Flensburg — <em style="font-style:italic; color:#D96B52">für dein lokales Business.</em>
         </h1>
 
-        <p style="font-size:1.06rem; line-height:1.8; color:#55625A; max-width:35rem; margin-bottom:2.4rem; text-wrap:pretty">
+        <p class="hero-sub" style="font-size:1.06rem; line-height:1.8; color:#55625A; max-width:35rem; margin-bottom:2.4rem; text-wrap:pretty">
           Als Google Ads Freelancerin aus Flensburg helfe ich KMU &amp; Dienstleister:innen in Nordfriesland, Schleswig-Flensburg &amp; Umgebung, planbar mehr Anfragen zu bekommen — direkt mit mir, ohne Agentur-Overhead und ohne versteckte Kosten.
         </p>
 
@@ -189,9 +206,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </div>
       </div>
 
-      <div style="position:relative">
-        <img src="../images/portrait-nina.webp" alt="Nina Zurawski — Google Ads Freelancerin Flensburg Nordfriesland" style="width:100%; aspect-ratio:4/5; object-fit:cover; object-position:center 12%; border-radius:20px; display:block" fetchpriority="high" decoding="async">
-        <div style="position:absolute; left:-1.5rem; bottom:2rem; white-space:nowrap; background:#FFFFFF; border:1px solid #E9E5DD; border-radius:14px; padding:0.9rem 1.1rem; box-shadow:0 18px 40px -22px rgba(22,33,27,0.35); display:flex; align-items:center; gap:0.7rem">
+      <div class="hero-media" style="position:relative">
+        <img src="../images/hero-portrait.webp" alt="Nina Zurawski — Google Ads Freelancerin Flensburg Nordfriesland" width="712" height="1068" style="width:100%; aspect-ratio:4/5; object-fit:cover; object-position:center 12%; border-radius:20px; display:block" fetchpriority="high" decoding="async">
+        <div class="hero-badge" style="position:absolute; left:-1.5rem; bottom:2rem; white-space:nowrap; background:#FFFFFF; border:1px solid #E9E5DD; border-radius:14px; padding:0.9rem 1.1rem; box-shadow:0 18px 40px -22px rgba(22,33,27,0.35); display:flex; align-items:center; gap:0.7rem">
           <span style="width:34px; height:34px; border-radius:50%; background:#F1F5F1; color:#1E3A2C; display:flex; align-items:center; justify-content:center; flex-shrink:0">
             <svg viewBox="0 0 20 20" fill="none" width="15" height="15"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.27l-4.77 2.44.91-5.32L2.27 6.62l5.34-.78L10 1z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"></path></svg>
           </span>

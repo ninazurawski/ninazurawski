@@ -2613,3 +2613,24 @@ br.m-br { display: none; }
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ============================================================
+   HERO MOBIL: Foto als Hintergrund, Text darunter (bis 700 px)
+   ============================================================ */
+@media (max-width: 700px) {
+  #hero { display: block; min-height: 0; background: #1E3A2C; }
+  #hero > div[style*="position:absolute"] { display: none; }
+  .hero-ambient, .scroll-indicator { display: none; }
+  #hero::after { display: none; }
+  .hero-container { display: block; padding: 0 0 2.5rem; }
+  .hero-portrait { position: absolute; top: 0; left: 0; right: 0; height: 150vw; z-index: 0; }
+  .hero-portrait-frame { position: absolute; inset: 0; max-width: none; aspect-ratio: auto; border: 0; border-radius: 0; box-shadow: none; }
+  .hero-portrait-img { object-position: 40% top; }
+  .hero-portrait::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(180deg, rgba(22,41,31,0.04) 0%, rgba(22,41,31,0.08) 30%, rgba(22,41,31,0.78) 52%, #1E3A2C 84%, #1E3A2C 100%); }
+  .hero-portrait-badge { display: none; }
+  .hero-content { position: relative; z-index: 1; padding: 78vw clamp(1rem, 4vw, 3rem) 0; }
+  .hero-headline { color: #fff; }
+  .hero-headline em { color: #F0A090; }
+  .hero-sub { color: rgba(255,255,255,0.9); }
+  .hero-ctas .btn-ghost { color: #fff; border-color: rgba(255,255,255,0.5); }
+}
