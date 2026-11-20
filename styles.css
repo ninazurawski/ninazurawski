@@ -2628,7 +2628,7 @@ br.m-br { display: none; }
   .hero-portrait-img { object-position: 40% top; }
   .hero-portrait::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(180deg, rgba(22,41,31,0.04) 0%, rgba(22,41,31,0.08) 30%, rgba(22,41,31,0.78) 52%, #1E3A2C 84%, #1E3A2C 100%); }
   .hero-portrait-badge { display: none; }
-  .hero-content { position: relative; z-index: 1; padding: 84vw clamp(1rem, 4vw, 3rem) 0; }
+  .hero-content { position: relative; z-index: 1; padding: 92vw clamp(1rem, 4vw, 3rem) 0; }
   .hero-headline { color: #fff; }
   .hero-headline em { color: #F0A090; }
   .hero-sub { color: rgba(255,255,255,0.9); }
