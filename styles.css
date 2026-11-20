@@ -2450,7 +2450,8 @@ br.m-br { display: none; }
     text-align: left;
   }
 
-  .hero-portrait { display: none; }
+  .hero-portrait { display: flex; }
+  .hero-portrait-frame { max-width: 360px; }
 
   .services-grid {
     grid-template-columns: 1fr;
@@ -2460,7 +2461,7 @@ br.m-br { display: none; }
   .service-card--featured { transform: translateY(0); }
 
 .about-grid { grid-template-columns: 1fr; gap: 3rem; }
-  .about-image-placeholder { max-width: 340px; aspect-ratio: 4/3; }
+  .about-image-placeholder { max-width: 340px; aspect-ratio: 3/4; }
   .reviews-slider-wrap { gap: 0.75rem; }
 
   .faq-grid { grid-template-columns: 1fr; gap: 3rem; }
@@ -2533,8 +2534,9 @@ br.m-br { display: none; }
   .step-number::before { display: none; }
   .process-line { display: none; }
 
-  .about-photo { object-position: center 28%; }
+  .about-photo { object-position: center 5%; }
   .about-badge { right: 0; }
+  .hero-portrait-badge { right: 1rem; bottom: 1.5rem; }
 
   /* Perf: disable expensive blur blobs on mobile */
   .ha { display: none; }
