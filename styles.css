@@ -2634,3 +2634,16 @@ br.m-br { display: none; }
   .hero-sub { color: rgba(255,255,255,0.9); }
   .hero-ctas .btn-ghost { color: #fff; border-color: rgba(255,255,255,0.5); }
 }
+
+/* ============================================================
+   HEADER MOBIL: weiße Leiste mit Button, Hamburger bleibt
+   ============================================================ */
+.btn-nav-m { display: none; }
+@media (max-width: 768px) {
+  .btn-nav-m { display: inline-flex; align-items: center; font-family: var(--ff-label); font-size: 0.8rem; font-weight: 500; padding: 0.55rem 1rem; border-radius: 100px; background: var(--salmon); color: #fff; white-space: nowrap; }
+  .nav-container { gap: 0.7rem; }
+}
+@media (max-width: 700px) {
+  #siteNav, #siteNav.is-scrolled { padding: 0.8rem 0; background: #fff; backdrop-filter: none; -webkit-backdrop-filter: none; border-bottom: 1px solid var(--border-light); box-shadow: none; }
+  #hero { padding-top: 67px; }
+}
