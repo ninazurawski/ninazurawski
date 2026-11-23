@@ -187,6 +187,11 @@ try{var _c2=JSON.parse(localStorage.getItem('cookie_consent')||'null');if(_c2&&_
     .hero-micro { color: rgba(255,255,255,0.85) !important; margin-top: 0.7rem !important; }
   }
   .hero-micro { font-size: 0.84rem; line-height: 1.5; color: #55625A; margin: 0.9rem 0 0; }
+  /* Aktions-Banner: sitzt im Sticky-Header und bleibt beim Scrollen oben */
+  .bonus-bar { position: absolute; left: 0; right: 0; top: 100%; box-shadow: 0 10px 24px -14px rgba(22,33,27,0.5); background: #1E3A2C; color: #fff; text-align: center; font-size: 0.88rem; line-height: 1.4; padding: 0.55rem clamp(1rem,4vw,2.5rem); }
+  .bonus-bar strong { font-weight: 500; }
+  .bonus-hl { display: inline-block; background: #D96B52; color: #fff; font-weight: 500; border-radius: 100px; padding: 0.05rem 0.6rem; margin: 0 0.1rem; white-space: nowrap; }
+  @media (max-width: 560px) { .bonus-bar { font-size: 0.75rem; line-height: 1.35; padding: 0.45rem 0.9rem; } .bonus-hl { padding: 0 0.5rem; } }
 
   /* ==========================================================
      COOKIE CONSENT
@@ -275,6 +280,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <svg width="13" height="13" viewBox="0 0 16 16" fill="none" style="flex-shrink:0"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path></svg>
       </a>
     </div>
+    <div class="bonus-bar" id="heroBonus"><strong>Bis Ende des Jahres:</strong> Potential-Check bis 2.12., Zusage bis 5.12., <span class="bonus-hl">200 €</span> Vorteil auf die Einrichtung.</div>
+    <script>(function(){var e=document.getElementById("heroBonus");if(e&&Date.now()>Date.parse("2026-12-02T23:59:59+01:00"))e.hidden=true;})();</script>
   </header>
 
   <!-- ═══ 1. HERO ═══ -->
@@ -1043,6 +1050,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     if (kind === 'custom') fbq('trackCustom', name, params || {});
     else fbq('track', name, params || {});
   };
+  /* ---------- Bonus-Hinweis im Hero: Sichtbarkeit messen (einmal pro Besuch, nur nach Einwilligung) ---------- */
+  var bonusEl = document.getElementById("heroBonus");
+  var bonusSeen = false, bonusSent = false;
+  function trySendBonus() {
+    if (bonusSent || !bonusSeen || typeof fbq !== "function") return;
+    bonusSent = true;
+    ninaTrack("custom", "BonusHinweisSichtbar");
+  }
+  if (bonusEl && !bonusEl.hidden && "IntersectionObserver" in window) {
+    var bonusIO = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { bonusSeen = true; trySendBonus(); bonusIO.disconnect(); }
+      });
+    }, { threshold: 0.6 });
+    bonusIO.observe(bonusEl);
+  }
+
   /* Position der Buttons für CTAKlick */
   var POS = {
     'btn-header-booking': 'header', 'btn-hero-booking': 'hero', 'btn-schritte-booking': 'schritte', 'btn-schritte-quiz': 'schritte',
@@ -1138,6 +1162,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       ad_personalization: c.marketing ? 'granted' : 'denied'
     });
     if (c.marketing) { if (window.loadMetaPixel) window.loadMetaPixel(); } else if (typeof fbq === 'function') { fbq('consent', 'revoke'); }
+    setTimeout(trySendBonus, 0);
   }
 
   var banner = document.getElementById('cookieBanner');
