@@ -190,6 +190,14 @@ try{var _c2=JSON.parse(localStorage.getItem('cookie_consent')||'null');if(_c2&&_
   /* Aktions-Banner: sitzt im Sticky-Header und bleibt beim Scrollen oben */
   .bonus-bar { position: absolute; left: 0; right: 0; top: 100%; box-shadow: 0 10px 24px -14px rgba(22,33,27,0.5); background: #1E3A2C; color: #fff; text-align: center; font-size: 0.88rem; line-height: 1.4; padding: 0.55rem clamp(1rem,4vw,2.5rem); }
   .bonus-bar strong { font-weight: 500; }
+  /* Effekte: Einblenden von oben, Glanz-Streifen, pulsierende 200-€-Pille */
+  .bonus-bar { overflow: hidden; animation: bonusIn .7s .5s cubic-bezier(.16,1,.3,1) both; }
+  .bonus-bar::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.22) 50%, transparent 60%); transform: translateX(-100%); animation: bonusShine 6s 1.6s ease-in-out infinite; }
+  .bonus-hl { animation: bonusPulse 2.4s 1.2s ease-in-out infinite; }
+  @keyframes bonusIn { from { transform: translateY(-100%); opacity: 0; } to { transform: none; opacity: 1; } }
+  @keyframes bonusShine { 0%, 55% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
+  @keyframes bonusPulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(217,107,82,0.6); } 60% { box-shadow: 0 0 0 6px rgba(217,107,82,0); } }
+  @media (prefers-reduced-motion: reduce) { .bonus-bar, .bonus-bar::after, .bonus-hl { animation: none !important; } }
   .bonus-hl { display: inline-block; background: #D96B52; color: #fff; font-weight: 500; border-radius: 100px; padding: 0.05rem 0.6rem; margin: 0 0.1rem; white-space: nowrap; }
   @media (max-width: 560px) { .bonus-bar { font-size: 0.75rem; line-height: 1.35; padding: 0.45rem 0.9rem; } .bonus-hl { padding: 0 0.5rem; } }
 
