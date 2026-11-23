@@ -627,8 +627,8 @@ ul { list-style: none; }
 .hero-portrait-frame {
   position: relative;
   width: 100%;
-  max-width: 480px;
-  aspect-ratio: 4 / 5;
+  max-width: 580px;
+  aspect-ratio: 5 / 4;
   border-radius: var(--radius-xl);
   overflow: hidden;
   border: 1px solid var(--border-light);
@@ -2451,7 +2451,7 @@ br.m-br { display: none; }
   }
 
   .hero-portrait { display: flex; }
-  .hero-portrait-frame { max-width: 360px; }
+  .hero-portrait-frame { max-width: 520px; }
 
   .services-grid {
     grid-template-columns: 1fr;
