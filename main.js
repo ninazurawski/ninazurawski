@@ -291,7 +291,7 @@ function initQuiz() {
       badge: '✅ Du bist bereit',
       title: 'Du bist bereit – lass uns deine Ads zum Laufen bringen',
       text:  'Du hast die Grundlagen, die es braucht, damit Google Ads funktionieren. Ein klares Angebot, eine Seite, eine Zielgruppe. Das ist die Basis, auf der sich eine Kampagne aufbauen lässt, die wirklich Anfragen bringt. Im kostenlosen Erstgespräch schauen wir gemeinsam, ob und wie Ads für dich konkret aussehen könnten.',
-      cta:   { label: 'Kostenloses Kennenlerngespräch buchen', href: 'https://meet.brevo.com/nina-zurawski/kennenlerncall' },
+      cta:   { label: 'Kostenlosen Potential-Check buchen', href: 'https://meet.brevo.com/nina-zurawski/potential-check' },
       mod:   'green'
     },
     2: {
