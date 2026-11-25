@@ -628,7 +628,7 @@ ul { list-style: none; }
   position: relative;
   width: 100%;
   max-width: 580px;
-  aspect-ratio: 11 / 10;
+  aspect-ratio: 4 / 5;
   border-radius: var(--radius-xl);
   overflow: hidden;
   border: 1px solid var(--border-light);
